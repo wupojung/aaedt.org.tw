@@ -1,0 +1,48 @@
+footer {
+    background: #F5F4F2;
+    color: #1A1410;
+}
+
+
+.carousel-inner img {
+    /* 替代 d-block w-100 */
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+.section-title {
+    /* 1. 將 H2 本身設定為 Flex 容器 */
+    display: flex;
+
+    /* 2. 將內容垂直排列 (即上下兩行) */
+    flex-direction: column;
+
+    /* 3. 將整個 H2 容器在父元素中置中 (如果 H2 不是 100% 寬度) */
+    /* margin: 0 auto;
+       width: fit-content; */
+
+    /* 4. 將 H2 內部的文字/子元素置中對齊 */
+    align-items: center;
+
+    /* 範例樣式 */
+    font-size: 2.5rem; /* 總體字體大小 */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.en-title {
+    text-transform: uppercase;
+    color: #EF9E1D; /* 範例：Bootstrap 主色 */
+    font-weight: 900; /* 較輕的字重 */
+    font-size: 1.2rem; /* 較小的字體 */
+    letter-spacing: 0.1em;
+}
+
+.zh-title {
+    /* 設置中文的樣式 */
+    color: #534C46;
+    font-weight: 700;
+    font-size: 2rem; /* 較大的字體 */
+}
