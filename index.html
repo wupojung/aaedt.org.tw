@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 這裡的 lang value 要用 zh-Hant，因為輔助工具會根據這裡的 value 來選擇朗讀的語言 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +13,7 @@
 <body>
 <a href="#main-content" class="visually-hidden-focusable btn btn-primary m-2">跳到主要內容</a>
 
+<!-- 這裡的 role 不需要，header 本身就是 semantic 地標，banner role是為了如果不能使用<header>就使用 banner role，通常會在支援舊網站的狀況下會使用 -->
 <header role="banner">
     <nav class="navbar navbar-expand-lg navbar-light" aria-label="主要網站導航">
         <div class="container">
@@ -19,12 +21,21 @@
                 <img src="img/logo.png" alt="AAEDT台灣可及環境設計協會 Logo" width="200" height="60">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="切換導航菜單">
+                    aria-controls="navbarNav" aria-expanded="false">
+                    <!-- 我把這裡的  aria-label="切換導航菜單" 拿掉改成下面的 visually-hidden 的span，這是考慮如果有用戶選擇將 CSS 撤掉，aira-label會看不見 -->
+                    <!-- 這裡要加一個視覺隱藏的 <span>，這樣按鈕才能正確朗讀出來 -->
+                    <!-- 這裡的 navbar-toggler-icon 可以加 aria-hidden="true"，因為這個 icon 是裝飾用 -->
+                    <!-- 綜上，以下是參考代碼建議
+                        <span class="visually-hidden">切換導航菜單</span>
+                        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                        
+                     -->
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <!-- 以下的 <i> 都可以加 aria-hidden="true" ，不然螢幕閱讀器會嘗試把 icon 朗讀出來 -->
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">最新消息 <i
                             class="bi bi-chevron-down"></i></a></li>
                     <li class="nav-item"><a class="nav-link" href="#">認識協會 <i class="bi bi-chevron-down"></i></a>
@@ -38,6 +49,17 @@
                     <li class="nav-item"><a class="nav-link" href="#">加入我們 <i class="bi bi-chevron-down"></i></a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">|</a></li>
+                    <!-- 學生競圖這裡要多個"開啟新視窗"的提示 譬如:
+                        1.
+                        <a class="nav-link" href="#">學生競圖 <span class="visually-hidden">開啟新視窗</span><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                        或是
+                        
+                        2.
+                        <a class="nav-link" href="#" aria-label="學生競圖 開啟新視窗">學生競圖 <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+
+                        如果網站有許多開新視窗的連結，建議通用第一種方案，這樣可以確保一致性和 debug 的困難。
+                        第二種方案雖也可以，但是對許多剛接觸的 dev，他們很容易誤認為 aria-label 內的資訊是補充內容，而造成錯誤的朗讀信息，<a aria-label="開啟新視窗">學生競圖</a>，譬如這種代碼，dev可能會認為螢幕閱讀器(SR)會朗讀"學生競圖 開啟新視窗"，但實際上會只朗讀"開啟新視窗"。
+                    -->
                     <li class="nav-item"><a class="nav-link" href="#">學生競圖 <i class="bi bi-box-arrow-up-right"></i></a>
                     </li>
 
@@ -47,11 +69,12 @@
     </nav>
 </header>
 
-
+<!-- 這裡的 role 不需要，如 header，<main> 本身就是 semantic 地標 -->
 <main id="main-content" role="main" class="py-5">
     <div class="container">
 
         <!--- carousel -->
+        <!-- 不太確定這裡的 labelledby 的代碼的出處，這裡接受的 value 是 id 導向，所以這裡是會再找一個叫 section-carousel 的 ID，但在此頁面上沒找到 -->
         <section aria-labelledby="section-carousel">
 
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -95,6 +118,7 @@
 
                 </div>
 
+                <!-- 讚喔!! -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -115,6 +139,9 @@
         </section>
 
         <!--- about us -->
+        <!-- 以這裡的脈絡來看，H2 可以這樣調整 
+            <h2 id="section-about-us" class="section-title">
+        -->
         <section aria-labelledby="section-about-us">
             <h2 class="section-title">
                 <span class="en-title">About us</span>
@@ -124,13 +151,15 @@
     </div>
 </main>
 
+<!-- 這裡的 role 不需要，如 header，<footer> 本身就是 semantic 地標 -->
 <footer role="contentinfo" class="p-4 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-md-start text-center">
-
+                <!-- 提醒這裡的 alt -->
                 <img src="img/logo.png" height="60" width="200"/>
                 <!--social media-->
+                <!-- 吳老師威武，這裡的 aria-label用得很恰當 -->
                 <div class="mt-2">
                     <ul class="list-inline text-center text-md-start">
                         <li class="list-inline-item">
