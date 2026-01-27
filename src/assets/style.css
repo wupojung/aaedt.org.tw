@@ -1,0 +1,1294 @@
+.final {
+    background-color: #ffffff;
+    overflow: hidden;
+   /* border: 1px solid;*/
+    /*border-color: #3c3831;*/
+    width: 100%;
+    min-width: 1280px;
+    /* min-height: 4660px;  <-- 建議刪除或註解掉這行，讓內容自動撐開高度 */
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 0; /* 確保沒有多餘留白 */
+}
+
+.final .ellipse {
+    top: 388px;
+    transform: rotate(24.37deg);
+    position: absolute;
+    left: -102px;
+    width: 1630px;
+    height: 760px;
+    border-radius: 814.89px/379.87px;
+    filter: blur(100px);
+    background: linear-gradient(90deg, rgba(247, 236, 218, 0.1) 0%, rgba(225, 225, 225, 0.1) 100%);
+}
+
+.final .div {
+    top: 1309px;
+    transform: rotate(-27.23deg);
+    position: absolute;
+    left: -102px;
+    width: 1630px;
+    height: 760px;
+    border-radius: 814.89px/379.87px;
+    filter: blur(100px);
+    background: linear-gradient(90deg, rgba(247, 236, 218, 0.1) 0%, rgba(225, 225, 225, 0.1) 100%);
+}
+
+.final .main {
+    display: flex;
+    flex-direction: column;
+    width: 1280px;
+    align-items: flex-start;
+    position: relative; /* ✅ 改成相對定位 */
+    margin-top: 100px;  /* ✅ 把原本的 top 改成 margin-top */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.final .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px 120px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .hero-img {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.final .group {
+    position: relative;
+    width: 1040px;
+    height: 138.67px;
+}
+/* 父容器：負責排版 */
+.final .card-container {
+    /* 1. 基本設定 */
+    width: 1040px;   /* 你的 .group 原本的寬度 */
+
+    /* 2. Flex 設定 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* 建議：自動分配間距，不用手算 gap */
+    /* 或者用 gap: 20px; */
+
+    /* 3. 高度設定 (關鍵) */
+    height: auto;        /* 讓內容物把高度撐開，不要寫死，比較靈活 */
+    /* 如果一定要寫死，請保留 height: 139px; */
+
+    position: relative;
+}
+
+
+.final .feature-card {
+    /* 關鍵修正：一定要把 absolute 拿掉，改成 relative 或 static */
+    position: relative;
+    top: auto;  /* 歸零 */
+    left: auto; /* 歸零 */
+
+    width: 333px;
+    height: 139px;
+    /* display: flex; <--- 看你卡片內部是否需要 flex，不需要可拿掉 */
+}
+
+/*
+.final .frame-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 333px;
+  height: 139px;
+  display: flex;
+}
+
+ */
+
+/*
+.final .frame-3 {
+  width: 332.8px;
+  height: 138.67px;
+  position: relative;
+  background-color: #ffcb24;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.87px solid;
+  border-color: #bbbbbb;
+}*/
+
+.final .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 333px;
+    height: 139px;
+}
+
+.final .text-wrapper {
+    position: absolute;
+    top: 32px;
+    left: 133px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: #fde40f;
+    font-size: 17.3px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .text-wrapper-2 {
+    position: absolute;
+    top: 31px;
+    left: 132px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: #3c3831;
+    font-size: 17.3px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .text-wrapper-3 {
+    position: absolute;
+    top: 62px;
+    left: 132px;
+    width: 184px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 400;
+    color: #3c3831;
+    font-size: 12.1px;
+    letter-spacing: 0;
+    line-height: 14.6px;
+}
+
+.final .group-2 {
+    position: absolute;
+    top: 94px;
+    left: 279px;
+    width: 54px;
+    height: 45px;
+}
+
+.final .group-3 {
+    position: absolute;
+    top: 16px;
+    left: 257px;
+    width: 66px;
+    height: 42px;
+}
+
+.final .group-4 {
+    position: absolute;
+    top: 41px;
+    left: 91px;
+    width: 33px;
+    height: 32px;
+}
+
+.final .group-5 {
+    position: absolute;
+    top: 25px;
+    left: 38px;
+    width: 83px;
+    height: 85px;
+}
+
+.final .group-6 {
+    position: absolute;
+    top: 109px;
+    left: 65px;
+    width: 44px;
+    height: 30px;
+}
+
+.final .group-7 {
+    position: absolute;
+    top: 55px;
+    left: 1px;
+    width: 53px;
+    height: 84px;
+}
+
+/*
+.final .div-wrapper {
+  position: absolute;
+  top: 0;
+  left: 354px;
+  width: 333px;
+  height: 139px;
+  display: flex;
+}
+ */
+
+.final .action-card {
+    margin-top: 0;
+    width: 332.8px;
+    height: 138.67px;
+    margin-left: 0;
+    position: relative;
+    background-color: #ffcb24;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.87px solid;
+    border-color: #bbbbbb;
+}
+
+.final .group-8 {
+    position: absolute;
+    top: 95px;
+    left: 169px;
+    width: 41px;
+    height: 40px;
+}
+
+.final .group-9 {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 118px;
+    height: 103px;
+}
+
+/*
+.final .group-10 {
+  position: absolute;
+  top: 0;
+  left: 707px;
+  width: 333px;
+  height: 139px;
+  display: flex;
+}
+
+ */
+
+.final .rectangle {
+    position: absolute;
+    top: 69px;
+    left: -5px;
+    width: 50px;
+    height: 50px;
+    background-color: #fedb00;
+    border-radius: 9.75px;
+    transform: rotate(-16.34deg);
+}
+
+.final .group-11 {
+    position: absolute;
+    top: 11px;
+    left: -14px;
+    width: 149px;
+    height: 127px;
+}
+
+.final .group-12 {
+    position: absolute;
+    top: 6px;
+    left: 18px;
+    width: 55px;
+    height: 53px;
+    transform: rotate(-16.23deg);
+}
+
+.final .rectangle-2 {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 53px;
+    height: 52px;
+    background-color: #fedb00;
+    border-radius: 9.75px;
+}
+
+.final .rectangle-3 {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 50px;
+    height: 50px;
+    background-color: #383838;
+    border-radius: 9.75px;
+    border: 0.87px solid;
+    border-color: #000000;
+}
+
+.final .text-wrapper-4 {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    -webkit-text-stroke: 0.87px #000000;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 31.2px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .group-13 {
+    position: absolute;
+    top: 8px;
+    left: 62px;
+    width: 55px;
+    height: 51px;
+    transform: rotate(-7.29deg);
+}
+
+.final .rectangle-4 {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: 50px;
+    height: 50px;
+    background-color: #fedb00;
+    border-radius: 9.75px;
+}
+
+.final .rectangle-5 {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 50px;
+    height: 50px;
+    background-color: #fedb00;
+    border-radius: 9.75px;
+    border: 0.87px solid;
+    border-color: #000000;
+}
+
+.final .group-14 {
+    position: absolute;
+    top: 71px;
+    left: 47px;
+    width: 55px;
+    height: 51px;
+    transform: rotate(12.34deg);
+}
+
+.final .rectangle-6 {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 50px;
+    height: 50px;
+    background-color: #383838;
+    border-radius: 9.75px;
+    border: 0.87px solid;
+    border-color: #000000;
+}
+
+.final .text-wrapper-5 {
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    -webkit-text-stroke: 0.87px #000000;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 31.2px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .group-15 {
+    position: absolute;
+    top: 56px;
+    left: 6px;
+    width: 52px;
+    height: 50px;
+    transform: rotate(-16.34deg);
+}
+
+.final .rectangle-7 {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 50px;
+    height: 50px;
+    background-color: #ebebeb;
+    border-radius: 9.75px;
+    border: 0.87px solid;
+    border-color: #000000;
+}
+
+.final .text-wrapper-6 {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    -webkit-text-stroke: 0.87px #000000;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 31.2px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .group-16 {
+    position: absolute;
+    top: 49px;
+    left: 90px;
+    width: 54px;
+    height: 52px;
+    transform: rotate(-18.26deg);
+}
+
+.final .rectangle-8 {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 50px;
+    height: 50px;
+    background-color: #fedb00;
+    border-radius: 9.75px;
+}
+
+.final .rectangle-9 {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #ebebeb;
+    border-radius: 9.75px;
+    border: 0.87px solid;
+    border-color: #000000;
+}
+
+.final .text-wrapper-7 {
+    position: absolute;
+    top: 6px;
+    left: 13px;
+    -webkit-text-stroke: 0.87px #000000;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 31.2px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .donate-section,
+.final .about-us-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 80px 120px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .h-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .h {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    justify-content: center;
+    position: relative;
+}
+
+.final .h-2 {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    height: 40px;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: var(--neautral-40);
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 48px;
+    white-space: nowrap;
+    justify-content: center;
+    position: relative;
+}
+
+.final .rectangle-10 {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 12px;
+}
+
+.final .frame-6 {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .frame-7 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: flex-start;
+    gap: 60px;
+    position: relative;
+}
+
+.final .frame-8 {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.final .text-wrapper-8 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 600;
+    color: #534c46;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 27px;
+    white-space: nowrap;
+}
+
+.final .text-wrapper-9 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 400;
+    color: #534c46;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.final .button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px 12px 24px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--primaryyellow);
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.final .text-wrapper-10 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: var(--neautral-50);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.final .icon-arrow {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+
+.final .frame-9 {
+    position: relative;
+    width: 600px;
+    height: 387px;
+    border-radius: 12px;
+    background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.final .intersect {
+    position: absolute; /* ✅ 設定絕對定位 */
+    bottom: -60px;          /* ✅ 貼齊底部 */
+    left: 0;            /* ✅ 貼齊左邊 */
+    width: 100%;        /* ✅ 寬度撐滿整個區塊 (無視 padding) */
+    height: 60px;
+    z-index: 1;         /* 確保它在背景之上 */
+}
+
+.final .intersect-top {
+    position: absolute;
+    top: -60px;         /* ⚠️ 關鍵：往上推出去 60px */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+    /* ✅ 關鍵修改：讓圖片上下顛倒 (垂直鏡射) */
+    transform: scaleY(-1);
+}
+
+.final .outreach-section,
+.final .video-section {
+    display: flex;
+    flex-direction: column;
+    width: 1280px;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+
+    padding: 20px 120px;
+
+    /* ✅ 修改這裡：同時預留上面和下面的空間 */
+    margin-top: 60px;    /* 給頭頂波浪用的空間 */
+    margin-bottom: 60px; /* 給腳底波浪用的空間 */
+
+    overflow: visible;   /* 記得確認這行要是 visible */
+
+    flex: 0 0 auto;
+    background-color: #f5f4f2;
+}
+
+.final .frame-11 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .frame-12 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .text-wrapper-11 {
+    position: relative;
+    width: 450px;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 600;
+    color: #534c46;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.final .AAEDT {
+    position: relative;
+    width: 450px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 400;
+    color: #534c46;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.final .frame-13 {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .frame-14 {
+    display: flex;
+    flex-direction: column;
+    width: 322px;
+    align-items: flex-start;
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    background-color: #534c46;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #bbbbbb;
+}
+
+.final .element-wrapper {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 200px;
+    border-radius: 12px 12px 0px 0px;
+    overflow: hidden;
+}
+
+.final .element {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: 0;
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.final .frame-15 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 0px 20px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    border-radius: 0px 0px 12px 12px;
+}
+
+.final .frame-16 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #655b52;
+    border-radius: 40px;
+    border: 1px solid;
+}
+
+.final .text-wrapper-12 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.final .frame-17 {
+    display: flex;
+    flex-direction: column;
+    width: 322px;
+    align-items: flex-start;
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    background-color: #534c46;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #bbbbbb;
+}
+
+.final .element-2 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 160px);
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.final .frame-18 {
+    display: flex;
+    flex-direction: column;
+    width: 322px;
+    align-items: flex-start;
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-right: -1px;
+    background-color: #534c46;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #bbbbbb;
+}
+
+.final .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .text-wrapper-13 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 600;
+    color: #534c46;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.final .frame-19 {
+    position: relative;
+    width: 600px;
+    height: 387px;
+    border-radius: 12px;
+    background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-10-39-1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.final .frame-20 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* ✅ 定位基準點 (保持不動) */
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+
+    /* ❌ 刪除或註解掉這行 */
+    /* overflow: hidden; */
+
+    /* ✅ 改成這樣：允許內容凸出去 */
+    overflow: visible;
+
+    /* ✅ 加入這行：把下面的空間撐開，給那張 60px 高的波浪圖用 */
+    margin-bottom: 60px;
+}
+
+.final .frame-21 {
+    gap: 8px;
+    padding: 0px 0px 20px;
+    background-color: #f5f4f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .frame-22 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 0px 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: #f5f4f2;
+}
+
+.final .element-3 {
+    position: relative;
+    width: 858px;
+    height: 480px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.final .text-wrapper-14 {
+    position: relative;
+    width: 450px;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 400;
+    color: #534c46;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.final .partners-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 60px 120px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+}
+
+.final .frame-24 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .frame-25 {
+    position: relative;
+    width: 1040.23px;
+    flex: 0 0 auto;
+    margin-right: -0.23px;
+}
+
+.final .footer {
+    position: relative;
+    width: 1280px;
+    height: 381px;
+    background-color: var(--neautral-10);
+    margin: 0 auto; /* ✅ 加入這行確保置中 */
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-color: #e7e7e7;
+}
+
+.final .bg {
+    position: absolute;
+    top: calc(50% - 190px);
+    left: calc(50% - 640px);
+    width: 1280px;
+    /*height: 381px;*/
+}
+
+.final .frame-26 {
+    display: flex;
+    width: 1040px;
+    align-items: flex-end;
+    gap: 40px;
+    position: absolute;
+    top: 60px;
+    left: 120px;
+}
+
+.final .frame-27 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.final .footer-logo {
+    position: relative;
+    width: 220px;
+    height: 80px;
+}
+
+.final .group-17 {
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 103px);
+    width: 206px;
+    height: 63px;
+}
+
+.final .frame-28 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.final .footer-social-media {
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+.final .footer-social-media-2 {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/mask-group-2.png);
+    background-size: 100% 100%;
+}
+
+.final .frame-29 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .frame-30 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .text-wrapper-15 {
+    position: relative;
+    flex: 1;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: var(--neautral-50);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16.8px;
+}
+
+.final .frame-31 {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.final .div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.final .footer-page-link {
+    display: flex;
+    width: 240px;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 0px;
+    position: relative;
+    flex: 0 0 auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #534c46;
+}
+
+.final .footer-illustration {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.final .text-wrapper-16 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: var(--neautral-40);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19.2px;
+    white-space: nowrap;
+}
+
+.final .nav-bar {
+    display: flex;
+    width: 1280px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--neautral-0);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #e7e7e7;
+    z-index: 100;
+}
+
+.final .nav-logo {
+    position: relative;
+    width: 200px;
+    height: 60px;
+}
+
+.final .logo {
+    position: absolute;
+    top: calc(50% - 23px);
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 46px;
+}
+
+.final .nav-content-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.final .nav-menu-list {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.final .nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 8px;
+    position: relative;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.final .nav:hover {
+    background-color: rgba(254, 219, 0, 0.1);
+    border-radius: 8px;
+}
+
+.final .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 8px;
+}
+
+.final .nav.active .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.final .nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--neautral-40);
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f5f4f2;
+}
+
+.final .nav-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.final .nav-dropdown-item:hover {
+    background-color: #f5f4f2;
+}
+
+.final .nav .icon-arrow {
+    transition: transform 0.3s ease;
+}
+
+.final .nav.active .icon-arrow {
+    transform: rotate(180deg);
+}
+
+.final .nav-link {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica;
+    font-weight: 500;
+    color: var(--neautral-40);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.final .nav-divider {
+    position: relative;
+    width: 2px;
+    height: 22px;
+}
+
+.final .nav-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 8px;
+    position: relative;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.final .nav-2:hover {
+    background-color: rgba(254, 219, 0, 0.1);
+    border-radius: 8px;
+}
