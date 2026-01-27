@@ -8,8 +8,9 @@ const navDropdownData = {
         { text: '活動花絮', link: '#' }
     ],
     '認識協會': [
-        { text: '協會簡介', link: '#' },
+        { text: '關於協會', link: '#' },
         { text: '組織架構', link: '#' },
+        { text: '組織成員', link: 'member.html' },
         { text: '理事長的話', link: '#' },
         { text: '協會章程', link: '#' }
     ],
@@ -69,6 +70,8 @@ function initDropdownNavigation() {
                     e.preventDefault();
                     console.log('Navigating to:', item.text);
                     // Add your navigation logic here
+                    window.open(item.link, '_self');
+
                 });
 
                 dropdown.appendChild(dropdownItem);
