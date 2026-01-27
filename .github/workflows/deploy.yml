@@ -1,15 +1,31 @@
 name: Deploy to GitHub Pages
 
 on:
+  # 當你推送到 main 分支時自動執行
   push:
-    branches: [ main ] # 當你推送到 main 時觸發
+    branches: [ main ]
+
+  # 讓你可以手動點擊按鈕執行 (手動開關)
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # 這裡必須加入權限，否則 GitHub Pages 會拒絕寫入
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
       - name: Install and Build
         run: |
@@ -19,4 +35,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # 告訴它要把這個資料夾的內容上傳到 gh-pages 分支
+          folder: dist # Vite 預設打包輸出的資料夾
