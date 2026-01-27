@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import injectHTML from 'vite-plugin-html-inject';
 
 export default defineConfig({
+    base: './',
     plugins: [
         injectHTML({
             tagName: 'include', // 將原本的 load 改為 include
