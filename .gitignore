@@ -1,34 +1,24 @@
-# 依賴套件 (這絕對不能傳，超級大)
-node_modules/
-.pnpm-store/
-
-# 打包產出 (這是編譯後的結果，通常不進版本控制)
-dist/
-dist-ssr/
-*.local
-
-# 日誌檔案
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# 編輯器設定 (IDE 相關)
-.vscode/
-.idea/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# 作業系統暫存檔
-.DS_Store
-Thumbs.db
-
-# 環境變數 (如果你有用到 .env，通常內含密鑰，絕對不能傳)
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
