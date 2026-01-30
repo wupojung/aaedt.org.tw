@@ -8,18 +8,23 @@
 </head>
 
 <body>
+    <!-- skip link 必需要是第一個元件 -->
+    <a href="#main-content" class="sr-only sr-only-focusable">跳至主要內容</a>
 <div class="final">
 
     <include src="src/partials/header.html"/>
 
-    <main class="main">
+    <!-- 這是建立在我們的頁面是 HTML 跟之後會用 WP 之上的作法。如果是 SPA 的話，作法稍有不同，但是吳老師你可以直接問我，到時候我一起看跟講解 -->
+    <main class="main" id="main-content">
 
         <section class="hero-section">
-            <img class="hero-img" src="img/hero/hero.png" alt="hero"/>
+            <!-- 這裡的 alt 要比較描述 (it needs to be more descriptive)，因為這有代表協會的相關的含意，更詳細可能要和立婷確認，其實 Copilot 現在可以給的 alt text 還滿好的 -->
+            <img class="hero-img" src="img/hero/hero.png" alt="可及協會在環境不要障礙的活動時的團體照，總共12位成員，每個人帶著笑容並拿著綠色盆栽一起提倡環境不要障礙。"/> 
             <div class="card-container">
                 <div class="feature-card">
                     <div class="action-card">
-                        <img class="img" src="img/hero/feature-card-bg1.svg" alt="card background"/>
+                        <!-- 這個 img 也可被歸類為裝飾性，所以 alt 可以是空白 -->
+                        <img class="img" src="img/hero/feature-card-bg1.svg" alt=""/>
                         <div class="text-wrapper">我要改善環境</div>
                         <div class="text-wrapper-2">我要改善環境</div>
                         <div class="text-wrapper-3">
@@ -35,7 +40,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="action-card">
-                        <img class="img" src="img/hero/feature-card-bg2.svg" alt="card background"/>
+                        <!-- 這個 img 也可被歸類為裝飾性，所以 alt 可以是空白 -->
+                        <img class="img" src="img/hero/feature-card-bg2.svg" alt=""/>
                         <div class="text-wrapper">我想邀約演講</div>
                         <div class="text-wrapper-2">我想邀約演講</div>
                         <div class="text-wrapper-3">邀請我們的專業講師到現場分享，讓更多人了解『可及設計』的理念與實踐。
@@ -48,12 +54,14 @@
                 </div>
                 <div class="feature-card">
                     <div class="action-card">
-                        <img class="img" src="img/hero/feature-card-bg3.png" alt="card background"/>
+                        <!-- 這個 img 也可被歸類為裝飾性，所以 alt 可以是空白 -->
+                        <img class="img" src="img/hero/feature-card-bg3.png" alt=""/>
                         <div class="rectangle"></div>
                         <div class="text-wrapper">我想參加活動</div>
                         <div class="text-wrapper-2">我想參加活動</div>
                         <img class="group-2" src="img/hero/card3/group-51-2.png" alt=""/>
-                        <div class="group-11">
+                        <!-- 以下的部份很有意思，吳老師你真強，直接用 CSS 刻出來，但在這個情景底下，我會把這部分視為裝飾性的圖像，但這時候一般的  alt 就不能用了，所以我們會用到一個很有用也很危險的 aria attribute: aria-hidden。這個 attribute 要注意的是它會把這元件以及子元件都藏起來讓輔具直接忽略，用的恰當的話是很有用，但用錯的話，有可能直接把整個網站給藏起來。要謹慎使用。 -->
+                        <div class="group-11" aria-hidden="true">
                             <div class="group-12">
                                 <div class="rectangle-2"></div>
                                 <div class="rectangle-3"></div>
@@ -79,6 +87,36 @@
                                 <div class="text-wrapper-7">T</div>
                             </div>
                         </div>
+                        <!-- 以下的部分是如果類似的圖形不是純裝飾性的話，可以用 sr-only 的方式來提供給輔具使用者
+                        <div class="group-11">
+                            <div class="sr-only">
+                                圖形說明：由五個部分組成，分別是兩個 A、D、E、T，代表可及協會 (AAEDT) 的字母縮寫。
+                            </div>
+                            <div aria-hidden="true" class="group-12">
+                                <div class="rectangle-2"></div>
+                                <div class="rectangle-3"></div>
+                                <div class="text-wrapper-4">A</div>
+                            </div>
+                            <div aria-hidden="true" class="group-13">
+                                <div class="rectangle-4"></div>
+                                <div class="rectangle-5"></div>
+                                <div class="text-wrapper-4">A</div>
+                            </div>
+                            <div aria-hidden="true" class="group-14">
+                                <div class="rectangle-4"></div>
+                                <div class="rectangle-6"></div>
+                                <div class="text-wrapper-5">D</div>
+                            </div>
+                            <div aria-hidden="true" class="group-15">
+                                <div class="rectangle-7"></div>
+                                <div class="text-wrapper-6">E</div>
+                            </div>
+                            <div aria-hidden="true" class="group-16">
+                                <div class="rectangle-8"></div>
+                                <div class="rectangle-9"></div>
+                                <div class="text-wrapper-7">T</div>
+                            </div>
+                        </div> -->
                         <div class="text-wrapper-3">
                             參加課程、工作坊、講座或參展，親身理解『可及設計』，和大家一起學習、分享。
                         </div>
@@ -125,8 +163,9 @@
                     <h3 class="text-wrapper-11">我們正在努力的方向</h3>
                     <div class="AAEDT">從居家改善到社區推廣，AAEDT 積極推動不同計畫，<br/>讓可及設計更貼近生活。</div>
                 </div>
+                <!-- 以下的 card component 可以參考這個網站 https://inclusive-components.design/cards/ -->
                 <div class="frame-13">
-                    <div class="frame-14">
+                    <div class="frame-14 card">
                         <div class="element-wrapper">
                             <img class="element-2" src="img/outreach/2025-09-23-21-06-04-1.png"
                                  alt="長照2.0居家環境改造範例"/>
@@ -135,31 +174,32 @@
                             <div class="frame-16">
                                 <div class="text-wrapper-12">改善環境</div>
                             </div>
-                            <h3 class="text-wrapper-9">長照2.0居家環境改造</h3>
+                            <!-- 先放 GOOG 在這作範例 -->
+                            <h3 class="text-wrapper-9"><a href="https://www.google.com/">長照2.0居家環境改造</a></h3>
                         </div>
                     </div>
-                    <div class="frame-17">
+                    <div class="frame-17 card">
                         <div class="element-wrapper">
                             <img class="element-2" src="img/outreach/2025-09-23-21-06-48-1.png"
                                  alt="公共空間無障礙環境改善範例"/>
                         </div>
-                        <div class="frame-15">
+                        <div class="frame-15 card">
                             <div class="frame-16">
                                 <div class="text-wrapper-12">改善環境</div>
                             </div>
-                            <h3 class="text-wrapper-9">公共空間無障礙環境改善</h3>
+                            <h3 class="text-wrapper-9"><a href="#">公共空間無障礙環境改善</a></h3>
                         </div>
                     </div>
-                    <div class="frame-18">
+                    <div class="frame-18 card">
                         <div class="element-wrapper">
                             <img class="element-2" src="img/outreach/2025-09-23-21-06-48-1-1.png"
                                  alt="可及性設計理念教育推廣"/>
                         </div>
-                        <div class="frame-15">
+                        <div class="frame-15 card">
                             <div class="frame-16">
                                 <div class="text-wrapper-12">改善環境</div>
                             </div>
-                            <h3 class="text-wrapper-9">可及性設計理念教育推廣</h3>
+                            <h3 class="text-wrapper-9"><a href="#">可及性設計理念教育推廣</a></h3>
                         </div>
                     </div>
                 </div>

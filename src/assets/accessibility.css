@@ -1,0 +1,126 @@
+/* Accessibility CSS Styles */
+
+
+/* Focus styles for keyboard navigation */
+:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+/* 這部份是做為參考，如果客戶的網站有這要求的話，以下是高對比的做法，但是業界更講究的是不要去複寫用戶自己想用的設定。意思以下的做法會影響用戶自己電腦設定成高對比的設定時候，這個CSS會影響該設備的設定。 */
+.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+.high-contrast a {
+    color: #1e90ff;
+}
+
+.high-contrast a:focus {
+    outline: 2px solid #ff0;
+}
+
+/* Text resizing */
+/* 這部份也是做為參考，中國大陸的網站有越來越多增加這個功能，就是在頁面上面增加一個可以放大跟縮小字體的按鈕，每按一次字體會放大或縮小，這可以視為相對進階的技巧，這專案我們先以基礎做好為主。在字體的大小上，要用 rem 而不是 px 或 pt，rem 會根據設備的字體大小調整而做相對應的調整。1 rem 預設是 16px 的大小，但如果用戶把瀏覽器的字體調成 32px的話，1 rem呈現的大小會是 32px，其他的單位也會根據這個 rem 去做相應的調整 */
+.resizable-text {
+    font-size: 1rem;
+}
+
+.resizable-text.large {
+    font-size: 1.25rem;
+}
+
+.resizable-text.x-large {
+    font-size: 1.5rem;
+}
+
+/* Skip to content link */
+/* 這是讓用戶可以直接跳到主要內容的連結的CSS，在一般情況下是不會顯示出來，可是鍵盤用戶按 TAB 鍵的時候，這個才會出現。這在 WCAG 裡面是處於 2.4.1 Bypass Blocks 準則內，最主要目的是提供鍵盤用戶一個可以跳過重複性區塊的方式，譬如 main navbar，通常顯示跟隱藏的通常會有 20~30 個連結，如果沒有這個 bypass block 的方式，鍵盤用戶每一次新的頁面都會需要按 TAB 按個20~30次才能夠道主要內容區塊 */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #005fcc;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+}
+/* 這部份是聚焦後，連結會顯示出來的部分 */
+.skip-to-content:focus {
+    top: 0;
+}
+
+
+/* 以下是跟螢幕閱讀器有關的 CSS */
+/* Screen reader only */
+/* sr-only 是一個會很常用到的一個重要 class，許多視覺上面為了好看可能會縮減許多元素，以至於透過螢幕閱讀器朗讀出來會很不好懂，sr-only 可以很好的增加相關資訊的同時，又不會影響視覺呈現 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 我稍微偷個懶，請 copilot 更好講解，不然我的 chinglish 會很難看懂 
+.sr-only-focusable 是一個非常重要的 CSS class，特別是在為無障礙設計（Accessibility, a11y）優化網頁時。它的主要目的是讓隱藏的內容在特定情況下（例如獲得焦點或被激活時）變得可見，從而為使用螢幕閱讀器或鍵盤導航的使用者提供更好的體驗。
+
+功能與重要性
+隱藏內容的可訪問性:
+
+.sr-only class 通常用於隱藏一些對視覺使用者不必要，但對螢幕閱讀器使用者非常重要的內容，例如額外的描述或輔助資訊。
+.sr-only-focusable 則進一步擴展了這個功能，允許這些隱藏的內容在使用者需要時（例如按下 Tab 鍵或使用鍵盤導航時）變得可見。
+提升鍵盤導航體驗:
+
+當使用者使用鍵盤導航（例如 Tab 鍵）時，.sr-only-focusable 可以讓隱藏的元素在獲得焦點時顯示出來，這樣使用者就能看到相關的內容或指引。
+無障礙設計的最佳實踐:
+
+它是無障礙設計中的一個重要工具，確保所有使用者（包括有視力障礙的使用者）都能獲得完整的資訊和功能。
+工作原理
+.sr-only-focusable 通常與 .sr-only 配合使用。
+當元素處於正常狀態時，.sr-only 隱藏它。
+當元素獲得焦點（focus）或被激活（active）時，.sr-only-focusable 的樣式會覆蓋 .sr-only 的樣式，讓元素重新顯示。
+相關範例
+以下是一個使用 .sr-only-focusable 的範例：
+
+<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+<div id="main-content">
+    <h1>Welcome to the website</h1>
+    <p>This is the main content of the page.</p>
+</div>
+在這個範例中：
+
+Skip to main content 這個連結平時是隱藏的（因為有 .sr-only）。
+當使用者按下 Tab 鍵並聚焦到這個連結時，.sr-only-focusable 的樣式會讓它顯示出來，方便使用者快速跳轉到主要內容。
+總結
+.sr-only-focusable 是一個簡單但強大的工具，能夠顯著提升網站的無障礙性。它確保了隱藏的輔助資訊在需要時能夠被使用者看到，從而改善了整體的用戶體驗，特別是對於依賴鍵盤或輔助技術的使用者。 */
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Card 的 style */
+.card:hover {
+    /* Enlarge the element to 1.5 times its original size on hover */
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+  }
+
+
+.card:focus-within h3 a:focus {
+    text-decoration: none;
+}
