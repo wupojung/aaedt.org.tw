@@ -14,6 +14,8 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 member: resolve(__dirname, 'member.html'),
+                about: resolve(__dirname, 'about.html'),
+                organization: resolve(__dirname, 'organization.html'),
             },
         },
     },
