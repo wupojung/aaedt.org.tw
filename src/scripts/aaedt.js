@@ -10,33 +10,34 @@ const navDropdownData = {
     '認識協會': [
         { text: '關於協會', link: '#' },
         { text: '組織架構', link: '#' },
-        { text: '組織成員', link: 'member.html' },
-        { text: '理事長的話', link: '#' },
-        { text: '協會章程', link: '#' }
+        { text: '成員介紹', link: 'member.html' },
+        { text: '本會章程', link: '#' },
+        { text: '會議記錄', link: '#' }
     ],
     '專業服務': [
-        { text: '居家環境改造', link: '#' },
-        { text: '無障礙環境檢測', link: '#' },
-        { text: '可及性設計諮詢', link: '#' },
-        { text: '環境改善施工', link: '#' }
+        { text: '環境改造', link: '#' },
+        { text: '環境檢測', link: '#' },
+        { text: '體驗工作坊', link: '#' },
+        { text: '系列演講', link: '#' },
+        { text: '學術活動', link: '#' }
     ],
     '推廣行動': [
-        { text: '長照2.0居家環境改造', link: '#' },
-        { text: '公共空間無障礙環境改善', link: '#' },
-        { text: '可及性設計理念教育推廣', link: '#' },
-        { text: '社區推廣活動', link: '#' }
+        { text: '知識分享', link: '#' },
+        { text: '改善實務', link: '#' },
+        { text: '標章認證', link: '#' },
+        { text: '推廣成果', link: '#' }
     ],
-    '相關資源': [
+    '相關連結': [
         { text: '法規資訊', link: '#' },
         { text: '設計指南', link: '#' },
         { text: '參考資料', link: '#' },
         { text: '常見問題', link: '#' }
     ],
     '加入我們': [
-        { text: '會員申請', link: '#' },
+        { text: '成為會員', link: '#' },
         { text: '志工招募', link: '#' },
+        { text: '合作提案', link: '#' },
         { text: '捐款支持', link: '#' },
-        { text: '合作提案', link: '#' }
     ]
 };
 
