@@ -1,101 +1,36 @@
-// Main JavaScript file for AAEDT website
-
-// Navigation dropdown data
-const navDropdownData = {
-    '最新消息': [
-
-    ],
-    '認識協會': [
-        { text: '關於協會', link: '#' },
-        { text: '組織架構', link: '#' },
-        { text: '成員介紹', link: 'member.html' },
-        { text: '本會章程', link: '#' },
-        { text: '會議記錄', link: '#' }
-    ],
-    '專業服務': [
-        { text: '環境改造', link: '#' },
-        { text: '環境檢測', link: '#' },
-        { text: '體驗工作坊', link: '#' },
-        { text: '系列演講', link: '#' },
-        { text: '學術活動', link: '#' }
-    ],
-    '推廣行動': [
-        { text: '知識分享', link: '#' },
-        { text: '改善實務', link: '#' },
-        { text: '標章認證', link: '#' },
-        { text: '推廣成果', link: '#' }
-    ],
-    '資源連結': [
-        { text: '法規資訊', link: '#' },
-        { text: '設計指南', link: '#' },
-        { text: '參考資料', link: '#' },
-        { text: '常見問題', link: '#' }
-    ],
-    '加入我們': [
-        { text: '成為會員', link: '#' },
-        { text: '志工招募', link: '#' },
-        { text: '合作提案', link: '#' },
-        { text: '捐款支持', link: '#' },
-    ]
-};
-
 document.addEventListener('DOMContentLoaded', function() {
     initDropdownNavigation();
     initButtonEffects();
     initFooterLinks();
+    initExternalLinks();
 });
 
-// Initialize dropdown navigation
+// 處理導覽列下拉動作
 function initDropdownNavigation() {
     const navItems = document.querySelectorAll('.nav-menu-list .nav');
 
     navItems.forEach(navItem => {
-        const navText = navItem.querySelector('.nav-link').textContent;
-        const dropdownItems = navDropdownData[navText];
+        // 檢查該項目是否有下拉內容
+        const dropdown = navItem.querySelector('.nav-dropdown');
+        if (!dropdown) return;
 
-        if (dropdownItems && dropdownItems.length > 0) {
-            // Create dropdown container
-            const dropdown = document.createElement('div');
-            dropdown.className = 'nav-dropdown';
+        navItem.addEventListener('click', function(e) {
+            // 防止點擊事件往上傳到 document 導致選單立刻被關閉
+            e.stopPropagation();
 
-            // Add dropdown items
-            dropdownItems.forEach(item => {
-                const dropdownItem = document.createElement('a');
-                dropdownItem.className = 'nav-dropdown-item';
-                dropdownItem.href = item.link;
-                dropdownItem.textContent = item.text;
-
-                dropdownItem.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Navigating to:', item.text);
-                    // Add your navigation logic here
-                    window.open(item.link, '_self');
-
-                });
-
-                dropdown.appendChild(dropdownItem);
+            // 關閉「其他」已經開啟的選單 (確保一次只開一個)
+            document.querySelectorAll('.nav.active').forEach(activeItem => {
+                if (activeItem !== navItem) {
+                    activeItem.classList.remove('active');
+                }
             });
 
-            navItem.appendChild(dropdown);
-
-            // Toggle dropdown on click
-            navItem.addEventListener('click', function(e) {
-                e.stopPropagation();
-
-                // Close other dropdowns
-                document.querySelectorAll('.nav.active').forEach(item => {
-                    if (item !== navItem) {
-                        item.classList.remove('active');
-                    }
-                });
-
-                // Toggle current dropdown
-                this.classList.toggle('active');
-            });
-        }
+            // 切換當前選單的 active class
+            this.classList.toggle('active');
+        });
     });
 
-    // Close dropdowns when clicking outside
+    // 點擊頁面其他空白處時，關閉所有選單
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.nav')) {
             document.querySelectorAll('.nav.active').forEach(item => {
@@ -104,7 +39,7 @@ function initDropdownNavigation() {
         }
     });
 
-    // Close dropdowns on scroll
+    // 捲動頁面時關閉選單 (避免選單懸浮在奇怪位置)
     window.addEventListener('scroll', function() {
         document.querySelectorAll('.nav.active').forEach(item => {
             item.classList.remove('active');
@@ -160,12 +95,13 @@ function initFooterLinks() {
     });
 }
 
-// Handle external link (學生競圖)
-const externalLink = document.querySelector('.nav-2');
-if (externalLink) {
-    externalLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        console.log('External link clicked: 學生競圖');
-        window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
-    });
+// 處理外部連結 (學生競圖)
+function initExternalLinks() {
+    const externalLink = document.querySelector('.nav-2');
+    if (externalLink) {
+        externalLink.addEventListener('click', function() {
+            window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
+        });
+    }
 }
+
