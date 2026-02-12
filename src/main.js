@@ -5,6 +5,7 @@ import './assets/accessibility.css';
 import './assets/about.css';
 //import './assets/organization.css';
 import './assets/breadcrumb.css';   //breadcrumb nav
+import './assets/nav-bar.css';
 
 
 import './scripts/aaedt.js';

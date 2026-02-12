@@ -1,0 +1,158 @@
+.nav-bar {
+    display: flex;
+    width: 1280px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--neautral-0);
+    border-bottom: 1px solid #e7e7e7;
+    z-index: 100;
+
+    /* Logo 區塊 */
+    .nav-logo {
+        position: relative;
+        width: 200px;
+        height: 60px;
+
+        .logo {
+            position: absolute;
+            top: calc(50% - 23px);
+            left: calc(50% - 100px);
+            width: 200px;
+            height: 46px;
+        }
+    }
+
+    /* 右側內容包裝層 */
+    .nav-content-wrapper {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        flex: 0 0 auto;
+
+        .nav-divider {
+            position: relative;
+            width: 2px;
+            height: 22px;
+        }
+    }
+
+    /* 選單列表 */
+    .nav-menu-list {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    /* 單個導覽項目 */
+    .nav {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 10px 8px;
+        position: relative;
+        flex: 0 0 auto;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: rgba(254, 219, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .nav-link {
+            position: relative;
+            width: fit-content;
+            margin-top: -1px;
+            font-family: "Noto Sans", Helvetica, sans-serif;
+            font-weight: 500;
+            color: var(--neautral-40);
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+
+        .icon-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        /* 下拉選單主體 */
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 8px;
+
+            .nav-dropdown-item {
+                display: flex;
+                align-items: center;
+                padding: 12px 16px;
+                color: var(--neautral-40);
+                font-family: "Noto Sans", Helvetica, sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+                border-bottom: 1px solid #f5f4f2;
+                text-decoration: none; /* 確保 a 標籤沒有底線 */
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background-color: #f5f4f2;
+                }
+            }
+        }
+
+        /* 啟動狀態（Active） */
+        &.active {
+            .nav-dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .icon-arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    /* 學生競圖等特殊按鈕樣式 */
+    .nav-2 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 8px;
+        position: relative;
+        flex: 0 0 auto;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+            background-color: rgba(254, 219, 0, 0.1);
+            border-radius: 8px;
+        }
+    }
+}
