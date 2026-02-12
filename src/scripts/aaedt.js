@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     initDropdownNavigation();
-    initButtonEffects();
-    initFooterLinks();
+    //initButtonEffects();
+    //initFooterLinks();
     initExternalLinks();
 });
-
+/*
 // 處理導覽列下拉動作
 function initDropdownNavigation() {
     const navItems = document.querySelectorAll('.nav-menu-list .nav');
@@ -100,6 +100,45 @@ function initExternalLinks() {
     const externalLink = document.querySelector('.nav-2');
     if (externalLink) {
         externalLink.addEventListener('click', function() {
+            window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
+        });
+    }
+}
+
+ */
+
+
+// 下拉選單邏輯維持，但移除不必要的細節
+function initDropdownNavigation() {
+    const navItems = document.querySelectorAll('.nav-menu-list .nav');
+
+    navItems.forEach(navItem => {
+        const dropdown = navItem.querySelector('.nav-dropdown');
+        if (!dropdown) return;
+
+        navItem.addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelectorAll('.nav.active').forEach(activeItem => {
+                if (activeItem !== navItem) activeItem.classList.remove('active');
+            });
+            this.classList.toggle('active');
+        });
+    });
+
+    // 點擊空白處關閉
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav')) {
+            document.querySelectorAll('.nav.active').forEach(i => i.classList.remove('active'));
+        }
+    });
+}
+
+// 學生競圖直接用 HTML 的 <a> 標籤屬性處理最好，
+// 如果一定要 JS 處理：
+function initExternalLinks() {
+    const externalLink = document.querySelector('.nav-2');
+    if (externalLink) {
+        externalLink.addEventListener('click', () => {
             window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
         });
     }

@@ -52,6 +52,7 @@
 
     /* 單個導覽項目 */
     .nav {
+        border-radius: 8px; /* 預先設定好，避免 hover 瞬間才出現圓角導致閃動 */
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -154,5 +155,12 @@
             background-color: rgba(254, 219, 0, 0.1);
             border-radius: 8px;
         }
+    }
+    /* nav.css */
+    .nav-2, .button {
+        transition: transform 0.3s ease;
+    }
+    .nav-2:hover, .button:hover {
+        transform: scale(1.05); /* 交給 CSS 處理，不經過 JS */
     }
 }
