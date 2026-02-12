@@ -3,9 +3,7 @@
 // Navigation dropdown data
 const navDropdownData = {
     '最新消息': [
-        { text: '最新活動', link: '#' },
-        { text: '新聞公告', link: '#' },
-        { text: '活動花絮', link: '#' }
+
     ],
     '認識協會': [
         { text: '關於協會', link: '#' },
@@ -27,7 +25,7 @@ const navDropdownData = {
         { text: '標章認證', link: '#' },
         { text: '推廣成果', link: '#' }
     ],
-    '相關連結': [
+    '資源連結': [
         { text: '法規資訊', link: '#' },
         { text: '設計指南', link: '#' },
         { text: '參考資料', link: '#' },
