@@ -1,11 +1,16 @@
 import './assets/globals.css';
-import './assets/breadcrumb.css';   //breadcrumb nav
+
 import './assets/nav-bar.css';
+import './assets/breadcrumb.css';   //breadcrumb nav
+import './assets/content-section.css';
+import './assets/table-container.css';
+
+
+
 
 import './assets/style.css';
 import './assets/styleguide.css';
 import './assets/accessibility.css';
-import './assets/about.css';
 //import './assets/organization.css';
 
 
