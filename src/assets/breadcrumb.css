@@ -1,0 +1,35 @@
+/* 獨立的麵包屑組件 - 巢狀寫法 */
+.breadcrumb {
+    align-self: flex-start; /* 確保在 Flex 容器中靠左 */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: -20px;
+    font-size: 14px;
+    font-family: "Noto Sans", sans-serif;
+
+    /* 處理所有的連結 */
+    .link {
+        color: #8a847e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #534c46;
+            text-decoration: underline;
+        }
+
+        /* 當前頁面的特殊樣式 */
+        &.active {
+            color: #534c46;
+            font-weight: 500;
+            pointer-events: none;
+        }
+    }
+
+    /* 分隔符號 */
+    .sep {
+        color: #ccc;
+        user-select: none;
+    }
+}
