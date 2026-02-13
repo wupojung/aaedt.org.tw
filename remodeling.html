@@ -4,6 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,33 +32,215 @@
         <section class="content-section is-dark">
             <div class="page-header">
                 <div class="breadcrumb">
-                    <a href="/" class="link">首頁</a>
+                    <a href="#" class="link">首頁</a>
                     <span class="sep">/</span>
-                    <a href="/about" class="link active">關於協會</a>
+                    <a href="#" class="link">專業服務</a>
+                    <span class="sep">/</span>
+                    <a href="#" class="link active">專業服務</a>
                 </div>
                 <div class="title-group">
-                    <h2 class="main-title">環境改造</h2>
-                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                    <h2 class="main-title">環境改善</h2>
+                    <div class="title-line-bg"></div>
+
                 </div>
                 <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">TEXT</p>
+                    <h3 class="sub-title">與你一起打造更安全、友善、可及的生活環境可及</h3>
+                    <p class="intro-text">
+                        我們推動可及設計，讓每個人都能自在參與生活──不論年齡或能力。
+                        <br/> 從居家改造到政策倡議，AAEDT 用專業與溫度，將「友善空間」變成日常。
+                    </p>
                 </div>
             </div>
             <img class="intersect" src="img/intersect.svg" alt="">
         </section>
 
-        <section class="content-section ">
+        <section class="content-section">
             <div class="page-header">
                 <div class="title-group">
-                    <h2 class="main-title">H2</h2>
-                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                    <h2 class="main-title">為什麼需要環境改善？</h2>
+                    <div class="title-line-bg"></div>
                 </div>
-                <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">text</p>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <!--<h3 class="sub-title"> </h3>-->
+                        <p class="intro-text">
+                            多數環境障礙其實不是使用者造成，而是在設計或施工階段「無意間」產生。
+                            例如：
+                            入口僅差 3 公分的高差，就可能讓輪椅與娃娃車無法通過
+                            人行道突起、斜坡過陡，使長者行走困難
+                            公共空間的轉彎半徑太小，造成推行輔具不便
+                            廁所設備位置不當，讓使用者無法安全使用
+                            改善並不是「為特定族群妥協」，而是讓空間回到最初的目的──讓人能使用。
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
                 </div>
             </div>
+        </section>
+
+
+        <section class="content-section is-dark">
+            <img class="intersect-top" src="img/intersect.svg" alt=""/>
+
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">服務項目</h2>
+                    <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">一、居家可及性改善</h3>
+                        <p class="intro-text">
+                            多數環境障礙其實不是使用者造成，而是在設計或施工階段「無意間」產生。
+                            例如：
+                            入口僅差 3 公分的高差，就可能讓輪椅與娃娃車無法通過
+                            人行道突起、斜坡過陡，使長者行走困難
+                            公共空間的轉彎半徑太小，造成推行輔具不便
+                            廁所設備位置不當，讓使用者無法安全使用
+                            改善並不是「為特定族群妥協」，而是讓空間回到最初的目的──讓人能使用。
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                    <div class="intro-content">
+                        <h3 class="sub-title">二、戶外空間改善（街道、公園、校園、社區…）</h3>
+                        <p class="intro-text">
+                            多數環境障礙其實不是使用者造成，而是在設計或施工階段「無意間」產生。
+                            例如：
+                            入口僅差 3 公分的高差，就可能讓輪椅與娃娃車無法通過
+                            人行道突起、斜坡過陡，使長者行走困難
+                            公共空間的轉彎半徑太小，造成推行輔具不便
+                            廁所設備位置不當，讓使用者無法安全使用
+                            改善並不是「為特定族群妥協」，而是讓空間回到最初的目的──讓人能使用。
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">三、建築與室內空間改善</h3>
+                        <p class="intro-text">
+                            多數環境障礙其實不是使用者造成，而是在設計或施工階段「無意間」產生。
+                            例如：
+                            入口僅差 3 公分的高差，就可能讓輪椅與娃娃車無法通過
+                            人行道突起、斜坡過陡，使長者行走困難
+                            公共空間的轉彎半徑太小，造成推行輔具不便
+                            廁所設備位置不當，讓使用者無法安全使用
+                            改善並不是「為特定族群妥協」，而是讓空間回到最初的目的──讓人能使用。
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+                <div class="spacer-48"></div>
+            </div>
+            <img class="intersect" src="img/intersect.svg" alt="">
+
+        </section>
+
+
+        <section class="content-section">
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">服務流程</h2>
+                    <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group">
+                    <ol class="process-steps">
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">1</div>
+                            <div class="step-content">
+                                <h3>初步諮詢</h3>
+                                <p>了解場域需求、使用者狀態與改善目標。</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">2</div>
+                            <div class="step-content">
+                                <h4>現場評估</h4>
+                                <p>協會專業人員到場檢視動線、障礙與風險。</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">3</div>
+                            <div class="step-content">
+                                <h4>可及性分析報告</h4>
+                                <p>提供問題點分析、改善方案與建議。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">4</div>
+                            <div class="step-content">
+                                <h4>設計階段諮詢（選配）</h4>
+                                <p>配合建築師、設計團隊進行細部改善規劃。</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">5</div>
+                            <div class="step-content">
+                                <h4>完工後檢視（選配）</h4>
+                                <p>協助確認施工成果符合可及性需求。</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section is-dark">
+            <img class="intersect-top" src="img/intersect.svg" alt=""/>
+
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">服務項目</h2>
+                    <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">一、居家可及性改善</h3>
+                        <div class="intro-text">
+                            以「家」為核心，協助行動不便者、長者、孕婦、兒童與一般家庭打造安全便利的生活動線。
+                            <br/>服務內容包含：
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 居家動線評估與風險檢視</li>
+                                <li> 出入口、浴室、廚房、臥室的可及性改善建議</li>
+                                <li> 高差、照明、地面材質、防跌設計</li>
+                                <li> 居家輔具配置建議（非販售，僅提供專業建議）</li>
+                            </ul>
+                            讓每個家，都能陪伴家人安全地老化，也能滿足暫時性與長期性的行動需求。
+                        </div>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+            </div>
+            <img class="intersect" src="img/intersect.svg" alt="">
+
         </section>
     </main>
 

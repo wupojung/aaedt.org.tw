@@ -4,7 +4,7 @@
     width: 1280px;
     align-items: flex-start;
     position: relative; /* ✅ 改成相對定位 */
-    margin-top: 100px;  /* ✅ 把原本的 top 改成 margin-top */
+    margin-top: 100px; /* ✅ 把原本的 top 改成 margin-top */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -54,7 +54,10 @@
         flex-direction: column;
         align-items: center;
         gap: 8px;
-        width: 100%;
+        /*width: 100%;*/
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
 
         .main-title {
             font-size: clamp(1.5rem, 5vw, 2rem); /* 響應式字體 */
@@ -66,8 +69,34 @@
         }
 
         .title-line {
-            width: auto; /* 確保裝飾線不被拉伸 */
-            height: auto;
+            /* 1. 讓它填滿容器寬度 */
+            width: 100%;
+
+            /* 🔥 2. 關鍵：強制鎖定高度，不讓它亂拉伸 🔥 */
+            height: 12px;
+
+            /* 3. 確保圖片內容填滿這個 100%x12px 的框框 */
+            object-fit: fill;
+        }
+
+        /* 新的 class */
+
+        .title-line-bg {
+            /* ✅ 關鍵 1：強制寬度填滿 title-group */
+            align-self: stretch;
+
+            /* ✅ 關鍵 2：固定高度 */
+            height: 12px;
+
+            background-image: url('img/rectangle-1.svg');
+
+            /* ✅ 關鍵 3：背景不重覆且強制拉滿 */
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            display: block;
+
         }
     }
 
@@ -145,6 +174,7 @@
             line-height: 1.6;
             max-width: 700px;
             margin: 0;
+
         }
 
         .intro-image {
@@ -161,6 +191,7 @@
             width: 100%;
             align-items: flex-start; /* 確保「標章介紹」靠左 */
             font-family: "Noto Sans";
+
             .title {
                 color: #534C46;
                 font-size: 1.25rem; /* 維持您的設定 */
@@ -214,6 +245,7 @@
                         .cert-info {
                             flex: 1;
                             text-align: left; /* 確保內部所有文字（XXX標章）靠左 */
+
                             .cert-name {
                                 color: #534C46;
                                 font-size: 1.25rem;
@@ -318,7 +350,79 @@
             }
         }
 
-        /**/
+        /* 流程樣式 (服務流程 版面) */
+        .process-steps {
+            width: 100%;
+            max-width: 400px;      /* 約束寬度 */
+            margin: 40px auto;     /* 上下留白，水平置中 */
+            padding: 0;
+            list-style: none;
+            text-align: left;
+            display: block;
+            position: relative;
+
+            /* 每個步驟的項目 (取代 relative pl-16 mb-12) */
+            li {
+                position: relative;
+                padding-left: 64px;    /* Tailwind pl-16 (16 * 4px) */
+                margin-bottom: 48px;   /* Tailwind mb-12 (12 * 4px) */
+
+                /* 確保最後一個項目不要有下邊距 */
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                /* 垂直虛線 */
+                .step-line {
+                    position: absolute;
+                    left: 19px;        /* 圓圈中心點 */
+                    top: 40px;         /* 從圓圈下緣開始 */
+                    bottom: -48px;     /* 延伸到下一個項目的起點 */
+                    border-left: 2px dashed #9ca3af;
+                    display: block;
+                }
+
+                /* 最後一個步驟不需要畫線 */
+                &:last-child .step-line {
+                    display: none;
+                }
+
+                /* 數字圓圈 */
+                .step-number {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #88837d;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ffffff;
+                    font-weight: 700;
+                    z-index: 1; /* 確保圓圈在線條上方 */
+                }
+
+                /* 文字內容區塊 */
+                .step-content {
+                    h3, h4 {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        color: #534c46;
+                        margin: 0 0 4px 0;
+                        line-height: 1.4;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: #726b64;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                }
+            }
+        }
 
         .more {
             display: flex;
