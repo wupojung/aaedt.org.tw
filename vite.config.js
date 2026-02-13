@@ -13,9 +13,15 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                member: resolve(__dirname, 'member.html'),
+                //
+                news: resolve(__dirname, 'news.html'),
+                // 認識協會
                 about: resolve(__dirname, 'about.html'),
                 organization: resolve(__dirname, 'organization.html'),
+                member: resolve(__dirname, 'member.html'),
+                bylaw: resolve(__dirname, 'bylaw.html'),
+                meetings: resolve(__dirname, 'meetings.html'),
+                //專業服務
             },
         },
     },
