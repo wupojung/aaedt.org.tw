@@ -68,6 +68,27 @@
 
             .intro-content {
                 flex: 1;             /* 文字佔滿剩餘空間 */
+                display: flex;
+                flex-direction: column;
+                .more{
+
+                    text-align: left;
+                    display: flex;
+                    padding: 10px 8px;
+
+                    align-items: start;
+
+
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 120%; /* 21.6px */
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    text-decoration-skip-ink: auto;
+                    text-decoration-thickness: auto;
+                    text-underline-offset: auto;
+                    text-underline-position: from-font;
+                }
             }
 
             .intro-image {
@@ -103,6 +124,52 @@
             width: 100%;
             height: auto;
             padding: 0 0;
+        }
+
+
+        /*文章標題 (改善實務 版面) */
+        .article-group{
+            font-family: "Noto Sans";
+            text-align: left;        /* 文字改回靠左 */
+            display: flex;
+            flex-direction: column;
+            gap:12px;
+            .title{
+                color: #534C46;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 150%; /* 33px */
+            }
+            .description{
+                color: #534C46;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; /* 27px */
+            }
+        }
+
+        /**/
+        .more{
+            display: flex;
+            padding: 10px 8px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--neautral-50, #1A1410);
+
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 120%; /* 21.6px */
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
         }
     }
 

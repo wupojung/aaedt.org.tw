@@ -4,6 +4,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,29 +35,160 @@
                 <div class="breadcrumb">
                     <a href="/" class="link">首頁</a>
                     <span class="sep">/</span>
-                    <a href="/about" class="link active">關於協會</a>
+                    <a href="campaign_overview.html" class="link">推廣行動</a>
+                    <span class="sep">/</span>
+                    <a href="#" class="link active">知識分享</a>
                 </div>
                 <div class="title-group">
                     <h2 class="main-title">知識分享</h2>
-                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                    <img class="title-line" src="public/img/rectangle-1.svg" alt="">
                 </div>
+
                 <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">TEXT</p>
+                    <h3 class="sub-title">建立可及設計觀念，讓理解成為改變的起點</h3>
+                    <p class="intro-text">可及設計的第一步，是觀念的建立。  在這個分類中，我們整理可及環境相關的專題文章、案例解析與重要資源，協助設計者、管理者與一般大眾，從不同角度理解「什麼是可及、為何重要」。</p>
                 </div>
+
             </div>
-            <img class="intersect" src="img/intersect.svg" alt="">
+            <img class="intersect" src="public/img/intersect.svg" alt="">
         </section>
 
-        <section class="content-section ">
+        <section class="content-section">
             <div class="page-header">
+
                 <div class="title-group">
-                    <h2 class="main-title">H2</h2>
-                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                    <h2 class="main-title">文章內容</h2>
+                    <img class="title-line" src="public/img/rectangle-1.svg" alt="">
                 </div>
+
                 <div class="intro-group">
+                    <!--
                     <h3 class="sub-title">H3</h3>
                     <p class="intro-text">text</p>
+                    -->
+                    <div class="category-warp">
+                        <div class="category-group">
+                            <label>文章類別</label>
+                            <div class="category-content">
+                                <span class="tag">可及設計觀念</span>
+                                <span class="tag">專題解析</span>
+                                <span class="tag">國內外案例分享</span>
+                                <span class="tag">相關研究</span>
+                                <span class="tag">延伸閱讀</span>
+                                <span class="tag">實用連結</span>
+                                <span class="tag">國內外法規與制度</span>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </div>
+
+                    <ul class="card-grid">
+                        <li class="card-meeting">
+                            <div class="card-meeting-image">
+                                <img src="/img/article-img.png" alt="">
+                            </div>
+                            <div class="card-meeting-describe">
+                                <div class="card-meeting-tag-wrap">
+                                    <span class="tag">知識分享</span>
+                                    <span class="tag">專題解析</span>
+                                </div>
+                                <div class="card-meeting-content-wrap">
+                                    <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                    <h3 class="card-meeting-title">
+                                        <a href="campaign_article.html">文章名稱</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="card-meeting">
+                            <div class="card-meeting-image">
+                                <img src="/img/article-img.png" alt="">
+                            </div>
+                            <div class="card-meeting-describe">
+                                <div class="card-meeting-tag-wrap">
+                                    <span class="tag">知識分享</span>
+                                    <span class="tag">專題解析</span>
+                                </div>
+                                <div class="card-meeting-content-wrap">
+                                    <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                    <h3 class="card-meeting-title">
+                                        <a href="campaign_article.html">文章名稱</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-meeting">
+                            <div class="card-meeting-image">
+                                <img src="/img/article-img.png" alt="">
+                            </div>
+                            <div class="card-meeting-describe">
+                                <div class="card-meeting-tag-wrap">
+                                    <span class="tag">知識分享</span>
+                                    <span class="tag">專題解析</span>
+                                </div>
+                                <div class="card-meeting-content-wrap">
+                                    <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                    <h3 class="card-meeting-title">
+                                        <a href="campaign_article.html">文章名稱</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-meeting">
+                            <div class="card-meeting-image">
+                                <img src="/img/article-img.png" alt="">
+                            </div>
+                            <div class="card-meeting-describe">
+                                <div class="card-meeting-tag-wrap">
+                                    <span class="tag">知識分享</span>
+                                    <span class="tag">專題解析</span>
+                                </div>
+                                <div class="card-meeting-content-wrap">
+                                    <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                    <h3 class="card-meeting-title">
+                                        <a href="campaign_article.html">文章名稱</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-meeting">
+                            <div class="card-meeting-image">
+                                <img src="/img/article-img.png" alt="">
+                            </div>
+                            <div class="card-meeting-describe">
+                                <div class="card-meeting-tag-wrap">
+                                    <span class="tag">知識分享</span>
+                                    <span class="tag">專題解析</span>
+                                </div>
+                                <div class="card-meeting-content-wrap">
+                                    <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                    <h3 class="card-meeting-title">
+                                        <a href="campaign_article.html">文章名稱</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-meeting">
+                            <div class="card-meeting-image">
+                                <img src="/img/article-img.png" alt="">
+                            </div>
+                            <div class="card-meeting-describe">
+                                <div class="card-meeting-tag-wrap">
+                                    <span class="tag">知識分享</span>
+                                    <span class="tag">專題解析</span>
+                                </div>
+                                <div class="card-meeting-content-wrap">
+                                    <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                    <h3 class="card-meeting-title">
+                                        <a href="campaign_article.html">文章名稱</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </section>

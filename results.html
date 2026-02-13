@@ -4,6 +4,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,32 +35,206 @@
                 <div class="breadcrumb">
                     <a href="/" class="link">首頁</a>
                     <span class="sep">/</span>
-                    <a href="/about" class="link active">關於協會</a>
+                    <a href="campaign_overview.html" class="link">推廣行動</a>
+                    <span class="sep">/</span>
+                    <a href="#" class="link active">推廣成果</a>
                 </div>
                 <div class="title-group">
                     <h2 class="main-title">推廣成果</h2>
-                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                    <img class="title-line" src="public/img/rectangle-1.svg" alt="">
                 </div>
+
                 <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">TEXT</p>
+                    <h3 class="sub-title">把理念，化為看得見的行動</h3>
+                    <p class="intro-text">
+                        可及環境不是只存在於設計圖或口號中，而是需要一次又一次被實踐、被看見、被討論。台灣可及環境設計協會透過參與展覽、舉辦設計競圖與頒獎典禮，讓可及設計從專業圈層走進公共視野，也讓更多人理解：可及，是一種可以被實現的日常。
+                        <br/>在這裡，我們紀錄每一次推廣行動的過程與成果，分享背後的想法、合作的夥伴，以及那些因為行動而產生的改變。
+                    </p>
+                </div>
+
+            </div>
+            <img class="intersect" src="public/img/intersect.svg" alt="">
+        </section>
+
+        <section class="content-section">
+            <div class="page-header">
+
+                <div class="title-group">
+                    <h2 class="main-title">文章內容</h2>
+                    <img class="title-line" src="public/img/rectangle-1.svg" alt="">
+                </div>
+
+                <div class="intro-group">
+
+                    <div class="category-article">
+                        <div class="article-group">
+                            <div class="title">參與展覽｜讓可及被更多人看見</div>
+                            <div class="description">
+                                我們透過參與各類設計、環境與公共議題相關展覽，將可及環境的概念轉化為具體、可理解的展示內容。 
+                                從居家空間、公共設施到戶外環境，透過案例、模型與體驗設計，讓參觀者能從使用者角度重新理解空間。
+                                <br/>我們關注的不只是展示成果，而是：
+                                <ul>
+                                    <li>可及理念如何被轉譯給大眾</li>
+                                    <li>不同族群如何在展覽中產生共感</li>
+                                    <li>設計如何成為溝通的媒介</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="card-grid">
+                            <li class="card-meeting">
+                                <div class="card-meeting-image">
+                                    <img src="/img/article-img.png" alt="">
+                                </div>
+                                <div class="card-meeting-describe">
+                                    <div class="card-meeting-tag-wrap">
+                                        <span class="tag">知識分享</span>
+                                        <span class="tag">專題解析</span>
+                                    </div>
+                                    <div class="card-meeting-content-wrap">
+                                        <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                        <h3 class="card-meeting-title">
+                                            <a href="campaign_article.html">文章名稱</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-meeting">
+                                <div class="card-meeting-image">
+                                    <img src="/img/article-img.png" alt="">
+                                </div>
+                                <div class="card-meeting-describe">
+                                    <div class="card-meeting-tag-wrap">
+                                        <span class="tag">知識分享</span>
+                                        <span class="tag">專題解析</span>
+                                    </div>
+                                    <div class="card-meeting-content-wrap">
+                                        <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                        <h3 class="card-meeting-title">
+                                            <a href="campaign_article.html">文章名稱</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-meeting">
+                                <div class="card-meeting-image">
+                                    <img src="/img/article-img.png" alt="">
+                                </div>
+                                <div class="card-meeting-describe">
+                                    <div class="card-meeting-tag-wrap">
+                                        <span class="tag">知識分享</span>
+                                        <span class="tag">專題解析</span>
+                                    </div>
+                                    <div class="card-meeting-content-wrap">
+                                        <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                        <h3 class="card-meeting-title">
+                                            <a href="campaign_article.html">文章名稱</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="more">
+                            查看更多
+                        </div>
+                    </div>
+
+                    <div class="category-article">
+                        <div class="article-group">
+                            <div class="title">頒獎典禮｜為學生的思考與行動留下記錄</div>
+                            <div class="description">
+                                學生競圖頒獎典禮，是對年輕設計者最直接的肯定，也是理念被真正理解與內化的重要時刻。
+                                <br/>透過公開展示與頒獎，我們希望讓學生知道：願意為不同使用者多想一步，是一種值得被鼓勵的設計態度。
+                                <br/>頒獎不只是成果的終點，而是讓這些思考被看見、被記住，甚至被延續的開始。
+                                <br/>未來，我們也期待這個舞台不只屬於學生，
+                                <br/>而是成為一個讓設計者、實務工作者與社會大眾
+                                <br/>一起看見「可及環境」價值的公共平台。
+
+                            </div>
+                        </div>
+                        <ul class="card-grid">
+                            <li class="card-meeting">
+                                <div class="card-meeting-image">
+                                    <img src="/img/article-img.png" alt="">
+                                </div>
+                                <div class="card-meeting-describe">
+                                    <div class="card-meeting-tag-wrap">
+                                        <span class="tag">知識分享</span>
+                                        <span class="tag">專題解析</span>
+                                    </div>
+                                    <div class="card-meeting-content-wrap">
+                                        <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                        <h3 class="card-meeting-title">
+                                            <a href="campaign_article.html">文章名稱</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-meeting">
+                                <div class="card-meeting-image">
+                                    <img src="/img/article-img.png" alt="">
+                                </div>
+                                <div class="card-meeting-describe">
+                                    <div class="card-meeting-tag-wrap">
+                                        <span class="tag">知識分享</span>
+                                        <span class="tag">專題解析</span>
+                                    </div>
+                                    <div class="card-meeting-content-wrap">
+                                        <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                        <h3 class="card-meeting-title">
+                                            <a href="campaign_article.html">文章名稱</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-meeting">
+                                <div class="card-meeting-image">
+                                    <img src="/img/article-img.png" alt="">
+                                </div>
+                                <div class="card-meeting-describe">
+                                    <div class="card-meeting-tag-wrap">
+                                        <span class="tag">知識分享</span>
+                                        <span class="tag">專題解析</span>
+                                    </div>
+                                    <div class="card-meeting-content-wrap">
+                                        <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                                        <h3 class="card-meeting-title">
+                                            <a href="campaign_article.html">文章名稱</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="more">
+                            查看更多
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <img class="intersect" src="img/intersect.svg" alt="">
         </section>
+
 
         <section class="content-section ">
             <div class="page-header">
-                <div class="title-group">
-                    <h2 class="main-title">H2</h2>
-                    <img class="title-line" src="img/rectangle-1.svg" alt="">
-                </div>
-                <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">text</p>
+                <div class="intro-group --split">
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                    <div class="intro-content">
+                        <h3 class="sub-title">學生競圖｜讓下一代設計師開始思考「可及」</h3>
+                        <p class="intro-text">
+                            為了讓可及設計向下扎根，我們持續舉辦與參與可及性設計相關競圖，邀請學生與年輕設計師，從生活情境出發，重新思考環境中的障礙與可能性。
+                            競圖不只是比賽，更是一個學習與對話的過程。
+                            <br/>我們期待透過開放的主題與多元觀點，讓「可及」成為設計思考中的基本條件，而非事後補救。
+                        </p>
+                        <div class="more">
+                            查看競圖頁面
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>
     </main>
 
     <include src="src/partials/footer.html"/>
