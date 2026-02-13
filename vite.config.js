@@ -21,7 +21,7 @@ export default defineConfig({
                 member: resolve(__dirname, 'member.html'),
                 bylaw: resolve(__dirname, 'bylaw.html'),
                 minutes: resolve(__dirname, 'minutes.html'),
-                meetings_detail: resolve(__dirname, 'minutes-detail.html'),
+                meetings_detail: resolve(__dirname, 'meetings_detail.html'),
 
 
                 //專業服務
