@@ -1,67 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta charset="UTF-8">
-  <title>AAEDT 台灣可及環境設計協會</title>
-  <style>
-    /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
-    .nav-dropdown {
-      opacity: 0 !important;
-      visibility: hidden !important;
-      transform: translateY(-10px) !important;
-      position: absolute !important;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8">
+    <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
-    .nav.active .nav-dropdown {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateY(0) !important;
-    }
-  </style>
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
 <a href="#main-content" class="sr-only sr-only-focusable">跳至主要內容</a>
 
 <div class="final">
-  <include src="src/partials/header.html"/>
-  <main class="main" id="main-content">
-    <section class="content-section is-dark">
-      <div class="page-header">
-        <div class="breadcrumb">
-          <a href="/" class="link">首頁</a>
-          <span class="sep">/</span>
-          <a href="/about" class="link active">關於協會</a>
-        </div>
-        <div class="title-group">
-          <h2 class="main-title">組織架構</h2>
-          <img class="title-line" src="img/rectangle-1.svg" alt="">
-        </div>
-        <div class="intro-group">
-          <h3 class="sub-title">H3</h3>
-          <p class="intro-text">TEXT</p>
-        </div>
-      </div>
-      <img class="intersect" src="img/intersect.svg" alt="">
-    </section>
+    <include src="src/partials/header.html"/>
+    <main class="main" id="main-content">
+        <section class="content-section is-dark">
+            <div class="page-header">
+                <div class="breadcrumb">
+                    <a href="/" class="link">首頁</a>
+                    <span class="sep">/</span>
+                    <a href="/about" class="link active">關於協會</a>
+                </div>
+                <div class="title-group">
+                    <h2 class="main-title">組織架構</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <h3 class="sub-title">推動可及觀念，從理解到行動</h3>
+                    <p class="intro-text">
+                        AAEDT以清楚的分工與協作為基礎，串連研究、實務、教育與推廣的力量，讓「可及」不只停留在理念，而能一步步落實於真實的生活環境之中。</p>
+                </div>
+            </div>
+            <img class="intersect" src="img/intersect.svg" alt="">
+        </section>
 
-    <section class="content-section ">
-      <div class="page-header">
-        <div class="title-group">
-          <h2 class="main-title">H2</h2>
-          <img class="title-line" src="img/rectangle-1.svg" alt="">
-        </div>
-        <div class="intro-group">
-          <h3 class="sub-title">H3</h3>
-          <p class="intro-text">text</p>
-        </div>
-      </div>
-    </section>
-  </main>
+        <section class="content-section ">
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">組織架構圖</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <img class="intro-image" src="/img/organization.png"/>
+                    <div class="table-container ">
+                        <table class="accessible-table">
+                            <caption class="sr-only">協會大事紀</caption>
+                            <colgroup>
+                                <col style="width: 200px;">
+                                <col>
+                            </colgroup>
+                            <thead class="sr-only">
+                            <tr>
+                                <th scope="col">組織</th>
+                                <th scope="col">權責</th>
+                            </tr>
 
-  <include src="src/partials/footer.html"/>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">理事會與監事會</th>
+                                <td>
+                                    理事會為本會最高決策單位，負責協會整體發展方向、重大政策與年度計畫之擬定與審議。 監事會依法行使監督職責，確保本會運作之合法性、財務健全與治理透明。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">理事長</th>
+                                <td>
+                                    理事長統籌本會整體運作與跨組溝通，連結理事會決策與各工作單位的實際執行，帶領協會穩健發展，並代表本會對外交流與合作。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">顧問群</th>
+                                <td>
+                                    本會邀集來自環境設計、建築、景觀、教育、社會福利等領域之專家組成顧問群，提供專業諮詢與策略建議，協助協會在政策倡議、研究發展與實務推動上持續精進。
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">秘書處</th>
+                                <td>
+                                    秘書處為協會日常運作的核心單位，負責行政與營運支持工作，包括：
+                                    <ul class="list-disc list-outside ml-6">
+                                        <li>會務與會員管理</li>
+                                        <li>業務與專案行政</li>
+                                        <li>財務與帳務管理</li>
+                                        <li>行銷與對外聯繫</li>
+                                    </ul>
+                                    確保各項專業工作能在穩定且有效的基礎上推進。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">專案推動組</th>
+                                <td>
+                                    專注於制度與政策層面的推動，將可及理念轉化為可實踐的行動與規範，包括：
+                                    <ul class="list-disc list-outside ml-6">
+                                        <li>政策倡議與制度建議</li>
+                                        <li>可及相關標章與推動機制</li>
+                                    </ul>
+                                    促進可及環境在公共與專業領域中的落實。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">教育推廣組</th>
+                                <td>
+                                    以教育與體驗為核心，培育可及觀念與實務能力，推動不同族群對可及環境的理解與參與：
+                                    <ul class="list-disc list-outside ml-6">
+                                        <li>師資培訓（核心師資、種子師資）</li>
+                                        <li>可及課程與觀念推廣</li>
+                                        <li>環境體驗、演講參訪</li>
+                                        <li>學校教育、專業課程與競圖活動</li>
+                                    </ul>
+                                    讓可及不只是知識，而是可被感受與實踐的日常經驗。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">環境設計組</th>
+                                <td>
+                                    以實務導向回應實際空間需求，提供專業評估與改善建議，涵蓋：
+                                    <ul class="list-disc list-outside ml-6">
+                                        <li>專業諮詢</li>
+                                        <li>空間檢測與評估</li>
+                                        <li>環境與空間改善建議</li>
+                                    </ul>
+                                    協助公共與私人空間逐步邁向更安全、友善且真正可及的環境。
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <include src="src/partials/footer.html"/>
 
 </div>
 <script type="module" src="/src/main.js"></script>

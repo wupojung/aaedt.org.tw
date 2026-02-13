@@ -46,7 +46,14 @@
     }
 
     /* 最後一行不需要底線 */
-    tbody tr:last-child td {
+    tbody tr:last-child td,
+    tbody tr:last-child th{
         border-bottom: none;
+    }
+
+    /* 只針對 tbody 裡面的 th 進行垂直與水平置中 */
+    tbody tr th {
+        vertical-align: middle;
+        text-align: center;
     }
 }
