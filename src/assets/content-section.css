@@ -88,7 +88,8 @@
             /* ✅ 關鍵 2：固定高度 */
             height: 12px;
 
-            background-image: url('img/rectangle-1.svg');
+            background-image: url('/img/rectangle-1.svg');
+            /*background-image: url('../assets/img/rectangle-1.svg');*/
 
             /* ✅ 關鍵 3：背景不重覆且強制拉滿 */
             background-size: 100% 100%;
