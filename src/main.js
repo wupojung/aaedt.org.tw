@@ -6,6 +6,7 @@ import './assets/content-section.css';
 import './assets/table-container.css';
 import './assets/bylaw.css';   // 手風琴效果
 import './assets/card-meeting.css';  //最新消息專用卡片
+import './assets/minutes-article.css';   //會議記錄專用css
 
 
 
