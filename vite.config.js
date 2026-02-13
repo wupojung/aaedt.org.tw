@@ -20,7 +20,7 @@ export default defineConfig({
                 organization: resolve(__dirname, 'organization.html'),
                 member: resolve(__dirname, 'member.html'),
                 bylaw: resolve(__dirname, 'bylaw.html'),
-                meetings: resolve(__dirname, 'minutes.html'),
+                minutes: resolve(__dirname, 'minutes.html'),
                 meetings_detail: resolve(__dirname, 'minutes-detail.html'),
 
 
