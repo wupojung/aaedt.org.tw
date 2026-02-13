@@ -35,16 +35,7 @@
     background: linear-gradient(90deg, rgba(247, 236, 218, 0.1) 0%, rgba(225, 225, 225, 0.1) 100%);
 }
 
-.final .main {
-    display: flex;
-    flex-direction: column;
-    width: 1280px;
-    align-items: flex-start;
-    position: relative; /* ✅ 改成相對定位 */
-    margin-top: 100px;  /* ✅ 把原本的 top 改成 margin-top */
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 .final .hero-section {
     display: flex;
