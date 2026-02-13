@@ -1,0 +1,114 @@
+/* 1. 外部大容器 */
+.bylaw-wrap {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+/* 2. 頂部備查資訊區 (Padding Bottom 20px) */
+.bylaw-info {
+    padding: 1.5rem 1.5rem 20px 1.5rem;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+.bylaw-info p {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+/* 3. 章節手風琴項目 */
+.bylaw-chapter {
+    border-bottom: 1px solid #f1f5f9;
+}
+.bylaw-chapter:last-child { border-bottom: none; }
+
+/* 章節標題按鈕 */
+.bylaw-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.bylaw-title:hover { background-color: #f1f5f9; }
+
+.bylaw-title span {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+/* 展開狀態：標題與背景變色 */
+.bylaw-chapter.active .bylaw-title { background-color: #f8fafc; }
+.bylaw-chapter.active .bylaw-title span { color: #2563eb; }
+
+/* 4. 手風琴展開動畫邏輯 */
+.bylaw-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff;
+}
+/* 核心：靠這個類別撐開高度 */
+.bylaw-chapter.active .bylaw-body {
+    max-height: 2000px;
+}
+
+/* 5. 無障礙條文清單 (dl/dt/dd) */
+.article-list {
+    padding: 0.5rem 1.5rem 2rem 1.5rem;
+}
+.article-row {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px dashed #f1f5f9; /* 閱讀引導線 */
+    align-items: flex-start;
+}
+.article-row:last-child { border-bottom: none; }
+
+.article-row dt {
+    min-width: 6rem; /* 條號對齊寬度 */
+    font-weight: 800;
+    color: #1e293b;
+    flex-shrink: 0;
+    line-height: 1.8;
+}
+.article-row dd {
+    margin: 0;
+    color: #475569;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+/* 圖示基礎樣式 */
+.icon-plus {
+    transition: all 0.3s ease;
+    color: #94a3b8;
+}
+
+/* 針對加號中的「垂直線」進行處理 */
+/* d="M12 4v16..." 是第一條路徑，通常是垂直線 */
+.icon-plus path:first-child {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+}
+
+/* 當父層 active 時：垂直線消失，整體顏色改變 */
+.bylaw-chapter.active .icon-plus {
+    color: #2563eb;
+    /* 如果你想讓減號轉一下也可以保留 transform: rotate(180deg); */
+}
+
+.bylaw-chapter.active .icon-plus path:first-child {
+    opacity: 0; /* 讓直條消失，就變成了減號 */
+    transform: scaleY(0); /* 加上縮放效果會更精緻 */
+}
