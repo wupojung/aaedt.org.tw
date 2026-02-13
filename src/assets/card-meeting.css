@@ -1,0 +1,193 @@
+/* 1. 基礎容器：手機端 (預設) */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 手機端單欄 */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 2. 平板端：寬度大於 640px 時變 2 欄 */
+@media (min-width: 640px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
+@media (min-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1280px; /* 鎖定設計師要求的寬度 */
+        gap: 30px;
+        padding: 40px 20px;
+    }
+}
+
+
+/* 強制卡片等高，即便標題字數不同 */
+.card-meeting {
+    /* 基礎設定 */
+    background-color: #ffffff; /* 假設 --neautral-0 是白色 */
+    border: 1px solid #e0e0e0; /* 務必加上顏色值 */
+    border-radius: 16px;
+
+    /* 為了 RWD 與無障礙，建議加上以下屬性 */
+    overflow: hidden; /* 確保圖片不會超出圓角邊框 */
+    position: relative; /* 為了擴大點擊範圍的定位 */
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease-in-out; /* 增加互動感 */
+
+    /*by taki*/
+    gap: 20px;
+    padding-bottom: 20px;
+    min-height: 487px;
+}
+
+
+/* 確保卡片內的圖片不會撐破容器 */
+.card-meeting-image img {
+    width: 100%;
+    /*aspect-ratio: 4 / 3; /* 保持圖片比例 */
+    object-fit: cover;
+    display: block;
+}
+
+.card-meeting-describe {
+    /*flex-grow: 1;*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 20px;
+
+    text-align: left;
+
+
+    .card-meeting-describe h3 {
+        margin-top: 10px;
+    }
+}
+
+.card-meeting-content-wrap {
+    gap: 4px;
+
+    .card-meeting-date {
+        color: var(--neautral-30, #837B74);
+        font-family: "Noto Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+    }
+
+
+    .card-meeting-title {
+        color: var(--neautral-50, #1A1410);
+        font-family: "Noto Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 30px */
+        a {
+
+        }
+    }
+
+}
+
+
+
+.tag {
+    /* 讓寬度隨文字自動調整 (Hug) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 根據你的 Figma 數據 */
+    min-height: 40px;
+    padding: 6px 16px; /* 上下 8px，左右 20px */
+
+    /* 圓角與顏色 */
+    border-radius: 40px;
+    background-color: #E6E6E6; /* 這是圖片中的淺灰色 */
+    color: #333;
+
+    /* 移除 a 標籤預設底線 */
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap; /* 強制不換行，確保寬度完整 */
+}
+
+
+.category-warp{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    /*margin-bottom: 30px;*/
+    .category-group{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:8px;
+    }
+    .tag{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 40px;
+        padding: 4px 16px;
+
+        /* 圓角與顏色 */
+        border-radius: 40px;
+
+        border: 1px solid var(--neautral-50, #1A1410);
+        background: var(--neautral-40, #534C46);
+
+        /* 移除 a 標籤預設底線 */
+        text-decoration: none;
+        font-size: 16px;
+        white-space: nowrap; /* 強制不換行，確保寬度完整 */
+
+        color:#ffffff;
+    }
+}
+
+.category-warp label {
+    color: var(--neautral-50, #1A1410);
+    font-family: "Noto Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+}
+
+.category-content {
+    display: flex;
+    flex-wrap: wrap;       /* 關鍵：標籤太多時自動換行，不擠成一團 */
+    justify-content: flex-start; /* 標籤從左邊開始排 */
+    gap: 8px;              /* 標籤之間的間距 (Figma 常見數值) */
+    width: 100%;
+}
+
+hr {
+    /* 移除瀏覽器預設樣式 */
+    border: 0;
+
+    /* 設定一條 1px 的實線，顏色建議與卡片邊框一致 */
+    height: 1px;
+    background-color: #E6E6E6; /* 或你的變數 --neautral-border */
+
+    /* 處理上下 20px 的間距 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    /* 確保 RWD 下寬度正確 */
+    width: 100%;
+}

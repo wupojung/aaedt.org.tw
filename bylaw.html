@@ -1,12 +1,29 @@
+
+
 <!DOCTYPE html>
 <html lang="zh" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta charset="utf-8"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
