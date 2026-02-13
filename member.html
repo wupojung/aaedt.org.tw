@@ -1,75 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta charset="utf-8"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* Reset CSS */
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-        @import url("https://fonts.googleapis.com/css?family=Noto+Sans:500,400,600|Inter:400");
-
-        * {
-            -webkit-font-smoothing: antialiased;
-            box-sizing: border-box;
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
         }
 
-        html,
-        body {
-            margin: 0px;
-            height: 100%;
-        }
-
-        button:focus-visible,
-        a:focus-visible {
-            outline: 2px solid #4a90e2 !important;
-            outline: -webkit-focus-ring-color auto 5px !important;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* CSS Variables */
-        :root {
-            --neautral-40: rgba(83, 76, 70, 1);
-            --neautral-50: rgba(26, 20, 16, 1);
-            --neautral-60: rgba(0, 0, 0, 1);
-            --primarylogoyellow: rgba(229, 195, 62, 1);
-            --primaryorange: rgba(239, 158, 29, 1);
-            --neautral-10: rgba(245, 244, 242, 1);
-            --neautral-0: rgba(255, 255, 255, 1);
-            --primaryyellow: rgba(254, 219, 0, 1);
-            --neautral-30: rgba(131, 123, 116, 1);
-            --neautral-20: rgba(231, 231, 231, 1);
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
         }
     </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        /** @type {import('tailwindcss').Config} */
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "neautral-0": "var(--neautral-0)",
-                        "neautral-10": "var(--neautral-10)",
-                        "neautral-20": "var(--neautral-20)",
-                        "neautral-30": "var(--neautral-30)",
-                        "neautral-40": "var(--neautral-40)",
-                        "neautral-50": "var(--neautral-50)",
-                        "neautral-60": "var(--neautral-60)",
-                        primarylogoyellow: "var(--primarylogoyellow)",
-                        primaryorange: "var(--primaryorange)",
-                        primaryyellow: "var(--primaryyellow)",
-                    },
-                },
-            },
-            plugins: [],
-        };
-    </script>
-
 </head>
 
 <body>
@@ -79,1294 +31,1217 @@
     <include src="src/partials/header.html"/>
 
     <main class="main" id="main-content">
-        <section
-                class="flex flex-col items-start gap-10 pt-5 pb-0 px-20 relative self-stretch w-full flex-[0_0_auto] bg-neautral-10"
-        >
-            <nav class="gap-1 inline-flex items-center relative flex-[0_0_auto]" aria-label="麵包屑導航">
-                <ol class="inline-flex items-center gap-1 relative flex-[0_0_auto]">
-                    <li class="justify-center gap-2.5 inline-flex items-center relative flex-[0_0_auto]">
-                        <a
-                                href="#"
-                                class="mt-[-1.00px] font-normal text-[#534c46] text-base leading-6 whitespace-nowrap relative w-fit [font-family:'Noto_Sans',Helvetica] tracking-[0]"
-                        >
-                            首頁
-                        </a>
-                    </li>
-                    <li
-                            class="w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-xl leading-[30px] whitespace-nowrap relative tracking-[0]"
-                            aria-hidden="true"
-                    >
-                        /
-                    </li>
-                    <li class="justify-center gap-2.5 inline-flex items-center relative flex-[0_0_auto]">
-                        <a
-                                href="#"
-                                class="mt-[-1.00px] font-normal text-[#534c46] text-base leading-6 whitespace-nowrap relative w-fit [font-family:'Noto_Sans',Helvetica] tracking-[0]"
-                        >
-                            認識協會
-                        </a>
-                    </li>
-                    <li
-                            class="w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-xl leading-[30px] whitespace-nowrap relative tracking-[0]"
-                            aria-hidden="true"
-                    >
-                        /
-                    </li>
-                    <li class="justify-center gap-2.5 inline-flex items-center relative flex-[0_0_auto]">
-                  <span
-                          class="mt-[-1.00px] font-semibold text-[#534c46] text-base leading-6 underline whitespace-nowrap relative w-fit [font-family:'Noto_Sans',Helvetica] tracking-[0]"
-                          aria-current="page"
-                  >
-                    組織成員
-                  </span>
-                    </li>
-                </ol>
-            </nav>
-            <div class="flex flex-col items-start gap-10 relative self-stretch w-full flex-[0_0_auto]">
-                <div class="flex flex-col items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                    <div class="inline-flex flex-col items-start flex-[0_0_auto] justify-center relative">
-                        <h1
-                                class="flex items-center self-stretch h-10 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-neautral-40 text-[32px] text-center tracking-[0] leading-[48px] whitespace-nowrap justify-center relative"
-                        >
-                            成員介紹
-                        </h1>
-                        <img
-                                class="relative self-stretch w-full h-3"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/rectangle-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                    </div>
+
+        <section class="content-section is-dark">
+            <div class="page-header">
+                <div class="breadcrumb">
+                    <a href="/" class="link">首頁</a>
+                    <span class="sep">/</span>
+                    <a href="/about" class="link active">成員介紹</a>
                 </div>
-                <div class="flex flex-col items-center justify-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                    <p
-                            class="relative w-[800px] mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg text-center tracking-[0] leading-[27px]"
-                    >
-                        目前會員數
-                    </p>
-                    <div class="inline-flex items-start gap-[50px] relative flex-[0_0_auto]">
-                        <div class="flex flex-col w-[100px] items-center gap-2 relative">
-                            <div
-                                    class="flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-6xl text-center tracking-[6.00px] leading-[90px] whitespace-nowrap justify-center relative"
-                                    aria-label="44個人會員"
-                            >
-                                44
+                <div class="title-group">
+                    <h2 class="main-title">成員介紹</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <h3 class="sub-title">目前會員數</h3>
+                    <div class="intro-text">
+
+                        <div class="inline-flex items-start gap-[50px] relative flex-[0_0_auto]">
+                            <div class="flex flex-col w-[100px] items-center gap-2 relative">
+                                <div class="flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-6xl text-center tracking-[6.00px] leading-[90px] whitespace-nowrap justify-center relative"
+                                     aria-label="44個人會員">
+                                    44
+                                </div>
+                                <p class="w-fit [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] whitespace-nowrap relative tracking-[0]">
+                                    個人會員
+                                </p>
                             </div>
-                            <p
-                                    class="w-fit [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] whitespace-nowrap relative tracking-[0]"
-                            >
-                                個人會員
-                            </p>
-                        </div>
-                        <div class="flex flex-col w-[100px] items-center gap-2 relative">
-                            <div
-                                    class="flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-6xl text-center tracking-[6.00px] leading-[90px] whitespace-nowrap justify-center relative"
-                                    aria-label="11團體會員"
-                            >
-                                11
+                            <div class="flex flex-col w-[100px] items-center gap-2 relative">
+                                <div class="flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-6xl text-center tracking-[6.00px] leading-[90px] whitespace-nowrap justify-center relative"
+                                     aria-label="11團體會員">
+                                    11
+                                </div>
+                                <p class="w-fit [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] whitespace-nowrap relative tracking-[0]">
+                                    團體會員
+                                </p>
                             </div>
-                            <p
-                                    class="w-fit [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] whitespace-nowrap relative tracking-[0]"
-                            >
-                                團體會員
-                            </p>
-                        </div>
-                        <div class="flex flex-col w-[100px] items-center gap-2 relative">
-                            <div
-                                    class="flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-6xl text-center tracking-[6.00px] leading-[90px] whitespace-nowrap justify-center relative"
-                                    aria-label="9永久會員"
-                            >
-                                9
+                            <div class="flex flex-col w-[100px] items-center gap-2 relative">
+                                <div class="flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-6xl text-center tracking-[6.00px] leading-[90px] whitespace-nowrap justify-center relative"
+                                     aria-label="9永久會員">
+                                    9
+                                </div>
+                                <p class="w-fit [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] whitespace-nowrap relative tracking-[0]">
+                                    永久會員
+                                </p>
                             </div>
-                            <p
-                                    class="w-fit [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] whitespace-nowrap relative tracking-[0]"
-                            >
-                                永久會員
-                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <img class="intersect" src="img/intersect.svg" alt=""/>
         </section>
-        <img
-                class="self-stretch w-full relative h-[60px]"
-                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/intersect-1.svg"
-                alt=""
-                aria-hidden="true"
-        />
-        <section
-                class="flex flex-col items-start gap-10 px-[120px] py-[60px] relative self-stretch w-full flex-[0_0_auto]"
-        >
-            <div class="flex flex-col items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                <div class="inline-flex flex-col items-start flex-[0_0_auto] justify-center relative">
-                    <h2
-                            class="flex items-center self-stretch h-10 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-neautral-40 text-[32px] text-center tracking-[0] leading-[48px] whitespace-nowrap justify-center relative"
-                    >
-                        現任理事長
-                    </h2>
-                    <img
-                            class="relative self-stretch w-full h-3"
-                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/rectangle-1.svg"
-                            alt=""
-                            aria-hidden="true"
-                    />
+
+
+        <section class="content-section ">
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">現任理事長</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <div class="intro-content">
+                        <article class="flex items-start gap-20 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-center justify-center gap-5 relative flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px] h-[200px] rounded-xl object-cover"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-12-28-23-31-46-1.png"
+                                        alt="張華蓀理事長照片"
+                                />
+                                <h3
+                                        class="self-stretch [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg text-center leading-[27px] relative tracking-[0]"
+                                >
+                                    張華蓀 理事長
+                                </h3>
+                            </div>
+                            <div class="flex flex-col items-start gap-5 relative flex-1 grow">
+                                <section
+                                        class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                    <h4
+                                            class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
+                                    >
+                                        學歷
+                                    </h4>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                        <li
+                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            1999–2006 台灣大學地理所（人文地理組）博士
+                                        </li>
+                                        <li
+                                                class="relative self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg tracking-[0] leading-[27px]"
+                                        >
+                                            1989–1991 美國賓州大學景觀所（University of Pennsylvania）碩士
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            1983–1988 中原大學建築系學士
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section
+                                        class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                    <h4
+                                            class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
+                                    >
+                                        經歷
+                                    </h4>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                        <li
+                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            2024 – 至今 台灣可及環境設計協會理事長
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            2009 – 2022 中原大學景觀建築學系─專任副教授
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            2012 – 2017 擔任中原大學景觀建築學系系主任
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            2009 – 2009 中華大學景觀建築系─兼任副教授
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            2008 – 2009 中華大學景觀建築系─專任副教授
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section
+                                        class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                    <h4
+                                            class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
+                                    >
+                                        專長領域
+                                    </h4>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                        <li
+                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            永續環境-文化地景、設計方法與社會因子、敷地計畫、景觀設計
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </article>
+                    </div>
+
                 </div>
             </div>
-            <article class="flex items-start gap-20 relative self-stretch w-full flex-[0_0_auto]">
-                <div class="inline-flex flex-col items-center justify-center gap-5 relative flex-[0_0_auto]">
-                    <img
-                            class="relative w-[200px] h-[200px] rounded-xl object-cover"
-                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-12-28-23-31-46-1.png"
-                            alt="張華蓀理事長照片"
-                    />
-                    <h3
-                            class="self-stretch [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg text-center leading-[27px] relative tracking-[0]"
-                    >
-                        張華蓀 理事長
-                    </h3>
-                </div>
-                <div class="flex flex-col items-start gap-5 relative flex-1 grow">
-                    <section class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                        <h4
-                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
-                        >
-                            學歷
-                        </h4>
-                        <img
-                                class="relative self-stretch w-full h-px object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                        <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                            <li
-                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                1999–2006 台灣大學地理所（人文地理組）博士
-                            </li>
-                            <li
-                                    class="relative self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg tracking-[0] leading-[27px]"
-                            >
-                                1989–1991 美國賓州大學景觀所（University of Pennsylvania）碩士
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                1983–1988 中原大學建築系學士
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                        <h4
-                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
-                        >
-                            經歷
-                        </h4>
-                        <img
-                                class="relative self-stretch w-full h-px object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                        <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                            <li
-                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                2024 – 至今 台灣可及環境設計協會理事長
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                2009 – 2022 中原大學景觀建築學系─專任副教授
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                2012 – 2017 擔任中原大學景觀建築學系系主任
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                2009 – 2009 中華大學景觀建築系─兼任副教授
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                2008 – 2009 中華大學景觀建築系─專任副教授
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                        <h4
-                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
-                        >
-                            專長領域
-                        </h4>
-                        <img
-                                class="relative self-stretch w-full h-px object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                        <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                            <li
-                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                永續環境-文化地景、設計方法與社會因子、敷地計畫、景觀設計
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-            </article>
         </section>
-        <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-            <img
-                    class="w-[1280px] relative h-[60px]"
-                    src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/intersect.svg"
-                    alt=""
-                    aria-hidden="true"
-            />
-            <section
-                    class="flex flex-col items-start gap-10 pt-0 pb-20 px-[120px] relative self-stretch w-full flex-[0_0_auto] bg-neautral-10"
-            >
-                <div class="flex flex-col items-start gap-10 relative self-stretch w-full flex-[0_0_auto]">
-                    <div class="flex flex-col items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                        <div class="inline-flex flex-col items-start flex-[0_0_auto] justify-center relative">
-                            <h2
-                                    class="flex items-center self-stretch h-10 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-neautral-40 text-[32px] text-center tracking-[0] leading-[48px] whitespace-nowrap justify-center relative"
-                            >
-                                第五屆理監事群
-                            </h2>
-                            <img
-                                    class="relative self-stretch w-full h-3"
-                                    src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/rectangle-1.svg"
-                                    alt=""
-                                    aria-hidden="true"
-                            />
-                        </div>
-                    </div>
-                    <p
-                            class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] relative tracking-[0]"
-                    >
-                        任期：113年3月17日起至116年3月16日止
-                    </p>
-                    <div class="flex flex-col items-start gap-10 relative self-stretch w-full flex-[0_0_auto]">
-                        <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-                            <article
-                                    class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+
+        <section class="content-section is-dark">
+            <img class="intersect-top" src="img/intersect.svg" alt=""/>
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">第五屆理監事群</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <div class="intro-content">
+                        <!--<h3 class="sub-title"> </h3>-->
+                        <p class="intro-text">
+                        <p
+                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-[#534c46] text-lg text-center leading-[27px] relative tracking-[0]"
+                        >
+                            任期：113年3月17日起至116年3月16日止
+                        </p>
+                        <div class="flex flex-col items-start gap-10 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
+                                <article
+                                        class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
                           <span
                                   class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
                           >
                             常務監事
                           </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            陳湘媛
-                                        </h3>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                陳湘媛
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="relative w-[200px] h-[200px] rounded-xl bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-06-43-1-2.png)] bg-cover bg-[50%_50%]"
+                                                role="img"
+                                                aria-label="陳湘媛照片"
+                                        ></div>
                                     </div>
-                                    <div
-                                            class="relative w-[200px] h-[200px] rounded-xl bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-06-43-1-2.png)] bg-cover bg-[50%_50%]"
-                                            role="img"
-                                            aria-label="陳湘媛照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            中華大學景觀建築學系&nbsp;&nbsp;專任教授兼系主任
-                                        </p>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                中華大學景觀建築學系&nbsp;&nbsp;專任教授兼系主任
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                景觀設計與施工<br/>生態工程規劃設計<br/>景觀植栽設計<br/>社區總體營造
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            景觀設計與施工<br/>生態工程規劃設計<br/>景觀植栽設計<br/>社區總體營造
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                                </article>
+                                <article
+                                        class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
                           <span
                                   class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
                           >
                             監事
                           </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            樓琦庭
-                                        </h3>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                樓琦庭
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-16-55-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="樓琦庭照片"
+                                        ></div>
                                     </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-16-55-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="樓琦庭照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            輔仁大學景觀設計學系副教授級&nbsp;&nbsp;專業技術人員
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            珍宇設計工程顧問有限公司&nbsp;&nbsp;總監
-                                        </p>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                輔仁大學景觀設計學系副教授級&nbsp;&nbsp;專業技術人員
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                珍宇設計工程顧問有限公司&nbsp;&nbsp;總監
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                社區營造<br/>都市與景觀建築規劃設計
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            社區營造<br/>都市與景觀建築規劃設計
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="mr-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                                </article>
+                                <article
+                                        class="mr-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
                           <span
                                   class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
                           >
                             監事
                           </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            詹嘉弘
-                                        </h3>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                詹嘉弘
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-17-26-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="詹嘉弘照片"
+                                        ></div>
                                     </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-17-26-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="詹嘉弘照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            巴爾巴創意開發管理顧問股份有限公司&nbsp;&nbsp;經理
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            嘉澄股份有限公司&nbsp;&nbsp;經理
-                                        </p>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                巴爾巴創意開發管理顧問股份有限公司&nbsp;&nbsp;經理
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                嘉澄股份有限公司&nbsp;&nbsp;經理
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                社區規劃與社造計畫整合<br/>農村再生與農村綠色照顧輔導<br/>景觀與休閒農業區規劃設計<br/>可及性空間規劃與無障礙檢測<br/>區域亮點與跨域資源整合輔導<br/>產業策劃與地方品牌推廣<br/>政策與計畫諮詢、評估與決策分析<br/>專題講授與培力課程規劃
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            社區規劃與社造計畫整合<br/>農村再生與農村綠色照顧輔導<br/>景觀與休閒農業區規劃設計<br/>可及性空間規劃與無障礙檢測<br/>區域亮點與跨域資源整合輔導<br/>產業策劃與地方品牌推廣<br/>政策與計畫諮詢、評估與決策分析<br/>專題講授與培力課程規劃
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-                            <article
-                                    class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                                </article>
+                            </div>
+                            <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
+                                <article
+                                        class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
                           <span
                                   class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
                           >
                             常務理事
                           </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            朱世雲
-                                        </h3>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                朱世雲
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-18-24-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="朱世雲照片"
+                                        ></div>
                                     </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-18-24-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="朱世雲照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            台灣可及環境設計協會&nbsp;&nbsp;首屆理事長
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            南華大學建築與景觀學系&nbsp;&nbsp;助理教授
-                                        </p>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                台灣可及環境設計協會&nbsp;&nbsp;首屆理事長
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                南華大學建築與景觀學系&nbsp;&nbsp;助理教授
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                住宅政策暨理論、環境保護政策暨理論<br/>都市計畫、都市公共空間設計理論<br/>區域產業發展理論<br/>古蹟、歷史建築保護<br/>生活型態與形式建構
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            住宅政策暨理論、環境保護政策暨理論<br/>都市計畫、都市公共空間設計理論<br/>區域產業發展理論<br/>古蹟、歷史建築保護<br/>生活型態與形式建構
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                                </article>
+                                <article
+                                        class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
                           <span
                                   class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
                           >
                             常務理事
                           </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            周德清
-                                        </h3>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                周德清
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-17-49-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="周德清照片"
+                                        ></div>
                                     </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-17-49-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="周德清照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            櫟竹文化設計整合有限公司&nbsp;&nbsp;執行長
-                                        </p>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                櫟竹文化設計整合有限公司&nbsp;&nbsp;執行長
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                文化景觀<br/>田野調查<br/>調查研究<br/>景觀設計<br/>社區營造<br/>整合行銷
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            文化景觀<br/>田野調查<br/>調查研究<br/>景觀設計<br/>社區營造<br/>整合行銷
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="mr-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                                </article>
+                                <article
+                                        class="mr-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
                           <span
                                   class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
                           >
                             理事
                           </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            蔡靜嫺
-                                        </h3>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                蔡靜嫺
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-18-08-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="蔡靜嫺照片"
+                                        ></div>
                                     </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-18-08-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="蔡靜嫺照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            台灣可及環境設計協會&nbsp;&nbsp;第三至四屆理事長
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            中華大學景觀建築設計學系&nbsp;&nbsp;助理教授
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            哲園景觀設計公司&nbsp;&nbsp;景觀設計師
-                                        </p>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                台灣可及環境設計協會&nbsp;&nbsp;第三至四屆理事長
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                中華大學景觀建築設計學系&nbsp;&nbsp;助理教授
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                哲園景觀設計公司&nbsp;&nbsp;景觀設計師
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                景觀建築設計<br/>植栽設計<br/>花精、食療、水晶療育、徒手療育
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            景觀建築設計<br/>植栽設計<br/>花精、食療、水晶療育、徒手療育
-                                        </p>
+                                </article>
+                            </div>
+                            <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
+                                <article
+                                        class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                          <span
+                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
+                          >
+                            理事
+                          </span>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                徐宛菱
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-27-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="徐宛菱照片"
+                                        ></div>
                                     </div>
-                                </div>
-                            </article>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                若晨室內裝修有限公司&nbsp;&nbsp;專案經理
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                長照教育訓練&nbsp;&nbsp;兼任講師
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                居家無障礙環境改善、高齡居住空間規劃、高齡產業創新服務<br/>身心障礙20小時教育訓練、照服員職涯發展與規劃、職業安全<br/>預立醫療照護諮商、家庭托顧空間規劃
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article
+                                        class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                          <span
+                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
+                          >
+                            理事
+                          </span>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                黃承皇
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-11-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="黃承皇照片"
+                                        ></div>
+                                    </div>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                愷恩無障礙室內裝修設計工程有限公司&nbsp;&nbsp;設計師
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                臺中市新建公共建築物無障礙設施勘檢小組&nbsp;&nbsp;委員
+                                            </p>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                台北市公共建築物行動不便者使用設施改善諮詢及審查小組&nbsp;&nbsp;委員
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                無障礙設施設計規劃
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article
+                                        class="mr-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                          <span
+                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
+                          >
+                            理事
+                          </span>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                童宏文
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-18-47-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="童宏文照片"
+                                        ></div>
+                                    </div>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                藿香設計室內裝修有限&nbsp;&nbsp;公司負責人
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                居家無障礙環境改善<br/>室內裝修工程<br/>活動規劃<br/>行銷規劃
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
+                                <article
+                                        class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                          <span
+                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
+                          >
+                            理事
+                          </span>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                陳麗文
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-56-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="陳麗文照片"
+                                        ></div>
+                                    </div>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                藿香設計室內裝修有限&nbsp;&nbsp;公司負責人
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                網頁規劃設計<br/>程式設計
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article
+                                        class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
+                                >
+                                    <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
+                                        <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
+                          <span
+                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
+                          >
+                            理事
+                          </span>
+                                            <h3
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
+                                            >
+                                                陳建成
+                                            </h3>
+                                        </div>
+                                        <div
+                                                class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-44-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
+                                                role="img"
+                                                aria-label="陳建成照片"
+                                        ></div>
+                                    </div>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                現職
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                淂銘設計有限&nbsp;&nbsp;公司負責人
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
+                                            <h4
+                                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                專長
+                                            </h4>
+                                            <p
+                                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
+                                            >
+                                                建築工程<br/>室內裝修工程
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                        <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-                            <article
-                                    class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
-                          <span
-                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
-                          >
-                            理事
-                          </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            徐宛菱
-                                        </h3>
-                                    </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-27-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="徐宛菱照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            若晨室內裝修有限公司&nbsp;&nbsp;專案經理
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            長照教育訓練&nbsp;&nbsp;兼任講師
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            居家無障礙環境改善、高齡居住空間規劃、高齡產業創新服務<br/>身心障礙20小時教育訓練、照服員職涯發展與規劃、職業安全<br/>預立醫療照護諮商、家庭托顧空間規劃
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
-                          <span
-                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
-                          >
-                            理事
-                          </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            黃承皇
-                                        </h3>
-                                    </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-11-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="黃承皇照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            愷恩無障礙室內裝修設計工程有限公司&nbsp;&nbsp;設計師
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            臺中市新建公共建築物無障礙設施勘檢小組&nbsp;&nbsp;委員
-                                        </p>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            台北市公共建築物行動不便者使用設施改善諮詢及審查小組&nbsp;&nbsp;委員
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            無障礙設施設計規劃
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="mr-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
-                          <span
-                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
-                          >
-                            理事
-                          </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            童宏文
-                                        </h3>
-                                    </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-18-47-1-1.png)] bg-[100%_100%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="童宏文照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            藿香設計室內裝修有限&nbsp;&nbsp;公司負責人
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            居家無障礙環境改善<br/>室內裝修工程<br/>活動規劃<br/>行銷規劃
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-                            <article
-                                    class="ml-[-1.00px] flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
-                          <span
-                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
-                          >
-                            理事
-                          </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            陳麗文
-                                        </h3>
-                                    </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-56-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="陳麗文照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            藿香設計室內裝修有限&nbsp;&nbsp;公司負責人
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            網頁規劃設計<br/>程式設計
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article
-                                    class="flex flex-col w-[335.33px] items-center gap-5 p-5 relative self-stretch mt-[-1.00px] mb-[-1.00px] bg-neautral-0 rounded-2xl border border-solid border-[#837a73]"
-                            >
-                                <div class="inline-flex flex-col items-center gap-3 relative flex-[0_0_auto]">
-                                    <div class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]">
-                          <span
-                                  class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-primaryorange text-sm text-center leading-[21px] relative tracking-[0]"
-                          >
-                            理事
-                          </span>
-                                        <h3
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-50 text-xl text-center leading-[30px] relative tracking-[0]"
-                                        >
-                                            陳建成
-                                        </h3>
-                                    </div>
-                                    <div
-                                            class="bg-[url(https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-10-28-00-19-44-1-1.png)] bg-cover bg-[50%_50%] relative w-[200px] h-[200px] rounded-xl"
-                                            role="img"
-                                            aria-label="陳建成照片"
-                                    ></div>
-                                </div>
-                                <img
-                                        class="relative self-stretch w-full h-px object-cover"
-                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                />
-                                <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            現職
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            淂銘設計有限&nbsp;&nbsp;公司負責人
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col items-start gap-1 relative self-stretch w-full flex-[0_0_auto]">
-                                        <h4
-                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            專長
-                                        </h4>
-                                        <p
-                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-sm leading-[21px] relative tracking-[0]"
-                                        >
-                                            建築工程<br/>室內裝修工程
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                        </p>
                     </div>
-                </div>
-            </section>
-            <img
-                    class="w-[1280px] relative h-[60px]"
-                    src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/intersect-1.svg"
-                    alt=""
-                    aria-hidden="true"
-            />
-        </div>
-        <section
-                class="flex flex-col items-start gap-10 px-[120px] py-[60px] relative self-stretch w-full flex-[0_0_auto]"
-        >
-            <div class="flex flex-col items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                <div class="inline-flex flex-col items-start flex-[0_0_auto] justify-center relative">
-                    <h2
-                            class="flex items-center self-stretch h-10 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-neautral-40 text-[32px] text-center tracking-[0] leading-[48px] whitespace-nowrap justify-center relative"
-                    >
-                        現任秘書長
-                    </h2>
-                    <img
-                            class="relative self-stretch w-full h-3"
-                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/rectangle-1.svg"
-                            alt=""
-                            aria-hidden="true"
-                    />
+
                 </div>
             </div>
-            <article class="flex items-start gap-20 relative self-stretch w-full flex-[0_0_auto]">
-                <div class="inline-flex flex-col items-center justify-center gap-5 relative flex-[0_0_auto]">
-                    <img
-                            class="relative w-[200px] h-[200px] rounded-xl object-cover"
-                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-12-28-23-31-46-1-1.png"
-                            alt="戴立婷秘書長照片"
-                    />
-                    <h3
-                            class="self-stretch [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg text-center leading-[27px] relative tracking-[0]"
-                    >
-                        戴立婷　秘書長
-                    </h3>
-                </div>
-                <div class="flex flex-col items-start gap-5 relative flex-1 grow">
-                    <section class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                        <h4
-                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
-                        >
-                            學歷
-                        </h4>
-                        <img
-                                class="relative self-stretch w-full h-px object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                        <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                            <li
-                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                嶺東科技大學視覺傳達設計系碩士班
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                中華大學景觀建築學系
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                        <h4
-                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
-                        >
-                            經歷
-                        </h4>
-                        <img
-                                class="relative self-stretch w-full h-px object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                        <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                            <li
-                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                內政部國土署／建築研究所通用設計評審委員
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                職訓局園藝景觀設計應用實務班授課講師
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                南華大學建築與景觀學系建築設計專題業師
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                中原大學景觀學系人本環境系列主題演講講師
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                臺中市社區規劃區域輔導/課程講師
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                內政部營建署建築物無障礙勘檢人員
-                            </li>
-                            <li
-                                    class="self-stretch [font-family:'Noto_Sans',Helvetica] text-neautral-40 text-lg leading-[27px] relative font-normal tracking-[0]"
-                            >
-                                藿香創意設計工作室負責人(2011-2015)
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                        <h4
-                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
-                        >
-                            專長領域
-                        </h4>
-                        <img
-                                class="relative self-stretch w-full h-px object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
-                                alt=""
-                                aria-hidden="true"
-                        />
-                        <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                            <li
-                                    class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
-                            >
-                                可及環境檢測、設計與施工<br/>無障礙環境改善實務及工程<br/>景觀設計與施工<br/>視覺識別系統規劃與設計
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-            </article>
+            <img class="intersect" src="img/intersect.svg" alt="">
+
         </section>
+
+
+        <section class="content-section ">
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">現任秘書長</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <div class="intro-content">
+                        <p class="intro-text">
+                        <article class="flex items-start gap-20 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-center justify-center gap-5 relative flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px] h-[200px] rounded-xl object-cover"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-----2025-12-28-23-31-46-1-1.png"
+                                        alt="戴立婷秘書長照片"
+                                />
+                                <h3
+                                        class="self-stretch [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg text-center leading-[27px] relative tracking-[0]"
+                                >
+                                    戴立婷　秘書長
+                                </h3>
+                            </div>
+                            <div class="flex flex-col items-start gap-5 relative flex-1 grow">
+                                <section
+                                        class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                    <h4
+                                            class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
+                                    >
+                                        學歷
+                                    </h4>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                        <li
+                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            嶺東科技大學視覺傳達設計系碩士班
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            中華大學景觀建築學系
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section
+                                        class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                    <h4
+                                            class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
+                                    >
+                                        經歷
+                                    </h4>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                        <li
+                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            內政部國土署／建築研究所通用設計評審委員
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            職訓局園藝景觀設計應用實務班授課講師
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            南華大學建築與景觀學系建築設計專題業師
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            中原大學景觀學系人本環境系列主題演講講師
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            臺中市社區規劃區域輔導/課程講師
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            內政部營建署建築物無障礙勘檢人員
+                                        </li>
+                                        <li
+                                                class="self-stretch [font-family:'Noto_Sans',Helvetica] text-neautral-40 text-lg leading-[27px] relative font-normal tracking-[0]"
+                                        >
+                                            藿香創意設計工作室負責人(2011-2015)
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section
+                                        class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                    <h4
+                                            class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-semibold text-[#534c46] text-lg leading-[27px] relative tracking-[0]"
+                                    >
+                                        專長領域
+                                    </h4>
+                                    <img
+                                            class="relative self-stretch w-full h-px object-cover"
+                                            src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/vector-1.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                    />
+                                    <ul class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                        <li
+                                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-40 text-lg leading-[27px] relative tracking-[0]"
+                                        >
+                                            可及環境檢測、設計與施工<br/>無障礙環境改善實務及工程<br/>景觀設計與施工<br/>視覺識別系統規劃與設計
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </article>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="content-section ">
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">團體會員</h2>
+                    <img class="title-line" src="img/rectangle-1.svg" alt="">
+                </div>
+                <div class="intro-group">
+                    <div class="intro-content">
+                        <!--
+                        <h3 class="sub-title">台灣可及環境設計協會（AAEDT）的誕生，源自一份深切的思念與延續。</h3>
+                        -->
+                        <p class="intro-text">
+                        <div class="flex flex-col w-[1040px] items-start relative flex-[0_0_auto]">
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-2.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow rounded-[0px_20px_0px_0px] border-t [border-top-style:solid] border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        亦欣企業股份有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
+                                >
+                                    <div class="relative w-[91.88px] h-[60px] bg-white">
+                                        <img
+                                                class="absolute top-[calc(50.00%_-_27px)] left-[calc(50.00%_-_33px)] w-[67px] h-[53px] object-cover"
+                                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-------1.png"
+                                                alt="泰翼企業行標誌"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        泰翼企業行
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
+                                >
+                                    <div class="relative w-[91.88px] h-[60px] bg-white">
+                                        <img
+                                                class="absolute top-[calc(50.00%_-_30px)] left-[calc(50.00%_-_34px)] w-[68px] h-[60px]"
+                                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/mask-group-2.png"
+                                                alt="愛來家銀髮事業有限公司標誌"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        愛來家銀髮事業有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-4.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        愷恩無障礙室內裝修設計工程有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-5.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        安德貿易股份有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-1.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        添大興業股份有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
+                                >
+                                    <div class="relative w-[91.88px] h-[60px] bg-white"></div>
+                                </div>
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        竑皓景觀國際有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
+                                >
+                                    <div class="relative w-[91.88px] h-[60px] bg-white">
+                                        <img
+                                                class="absolute top-[calc(50.00%_-_12px)] left-[calc(50.00%_-_46px)] w-[92px] h-[25px] object-cover"
+                                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-logo----1.png"
+                                                alt="若晨室內豬裝修有限公司標誌"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        若晨室內豬裝修有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        霖居無障礙輔具有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-3.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        新綠主義股份有限公司
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
+                                <img
+                                        class="relative w-[200px]"
+                                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-6.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                />
+                                <div
+                                        class="items-center gap-2.5 px-5 py-6 flex-1 grow rounded-[0px_0px_20px_0px] border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73] flex relative"
+                                >
+                                    <p
+                                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
+                                    >
+                                        台灣東陶股份有限公司
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
-    <section
-            class="flex flex-col items-start gap-10 px-[120px] py-[60px] relative self-stretch w-full flex-[0_0_auto]"
-    >
-        <div class="flex flex-col items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="inline-flex flex-col items-start flex-[0_0_auto] justify-center relative">
-                <h2
-                        class="flex items-center self-stretch h-10 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-medium text-neautral-40 text-[32px] text-center tracking-[0] leading-[48px] whitespace-nowrap justify-center relative"
-                >
-                    團體會員
-                </h2>
-                <img
-                        class="relative self-stretch w-full h-3"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/rectangle-1.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-            </div>
-        </div>
-        <div class="flex flex-col w-[1040px] items-start relative flex-[0_0_auto]">
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-2.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow rounded-[0px_20px_0px_0px] border-t [border-top-style:solid] border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        亦欣企業股份有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div
-                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
-                >
-                    <div class="relative w-[91.88px] h-[60px] bg-white">
-                        <img
-                                class="absolute top-[calc(50.00%_-_27px)] left-[calc(50.00%_-_33px)] w-[67px] h-[53px] object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-------1.png"
-                                alt="泰翼企業行標誌"
-                        />
-                    </div>
-                </div>
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        泰翼企業行
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div
-                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
-                >
-                    <div class="relative w-[91.88px] h-[60px] bg-white">
-                        <img
-                                class="absolute top-[calc(50.00%_-_30px)] left-[calc(50.00%_-_34px)] w-[68px] h-[60px]"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/mask-group-2.png"
-                                alt="愛來家銀髮事業有限公司標誌"
-                        />
-                    </div>
-                </div>
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        愛來家銀髮事業有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-4.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        愷恩無障礙室內裝修設計工程有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-5.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        安德貿易股份有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-1.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        添大興業股份有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div
-                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
-                >
-                    <div class="relative w-[91.88px] h-[60px] bg-white"></div>
-                </div>
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        竑皓景觀國際有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div
-                        class="flex w-[200px] items-center justify-center gap-2.5 px-0 py-3 relative border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-l [border-left-style:solid] border-[#837a73]"
-                >
-                    <div class="relative w-[91.88px] h-[60px] bg-white">
-                        <img
-                                class="absolute top-[calc(50.00%_-_12px)] left-[calc(50.00%_-_46px)] w-[92px] h-[25px] object-cover"
-                                src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/-logo----1.png"
-                                alt="若晨室內豬裝修有限公司標誌"
-                        />
-                    </div>
-                </div>
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        若晨室內豬裝修有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        霖居無障礙輔具有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-3.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="flex items-center gap-2.5 px-5 py-6 relative flex-1 grow border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73]"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        新綠主義股份有限公司
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start relative self-stretch w-full flex-[0_0_auto]">
-                <img
-                        class="relative w-[200px]"
-                        src="https://c.animaapp.com/mkwu4ywiQJVaHP/img/frame-201-6.svg"
-                        alt=""
-                        aria-hidden="true"
-                />
-                <div
-                        class="items-center gap-2.5 px-5 py-6 flex-1 grow rounded-[0px_0px_20px_0px] border-r [border-right-style:solid] border-b [border-bottom-style:solid] border-[#837a73] flex relative"
-                >
-                    <p
-                            class="flex-1 mt-[-1.00px] [font-family:'Noto_Sans',Helvetica] font-normal text-neautral-30 text-2xl leading-9 relative tracking-[0]"
-                    >
-                        台灣東陶股份有限公司
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <include src="src/partials/footer.html"/>
 
