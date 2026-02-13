@@ -4,6 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,34 +32,203 @@
         <section class="content-section is-dark">
             <div class="page-header">
                 <div class="breadcrumb">
-                    <a href="/" class="link">首頁</a>
+                    <a href="#" class="link">首頁</a>
                     <span class="sep">/</span>
-                    <a href="/about" class="link active">關於協會</a>
+                    <a href="#" class="link">專業服務</a>
+                    <span class="sep">/</span>
+                    <a href="#" class="link active">環境檢測</a>
                 </div>
                 <div class="title-group">
                     <h2 class="main-title">環境檢測</h2>
                     <div class="title-line-bg"></div>
+
                 </div>
                 <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">TEXT</p>
+                    <h3 class="sub-title">與你一起打造更安全、友善、可及的生活環境可及</h3>
+                    <p class="intro-text">
+                        我們推動可及設計，讓每個人都能自在參與生活──不論年齡或能力。
+                        <br/> 從居家改造到政策倡議，AAEDT 用專業與溫度，將「友善空間」變成日常。
+                    </p>
                 </div>
             </div>
             <img class="intersect" src="img/intersect.svg" alt="">
         </section>
 
-        <section class="content-section ">
+        <section class="content-section">
             <div class="page-header">
                 <div class="title-group">
-                    <h2 class="main-title">H2</h2>
+                    <h2 class="main-title">環境檢測服務</h2>
                     <div class="title-line-bg"></div>
                 </div>
-                <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">text</p>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <!--<h3 class="sub-title"> </h3>-->
+                        <p class="intro-text">
+                            我們提供專業的可及性與無障礙環境檢測服務，以實地勘查、量測與使用者視角分析，協助空間單位了解現況、找出問題並提供改善方向。
+                            <br/>透過客觀數據與專業建議，協會協助您打造安全、友善、可被所有人使用的生活與服務環境。
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
                 </div>
             </div>
         </section>
+
+
+        <section class="content-section is-dark">
+            <img class="intersect-top" src="img/intersect.svg" alt=""/>
+
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">服務項目</h2>
+                    <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">一、無障礙與可及性檢測</h3>
+                        <div class="intro-text">
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 無障礙環境勘檢（建築技術規則、建築物無障礙設施設計規範）</li>
+                                <li> 動線與高差檢測</li>
+                                <li> 廁所、坡道、入口、走廊、電梯設備等</li>
+                                <li> 障礙熱點分析</li>
+                                <li> 完整改善建議書</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                    <div class="intro-content">
+                        <h3 class="sub-title">二、空間使用體驗檢測（使用者視角）</h3>
+                        <div class="intro-text">
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 不同使用者（輪椅、推車、年長者、視障者）使用模擬</li>
+                                <li> 動線及可及性評估</li>
+                                <li> 標示清楚度與動線判讀性</li>
+                                <li> 實際使用困難點紀錄與建議</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">三、場域類型專業檢測</h3>
+                        <div class="intro-text">
+                            適用於各類不同空間的深度檢測：
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 學校校園</li>
+                                <li> 旅遊/景點/旅宿環境</li>
+                                <li> 公共建築與醫療單位</li>
+                                <li> 社區空間、公園</li>
+                                <li> 商業空間與服務場所（門市、展館、餐飲等）</li>
+                            </ul>
+                            每一類型皆可提供專屬的檢測項目與改善策略。
+                        </div>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                    <div class="intro-content">
+                        <h3 class="sub-title">四、檢測成果報告</h3>
+                        <div class="intro-text">
+                            每次檢測皆提供：
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 問題點清單與位置標示</li>
+                                <li> 量測數據</li>
+                                <li> 法規比對分析</li>
+                                <li> 改善建議（短期/中期/長期方案）</li>
+                                <li> 若需，可提供後續改善顧問服務 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer-48"></div>
+            </div>
+            <img class="intersect" src="img/intersect.svg" alt="">
+
+        </section>
+
+
+        <section class="content-section">
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">服務流程</h2>
+                    <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group">
+                    <div>適用對象</div>
+                    <div>政府機關、學校、醫療院所、社區組織、旅宿業者、商業服務場所、一般民眾。</div>
+                    <ol class="process-steps">
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">1</div>
+                            <div class="step-content">
+                                <h3>前期需求詢問</h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">2</div>
+                            <div class="step-content">
+                                <h4>場域現勘與量測</h4>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">3</div>
+                            <div class="step-content">
+                                <h4>使用者視角模擬</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">4</div>
+                            <div class="step-content">
+                                <h4>問題判讀與分析</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">5</div>
+                            <div class="step-content">
+                                <h4>完整檢測報告出具</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-line" aria-hidden="true"></div>
+                            <div class="step-number" aria-hidden="true">6</div>
+                            <div class="step-content">
+                                <h4>改善輔導</h4>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <include src="src/partials/footer.html"/>

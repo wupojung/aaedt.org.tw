@@ -4,6 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8">
     <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,34 +32,135 @@
         <section class="content-section is-dark">
             <div class="page-header">
                 <div class="breadcrumb">
-                    <a href="/" class="link">首頁</a>
+                    <a href="#" class="link">首頁</a>
                     <span class="sep">/</span>
-                    <a href="/about" class="link active">關於協會</a>
+                    <a href="#" class="link">專業服務</a>
+                    <span class="sep">/</span>
+                    <a href="#" class="link active">體驗工作坊</a>
                 </div>
                 <div class="title-group">
                     <h2 class="main-title">體驗工作坊</h2>
                     <div class="title-line-bg"></div>
+
                 </div>
                 <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">TEXT</p>
+                    <h3 class="sub-title">與你一起打造更安全、友善、可及的生活環境可及</h3>
+                    <p class="intro-text">
+                        我們推動可及設計，讓每個人都能自在參與生活──不論年齡或能力。
+                        <br/> 從居家改造到政策倡議，AAEDT 用專業與溫度，將「友善空間」變成日常。
+                    </p>
                 </div>
             </div>
             <img class="intersect" src="img/intersect.svg" alt="">
         </section>
 
-        <section class="content-section ">
+        <section class="content-section">
             <div class="page-header">
                 <div class="title-group">
-                    <h2 class="main-title">H2</h2>
+                    <h2 class="main-title">體驗工作坊</h2>
                     <div class="title-line-bg"></div>
                 </div>
-                <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">text</p>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <!--<h3 class="sub-title"> </h3>-->
+                        <p class="intro-text">
+                            以「親身體驗」取代「理論說明」，讓參與者站在不同使用者的角度，重新理解環境中的障礙如何被製造，也如何被改善。 
+                            協會設計多種情境模擬活動，適合企業訓練、校園教育、公部門共識營等，讓參與者在真實體驗中感受環境設計的重要性。
+                            <br/>
+                            <br/>誰適合參加？
+                            <br/>企業團隊、公部門同仁、校園師生、社區組織、志工團隊，或任何想了解環境可及性的民眾。
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+                <div class="intro-group --split">
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                    <div class="intro-content">
+                        <h3 class="sub-title">工作坊成果</h3>
+                        <div class="intro-text">
+                            參與者通常能在短時間內：
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 建立對障礙的感知能力</li>
+                                <li> 具備辨識環境問題的基本能力</li>
+                                <li> 理解使用者需求與改善的重要性</li>
+                                <li> 在日常工作中更能做出友善的空間決策</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+
+        <section class="content-section is-dark">
+            <img class="intersect-top" src="img/intersect.svg" alt=""/>
+
+            <div class="page-header">
+                <div class="title-group">
+                    <h2 class="main-title">課程特色</h2>
+                    <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">一、從體驗出發，理解障礙</h3>
+                        <div class="intro-text">
+                            透過輪椅操作、視覺模擬、環境障礙挑戰等方式，讓參與者實際「遇到問題」、並討論「為何會發生」、以及「如何改善」。
+
+                        </div>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                    <div class="intro-content">
+                        <h3 class="sub-title">二、專業講師帶領</h3>
+                        <div class="intro-text">
+                            由具備無障礙設計與可及環境專長的師資帶領，結合案例分享、現場示範與互動討論，讓體驗不只感動，更能轉化為實際行動。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-group --split">
+                    <div class="intro-content">
+                        <h3 class="sub-title">三、適用於不同場域需求</h3>
+                        <div class="intro-text">
+                            工作坊內容可依需求調整，常見方案包括：
+                            <ul class="list-disc list-outside ml-6">
+                                <li> 學校／大專院校：建構學生的社會參與與空間敏感度</li>
+                                <li> 企業與服務業：促進第一線服務人員理解使用者需求</li>
+                                <li> 公部門：協助政策推動與跨局處共識形成</li>
+                                <li> 社區／公益組織：支持社區動能與環境改善行動</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png"
+                             alt="描述圖片">
+                    </div>
+                </div>
+
+                <div class="spacer-48"></div>
+            </div>
+            <!--
+            <img class="intersect" src="img/intersect.svg" alt="">
+-->
+        </section>
+
+
     </main>
 
     <include src="src/partials/footer.html"/>
