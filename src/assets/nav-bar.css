@@ -51,7 +51,7 @@
     }
 
     /* 單個導覽項目 */
-    .nav, button.nav {
+    .nav {
         border-radius: 8px; /* 預先設定好，避免 hover 瞬間才出現圓角導致閃動 */
         display: inline-flex;
         align-items: center;
@@ -68,7 +68,7 @@
             border-radius: 8px;
         }
 
-        .nav-link {
+        .nav-link, .nav-dropdown-button {
             position: relative;
             width: fit-content;
             margin-top: -1px;
@@ -79,9 +79,20 @@
             letter-spacing: 0;
             line-height: normal;
         }
+        .nav-dropdown-button {
+            background-color: inherit;
+            border: 0;
+            &:focus-visible {
+                /* 這裡用 !important 去 overwrite browser defualts */
+                outline: 2px solid #005fcc !important;
+                outline-offset: 2px !important;
+            }
+        }
 
         .icon-arrow {
             transition: transform 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         /* 下拉選單主體 */
