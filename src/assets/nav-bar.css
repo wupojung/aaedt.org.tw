@@ -51,7 +51,7 @@
     }
 
     /* 單個導覽項目 */
-    .nav {
+    .nav, button.nav {
         border-radius: 8px; /* 預先設定好，避免 hover 瞬間才出現圓角導致閃動 */
         display: inline-flex;
         align-items: center;
