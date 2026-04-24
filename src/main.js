@@ -12,6 +12,7 @@ import './assets/minutes-article.css';   //會議記錄專用css
 
 
 import './assets/style.css';
+import './assets/style-footer.css';
 import './assets/styleguide.css';
 import './assets/accessibility.css';
 //import './assets/organization.css';

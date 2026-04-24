@@ -1,0 +1,198 @@
+
+
+.final .footer {
+    position: relative;
+    /*width: 1280px;*/
+    width: 100%;
+    height: 381px;
+    background-color: var(--neautral-10);
+    margin: 0 auto; /* ✅ 加入這行確保置中 */
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-color: #e7e7e7;
+}
+
+.final .bg {
+    position: absolute;
+    width: 100%;
+    /*
+     top: calc(50% - 190px);
+    left: calc(50% - 640px);
+    */
+    /*width: 1280px;*/
+    /*height: 381px;*/
+}
+
+
+
+
+.final .footer-main-panel {
+    display: flex;
+    flex-wrap: wrap; /* 關鍵 1：允許內部的子元素換行 */
+    width: 1040px;
+    align-items: flex-end;
+    gap: 20px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.final .footer-main-panel hr {
+    width: 100%; /* 關鍵 2：強制水平線撐滿 1040px */
+    margin: 0;   /* 清除預設的外邊距，讓排版更精準，依賴父層的 gap 即可 */
+    border: none;
+    border-top: 1px solid #E0E0E0; /* 這裡可以依照你的設計圖換成你要的線條顏色與粗細 */
+}
+
+.final .footer-brand-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.final .footer-nav-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.final .footer-nav-panel {
+    display: flex;
+    align-items: flex-end;
+
+    /* 新增這行：讓內部子元素（也就是那兩個 .div-2）靠右對齊 */
+    justify-content: flex-end;
+
+    gap: 20px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+
+.final .footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.final .contact-text {
+    position: relative;
+    flex: 1;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: var(--neautral-50);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16.8px;
+}
+
+.final .footer-policy-panel {
+    display: flex;
+    flex-direction: row; /* 關鍵修改：從 column 改成 row，讓內容左右並排 */
+    align-items: center; /* 建議從 flex-start 改成 center，這樣兩個連結在視覺上會完美水平對齊 */
+    gap: 20px;           /* 這裡的 20px 現在會變成兩個連結「左右」之間的距離 */
+    position: relative;
+    flex: 1;             /* 保持原樣，讓它繼續佔據左半邊的空間 */
+}
+
+/* (右下：社群媒體區)*/
+.final .footer-social-panel {
+    display: flex; /* 從 inline-flex 改為標準的 flex */
+    justify-content: flex-end; /* 關鍵：讓裡面的社群 icon 靠右對齊 */
+    align-items: center; /* 建議改成 center，這樣 icon 視覺上會對齊得比較好看，或是維持你的 flex-start */
+    gap: 20px;
+    position: relative;
+    flex: 1; /* 關鍵：讓它佔滿右半邊 50% 的空間 */
+}
+
+
+
+.final .footer-logo {
+    position: relative;
+    width: 220px;
+    height: 80px;
+}
+
+.final .group-17 {
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 103px);
+    width: 206px;
+    height: 63px;
+}
+
+
+
+.final .footer-social-media {
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+.final .footer-social-media-2 {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/mask-group-2.png);
+    background-size: 100% 100%;
+}
+
+
+.final .footer-page-link {
+    display: flex;
+    width: 240px;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 0px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.final .footer-illustration {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.final .text-wrapper-16 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--neautral-40);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19.2px;
+    white-space: nowrap;
+}
