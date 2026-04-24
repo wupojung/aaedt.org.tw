@@ -162,6 +162,13 @@
         transition: background-color 0.3s ease;
         text-decoration: none;
 
+        font-family: "Noto Sans", Helvetica, sans-serif;
+        font-weight: 500;
+        color: var(--neautral-40);
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: normal;
+
         &:hover {
             background-color: rgba(254, 219, 0, 0.1);
             border-radius: 8px;
