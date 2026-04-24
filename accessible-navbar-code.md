@@ -3,6 +3,7 @@
 ## HTML Structure
 
 ```html
+
 <nav class="nav-bar" aria-label="主選單">
     <div class="nav-logo">
         <a href="index.html" title="回協會首頁">
@@ -15,11 +16,11 @@
             <li class="nav">
                 <a href="news.html" class="nav-link">最新消息</a>
             </li>
-            
+
             <!-- Dropdown 1: 認識協會 -->
             <li class="nav">
                 <button class="nav-dropdown-button" aria-controls="dropdown-about" aria-expanded="false">
-                    認識協會 
+                    認識協會
                     <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
                 </button>
                 <ul class="nav-dropdown" id="dropdown-about">
@@ -34,7 +35,7 @@
             <!-- Dropdown 2: 專業服務 -->
             <li class="nav">
                 <button class="nav-dropdown-button" aria-controls="dropdown-services" aria-expanded="false">
-                    專業服務 
+                    專業服務
                     <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
                 </button>
                 <ul class="nav-dropdown" id="dropdown-services">
@@ -49,7 +50,7 @@
             <!-- Dropdown 3: 推廣行動 -->
             <li class="nav">
                 <button class="nav-dropdown-button" aria-controls="dropdown-outreach" aria-expanded="false">
-                    推廣行動 
+                    推廣行動
                     <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
                 </button>
                 <ul class="nav-dropdown" id="dropdown-outreach">
@@ -64,21 +65,20 @@
             <!-- Dropdown 4: 資源連結 -->
             <li class="nav">
                 <button class="nav-dropdown-button" aria-controls="dropdown-resources" aria-expanded="false">
-                    資源連結 
+                    資源連結
                     <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
                 </button>
                 <ul class="nav-dropdown" id="dropdown-resources">
-                    <li><a class="nav-dropdown-item" href="regulations.html">法規資訊</a></li>
-                    <li><a class="nav-dropdown-item" href="guide.html">設計指南</a></li>
-                    <li><a class="nav-dropdown-item" href="reference.html">參考資料</a></li>
-                    <li><a class="nav-dropdown-item" href="faq.html">常見問題</a></li>
+                    <li><a class="nav-dropdown-item" href="relevant_regulations.html">法規資訊</a></li>
+                    <li><a class="nav-dropdown-item" href="related_organizations.html">設計指南</a></li>
+                    <li><a class="nav-dropdown-item" href="grant_programs.html">參考資料</a></li>
                 </ul>
             </li>
 
             <!-- Dropdown 5: 加入我們 -->
             <li class="nav">
                 <button class="nav-dropdown-button" aria-controls="dropdown-join" aria-expanded="false">
-                    加入我們 
+                    加入我們
                     <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
                 </button>
                 <ul class="nav-dropdown" id="dropdown-join">

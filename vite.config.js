@@ -39,9 +39,9 @@ export default defineConfig({
 
 
                 //資源連結
-                regulations: resolve(__dirname, 'regulations.html'),  //法規資訊
-                guide: resolve(__dirname, 'guide.html'),//設計指南
-                reference: resolve(__dirname, 'reference.html'), //參考資料
+                regulations: resolve(__dirname, 'relevant_regulations.html'),  //法規資訊
+                guide: resolve(__dirname, 'related_organizations.html'),//設計指南
+                reference: resolve(__dirname, 'grant_programs.html'), //參考資料
                 faq: resolve(__dirname, 'faq.html'), //常見問題
 
                 //加入我們
