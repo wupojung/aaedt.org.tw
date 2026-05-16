@@ -1,5 +1,5 @@
-@import './reset.css';
-@import './fonts.css';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:500,400,600|Inter:400,800');
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -16,4 +16,24 @@ button:focus-visible {
 }
 a {
   text-decoration: none;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
 }

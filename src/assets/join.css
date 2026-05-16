@@ -1,5 +1,128 @@
-ul {
+.content-section-ul {
   list-style: disc !important;
   margin: auto !important;
   padding: auto !important;
+}
+
+.membership-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.membership-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.membership-item .category-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #534c46;
+  margin: 0;
+}
+
+.membership-item .category-description,
+.membership-item .category-suitable {
+  font-size: 1.125rem;
+  color: #534c46;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.membership-item .category-suitable strong {
+  font-weight: 600;
+}
+
+.download-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.download-group .file-link {
+  color: #534c46;
+  text-decoration: underline;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.download-group .file-link:hover {
+  color: #1a1410;
+}
+
+.download-group .download-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #534c46;
+  margin-left: 8px;
+}
+
+.download-group .icon-download {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23534C46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.payment-info {
+  padding: 24px 40px;
+  background-color: #fff;
+  color: #837b74; /* Updated color */
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  border-top: 1px solid #d1cdc7;
+  text-align: left; /* Payment info text is left aligned in image */
+}
+
+.payment-info p {
+  margin: 0;
+}
+
+.payment-info hr {
+  border: 0;
+  border-top: 1px solid #d1cdc7;
+  margin: 16px 0;
+}
+
+.payment-info .note {
+  font-size: 0.95rem;
+  color: #837b74; /* Updated color */
+}
+
+/* Table overrides for join page */
+.table-container {
+  margin: 40px auto;
+}
+
+.table-container .accessible-table {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.table-container .accessible-table th,
+.table-container .accessible-table td {
+  text-align: center !important; /* Centered as per image */
+  vertical-align: middle;
+  color: #837b74 !important; /* Updated color */
+}
+
+.table-container .accessible-table thead th {
+  background-color: #ffffff; /* Match image header background */
+  font-weight: 500;
+}
+
+.table-container .accessible-table td:first-child {
+  width: auto; /* Override fixed width from table-container.css */
+  color: #837b74 !important; /* Updated color */
+  background-color: transparent;
 }
