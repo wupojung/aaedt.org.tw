@@ -1,5 +1,5 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans:500,400,600|Inter:400,800");
+@import './reset.css';
+@import './fonts.css';
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
