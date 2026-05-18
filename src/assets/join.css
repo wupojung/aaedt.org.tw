@@ -1,7 +1,7 @@
 .content-section-ul {
   list-style: disc !important;
-  margin: auto !important;
-  padding: auto !important;
+  margin: 0 !important;
+  padding-left: 1.5rem !important;
 }
 
 .membership-container {
@@ -125,4 +125,40 @@
   width: auto; /* Override fixed width from table-container.css */
   color: #837b74 !important; /* Updated color */
   background-color: transparent;
+}
+
+/* --- Shared Utility Classes for Join/Volunteer/Proposal Pages --- */
+
+/* External Link Button */
+.btn-external {
+  display: inline-flex;
+  align-items: center;
+  background-color: #F5F5F4;
+  color: #111827;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-external:hover {
+  background-color: #E5E5E5;
+}
+
+.btn-external img {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+/* Section Spacing for Zigzag Layouts */
+.intro-group.--split + .intro-group.--split {
+  margin-top: 60px;
+}
+
+/* Bold Intro Text */
+.intro-text.bold {
+  font-weight: 600;
 }
