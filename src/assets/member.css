@@ -1,0 +1,134 @@
+/* ==========================================
+   Member Cards Refined Styling (member.html)
+   ========================================== */
+
+/* Target board member cards under "第五屆理監事群" (which resides in the .is-dark section) */
+.final .is-dark article {
+  background-color: #ffffff !important;
+  border-radius: 32px !important; /* Soft, premium rounded corners */
+  padding: 40px 32px !important; /* Spacious and balanced padding */
+  box-shadow: 0 4px 20px rgba(83, 76, 70, 0.02) !important; /* Soft, almost invisible shadow */
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Elegant hover interaction */
+.final .is-dark article:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(83, 76, 70, 0.08) !important;
+  border-color: #d3cbc4 !important;
+}
+
+/* Role badge (e.g., "理事", "常務監事") */
+.final .is-dark article span.text-primaryorange {
+  color: #e08518 !important; /* Vibrant warm amber-orange */
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 4px !important;
+  display: inline-block !important;
+}
+
+/* Member Name (e.g., "陳麗文", "陳建成") */
+.final .is-dark article h3.text-neautral-50 {
+  color: #2c2724 !important; /* Rich dark charcoal */
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 20px !important;
+  display: block !important;
+}
+
+/* Avatar Image Container */
+.final .is-dark article div[role='img'],
+.final .is-dark article div.w-\[200px\] {
+  border-radius: 20px !important; /* Perfectly rounded avatar corners */
+  overflow: hidden !important;
+  transition: transform 0.3s ease !important;
+}
+
+.final .is-dark article:hover div[role='img'],
+.final .is-dark article:hover div.w-\[200px\] {
+  transform: scale(1.02) !important;
+}
+
+/* Divider SVG style refinement */
+.final .is-dark article img[src*='vector-1'] {
+  border: none !important;
+  height: 1px !important;
+  background-color: #edebe9 !important; /* Soft, light divider line */
+  margin: 28px 0 !important;
+  opacity: 0.8 !important;
+}
+
+/* Section Subheadings (e.g., "現職", "專長") */
+.final .is-dark article h4 {
+  color: #3c3831 !important; /* Premium dark brown */
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 8px !important;
+}
+
+/* Section Paragraph Content */
+.final .is-dark article p {
+  color: #534c46 !important; /* Highly legible dark gray */
+  font-size: 15px !important;
+  line-height: 24px !important; /* Balanced, readable spacing */
+  letter-spacing: 0.01em !important;
+}
+
+/* Custom Bullet List rendering for the "專長" (Expertise) block
+   Targeting the 2nd block child which is "專長" */
+.final .is-dark article .flex-col > div:nth-child(2) p {
+  background: radial-gradient(circle 2.5px at 6px 11px, #534c46 100%, transparent 0);
+  background-size: 100% 24px; /* Match the line-height (24px) perfectly */
+  background-repeat: repeat-y;
+  text-align: left;
+  padding-left: 20px !important; /* Shift text to the right to make room for bullets */
+}
+
+/* ==========================================
+   President & Secretary General List Styling
+   ========================================== */
+
+/* Style all list items in the intro sections of President and Secretary General */
+.final .intro-content ul li {
+  position: relative !important;
+  color: #534c46 !important; /* High legibility dark gray */
+  font-size: 16px !important;
+  line-height: 27px !important; /* Matches line-height from layout */
+  font-weight: 400 !important; /* Premium regular weight */
+  list-style: none !important;
+  margin: 0 !important;
+  text-align: left !important;
+  padding-left: 0 !important; /* No bullets or indentation, aligns cleanly to the left */
+}
+
+/* Ensure no bullets are drawn */
+.final .intro-content ul li::before {
+  display: none !important;
+}
+
+.final .intro-content ul li:has(br) {
+  background: none !important;
+  padding-left: 0 !important;
+}
+
+/* Make dividers in these intro sections clean and soft */
+.final .intro-content img[src*='vector-1'] {
+  border: none !important;
+  height: 1px !important;
+  background-color: #edebe9 !important; /* Soft, light divider line */
+  margin: 12px 0 !important;
+  opacity: 0.8 !important;
+}
+
+.flex-start {
+  align-items: flex-start !important;
+}
+
+* {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+}
