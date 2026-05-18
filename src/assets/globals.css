@@ -37,3 +37,7 @@ a {
 .pb-1 {
   padding-bottom: 1rem;
 }
+
+.bold {
+  font-weight: bold;
+}
