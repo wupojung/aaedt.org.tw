@@ -1,102 +1,172 @@
 <nav class="nav-bar" aria-label="主選單">
-    <div class="nav-logo">
-        <a href="index.html" title="回協會首頁">
-            <img class="logo" src="img/logo.png" alt="台灣可及環境設計協會 - 回首頁"/>
-        </a>
-    </div>
+  <div class="nav-logo">
+    <a href="index.html" title="回協會首頁">
+      <img class="logo" src="img/logo.png" alt="台灣可及環境設計協會 - 回首頁" />
+    </a>
+  </div>
 
-    <!-- A11y updated -->
-    
-    <div class="nav-content-wrapper">
-        <a href="#U" title="右上方功能區塊" id="AU" accesskey="U" name="U" class="sr-only sr-only-focusable">
-            <span class="sr-only">右上方功能區塊</span>
-            <span aria-hidden="true">:::</span>
-        </a>
-        <ul class="nav-menu-list">
-            <li class="nav">
-                <a href="news.html" class="nav-link">最新消息</a>
-            </li>
-            
-            <!-- Dropdown 1: 認識協會 -->
-            <li class="nav">
-                <button class="nav-dropdown-button" aria-controls="dropdown-about" aria-expanded="false">
-                    認識協會 
-                    <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
-                </button>
-                <ul class="nav-dropdown" id="dropdown-about">
-                    <li><a class="nav-dropdown-item" href="about.html">關於協會</a></li>
-                    <li><a class="nav-dropdown-item" href="organization.html">組織架構</a></li>
-                    <li><a class="nav-dropdown-item" href="member.html">成員介紹</a></li>
-                    <li><a class="nav-dropdown-item" href="bylaw.html">本會章程</a></li>
-                    <li><a class="nav-dropdown-item" href="minutes.html">會議記錄</a></li>
-                </ul>
-            </li>
+  <!-- 
+        Hamburger toggle（對應 Bootstrap 的 navbar-toggler）
+        - aria-expanded 由 aaedt.js 的 initMobileToggle() 控制
+        - aria-controls 指向 nav-content-wrapper（與 Bootstrap data-target 概念相同）
+        - 只在 < 1024px 時顯示（CSS 控制）
+    -->
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-controls="nav-content-wrapper"
+    aria-expanded="false"
+    aria-label="開啟／關閉導覽選單"
+  >
+    <!-- Hamburger icon -->
+    <svg
+      class="icon-hamburger"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+    <!-- Close icon -->
+    <svg
+      class="icon-close"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  </button>
 
-            <!-- Dropdown 2: 專業服務 -->
-            <li class="nav">
-                <button class="nav-dropdown-button" aria-controls="dropdown-services" aria-expanded="false">
-                    專業服務 
-                    <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
-                </button>
-                <ul class="nav-dropdown" id="dropdown-services">
-                    <li><a class="nav-dropdown-item" href="remodeling.html">環境改造</a></li>
-                    <li><a class="nav-dropdown-item" href="inspection.html">環境檢測</a></li>
-                    <li><a class="nav-dropdown-item" href="workshop.html">體驗工作坊</a></li>
-                    <li><a class="nav-dropdown-item" href="lectures.html">系列演講</a></li>
-                    <li><a class="nav-dropdown-item" href="academic.html">學術活動</a></li>
-                </ul>
-            </li>
+  <!-- A11y updated -->
 
-            <!-- Dropdown 3: 推廣行動 -->
-            <li class="nav">
-                <button class="nav-dropdown-button" aria-controls="dropdown-outreach" aria-expanded="false">
-                    推廣行動 
-                    <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
-                </button>
-                <ul class="nav-dropdown" id="dropdown-outreach">
-                    <li><a class="nav-dropdown-item" href="campaign_overview.html">推廣行動</a></li>
-                    <li><a class="nav-dropdown-item" href="knowledge.html">知識分享</a></li>
-                    <li><a class="nav-dropdown-item" href="practice.html">改善實務</a></li>
-                    <li><a class="nav-dropdown-item" href="certification.html">標章認證</a></li>
-                    <li><a class="nav-dropdown-item" href="results.html">推廣成果</a></li>
-                </ul>
-            </li>
+  <!--
+        nav-content-wrapper 加上 id 供 aria-controls 參照（對應 Bootstrap 的 #navbarNav）
+        JS 的 initMobileToggle() 已透過 .nav-content-wrapper 選取；
+        同時加 id 不影響現有邏輯，只是增加可及性連結。
+    -->
+  <div class="nav-content-wrapper" id="nav-content-wrapper">
+    <a
+      href="#U"
+      title="右上方功能區塊"
+      id="AU"
+      accesskey="U"
+      name="U"
+      class="sr-only sr-only-focusable"
+    >
+      <span class="sr-only">右上方功能區塊</span>
+      <span aria-hidden="true">:::</span>
+    </a>
+    <ul class="nav-menu-list">
+      <li class="nav">
+        <a href="news.html" class="nav-link">最新消息</a>
+      </li>
 
-            <!-- Dropdown 4: 資源連結 -->
-            <li class="nav">
-                <button class="nav-dropdown-button" aria-controls="dropdown-resources" aria-expanded="false">
-                    資源連結 
-                    <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
-                </button>
-                <ul class="nav-dropdown" id="dropdown-resources">
-                    <li><a class="nav-dropdown-item" href="relevant_regulations.html">常用法規</a></li>
-                    <li><a class="nav-dropdown-item" href="related_organizations.html">相關組織</a></li>
-                    <li><a class="nav-dropdown-item" href="grant_programs.html">補助計畫</a></li>
-               </ul>
-            </li>
-
-            <!-- Dropdown 5: 加入我們 -->
-            <li class="nav">
-                <button class="nav-dropdown-button" aria-controls="dropdown-join" aria-expanded="false">
-                    加入我們 
-                    <img class="icon-arrow" src="img/icon-arrow.svg" alt=""/>
-                </button>
-                <ul class="nav-dropdown" id="dropdown-join">
-                    <li><a class="nav-dropdown-item" href="join.html">成為會員</a></li>
-                    <li><a class="nav-dropdown-item" href="volunteer.html">志工招募</a></li>
-                    <li><a class="nav-dropdown-item" href="proposal.html">合作提案</a></li>
-                    <li><a class="nav-dropdown-item" href="donate.html">捐款支持</a></li>
-                </ul>
-            </li>
+      <!-- Dropdown 1: 認識協會 -->
+      <li class="nav">
+        <button class="nav-dropdown-button" aria-controls="dropdown-about" aria-expanded="false">
+          認識協會
+          <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+        </button>
+        <ul class="nav-dropdown" id="dropdown-about">
+          <li><a class="nav-dropdown-item" href="about.html">關於協會</a></li>
+          <li><a class="nav-dropdown-item" href="organization.html">組織架構</a></li>
+          <li><a class="nav-dropdown-item" href="member.html">成員介紹</a></li>
+          <li><a class="nav-dropdown-item" href="bylaw.html">本會章程</a></li>
+          <li><a class="nav-dropdown-item" href="minutes.html">會議記錄</a></li>
         </ul>
+      </li>
 
-        <img class="nav-divider" src="img/nav-divider.svg" alt=""/>
+      <!-- Dropdown 2: 專業服務 -->
+      <li class="nav">
+        <button class="nav-dropdown-button" aria-controls="dropdown-services" aria-expanded="false">
+          專業服務
+          <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+        </button>
+        <ul class="nav-dropdown" id="dropdown-services">
+          <li><a class="nav-dropdown-item" href="remodeling.html">環境改造</a></li>
+          <li><a class="nav-dropdown-item" href="inspection.html">環境檢測</a></li>
+          <li><a class="nav-dropdown-item" href="workshop.html">體驗工作坊</a></li>
+          <li><a class="nav-dropdown-item" href="lectures.html">系列演講</a></li>
+          <li><a class="nav-dropdown-item" href="academic.html">學術活動</a></li>
+        </ul>
+      </li>
 
-        <a href="https://www.aaedt.org.tw/blog/asdc/" target="_blank" class="nav-2"
-           rel="noopener noreferrer" aria-label="學生競圖 (新視窗開啟)">
-            <div class="nav-link">學生競圖</div>
-            <img class="icon-external" src="img/icon-external.svg" alt=""/>
-        </a>
+      <!-- Dropdown 3: 推廣行動 -->
+      <li class="nav">
+        <button class="nav-dropdown-button" aria-controls="dropdown-outreach" aria-expanded="false">
+          推廣行動
+          <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+        </button>
+        <ul class="nav-dropdown" id="dropdown-outreach">
+          <li><a class="nav-dropdown-item" href="campaign_overview.html">推廣行動</a></li>
+          <li><a class="nav-dropdown-item" href="knowledge.html">知識分享</a></li>
+          <li><a class="nav-dropdown-item" href="practice.html">改善實務</a></li>
+          <li><a class="nav-dropdown-item" href="certification.html">標章認證</a></li>
+          <li><a class="nav-dropdown-item" href="results.html">推廣成果</a></li>
+        </ul>
+      </li>
 
-    </div>
+      <!-- Dropdown 4: 資源連結 -->
+      <li class="nav">
+        <button
+          class="nav-dropdown-button"
+          aria-controls="dropdown-resources"
+          aria-expanded="false"
+        >
+          資源連結
+          <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+        </button>
+        <ul class="nav-dropdown" id="dropdown-resources">
+          <li><a class="nav-dropdown-item" href="relevant_regulations.html">常用法規</a></li>
+          <li><a class="nav-dropdown-item" href="related_organizations.html">相關組織</a></li>
+          <li><a class="nav-dropdown-item" href="grant_programs.html">補助計畫</a></li>
+        </ul>
+      </li>
+
+      <!-- Dropdown 5: 加入我們 -->
+      <li class="nav">
+        <button class="nav-dropdown-button" aria-controls="dropdown-join" aria-expanded="false">
+          加入我們
+          <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+        </button>
+        <ul class="nav-dropdown" id="dropdown-join">
+          <li><a class="nav-dropdown-item" href="join.html">成為會員</a></li>
+          <li><a class="nav-dropdown-item" href="volunteer.html">志工招募</a></li>
+          <li><a class="nav-dropdown-item" href="proposal.html">合作提案</a></li>
+          <li><a class="nav-dropdown-item" href="donate.html">捐款支持</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <img class="nav-divider" src="img/nav-divider.svg" alt="" />
+
+    <a
+      href="https://www.aaedt.org.tw/blog/asdc/"
+      target="_blank"
+      class="nav-2"
+      rel="noopener noreferrer"
+      aria-label="學生競圖 (新視窗開啟)"
+    >
+      <div class="nav-link">學生競圖</div>
+      <img class="icon-external" src="img/icon-external.svg" alt="" />
+    </a>
+  </div>
 </nav>

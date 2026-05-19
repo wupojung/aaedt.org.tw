@@ -1,221 +1,144 @@
-// 以下是 card component 的无障碍点击支持代码
-const cards = document.querySelectorAll('.card');  
-Array.prototype.forEach.call(cards, card => {  
-    let down, up, link = card.querySelector('h3 a');
-    card.style.cursor = 'pointer';  
-    card.onmousedown = () => down = +new Date();
-    card.onmouseup = () => {
-        up = +new Date();
-        if ((up - down) < 200) {
-            link.click();
-        }
-    }
+// 以下是 card component 的無障礙點擊支持代碼
+const cards = document.querySelectorAll('.card');
+Array.prototype.forEach.call(cards, (card) => {
+  let down, up;
+  const link = card.querySelector('h3 a');
+  card.style.cursor = 'pointer';
+  card.onmousedown = () => (down = +new Date());
+  card.onmouseup = () => {
+    up = +new Date();
+    if (up - down < 200) link.click();
+  };
 });
-
-
 
 /**
  * Accessible Navigation Bar
- * Handles dropdown menus with full keyboard navigation support
+ * 鍵盤導覽增強（Arrow keys、Home/End、Tab、Escape）
+ * 不再自行管理 dropdown 的 display / opacity；
+ * 統一交由 aaedt.js 的 .active class + CSS 控制。
  * WCAG 2.1 Level AA Compliant
  */
-
-document.addEventListener('DOMContentLoaded', function() {
-    initAccessibleDropdownNavigation();
-    initExternalLinks();
+document.addEventListener('DOMContentLoaded', function () {
+  initKeyboardNavigation();
+  initExternalLinks();
 });
 
-/**
- * Initialize Accessible Dropdown Navigation
- * Features:
- * - Click to toggle dropdowns
- * - Keyboard navigation (Arrow keys, Enter, Escape, Tab)
- * - ARIA attribute management
- * - Focus trap within open dropdowns
- * - Close on outside click and scroll
- */
-function initAccessibleDropdownNavigation() {
-    const dropdownButtons = document.querySelectorAll('.nav-dropdown-button');
-    
-    dropdownButtons.forEach(button => {
-        const dropdownId = button.getAttribute('aria-controls');
-        const dropdown = document.getElementById(dropdownId);
-        
-        if (!dropdown) {
-            console.warn(`Dropdown with id "${dropdownId}" not found`);
-            return;
-        }
+function initKeyboardNavigation() {
+  const dropdownButtons = document.querySelectorAll('.nav-dropdown-button');
 
-        // Get all items in the dropdown
-        const dropdownItems = dropdown.querySelectorAll('.nav-dropdown-item');
+  dropdownButtons.forEach((button) => {
+    const dropdownId = button.getAttribute('aria-controls');
+    const dropdown = document.getElementById(dropdownId);
+    if (!dropdown) return;
 
-        // ===== CLICK HANDLER =====
-        button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleDropdown(button, dropdown);
-        });
+    const dropdownItems = Array.from(dropdown.querySelectorAll('.nav-dropdown-item'));
 
-        // ===== KEYBOARD HANDLERS =====
-        button.addEventListener('keydown', function(e) {
-            switch(e.key) {
-                case 'Enter':
-                case ' ':
-                    e.preventDefault();
-                    toggleDropdown(button, dropdown);
-                    break;
-                case 'ArrowDown':
-                    e.preventDefault();
-                    if (button.getAttribute('aria-expanded') === 'false') {
-                        openDropdown(button, dropdown);
-                    }
-                    focusDropdownItem(dropdownItems, 0);
-                    break;
-                case 'ArrowUp':
-                    e.preventDefault();
-                    if (button.getAttribute('aria-expanded') === 'false') {
-                        openDropdown(button, dropdown);
-                    }
-                    focusDropdownItem(dropdownItems, dropdownItems.length - 1);
-                    break;
-                case 'Escape':
-                    e.preventDefault();
-                    closeDropdown(button, dropdown);
-                    button.focus();
-                    break;
-                case 'Tab':
-                    // Allow Tab to navigate through dropdown items
-                    if (button.getAttribute('aria-expanded') === 'true') {
-                        const focusedItem = document.activeElement;
-                        if (focusedItem === dropdownItems[dropdownItems.length - 1]) {
-                            closeDropdown(button, dropdown);
-                        }
-                    }
-                    break;
+    // ── Button 鍵盤事件 ─────────────────────────────────
+    button.addEventListener('keydown', (e) => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          if (!isOpen) openNav(button);
+          focusItem(dropdownItems, 0);
+          break;
+
+        case 'ArrowUp':
+          e.preventDefault();
+          if (!isOpen) openNav(button);
+          focusItem(dropdownItems, dropdownItems.length - 1);
+          break;
+
+        case 'Escape':
+          e.preventDefault();
+          closeNav(button);
+          button.focus();
+          break;
+
+        // Enter / Space：交給 aaedt.js 的 click handler 處理（button 本身會觸發 click）
+      }
+    });
+
+    // ── Dropdown item 鍵盤事件 ──────────────────────────
+    dropdownItems.forEach((item, index) => {
+      item.addEventListener('keydown', (e) => {
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            focusItem(dropdownItems, (index + 1) % dropdownItems.length);
+            break;
+
+          case 'ArrowUp':
+            e.preventDefault();
+            focusItem(dropdownItems, (index - 1 + dropdownItems.length) % dropdownItems.length);
+            break;
+
+          case 'Home':
+            e.preventDefault();
+            focusItem(dropdownItems, 0);
+            break;
+
+          case 'End':
+            e.preventDefault();
+            focusItem(dropdownItems, dropdownItems.length - 1);
+            break;
+
+          case 'Escape':
+            e.preventDefault();
+            closeNav(button);
+            button.focus();
+            break;
+
+          case 'Tab':
+            // Shift+Tab 在第一項：收回按鈕
+            if (e.shiftKey && index === 0) {
+              e.preventDefault();
+              closeNav(button);
+              button.focus();
             }
-        });
-
-        // ===== DROPDOWN ITEM KEYBOARD NAVIGATION =====
-        dropdownItems.forEach((item, index) => {
-            item.addEventListener('keydown', function(e) {
-                switch(e.key) {
-                    case 'ArrowDown':
-                        e.preventDefault();
-                        const nextIndex = index + 1 < dropdownItems.length ? index + 1 : 0;
-                        focusDropdownItem(dropdownItems, nextIndex);
-                        break;
-                    case 'ArrowUp':
-                        e.preventDefault();
-                        const prevIndex = index - 1 >= 0 ? index - 1 : dropdownItems.length - 1;
-                        focusDropdownItem(dropdownItems, prevIndex);
-                        break;
-                    case 'Home':
-                        e.preventDefault();
-                        focusDropdownItem(dropdownItems, 0);
-                        break;
-                    case 'End':
-                        e.preventDefault();
-                        focusDropdownItem(dropdownItems, dropdownItems.length - 1);
-                        break;
-                    case 'Escape':
-                        e.preventDefault();
-                        closeDropdown(button, dropdown);
-                        button.focus();
-                        break;
-                    case 'Tab':
-                        if (e.shiftKey) {
-                            // Shift+Tab on first item: go back to button
-                            if (index === 0) {
-                                e.preventDefault();
-                                closeDropdown(button, dropdown);
-                                button.focus();
-                            }
-                        } else {
-                            // Tab on last item: close dropdown
-                            if (index === dropdownItems.length - 1) {
-                                closeDropdown(button, dropdown);
-                            }
-                        }
-                        break;
-                }
-            });
-        });
-    });
-
-    // ===== CLOSE ON OUTSIDE CLICK =====
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav')) {
-            document.querySelectorAll('.nav-dropdown-button[aria-expanded="true"]').forEach(btn => {
-                const dropId = btn.getAttribute('aria-controls');
-                const drop = document.getElementById(dropId);
-                if (drop) closeDropdown(btn, drop);
-            });
+            // Tab 在最後一項：關閉（讓 Tab 自然移到下一個按鈕）
+            if (!e.shiftKey && index === dropdownItems.length - 1) {
+              closeNav(button);
+            }
+            break;
         }
+      });
     });
-
-    // ===== CLOSE ON SCROLL =====
-    window.addEventListener('scroll', () => {
-        document.querySelectorAll('.nav-dropdown-button[aria-expanded="true"]').forEach(btn => {
-            const dropId = btn.getAttribute('aria-controls');
-            const drop = document.getElementById(dropId);
-            if (drop) closeDropdown(btn, drop);
-        });
-    });
+  });
 }
 
-/**
- * Helper Functions
- */
-
-function toggleDropdown(button, dropdown) {
-    if (button.getAttribute('aria-expanded') === 'false') {
-        openDropdown(button, dropdown);
-    } else {
-        closeDropdown(button, dropdown);
-    }
+/* ============================================================
+   Helper：透過 .active class 開關，與 aaedt.js 保持一致
+   ============================================================ */
+function openNav(button) {
+  // 先關其他（重用 aaedt.js 暴露的 closeAllDropdowns，若載入順序不同則 fallback）
+  if (typeof closeAllDropdowns === 'function') {
+    closeAllDropdowns();
+  }
+  const parentNav = button.closest('.nav');
+  if (parentNav) parentNav.classList.add('active');
+  button.setAttribute('aria-expanded', 'true');
 }
 
-function openDropdown(button, dropdown) {
-    // Close other open dropdowns
-    document.querySelectorAll('.nav-dropdown-button[aria-expanded="true"]').forEach(btn => {
-        if (btn !== button) {
-            const dropId = btn.getAttribute('aria-controls');
-            const drop = document.getElementById(dropId);
-            if (drop) closeDropdown(btn, drop);
-        }
-    });
-
-    // Toggle aria-expanded to TRUE
-    button.setAttribute('aria-expanded', 'true');
-    dropdown.style.display = 'block';
-    
-    // Add active class for CSS compatibility
-    button.parentElement.classList.add('active');
+function closeNav(button) {
+  const parentNav = button.closest('.nav');
+  if (parentNav) parentNav.classList.remove('active');
+  button.setAttribute('aria-expanded', 'false');
 }
 
-function closeDropdown(button, dropdown) {
-    // Toggle aria-expanded to FALSE
-    button.setAttribute('aria-expanded', 'false');
-    dropdown.style.display = 'none';
-    button.parentElement.classList.remove('active');
+function focusItem(items, index) {
+  if (items[index]) items[index].focus();
 }
 
-function focusDropdownItem(items, index) {
-    if (items[index]) {
-        items[index].focus();
-    }
-}
-
-/**
- * Handle External Links
- * Adds proper accessibility attributes for links opening in new windows
- */
+/* ============================================================
+   External Links
+   ============================================================ */
 function initExternalLinks() {
-    const externalLink = document.querySelector('.nav-2');
-    if (externalLink) {
-        // Already has aria-label in HTML, further JS is optional
-        externalLink.addEventListener('click', function(e) {
-            // Let the native <a href> handle it with target="_blank"
-            // This is comment-only; the link works natively
-        });
-    }
+  const externalLink = document.querySelector('.nav-2');
+  if (externalLink) {
+    externalLink.addEventListener('click', () => {
+      window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
+    });
+  }
 }

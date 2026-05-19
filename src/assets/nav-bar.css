@@ -1,3 +1,8 @@
+/* ============================================================
+   nav-bar.css
+   原本 desktop 樣式完整保留，下方 media query 區塊為 RWD 延伸
+   ============================================================ */
+
 .nav-bar {
     display: flex;
     width: 1280px;
@@ -68,7 +73,8 @@
             border-radius: 8px;
         }
 
-        .nav-link, .nav-dropdown-button {
+        .nav-link,
+        .nav-dropdown-button {
             position: relative;
             width: fit-content;
             margin-top: -1px;
@@ -175,10 +181,558 @@
         }
     }
     /* nav.css */
-    .nav-2, .button {
+    .nav-2,
+    .button {
         transition: transform 0.3s ease;
     }
-    .nav-2:hover, .button:hover {
+    .nav-2:hover,
+    .button:hover {
         transform: scale(1.05); /* 交給 CSS 處理，不經過 JS */
+    }
+}
+
+/* ============================================================
+   RWD 延伸區塊（Mobile First）
+   不更動以上原本 desktop 的任何樣式
+   ============================================================ */
+
+/* ── Hamburger 按鈕：預設隱藏（desktop 不顯示） ──────────── */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+    z-index: 200;
+}
+
+.nav-toggle:hover {
+    background-color: rgba(254, 219, 0, 0.1);
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* SVG icon 切換：預設顯示 hamburger，展開時顯示 close */
+.nav-toggle .icon-hamburger,
+.nav-toggle .icon-close {
+    display: block;
+    color: var(--neautral-40, #333);
+    transition:
+        opacity 0.2s ease,
+        transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+/* 預設：顯示 hamburger，隱藏 close */
+.nav-toggle .icon-close {
+    display: none;
+}
+
+/* 展開時：隱藏 hamburger，顯示 close */
+.nav-toggle[aria-expanded="true"] .icon-hamburger {
+    display: none;
+}
+.nav-toggle[aria-expanded="true"] .icon-close {
+    display: block;
+}
+
+/* ── sr-only 輔助文字（無障礙） ─────────────────────────── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    padding: 4px 8px;
+    background-color: #fff;
+    color: #005fcc;
+    text-decoration: underline;
+    z-index: 9999;
+}
+
+/* ============================================================
+   Mobile（< 768px）：Hamburger menu 全展開
+   ============================================================ */
+@media (max-width: 767px) {
+    .nav-bar {
+        width: 100%;
+        padding: 16px 20px;
+        position: fixed; /* mobile 固定在頂部 */
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Logo 縮小 */
+    .nav-bar .nav-logo {
+        width: 160px;
+        height: 48px;
+    }
+    .nav-bar .nav-logo .logo {
+        width: 160px;
+        height: 37px;
+        top: calc(50% - 18px);
+        left: calc(50% - 80px);
+    }
+
+    /* 顯示 hamburger 按鈕 */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* 收合右側 wrapper，改成全寬下拉 */
+    .nav-bar .nav-content-wrapper {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        padding-bottom: 12px;
+        /* 展開動畫 */
+        animation: mobileMenuOpen 0.25s ease;
+    }
+
+    .nav-bar .nav-content-wrapper.show {
+        display: flex;
+    }
+
+    @keyframes mobileMenuOpen {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* 分隔線在 mobile 隱藏 */
+    .nav-bar .nav-divider {
+        display: none;
+    }
+
+    /* 選單列表改垂直排列 */
+    .nav-bar .nav-menu-list {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    /* 每個 nav 項目：垂直排列，讓 dropdown 自然接在 button 下方 */
+    .nav-bar .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: 0;
+        padding: 0;
+
+        &:hover {
+            border-radius: 0;
+        }
+    }
+
+    /* nav-link 和 dropdown button 橫向撐滿，增加點擊區域 */
+    .nav-bar .nav .nav-link,
+    .nav-bar .nav .nav-dropdown-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 16px;
+        border-bottom: 1px solid #f5f4f2;
+        box-sizing: border-box;
+    }
+
+    /* 下拉選單在 mobile：inline 靜態展開，緊接在 button 下方 */
+    .nav-bar .nav .nav-dropdown {
+        /* 清除所有 desktop 浮層屬性 */
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        /* 清除陰影、邊框、圓角 */
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-top: 0 !important;
+        min-width: auto !important;
+        z-index: auto !important;
+        /* 背景與收合狀態 */
+        background-color: #fafafa;
+        display: none; /* 預設收合；.active 展開 */
+        width: 100%;
+    }
+
+    .nav-bar .nav.active .nav-dropdown {
+        display: block;
+    }
+
+    /* 子選單縮排 */
+    .nav-bar .nav .nav-dropdown-item {
+        padding-left: 32px;
+        font-size: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* 學生競圖連結 */
+    .nav-bar .nav-2 {
+        padding: 14px 16px;
+        justify-content: flex-start;
+        font-size: 16px;
+        border-top: 1px solid #e7e7e7;
+        transform: none !important;
+    }
+    .nav-bar .nav-2:hover {
+        border-radius: 0;
+    }
+}
+
+/* ============================================================
+   Tablet（768px – 1023px）：縮小字體 + 折疊成兩排或繼續 hamburger
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nav-bar {
+        width: 100%;
+        padding: 16px 32px;
+        position: fixed;
+        flex-wrap: wrap;
+    }
+
+    /* 顯示 hamburger（tablet 仍用 hamburger） */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-bar .nav-content-wrapper {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        padding-bottom: 12px;
+        animation: mobileMenuOpen 0.25s ease;
+    }
+
+    .nav-bar .nav-content-wrapper.show {
+        display: flex;
+    }
+
+    .nav-bar .nav-divider {
+        display: none;
+    }
+
+    .nav-bar .nav-menu-list {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .nav-bar .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .nav-bar .nav .nav-link,
+    .nav-bar .nav .nav-dropdown-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 17px;
+        border-bottom: 1px solid #f5f4f2;
+        box-sizing: border-box;
+    }
+
+    /* 下拉選單在 tablet：inline 靜態展開，緊接在 button 下方 */
+    .nav-bar .nav .nav-dropdown {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-top: 0 !important;
+        min-width: auto !important;
+        z-index: auto !important;
+        background-color: #fafafa;
+        display: none;
+        width: 100%;
+    }
+
+    .nav-bar .nav.active .nav-dropdown {
+        display: block;
+    }
+
+    .nav-bar .nav .nav-dropdown-item {
+        padding-left: 36px;
+        font-size: 16px;
+    }
+
+    .nav-bar .nav-2 {
+        padding: 14px 20px;
+        justify-content: flex-start;
+        font-size: 17px;
+        border-top: 1px solid #e7e7e7;
+        transform: none !important;
+    }
+}
+
+/* ============================================================
+   Desktop（1024px – 1439px）：原本樣式，但 width 改 100% 適配
+   ============================================================ */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .nav-bar {
+        width: 100%;
+        padding: 20px 48px;
+        position: absolute; /* 回到原本 absolute */
+    }
+
+    /* 確保 hamburger 完全隱藏 */
+    .nav-toggle {
+        display: none;
+    }
+
+    /* 確保選單恢復橫向顯示 */
+    .nav-bar .nav-content-wrapper {
+        display: inline-flex !important;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        padding-bottom: 0;
+    }
+
+    .nav-bar .nav-menu-list {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .nav-bar .nav {
+        width: auto;
+        border-radius: 8px;
+        padding: 10px 6px;
+        justify-content: center;
+    }
+
+    .nav-bar .nav .nav-link,
+    .nav-bar .nav .nav-dropdown-button {
+        font-size: 16px;
+        padding: 0;
+        border-bottom: none;
+        width: fit-content;
+    }
+
+    /* 子選單回到 absolute 浮層 */
+    .nav-bar .nav .nav-dropdown {
+        position: absolute;
+        display: block; /* 回到原本 CSS 控制 opacity/visibility */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+
+    .nav-bar .nav.active .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        display: block;
+    }
+
+    .nav-bar .nav-divider {
+        display: block;
+    }
+
+    .nav-bar .nav-2 {
+        padding: 10px 8px;
+        font-size: 16px;
+        border-top: none;
+    }
+}
+
+/* ============================================================
+   Wide（1440px – 1919px）：原本設計基準，完整 1280px 置中
+   ============================================================ */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .nav-bar {
+        width: 1280px;
+        padding: 20px 80px;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+
+/* ============================================================
+   4K（1920px+）：放大字體與間距，維持舒適閱讀
+   ============================================================ */
+
+/* ============================================================
+   Media query template（Mobile First 累積覆寫）
+   ============================================================ */
+
+/* ── 768px+：Tablet ─────────────────────────────────────── */
+@media (min-width: 768px) {
+    /* 
+     * Tablet 起點（768px）的 mobile-first 覆寫。
+     * 這裡的規則會繼續往上套用，直到被更大斷點覆寫。
+     * 目前 768–1023px 的完整樣式已由上方
+     * @media (min-width: 768px) and (max-width: 1023px) 處理；
+     * 若有需要在 768px 以上「所有寬度」都套用的共用規則，寫在此處。
+     */
+
+    /* 確保 nav-bar 固定在頂部（tablet 以上才固定，mobile 已 fixed） */
+    .nav-bar {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+}
+
+/* ── 1024px+：Desktop ───────────────────────────────────── */
+@media (min-width: 1024px) {
+    /*
+     * Desktop 起點（1024px）的 mobile-first 覆寫。
+     * 1024–1439px 的完整樣式已由上方精確斷點處理；
+     * 若有需要在 1024px 以上「所有寬度」都套用的共用規則，寫在此處。
+     */
+
+    /* Desktop 以上：nav-bar 改回 absolute（不隨捲動固定） */
+    .nav-bar {
+        position: absolute;
+        box-shadow: none;
+    }
+
+    /* Desktop 以上：確保 hamburger 隱藏 */
+    .nav-toggle {
+        display: none;
+    }
+
+    /* Desktop 以上：nav-content-wrapper 恢復橫向 inline-flex */
+    .nav-bar .nav-content-wrapper {
+        display: inline-flex !important;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        padding-bottom: 0;
+    }
+
+    /* Desktop 以上：選單列表恢復橫向 */
+    .nav-bar .nav-menu-list {
+        flex-direction: row;
+        width: auto;
+    }
+
+    /* Desktop 以上：分隔線顯示 */
+    .nav-bar .nav-divider {
+        display: block;
+    }
+
+    /* Desktop 以上：子選單恢復 absolute 浮層 */
+    .nav-bar .nav .nav-dropdown {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        display: block;
+    }
+
+    .nav-bar .nav.active .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Desktop 以上：nav-link / button 恢復預設間距 */
+    .nav-bar .nav .nav-link,
+    .nav-bar .nav .nav-dropdown-button {
+        border-bottom: none;
+        width: fit-content;
+    }
+
+    /* Desktop 以上：學生競圖連結恢復 */
+    .nav-bar .nav-2 {
+        border-top: none;
+        transform: none;
+    }
+}
+
+/* ── 1440px+：Wide ──────────────────────────────────────── */
+@media (min-width: 1440px) {
+    /*
+     * Wide 起點（1440px）的 mobile-first 覆寫。
+     * 1440–1919px 的完整樣式已由上方精確斷點處理；
+     * 若有需要在 1440px 以上「所有寬度」都套用的共用規則，寫在此處。
+     */
+
+    /* Wide 以上：恢復固定寬度置中佈局 */
+    .nav-bar {
+        width: 1280px;
+        padding: 20px 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ── 1920px+：4K / Ultra-wide ───────────────────────────── */
+@media (min-width: 1920px) {
+    .nav-bar {
+        width: 1600px;
+        padding: 24px 100px;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-bar .nav .nav-link,
+    .nav-bar .nav .nav-dropdown-button {
+        font-size: 20px;
+    }
+
+    .nav-bar .nav-2 {
+        font-size: 20px;
+    }
+
+    .nav-bar .nav .nav-dropdown-item {
+        font-size: 18px;
+        padding: 14px 20px;
     }
 }
