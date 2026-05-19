@@ -1,0 +1,14 @@
+/* Media query template */
+/* Mobile first (default) */
+@media (min-width: 768px) {
+  /* tablet */
+}
+@media (min-width: 1024px) {
+  /* desktop */
+}
+@media (min-width: 1440px) {
+  /* wide */
+}
+@media (min-width: 1920px) {
+  /* 4K */
+}
