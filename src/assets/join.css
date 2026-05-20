@@ -75,7 +75,7 @@
 }
 
 .payment-info {
-  padding: 24px 40px;
+  padding: 24px 20px; /* Modified for mobile */
   background-color: #fff;
   color: #837b74; /* Updated color */
   font-family: 'Noto Sans', sans-serif;

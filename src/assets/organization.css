@@ -1,13 +1,14 @@
 .organization-wrapper {
     background-color: #ffffff;
     width: 100%;
-    min-width: 1280px;
+    /* min-width: 1280px; */
     display: flex;
     justify-content: center;
 }
 
 .organization-container {
-    width: 1280px;
+    /* width: 1280px; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -20,7 +21,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 20px 20px; /* Modified for mobile */
     background-color: var(--neautral-0);
     border-bottom: 1px solid #e7e7e7;
     position: sticky;
@@ -124,7 +125,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    padding: 20px 80px 0px;
+    padding: 20px 20px 0px; /* Modified for mobile */
     width: 100%;
     background-color: var(--neautral-10);
 }
@@ -237,7 +238,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    padding: 60px 120px;
+    padding: 40px 20px; /* Modified for mobile */
     width: 100%;
 }
 
@@ -267,7 +268,8 @@
 /* Organization Content */
 .organization-content {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Modified for mobile */
+    align-items: stretch; /* Modified for mobile */
     gap: 40px;
     width: 100%;
 }
@@ -275,7 +277,7 @@
 .organization-text {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 100%; /* Modified for mobile */
     gap: 8px;
 }
 
@@ -319,7 +321,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px 120px 40px;
+    padding: 0px 20px 40px; /* Modified for mobile */
     width: 100%;
     background-color: #f5f4f2;
 }
@@ -335,14 +337,14 @@
 /* Members Grid */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Modified for mobile */
     gap: 40px;
     width: 100%;
 }
 
 .members-grid-small {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Modified for mobile */
     gap: 40px;
     width: 100%;
 }
@@ -423,7 +425,7 @@
 
 .committees-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr; /* Modified for mobile */
     gap: 40px;
     width: 100%;
 }
@@ -470,7 +472,8 @@
 /* Contact Section */
 .contact-content {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Modified for mobile */
+    align-items: stretch; /* Modified for mobile */
     gap: 40px;
     width: 100%;
 }
@@ -478,7 +481,7 @@
 .contact-text {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 100%; /* Modified for mobile */
     gap: 20px;
 }
 

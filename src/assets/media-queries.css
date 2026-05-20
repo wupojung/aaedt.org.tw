@@ -1,14 +1,263 @@
 /* Media query template */
 /* Mobile first (default) */
+.final .intersect {
+  height: 98px;
+}
+.final .intersect-top {
+  height: 23px;
+}
 @media (min-width: 768px) {
   /* tablet */
+  .final .hero-section,
+  .final .about-us-section,
+  .final .donate-section,
+  .final .outreach-section,
+  .final .video-section {
+    padding: 40px 60px;
+  }
+
+  .final .partners-section {
+    padding: 40px 60px;
+  }
+
+  .final .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Tablet: feature-card 各佔一半並排，最大不超過原始 333px */
+  .final .feature-card {
+    width: calc(50% - 10px);
+    max-width: 333px;
+  }
+
+  .final .frame-13 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Tablet: outreach cards 各佔一半並排 */
+  .final .frame-14,
+  .final .frame-17,
+  .final .frame-18 {
+    width: calc(50% - 20px);
+    max-width: 340px;
+  }
 }
+
 @media (min-width: 1024px) {
+  .final .intersect {
+    height: 60px;
+  }
+  .final .intersect-top {
+    height: 60px;
+  }
   /* desktop */
+  .final .hero-section {
+    padding: 40px 120px;
+  }
+
+  .final .about-us-section,
+  .final .donate-section {
+    padding: 80px 120px;
+  }
+
+  .final .outreach-section,
+  .final .video-section {
+    padding: 20px 120px;
+  }
+
+  /* Desktop: 恢復 partners-section 原始 padding */
+  .final .partners-section {
+    padding: 60px 120px;
+  }
+
+  .final .card-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 1040px;
+  }
+
+  /* Desktop: feature-card 固定回原始寬度，三張並排 */
+  .final .feature-card {
+    width: 333px;
+    max-width: none;
+  }
+
+  .final .frame-6 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .final .frame-7 {
+    width: 400px;
+  }
+
+  .final .frame-8 {
+    width: 380px;
+  }
+
+  .final .frame-9 {
+    width: 600px;
+  }
+
+  /* Desktop: 恢復 frame-19 固定尺寸 */
+  .final .frame-19 {
+    width: 600px;
+    height: 387px;
+    aspect-ratio: unset;
+  }
+
+  .final .frame-13 {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  /* Desktop: outreach cards 固定回原始寬度，三張並排 */
+  .final .frame-14,
+  .final .frame-17,
+  .final .frame-18 {
+    width: 322px;
+    max-width: none;
+    flex: 1;
+  }
+
+  .final .text-wrapper-11,
+  .final .AAEDT {
+    width: 450px;
+  }
+
+  .final .footer {
+    height: 381px;
+    padding-bottom: 0;
+  }
+
+  .final .footer-main-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1040px;
+    padding: 0;
+    align-items: flex-end;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  .final .footer-nav-panel {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .final .footer-social-panel {
+    justify-content: flex-end;
+  }
+
+  /* content-section.css overrides */
+  .final .main {
+    width: 1280px;
+  }
+  .final .main .content-section {
+    padding: 20px 80px 0 80px;
+  }
+  .final .content-section .intro-group.--split {
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  /* organization.css overrides */
+  .final .organization-container {
+    width: 1280px;
+  }
+  .final .nav-bar {
+    padding: 20px 80px;
+  }
+  .final .breadcrumb-section {
+    padding: 20px 80px 0px;
+  }
+  .final .organization-container .content-section {
+    padding: 60px 120px;
+  }
+  .final .organization-content {
+    flex-direction: row;
+    align-items: center;
+  }
+  .final .organization-text {
+    width: 500px;
+  }
+  .final .members-section {
+    padding: 0px 120px 40px;
+  }
+  .final .members-grid,
+  .final .members-grid-small {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .final .committees-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .final .contact-content {
+    flex-direction: row;
+    align-items: center;
+  }
+  .final .contact-text {
+    width: 500px;
+  }
+
+  /* table-container.css overrides */
+  .final .accessible-table td:first-child {
+    width: 120px;
+  }
+
+  /* join.css overrides */
+  .final .payment-info {
+    padding: 24px 40px;
+  }
 }
+
 @media (min-width: 1440px) {
   /* wide */
+  .final {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .final .outreach-section,
+  .final .video-section {
+    width: 1280px; /* Restore original width for wide screen */
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
 @media (min-width: 1920px) {
+  .final .intersect {
+    height: 60px;
+  }
   /* 4K */
+  .final {
+    max-width: 1920px;
+  }
+
+  .final .outreach-section,
+  .final .video-section {
+    width: 1600px;
+  }
+
+  .final .h-2 {
+    font-size: 40px;
+  }
+
+  .final .text-wrapper-8,
+  .final .text-wrapper-9,
+  .final .text-wrapper-11,
+  .final .AAEDT,
+  .final .text-wrapper-13 {
+    font-size: 22px;
+    line-height: 34px;
+  }
 }

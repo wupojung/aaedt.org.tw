@@ -1,12 +1,13 @@
 .main {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    /* width: 1280px; */ /* Removed for mobile-first */
+    width: 100%;
     align-items: flex-start;
     position: relative; /* ✅ 改成相對定位 */
     margin-top: 100px; /* ✅ 把原本的 top 改成 margin-top */
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main > :last-child {
@@ -27,7 +28,7 @@
     width: 100%;
     gap: 40px;
     position: relative;
-    padding: 20px 80px 0 80px;
+    padding: 20px 20px 0 20px; /* Modified for mobile */
 
     margin-top: 0;
     margin-bottom: 60px;
@@ -114,11 +115,11 @@
         /* --- 修飾符：當需要左右兩欄時 --- */
 
         &.--split {
-            flex-direction: row; /* 切換為水平排列 */
+            flex-direction: column; /* Modified for mobile */
             align-items: center; /* 垂直置中對齊 */
             text-align: left; /* 文字改回靠左 */
             justify-content: space-between;
-            gap: 60px; /* 左右兩欄的間距 */
+            gap: 40px; /* Modified for mobile */
 
             .intro-content {
                 flex: 1; /* 文字佔滿剩餘空間 */

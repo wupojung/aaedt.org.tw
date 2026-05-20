@@ -4,7 +4,8 @@
     position: relative;
     /*width: 1280px;*/
     width: 100%;
-    height: 381px;
+    height: auto;
+    padding-bottom: 40px;
     background-color: var(--neautral-10);
     margin: 0 auto; /* ✅ 加入這行確保置中 */
     border-top-width: 1px;
@@ -31,14 +32,14 @@
 
 .final .footer-main-panel {
     display: flex;
-    flex-wrap: wrap; /* 關鍵 1：允許內部的子元素換行 */
-    width: 1040px;
-    align-items: flex-end;
-    gap: 20px;
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    flex-direction: column; /* Modified for mobile */
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    align-items: stretch;
+    gap: 32px;
+    position: relative; /* Modified for mobile */
+    margin: 40px auto 0;
 }
 
 .final .footer-main-panel hr {
@@ -70,10 +71,10 @@
 
 .final .footer-nav-panel {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start; /* Modified for mobile */
 
     /* 新增這行：讓內部子元素（也就是那兩個 .div-2）靠右對齊 */
-    justify-content: flex-end;
+    justify-content: space-between; /* Modified for mobile */
 
     gap: 20px;
     position: relative;
@@ -128,7 +129,7 @@
 /* (右下：社群媒體區)*/
 .final .footer-social-panel {
     display: flex; /* 從 inline-flex 改為標準的 flex */
-    justify-content: flex-end; /* 關鍵：讓裡面的社群 icon 靠右對齊 */
+    justify-content: flex-start; /* Modified for mobile */
     align-items: center; /* 建議改成 center，這樣 icon 視覺上會對齊得比較好看，或是維持你的 flex-start */
     gap: 20px;
     position: relative;

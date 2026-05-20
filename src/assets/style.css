@@ -4,7 +4,7 @@
    /* border: 1px solid;*/
     /*border-color: #3c3831;*/
     width: 100%;
-    min-width: 1280px;
+    /* min-width: 1280px; */ /* Removed for mobile first */
     /* min-height: 4660px;  <-- 建議刪除或註解掉這行，讓內容自動撐開高度 */
     position: relative;
     margin: 0 auto;
@@ -42,7 +42,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    padding: 40px 120px;
+    padding: 40px 20px; /* Modified for mobile */
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -59,17 +59,21 @@
 
 .final .group {
     position: relative;
-    width: 1040px;
-    height: 138.67px;
+    width: 100%;
+    max-width: 1040px;
+    height: auto;
 }
 /* 父容器：負責排版 */
 .final .card-container {
     /* 1. 基本設定 */
-    width: 1040px;   /* 你的 .group 原本的寬度 */
+    width: 100%; /* Modified for mobile */
+    max-width: 1040px;
 
     /* 2. Flex 設定 */
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Modified for mobile */
+    align-items: center;
+    gap: 20px;
     justify-content: space-between; /* 建議：自動分配間距，不用手算 gap */
     /* 或者用 gap: 20px; */
 
@@ -87,9 +91,10 @@
     top: auto;  /* 歸零 */
     left: auto; /* 歸零 */
 
-    width: 333px;
+    /* Mobile first: 全寬，對齊 hero-img 寬度 */
+    width: 100%;
+    max-width: none;
     height: 139px;
-    /* display: flex; <--- 看你卡片內部是否需要 flex，不需要可拿掉 */
 }
 
 /*
@@ -120,8 +125,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 333px;
-    height: 139px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .final .text-wrapper {
@@ -222,7 +228,8 @@
 
 .final .action-card {
     margin-top: 0;
-    width: 332.8px;
+    /* Mobile first: 撐滿父容器 .feature-card */
+    width: 100%;
     height: 138.67px;
     margin-left: 0;
     position: relative;
@@ -473,7 +480,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    padding: 80px 120px;
+    padding: 40px 20px; /* Modified for mobile */
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -527,6 +534,7 @@
 
 .final .frame-6 {
     display: flex;
+    flex-direction: column; /* Added for mobile */
     align-items: center;
     gap: 40px;
     position: relative;
@@ -538,7 +546,8 @@
 .final .frame-7 {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 100%; /* Modified for mobile */
+    max-width: 400px;
     align-items: flex-start;
     gap: 60px;
     position: relative;
@@ -547,7 +556,8 @@
 .final .frame-8 {
     display: flex;
     flex-direction: column;
-    width: 380px;
+    width: 100%; /* Modified for mobile */
+    max-width: 380px;
     align-items: flex-start;
     gap: 8px;
     position: relative;
@@ -618,7 +628,8 @@
 
 .final .frame-9 {
     position: relative;
-    width: 600px;
+    width: 100%; /* Modified for mobile */
+    max-width: 600px;
     height: 387px;
     border-radius: 12px;
     background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-09-13-1.png);
@@ -651,12 +662,12 @@
 .final .video-section {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    width: 100%; /* Modified for mobile */
     align-items: flex-start;
     gap: 40px;
     position: relative;
 
-    padding: 20px 120px;
+    padding: 20px 20px; /* Modified for mobile */
 
     /* ✅ 修改這裡：同時預留上面和下面的空間 */
     margin-top: 60px;    /* 給頭頂波浪用的空間 */
@@ -693,7 +704,8 @@
 
 .final .text-wrapper-11 {
     position: relative;
-    width: 450px;
+    width: 100%; /* Modified for mobile */
+    max-width: 450px;
     margin-top: -1px;
      font-family: "Noto Sans", Helvetica, sans-serif;
     font-weight: 600;
@@ -706,7 +718,8 @@
 
 .final .AAEDT {
     position: relative;
-    width: 450px;
+    width: 100%; /* Modified for mobile */
+    max-width: 450px;
      font-family: "Noto Sans", Helvetica, sans-serif;
     font-weight: 400;
     color: #534c46;
@@ -718,7 +731,8 @@
 
 .final .frame-13 {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column; /* Added for mobile */
+    align-items: center; /* Changed for mobile */
     gap: 40px;
     position: relative;
     align-self: stretch;
@@ -729,7 +743,9 @@
 .final .frame-14 {
     display: flex;
     flex-direction: column;
-    width: 322px;
+    /* Mobile first: 全寬，最大 322px，desktop 時由 flex parent 控制 */
+    width: 100%;
+    max-width: 340px;
     align-items: flex-start;
     position: relative;
     margin-top: -1px;
@@ -804,7 +820,8 @@
 .final .frame-17 {
     display: flex;
     flex-direction: column;
-    width: 322px;
+    width: 100%;
+    max-width: 340px;
     align-items: flex-start;
     position: relative;
     margin-top: -1px;
@@ -827,7 +844,8 @@
 .final .frame-18 {
     display: flex;
     flex-direction: column;
-    width: 322px;
+    width: 100%;
+    max-width: 340px;
     align-items: flex-start;
     position: relative;
     margin-top: -1px;
@@ -865,8 +883,11 @@
 
 .final .frame-19 {
     position: relative;
-    width: 600px;
-    height: 387px;
+    width: 100%;
+    max-width: 600px;
+    /* 保持原始比例 600:387 */
+    aspect-ratio: 600 / 387;
+    height: auto;
     border-radius: 12px;
     background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-10-39-1.png);
     background-size: cover;
@@ -923,15 +944,18 @@
 
 .final .element-3 {
     position: relative;
-    width: 858px;
-    height: 480px;
+    /* Mobile first: 全寬，限制最大尺寸，保持 16:9 比例 */
+    width: 100%;
+    max-width: 858px;
+    aspect-ratio: 16 / 9;
+    height: auto;
     border-radius: 12px;
-    object-fit: cover;
 }
 
 .final .text-wrapper-14 {
     position: relative;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     margin-top: -1px;
      font-family: "Noto Sans", Helvetica, sans-serif;
     font-weight: 400;
@@ -947,7 +971,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    padding: 60px 120px;
+    /* Mobile first: 小 padding */
+    padding: 40px 20px;
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -967,7 +992,9 @@
 
 .final .frame-25 {
     position: relative;
-    width: 1040.23px;
+    width: 100%; /* Modified for mobile */
+    max-width: 1040.23px;
+    height: auto;
     flex: 0 0 auto;
     margin-right: -0.23px;
 }

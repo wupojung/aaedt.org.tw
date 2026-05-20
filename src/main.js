@@ -1,5 +1,4 @@
 import './assets/globals.css';
-import './assets/media-queries.css';
 
 import './assets/breadcrumb.css'; //breadcrumb nav
 import './assets/bylaw.css'; // 手風琴效果
@@ -14,6 +13,7 @@ import './assets/style-footer.css';
 import './assets/style.css';
 import './assets/styleguide.css';
 //import './assets/organization.css';
+import './assets/media-queries.css';
 
 import './scripts/aaedt.js';
 import './scripts/accessibiliy.js';
