@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+  initPageReveal();
   initMobileToggle();
   initDropdownNavigation();
   initExternalLinks();
 });
+
+/* ============================================================
+   Page Reveal — 移除初始隱藏，觸發淡入（CSS: html.page-ready）
+   ============================================================ */
+function initPageReveal() {
+  document.documentElement.classList.add('page-ready');
+}
 
 /* ============================================================
    Mobile Hamburger Toggle

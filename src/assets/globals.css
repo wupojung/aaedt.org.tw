@@ -1,5 +1,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:500,400,600|Inter:400,800');
+
+/* 頁面載入完成後淡入（由 initPageReveal 在 DOMContentLoaded 加上 .page-ready class） */
+html.page-ready {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
