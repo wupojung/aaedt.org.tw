@@ -1,11 +1,5 @@
 /* Media query template */
 /* Mobile first (default) */
-.final .intersect {
-  height: 98px;
-}
-.final .intersect-top {
-  height: 23px;
-}
 @media (min-width: 768px) {
   /* tablet */
   .final .hero-section,
@@ -245,7 +239,7 @@
 
   .final .outreach-section,
   .final .video-section {
-    width: 1600px;
+    width: 1280px;
   }
 
   .final .h-2 {
