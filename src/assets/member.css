@@ -41,20 +41,20 @@
 }
 
 /* Avatar Image Container */
-.final .is-dark article div[role='img'],
+.final .is-dark article div[role="img"],
 .final .is-dark article div.w-\[200px\] {
   border-radius: 20px !important; /* Perfectly rounded avatar corners */
   overflow: hidden !important;
   transition: transform 0.3s ease !important;
 }
 
-.final .is-dark article:hover div[role='img'],
+.final .is-dark article:hover div[role="img"],
 .final .is-dark article:hover div.w-\[200px\] {
   transform: scale(1.02) !important;
 }
 
 /* Divider SVG style refinement */
-.final .is-dark article img[src*='vector-1'] {
+.final .is-dark article img[src*="vector-1"] {
   border: none !important;
   height: 1px !important;
   background-color: #edebe9 !important; /* Soft, light divider line */
@@ -117,7 +117,7 @@
 }
 
 /* Make dividers in these intro sections clean and soft */
-.final .intro-content img[src*='vector-1'] {
+.final .intro-content img[src*="vector-1"] {
   border: none !important;
   height: 1px !important;
   background-color: #edebe9 !important; /* Soft, light divider line */
@@ -130,5 +130,121 @@
 }
 
 * {
-  font-family: 'Noto Sans', Helvetica, sans-serif;
+  font-family: "Noto Sans", Helvetica, sans-serif;
+}
+
+/* ==========================================
+   Member Page — Responsive Styles
+   ========================================== */
+
+/* ── Mobile (max 767px) ── */
+@media (max-width: 767px) {
+  /* 1. 個人介紹版面（理事長 / 秘書長）：照片與履歷上下排列 */
+  .final .content-section:not(.is-dark) article {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+  }
+
+  /* 履歷文字區塊佔滿全寬 */
+  .final .content-section:not(.is-dark) article > div:last-child {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  /* 2. 理監事群卡片：單欄排列 */
+  .final .is-dark .intro-content > div > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+  }
+
+  .final .is-dark .intro-content > div > div > article {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* 3. 團體會員：卡片式排列（Logo 上、名稱下） */
+
+  /* 外層容器：移除固定 1040px，卡片間加間距 */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 16px !important;
+  }
+
+  /* 每列 → 獨立卡片（直向堆疊） */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    border: 1px solid #837a73 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Logo 欄（img 類型，如 frame-201*.svg） */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div > div > img {
+    width: 100% !important;
+    height: 100px !important;
+    object-fit: contain !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+    /* border-bottom: 1px solid #837a73 !important; */
+    border-right: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Logo 欄（div 容器類型） */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div > div > div:first-child:not(:last-child) {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100px !important;
+    border: none !important;
+    border-bottom: 1px solid #837a73 !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 公司名稱欄 */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div > div > div:last-child {
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 14px 16px !important;
+    justify-content: center !important;
+  }
+
+  /* 公司名稱文字置中 */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div > div > div:last-child p {
+    text-align: center !important;
+  }
+}
+
+/* ── Tablet (768px – 1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* 理監事群卡片：兩欄排列 */
+  .final .is-dark .intro-content > div > div {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    justify-content: center !important;
+  }
+
+  .final .is-dark .intro-content > div > div > article {
+    width: calc(50% - 10px) !important;
+    max-width: 360px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* 團體會員表格：移除固定 1040px */
+  .final .content-section:not(.is-dark) .intro-group .intro-content > div {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
 }
