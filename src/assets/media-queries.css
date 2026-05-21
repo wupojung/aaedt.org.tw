@@ -152,6 +152,17 @@
     justify-content: flex-end;
   }
 
+  .final .footer-page-link {
+    width: 240px;
+  }
+
+  .final .footer-bottom-panel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
   /* content-section.css overrides */
   .final .main {
     width: 1280px;
