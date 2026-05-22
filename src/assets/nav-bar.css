@@ -3,19 +3,27 @@
    原本 desktop 樣式完整保留，下方 media query 區塊為 RWD 延伸
    ============================================================ */
 
+/* ── 外層容器：全寬、定位、背景 ─────────────────────────── */
 .nav-bar {
-    display: flex;
-    width: 1280px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
+    width: 100%;
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     background-color: var(--neautral-0);
     border-bottom: 1px solid #e7e7e7;
     z-index: 100;
+}
+
+/* ── 內層限寬容器：與 .main 使用相同機制對齊 ─────────────── */
+.nav-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--layout-max-width);
+    margin-inline: auto;
+    padding: 20px var(--layout-padding);
+    /* 垂直 20px 固定；水平用 clamp 跟 .content-section 同步 */
+    flex-wrap: wrap;
 
     /* Logo 區塊 */
     .nav-logo {
@@ -281,11 +289,10 @@
    ============================================================ */
 @media (max-width: 767px) {
     .nav-bar {
-        width: 100%;
-        padding: 16px 20px;
         position: fixed; /* mobile 固定在頂部 */
-        flex-wrap: wrap;
-        align-items: center;
+    }
+    .nav-bar-inner {
+        padding: 16px 20px;
     }
 
     /* Logo 縮小 */
@@ -423,10 +430,10 @@
    ============================================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
     .nav-bar {
-        width: 100%;
-        padding: 16px 32px;
         position: fixed;
-        flex-wrap: wrap;
+    }
+    .nav-bar-inner {
+        padding: 16px 32px;
     }
 
     /* 顯示 hamburger（tablet 仍用 hamburger） */
@@ -522,9 +529,10 @@
    ============================================================ */
 @media (min-width: 1024px) and (max-width: 1439px) {
     .nav-bar {
-        width: 100%;
+        position: absolute;
+    }
+    .nav-bar-inner {
         padding: 20px 48px;
-        position: absolute; /* 回到原本 absolute */
     }
 
     /* 確保 hamburger 完全隱藏 */
@@ -592,11 +600,7 @@
    Wide（1440px – 1919px）：原本設計基準，完整 1280px 置中
    ============================================================ */
 @media (min-width: 1440px) and (max-width: 1919px) {
-    .nav-bar {
-        width: 1280px;
-        padding: 20px 80px;
-    }
-
+    /* .nav-bar-inner 已有 max-width: 1280px + padding: 80px，無需額外覆蓋 */
     .nav-toggle {
         display: none;
     }
@@ -696,25 +700,13 @@
 
 /* ── 1440px+：Wide ──────────────────────────────────────── */
 @media (min-width: 1440px) {
-    /*
-     * Wide 起點（1440px）的 mobile-first 覆寫。
-     * 1440–1919px 的完整樣式已由上方精確斷點處理；
-     * 若有需要在 1440px 以上「所有寬度」都套用的共用規則，寫在此處。
-     */
-
-    /* Wide 以上：恢復固定寬度置中佈局 */
-    .nav-bar {
-        width: 1280px;
-        padding: 20px 80px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+    /* .nav-bar-inner 的 max-width + margin: auto 已自動置中，無需覆蓋 */
 }
 
 /* ── 1920px+：4K / Ultra-wide ───────────────────────────── */
 @media (min-width: 1920px) {
-    .nav-bar {
-        width: 1600px;
+    .nav-bar-inner {
+        max-width: 1600px;
         padding: 24px 100px;
     }
 

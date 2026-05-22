@@ -1,9 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
   initPageReveal();
+  initNavOffset();
   initMobileToggle();
   initDropdownNavigation();
   initExternalLinks();
 });
+
+/* ============================================================
+   Nav Offset — 動態偵測 nav-bar 高度，依斷點分別補償
+   < 1024px：nav 為 fixed → 對 .final 補 padding-top，--navbar-height 設 0
+   ≥ 1024px：nav 為 absolute → 對 .main 補 margin-top（CSS var），清除 padding
+   ============================================================ */
+function initNavOffset() {
+  const nav = document.querySelector('.nav-bar');
+  const final = document.querySelector('.final');
+  if (!nav || !final) return;
+
+  function applyOffset() {
+    const navHeight = nav.getBoundingClientRect().height;
+    if (window.innerWidth < 1024) {
+      // fixed nav：用 .final padding-top 補償，.main 不額外加距
+      final.style.paddingTop = navHeight + 'px';
+      document.documentElement.style.setProperty('--navbar-height', '0px');
+    } else {
+      // absolute nav：清除 padding，讓 .main margin-top 補償
+      final.style.paddingTop = '';
+      document.documentElement.style.setProperty('--navbar-height', navHeight + 'px');
+    }
+  }
+
+  // ResizeObserver：字體載入、視窗縮放等任何高度變化都即時反應
+  const ro = new ResizeObserver(applyOffset);
+  ro.observe(nav);
+
+  applyOffset();
+  window.addEventListener('resize', applyOffset);
+}
 
 /* ============================================================
    Page Reveal — 移除初始隱藏，觸發淡入（CSS: html.page-ready）

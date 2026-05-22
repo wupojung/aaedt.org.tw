@@ -9,4 +9,12 @@
   --primaryyellow: rgba(254, 219, 0, 1);
   --neautral-30: rgba(131, 123, 116, 1);
   --neautral-20: rgba(231, 231, 231, 1);
+
+  /* 版面側邊距 */
+  --padding-x-mobile:  20px;
+  --padding-x-tablet:  60px;
+  --padding-x-desktop: 120px;
+
+  /* section 垂直間距 */
+  --padding-y-section: 40px;
 }

@@ -1,5 +1,15 @@
-@import './reset.css';
-@import './fonts.css';
+@import "./reset.css";
+@import "./fonts.css";
+
+/* ── 版面對齊系統 ────────────────────────────────────────────
+   所有需要與 nav-bar 對齊的元件，統一使用這兩個變數。
+   只要改這裡，nav-bar-inner / .main / .content-section 全部同步。
+   ─────────────────────────────────────────────────────────── */
+:root {
+  --layout-max-width: 1280px;
+  /* 20px（手機）→ 80px（桌機 1280px+），與 .nav-bar-inner padding 同步 */
+  --layout-padding: clamp(20px, 6.25vw, 80px);
+}
 
 /* 頁面載入完成後淡入（由 initPageReveal 在 DOMContentLoaded 加上 .page-ready class） */
 html.page-ready {
@@ -55,4 +65,7 @@ a {
 
 .pb-5 {
   padding-bottom: 5rem;
+}
+.main {
+  margin-top: 0;
 }
