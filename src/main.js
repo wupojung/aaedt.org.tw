@@ -3,6 +3,7 @@ import './assets/globals.css';
 import './assets/breadcrumb.css'; //breadcrumb nav
 import './assets/bylaw.css'; // 手風琴效果
 import './assets/card-meeting.css'; //最新消息專用卡片
+import './assets/category-article.css'; //文章列表頁共用（category-article / article-group / card-meeting-tag-wrap）
 import './assets/content-section.css';
 import './assets/minutes-article.css'; //會議記錄專用css
 import './assets/nav-bar.css';

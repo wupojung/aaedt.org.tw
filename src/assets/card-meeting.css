@@ -31,7 +31,7 @@
 .card-meeting {
     /* 基礎設定 */
     background-color: #ffffff; /* 假設 --neautral-0 是白色 */
-    border: 1px solid #e0e0e0; /* 務必加上顏色值 */
+    border: 1px solid var(--neautral-20, #d1cdc7);
     border-radius: 16px;
 
     /* 為了 RWD 與無障礙，建議加上以下屬性 */
