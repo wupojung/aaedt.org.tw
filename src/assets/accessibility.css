@@ -1,8 +1,8 @@
 /* Accessibility CSS Styles */
 
-
 /* Focus styles for keyboard navigation */
-:focus, :focus-visible {
+:focus,
+:focus-visible {
     outline: 2px solid #005fcc;
     outline-offset: 2px;
 }
@@ -52,7 +52,6 @@
 .skip-to-content:focus {
     top: 0;
 }
-
 
 /* 以下是跟螢幕閱讀器有關的 CSS */
 /* Screen reader only */
@@ -112,14 +111,6 @@ Skip to main content 這個連結平時是隱藏的（因為有 .sr-only）。
     clip: auto;
     white-space: normal;
 }
-
-/* Card 的 style */
-.card:hover {
-    /* Enlarge the element to 1.5 times its original size on hover */
-    outline: 2px solid #005fcc;
-    outline-offset: 2px;
-  }
-
 
 .card:focus-within h3 a:focus {
     text-decoration: none;

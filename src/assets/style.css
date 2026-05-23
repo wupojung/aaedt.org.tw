@@ -600,6 +600,10 @@
     cursor: pointer;
 }
 
+.final .button:hover {
+    background-color: #FEC300;
+}
+
 .final .button .button-arrow {
     display: flex;
     align-items: center;
