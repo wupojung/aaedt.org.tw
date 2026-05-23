@@ -13,8 +13,11 @@
   }
   .final .hero-img {
     border-radius: 0;
-    height: auto;
-    object-fit: contain;
+    height: 60vw;
+    min-height: 240px;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center top;
   }
 }
 

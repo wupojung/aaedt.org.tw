@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initMobileToggle();
   initDropdownNavigation();
   initExternalLinks();
+  initCurrentNav();
 });
 
 /* ============================================================
@@ -127,6 +128,30 @@ function closeAllDropdowns() {
     nav.classList.remove('active');
     const btn = nav.querySelector('.nav-dropdown-button');
     if (btn) btn.setAttribute('aria-expanded', 'false');
+  });
+}
+
+/* ============================================================
+   Current Nav — 依當前路徑標記 .is-current / .is-current-item
+   ============================================================ */
+function initCurrentNav() {
+  const path = window.location.pathname;
+  // 取最後一段檔名（e.g. "/about.html" → "about.html"；"/" → "index.html"）
+  const page = path.split('/').pop() || 'index.html';
+
+  // 直接連結（最新消息）
+  document.querySelectorAll('.nav-link[href]').forEach((link) => {
+    if (link.getAttribute('href') === page) {
+      link.closest('.nav')?.classList.add('is-current');
+    }
+  });
+
+  // Dropdown 子項目
+  document.querySelectorAll('.nav-dropdown-item[href]').forEach((item) => {
+    if (item.getAttribute('href') === page) {
+      item.classList.add('is-current-item');
+      item.closest('.nav')?.classList.add('is-current');
+    }
   });
 }
 
