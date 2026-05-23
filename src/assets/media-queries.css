@@ -13,6 +13,8 @@
   }
   .final .hero-img {
     border-radius: 0;
+    height: auto;
+    object-fit: contain;
   }
 }
 
@@ -97,6 +99,15 @@
   .final .frame-17,
   .final .frame-18 {
     max-width: none;
+  }
+
+  .final .donate-section {
+    padding: 40px 20px;
+  }
+
+  .final .frame-19 {
+    min-height: 240px;
+    aspect-ratio: 4 / 3;
   }
 }
 
