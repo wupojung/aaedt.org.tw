@@ -56,5 +56,6 @@
     tbody tr th {
         vertical-align: middle;
         text-align: center;
+        white-space: nowrap;
     }
 }
