@@ -22,6 +22,14 @@
 }
 
 @media (max-width: 767px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+
   .final .card-container {
     padding: 20px;
     box-sizing: border-box;

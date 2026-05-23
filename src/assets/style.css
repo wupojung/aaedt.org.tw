@@ -1001,6 +1001,10 @@
     flex: 0 0 auto;
 }
 
+.show-mobile {
+    display: none;
+}
+
 .final .frame-25 {
     position: relative;
     width: 100%; /* Modified for mobile */
