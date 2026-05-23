@@ -29,52 +29,45 @@
 
 /* 強制卡片等高，即便標題字數不同 */
 .card-meeting {
-    /* 基礎設定 */
-    background-color: #ffffff; /* 假設 --neautral-0 是白色 */
+    background-color: #ffffff;
     border: 1px solid var(--neautral-20, #d1cdc7);
     border-radius: 16px;
-
-    /* 為了 RWD 與無障礙，建議加上以下屬性 */
-    overflow: hidden; /* 確保圖片不會超出圓角邊框 */
-    position: relative; /* 為了擴大點擊範圍的定位 */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.2s ease-in-out; /* 增加互動感 */
-
-    /*by taki*/
-    gap: 20px;
+    transition: box-shadow 0.2s ease-in-out;
+    gap: 0;
     padding-bottom: 20px;
-    min-height: 487px;
 }
 
-/* 確保卡片內的圖片不會撐破容器 */
+.card-meeting:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+}
+
 .card-meeting-image img {
     width: 100%;
-    /*aspect-ratio: 4 / 3; /* 保持圖片比例 */
     object-fit: cover;
     display: block;
 }
 
 .card-meeting-describe {
-    /*flex-grow: 1;*/
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    padding: 0 20px;
-
+    padding: 16px 20px 0;
     text-align: left;
-
-    .card-meeting-describe h3 {
-        margin-top: 10px;
-    }
 }
 
 .card-meeting-content-wrap {
+    display: flex;
+    flex-direction: column;
     gap: 4px;
 
     .card-meeting-date {
-        color: var(--neautral-30, #837b74);
+        color: var(--neautral-60, #837b74);
         font-family: "Noto Sans";
         font-size: 14px;
         font-style: normal;

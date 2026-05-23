@@ -70,9 +70,10 @@
     padding: 2px 12px;
     font-size: 0.8125rem; /* 13px */
     background-color: var(--neautral-10, #f5f4f2);
-    color: var(--neautral-40, #534c46);
+    color: black;
     border-radius: 40px;
     font-weight: 400;
+    padding: 12px;
 }
 
 /* 4. 卡片日期 + 標題直向排列 */
