@@ -274,7 +274,16 @@
   /* .main 已用 max-width + clamp padding 對齊，不再需要覆蓋 */
   .final .content-section .intro-group.--split {
     flex-direction: row;
+    align-items: stretch;
     gap: 60px;
+  }
+
+  .final .content-section .intro-group.--split.--image-first {
+    flex-direction: row-reverse;
+  }
+
+  .final .content-section .intro-group.--split .intro-image {
+    min-height: 360px;
   }
 
   /* organization.css overrides */

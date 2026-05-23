@@ -111,31 +111,30 @@
         /* --- 修飾符：當需要左右兩欄時 --- */
 
         &.--split {
-            flex-direction: column; /* Modified for mobile */
-            align-items: center; /* 垂直置中對齊 */
-            text-align: left; /* 文字改回靠左 */
+            flex-direction: column;
+            align-items: stretch;
+            text-align: left;
             justify-content: space-between;
-            gap: 40px; /* Modified for mobile */
+            gap: 40px;
 
             .intro-content {
-                flex: 1; /* 文字佔滿剩餘空間 */
+                flex: 1;
                 display: flex;
                 flex-direction: column;
-
-                /* .more 樣式已移至 globals.css */
+                justify-content: center;
             }
 
             .intro-image {
-                flex: 1; /* 圖片也佔一半，或設定具體寬度 */
+                flex: 1;
+                min-height: 280px;
 
                 img {
                     width: 100%;
-                    height: auto;
-                    border-radius: 12px; /* 順手加個圓角，比較現代 */
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 12px;
                 }
             }
-
-            /* 小標題在 split 模式下不需強制置中 */
 
             .sub-title {
                 margin-bottom: 16px;
@@ -161,6 +160,17 @@
                 padding-left: 24px;
                 margin: 0;
             }
+        }
+
+        .intro-list {
+            list-style-type: disc;
+            padding-left: 1.5em;
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height: 2;
+            max-width: 700px;
+            color: inherit;
         }
 
         .intro-image {
