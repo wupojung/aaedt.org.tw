@@ -1,0 +1,94 @@
+/* ============================================================
+   category-article.css
+   共用於：practice、results、campaign_overview 等列表頁
+   ============================================================ */
+
+/* 1. 主題文章區塊（article-group + card-grid + more 的容器） */
+.category-article {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 48px;
+}
+
+.category-article:last-child {
+    padding-bottom: 0;
+}
+
+/* 2. 文章分類標題與說明（card-grid 上方的文字區） */
+.article-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.article-group .title {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--neautral-50, #1a1410);
+    line-height: 1.5;
+}
+
+.article-group .description {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+    color: var(--neautral-40, #534c46);
+    line-height: 1.8;
+}
+
+.article-group .description ul {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+}
+
+.article-group .description ul li {
+    color: var(--neautral-40, #534c46);
+    line-height: 1.8;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.article-group .description ul li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--neautral-30, #837b74);
+}
+
+/* 3. 卡片內 tag 容器（.card-meeting-describe 內的 tag wrap） */
+.card-meeting-tag-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* 卡片內小 tag 樣式（比 category-warp 的篩選 tag 更小） */
+.card-meeting-tag-wrap .tag {
+    min-height: auto;
+    padding: 2px 12px;
+    font-size: 0.8125rem; /* 13px */
+    background-color: var(--neautral-10, #f5f4f2);
+    color: var(--neautral-40, #534c46);
+    border-radius: 40px;
+    font-weight: 400;
+}
+
+/* 4. 卡片日期 + 標題直向排列 */
+.card-meeting-content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* 5. 卡片標題連結樣式 */
+.card-meeting-title a {
+    color: var(--neautral-50, #1a1410);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-meeting-title a:hover {
+    color: var(--primarygold, #fec300);
+}
