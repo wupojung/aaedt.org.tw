@@ -1,11 +1,11 @@
 /* Accessibility CSS Styles */
 
 /* Focus styles for keyboard navigation */
-:focus,
+/* :focus,
 :focus-visible {
     outline: 2px solid #005fcc;
     outline-offset: 2px;
-}
+} */
 
 /* High contrast mode */
 /* 這部份是做為參考，如果客戶的網站有這要求的話，以下是高對比的做法，但是業界更講究的是不要去複寫用戶自己想用的設定。意思以下的做法會影響用戶自己電腦設定成高對比的設定時候，這個CSS會影響該設備的設定。 */
