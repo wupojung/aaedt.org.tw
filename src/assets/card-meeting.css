@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr; /* 手機端單欄 */
     gap: 20px;
-    padding: 20px;
+    /* padding: 20px; */
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -23,10 +23,9 @@
         grid-template-columns: repeat(3, 1fr);
         max-width: 1280px; /* 鎖定設計師要求的寬度 */
         gap: 30px;
-        padding: 40px 20px;
+        /* padding: 40px 20px; */
     }
 }
-
 
 /* 強制卡片等高，即便標題字數不同 */
 .card-meeting {
@@ -48,7 +47,6 @@
     min-height: 487px;
 }
 
-
 /* 確保卡片內的圖片不會撐破容器 */
 .card-meeting-image img {
     width: 100%;
@@ -67,7 +65,6 @@
 
     text-align: left;
 
-
     .card-meeting-describe h3 {
         margin-top: 10px;
     }
@@ -77,7 +74,7 @@
     gap: 4px;
 
     .card-meeting-date {
-        color: var(--neautral-30, #837B74);
+        color: var(--neautral-30, #837b74);
         font-family: "Noto Sans";
         font-size: 14px;
         font-style: normal;
@@ -85,22 +82,17 @@
         line-height: 150%; /* 21px */
     }
 
-
     .card-meeting-title {
-        color: var(--neautral-50, #1A1410);
+        color: var(--neautral-50, #1a1410);
         font-family: "Noto Sans";
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 150%; /* 30px */
         a {
-
         }
     }
-
 }
-
-
 
 .tag {
     /* 讓寬度隨文字自動調整 (Hug) */
@@ -114,7 +106,7 @@
 
     /* 圓角與顏色 */
     border-radius: 40px;
-    background-color: #E6E6E6; /* 這是圖片中的淺灰色 */
+    background-color: #e6e6e6; /* 這是圖片中的淺灰色 */
     color: #333;
 
     /* 移除 a 標籤預設底線 */
@@ -123,20 +115,19 @@
     white-space: nowrap; /* 強制不換行，確保寬度完整 */
 }
 
-
-.category-warp{
+.category-warp {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     /*margin-bottom: 30px;*/
-    .category-group{
+    .category-group {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap:8px;
+        gap: 8px;
     }
-    .tag{
+    .tag {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -147,20 +138,20 @@
         /* 圓角與顏色 */
         border-radius: 40px;
 
-        border: 1px solid var(--neautral-50, #1A1410);
-        background: var(--neautral-40, #534C46);
+        border: 1px solid var(--neautral-50, #1a1410);
+        background: var(--neautral-40, #534c46);
 
         /* 移除 a 標籤預設底線 */
         text-decoration: none;
         font-size: 16px;
         white-space: nowrap; /* 強制不換行，確保寬度完整 */
 
-        color:#ffffff;
+        color: #ffffff;
     }
 }
 
 .category-warp label {
-    color: var(--neautral-50, #1A1410);
+    color: var(--neautral-50, #1a1410);
     font-family: "Noto Sans";
     font-size: 14px;
     font-style: normal;
@@ -170,9 +161,9 @@
 
 .category-content {
     display: flex;
-    flex-wrap: wrap;       /* 關鍵：標籤太多時自動換行，不擠成一團 */
+    flex-wrap: wrap; /* 關鍵：標籤太多時自動換行，不擠成一團 */
     justify-content: flex-start; /* 標籤從左邊開始排 */
-    gap: 8px;              /* 標籤之間的間距 (Figma 常見數值) */
+    gap: 8px; /* 標籤之間的間距 (Figma 常見數值) */
     width: 100%;
 }
 
@@ -182,7 +173,7 @@ hr {
 
     /* 設定一條 1px 的實線，顏色建議與卡片邊框一致 */
     height: 1px;
-    background-color: #E6E6E6; /* 或你的變數 --neautral-border */
+    background-color: #e6e6e6; /* 或你的變數 --neautral-border */
 
     /* 處理上下 20px 的間距 */
     margin-top: 20px;

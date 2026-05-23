@@ -69,3 +69,32 @@ a {
 .main {
   margin-top: 0;
 }
+
+/* 全域「查看更多」元件，置中顯示，底線連結樣式 */
+.more {
+  display: flex;
+  padding: 10px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--neautral-50, #1a1410);
+  font-family: "Noto Sans", Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  cursor: pointer;
+}
+
+/* 在左右分欄（--split）內靠左對齊 */
+.--split .intro-content .more {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
