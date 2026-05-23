@@ -22,6 +22,68 @@
     box-sizing: border-box;
   }
 
+  /* organization.html / about.html: 手機板 table 每 row 變成獨立圓角卡片
+     scope 限定 .page-organization 與 .page-about，不影響 join.html 多欄表格 */
+  .final .page-organization .table-container,
+  .final .page-about .table-container {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .final .page-organization .accessible-table,
+  .final .page-organization .accessible-table tbody,
+  .final .page-about .accessible-table,
+  .final .page-about .accessible-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .final .page-organization .accessible-table tr,
+  .final .page-about .accessible-table tr {
+    display: block;
+    width: 100%;
+    border: 1px solid #d1cdc7;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .final .page-organization .accessible-table tbody tr:last-child,
+  .final .page-about .accessible-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .final .page-organization .accessible-table tbody tr th,
+  .final .page-about .accessible-table tbody tr th {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #534c46;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid #d1cdc7;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .final .page-organization .accessible-table tbody tr td,
+  .final .page-about .accessible-table tbody tr td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: none;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
   /* outreach/video 預設有 margin-top/bottom: 60px 給波浪裝飾用
      手機板移除，讓所有 section 間距一致（padding-bottom 40 + padding-top 40） */
   /* .final .outreach-section,

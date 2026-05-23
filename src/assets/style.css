@@ -793,13 +793,16 @@
     flex: 0 0 auto;
     background-color: #ffffff;
     border-radius: 0px 0px 12px 12px;
+    * {
+        color: #383838;
+    }
 }
 
 .final .frame-16 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 16px;
+    padding: 10px 23px;
     position: relative;
     flex: 0 0 auto;
     background-color: #655b52;
@@ -817,7 +820,7 @@
     font-family: "Noto Sans", Helvetica, sans-serif;
     font-weight: 500;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0;
     line-height: 18px;
     white-space: nowrap;
@@ -1004,3 +1007,7 @@
     flex: 0 0 auto;
     margin-right: -0.23px;
 }
+
+/* .campaign_overview_section {
+    padding: 0;
+} */
