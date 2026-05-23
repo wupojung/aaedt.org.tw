@@ -20,9 +20,14 @@
   border-color: #d3cbc4 !important;
 }
 
+/* 共用顏色：所有 text-primaryorange 元件統一使用 --primarygold */
+.text-primaryorange {
+  color: var(--primarygold);
+}
+
 /* Role badge (e.g., "理事", "常務監事") */
 .final .is-dark article span.text-primaryorange {
-  color: #e08518 !important; /* Vibrant warm amber-orange */
+  color: var(--primarygold) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
   letter-spacing: 0.05em !important;

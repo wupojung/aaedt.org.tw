@@ -601,7 +601,7 @@
 }
 
 .final .button:hover {
-    background-color: #FEC300;
+    background-color: var(--primarygold);
 }
 
 .final .button .button-arrow {
