@@ -3,7 +3,7 @@
 
 /* hero 全寬貼頂：< 1024px 全部移除 hero-section padding
    main 的 padding-top 由 JS initNavOffset() 動態測量設定 */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   /* padding-top 由 JS initNavOffset() 動態設定在 .final 上
      !important 蓋過後面 min-width: 768px 的 padding: 40px 60px，
      確保 768–1023px 時 hero 仍全寬貼頂 */
@@ -24,15 +24,11 @@
 
   /* outreach/video 預設有 margin-top/bottom: 60px 給波浪裝飾用
      手機板移除，讓所有 section 間距一致（padding-bottom 40 + padding-top 40） */
-  .final .outreach-section,
+  /* .final .outreach-section,
   .final .video-section {
     margin-top: 0;
     margin-bottom: 0;
-  }
-  .final .intersect,
-  .final .intersect-top {
-    display: none;
-  }
+  } */
   /* frame-14/17/18 max-width: 340px vs frame-9 max-width: 600px
      手機板兩者都用 width: 100%，移除 max-width 讓寬度一致 */
   .final .frame-14,
@@ -57,7 +53,7 @@
   .final .donate-section,
   .final .outreach-section,
   .final .video-section {
-    padding: 40px 60px;
+    padding: 0 60px;
   }
 
   .final .partners-section {
@@ -100,7 +96,7 @@
   }
   /* desktop */
   .final .hero-section {
-    padding: 40px 120px;
+    padding: 0 120px;
   }
 
   .final .about-us-section,
@@ -118,18 +114,18 @@
     padding: 60px 120px;
   }
 
-  .final .card-container {
+  /* .final .card-container {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 1040px;
-  }
+  } */
 
   /* Desktop: feature-card 固定回原始寬度，三張並排 */
-  .final .feature-card {
+  /* .final .feature-card {
     width: 333px;
     max-width: none;
-  }
+  } */
 
   .final .frame-6 {
     flex-direction: row;
