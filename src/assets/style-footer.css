@@ -26,6 +26,9 @@
 }
 
 .final .footer-main-panel {
+    * {
+        color: black;
+    }
     display: flex;
     flex-direction: column; /* Modified for mobile */
     width: 100%;
@@ -50,18 +53,18 @@
     align-items: flex-start;
     gap: 20px;
     position: relative;
-    flex: 1;
-    flex-grow: 1;
+    /* flex: unset;
+    flex-grow: 1; */
 }
 
 .final .footer-nav-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: flex-end;
+    /* gap: 8px; */
     position: relative;
-    flex: 1;
-    flex-grow: 1;
+    /* flex: unset;
+    flex-grow: 1; */
 }
 
 .final .footer-nav-panel {
@@ -69,8 +72,6 @@
     align-items: flex-start; /* Modified for mobile */
 
     /* 新增這行：讓內部子元素（也就是那兩個 .div-2）靠右對齊 */
-    justify-content: space-between; /* Modified for mobile */
-
     gap: 20px;
     position: relative;
     flex: 1;
@@ -174,10 +175,13 @@
 
 .final .footer-social-media-2 {
     position: relative;
+    flex-shrink: 0;
     width: 36px;
     height: 36px;
     background-image: url("../../public/img/footer/fb-icon.png");
-    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .final .footer-page-link {
@@ -215,4 +219,20 @@
     letter-spacing: 0;
     line-height: 19.2px;
     white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    * {
+        font-size: 12px !important;
+        word-break: keep-all;
+    }
+    .final .footer-social-media,
+    .final .footer-social-media-2 {
+        max-width: 25px;
+        max-height: 25px;
+    }
+
+    .final .footer-social-panel {
+        gap: 4;
+    }
 }
