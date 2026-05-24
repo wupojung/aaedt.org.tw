@@ -98,3 +98,7 @@ a {
   align-items: flex-start;
   text-align: left;
 }
+
+.font_family_inter {
+  font-family: "Inter", Helvetica;
+}

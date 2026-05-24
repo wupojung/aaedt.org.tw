@@ -222,9 +222,11 @@
 }
 
 @media (max-width: 1024px) {
-    * {
-        font-size: 12px !important;
-        word-break: keep-all;
+    .footer {
+        * {
+            font-size: 12px !important;
+            word-break: keep-all;
+        }
     }
     .final .footer-social-media,
     .final .footer-social-media-2 {

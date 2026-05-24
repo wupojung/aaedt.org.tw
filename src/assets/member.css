@@ -144,6 +144,9 @@
 
 /* ── Mobile (max 767px) ── */
 @media (max-width: 767px) {
+  .page-header .inline-flex {
+    gap: 5px !important;
+  }
   /* 1. 個人介紹版面（理事長 / 秘書長）：照片與履歷上下排列 */
   .final .content-section:not(.is-dark) article {
     flex-direction: column !important;
