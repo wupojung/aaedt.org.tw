@@ -58,8 +58,8 @@
         margin-right: auto;
 
         .main-title {
-            font-size: clamp(1.5rem, 5vw, 2rem); /* 響應式字體 */
-            font-weight: 700;
+            font-size: 32px; /* 響應式字體 */
+            font-weight: 500;
             color: var(--neautral-40, #534c46); /* 加入備用顏色 */
             text-align: center;
             line-height: 1.4;
