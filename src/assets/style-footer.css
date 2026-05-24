@@ -78,6 +78,16 @@
     flex-grow: 1;
 }
 
+.final .footer-org-name {
+    margin: 0;
+    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--neautral-50);
+    letter-spacing: 0.02em;
+}
+
 .final .footer-contact-list {
     display: flex;
     flex-direction: column;
@@ -143,16 +153,17 @@
 
 .final .footer-logo {
     position: relative;
-    width: 220px;
-    height: 80px;
+    width: min(220px, 100%);
+    height: auto;
 }
 
 .final .group-17 {
-    position: absolute;
-    top: calc(50% - 32px);
-    left: calc(50% - 103px);
-    width: 206px;
-    height: 63px;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 206px;
+    height: auto;
 }
 
 .final .footer-social-media {
@@ -177,6 +188,14 @@
     padding: 12px 0px;
     position: relative;
     flex: 0 0 auto;
+}
+
+.final a.footer-page-link {
+    text-decoration: none;
+}
+
+.final a.footer-page-link:hover .text-wrapper-16 {
+    color: var(--neautral-60, #555);
 }
 
 .final .footer-illustration {

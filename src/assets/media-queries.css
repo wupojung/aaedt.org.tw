@@ -256,7 +256,8 @@
   }
 
   .final .footer {
-    height: 381px;
+    min-height: 381px;
+    height: auto;
     padding-bottom: 0;
   }
 
@@ -265,17 +266,27 @@
     flex-wrap: wrap;
     width: 1040px;
     padding: 0;
-    align-items: flex-end;
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
+    align-items: flex-start;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 40px auto 40px;
+    gap: 0;
+  }
+
+  .final .footer-brand-panel {
+    flex: 0 0 360px;
+    width: 360px;
   }
 
   .final .footer-nav-panel {
+    flex: 0 0 680px;
+    width: 680px;
     align-items: flex-end;
     justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: 0;
   }
 
   .final .footer-social-panel {
@@ -284,6 +295,7 @@
 
   .final .footer-page-link {
     width: 240px;
+    justify-content: flex-end;
   }
 
   .final .footer-bottom-panel {
@@ -291,6 +303,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 32px;
   }
 
   /* .main 已用 max-width + clamp padding 對齊，不再需要覆蓋 */
