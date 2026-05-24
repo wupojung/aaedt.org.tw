@@ -102,3 +102,7 @@ a {
 .font_family_inter {
   font-family: "Inter", Helvetica;
 }
+
+.font-family_Noto {
+  font-family: "Noto Sans", Helvetica, sans-serif;
+}
