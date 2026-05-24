@@ -127,7 +127,6 @@
 
             .intro-image {
                 flex: 1;
-                min-height: 280px;
 
                 img {
                     width: 100%;
@@ -423,5 +422,11 @@
         }
 
         /* .more 樣式已移至 globals.css */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        margin-top: 2rem;
     }
 }

@@ -20,7 +20,9 @@
 .bylaw-chapter {
     border-bottom: 1px solid var(--neautral-20, #e7e7e7);
 }
-.bylaw-chapter:last-child { border-bottom: none; }
+.bylaw-chapter:last-child {
+    border-bottom: none;
+}
 
 /* 章節標題按鈕 */
 .bylaw-title {
@@ -34,7 +36,9 @@
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
-.bylaw-title:hover { opacity: 0.7; }
+.bylaw-title:hover {
+    opacity: 0.7;
+}
 
 .bylaw-title span {
     font-size: 1.125rem;
@@ -44,8 +48,12 @@
 }
 
 /* 展開狀態：無額外顏色變化 */
-.bylaw-chapter.active .bylaw-title { background: transparent; }
-.bylaw-chapter.active .bylaw-title span { color: var(--neautral-50, #1a1410); }
+.bylaw-chapter.active .bylaw-title {
+    background: transparent;
+}
+.bylaw-chapter.active .bylaw-title span {
+    color: var(--neautral-40, #534c46);
+}
 
 /* 4. 手風琴展開動畫邏輯 */
 .bylaw-body {
@@ -69,10 +77,12 @@
     align-items: baseline;
     gap: 0;
 }
-.article-row:last-child { border-bottom: none; }
+.article-row:last-child {
+    border-bottom: none;
+}
 
 .article-row dt {
-    width: 6em;         /* 固定欄寬：容納最長 5 字（第三十五條）+ 尾端留白 */
+    width: 6em; /* 固定欄寬：容納最長 5 字（第三十五條）+ 尾端留白 */
     flex-shrink: 0;
     font-weight: 700;
     color: var(--neautral-40, #534c46);
@@ -80,7 +90,7 @@
     font-size: 1rem;
     text-align: justify;
     text-align-last: justify;
-    letter-spacing: 0;  /* justify 自動分散，不另加 letter-spacing 避免尾端溢位 */
+    letter-spacing: 0; /* justify 自動分散，不另加 letter-spacing 避免尾端溢位 */
     padding-right: 1em; /* dt 與 dd 之間的固定間距 */
     box-sizing: content-box;
 }
@@ -113,7 +123,9 @@
 }
 
 .icon-plus path:first-child {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
     transform-origin: center;
 }
 
@@ -123,4 +135,10 @@
 .bylaw-chapter.active .icon-plus path:first-child {
     opacity: 0;
     transform: scaleY(0);
+}
+
+@media (max-width: 768px) {
+    .article-row {
+        flex-flow: column;
+    }
 }
