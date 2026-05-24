@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    /* 頁面初始隱藏，防止 CSS/JS 尚未載入時的內容閃爍 (FOUC) */
+    html { opacity: 0; }
+
+    /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+    .nav-dropdown {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-10px) !important;
+        position: absolute !important;
+    }
+    /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+    .nav.active .nav-dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+</style>
+
+    <script type="module" crossorigin src="./assets/main-Bg0OGYvo.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-B_5A_H6E.css">
+  </head>
+
+  <body>
+    <a href="#main-content" class="sr-only sr-only-focusable">跳至主要內容</a>
+
+    <div class="final">
+      <nav class="nav-bar" aria-label="主選單">
+  <div class="nav-bar-inner">
+    <div class="nav-logo">
+      <a href="index.html" title="回協會首頁">
+        <img class="logo" src="img/logo.png" alt="台灣可及環境設計協會 - 回首頁" />
+      </a>
+    </div>
+
+    <!-- 
+        Hamburger toggle（對應 Bootstrap 的 navbar-toggler）
+        - aria-expanded 由 aaedt.js 的 initMobileToggle() 控制
+        - aria-controls 指向 nav-content-wrapper（與 Bootstrap data-target 概念相同）
+        - 只在 < 1024px 時顯示（CSS 控制）
+    -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="nav-content-wrapper"
+      aria-expanded="false"
+      aria-label="開啟／關閉導覽選單"
+    >
+      <!-- Hamburger icon -->
+      <svg
+        class="icon-hamburger"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      <!-- Close icon -->
+      <svg
+        class="icon-close"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <!-- A11y updated -->
+
+    <!--
+        nav-content-wrapper 加上 id 供 aria-controls 參照（對應 Bootstrap 的 #navbarNav）
+        JS 的 initMobileToggle() 已透過 .nav-content-wrapper 選取；
+        同時加 id 不影響現有邏輯，只是增加可及性連結。
+    -->
+    <div class="nav-content-wrapper" id="nav-content-wrapper">
+      <a
+        href="#U"
+        title="右上方功能區塊"
+        id="AU"
+        accesskey="U"
+        name="U"
+        class="sr-only sr-only-focusable"
+      >
+        <span class="sr-only">右上方功能區塊</span>
+        <span aria-hidden="true">:::</span>
+      </a>
+      <ul class="nav-menu-list">
+        <li class="nav">
+          <a href="news.html" class="nav-link">最新消息</a>
+        </li>
+
+        <!-- Dropdown 1: 認識協會 -->
+        <li class="nav">
+          <button class="nav-dropdown-button" aria-controls="dropdown-about" aria-expanded="false">
+            認識協會
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-about">
+            <li><a class="nav-dropdown-item" href="about.html">關於協會</a></li>
+            <li><a class="nav-dropdown-item" href="organization.html">組織架構</a></li>
+            <li><a class="nav-dropdown-item" href="member.html">成員介紹</a></li>
+            <li><a class="nav-dropdown-item" href="bylaw.html">本會章程</a></li>
+            <li><a class="nav-dropdown-item" href="minutes.html">會議記錄</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 2: 專業服務 -->
+        <li class="nav">
+          <button
+            class="nav-dropdown-button"
+            aria-controls="dropdown-services"
+            aria-expanded="false"
+          >
+            專業服務
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-services">
+            <li><a class="nav-dropdown-item" href="remodeling.html">環境改造</a></li>
+            <li><a class="nav-dropdown-item" href="inspection.html">環境檢測</a></li>
+            <li><a class="nav-dropdown-item" href="workshop.html">體驗工作坊</a></li>
+            <li><a class="nav-dropdown-item" href="lectures.html">系列演講</a></li>
+            <li><a class="nav-dropdown-item" href="academic.html">培訓教學</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 3: 推廣行動 -->
+        <li class="nav">
+          <button
+            class="nav-dropdown-button"
+            aria-controls="dropdown-outreach"
+            aria-expanded="false"
+          >
+            推廣行動
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-outreach">
+            <li><a class="nav-dropdown-item" href="campaign_overview.html">推廣行動</a></li>
+            <li><a class="nav-dropdown-item" href="knowledge.html">知識分享</a></li>
+            <li><a class="nav-dropdown-item" href="practice.html">改善實務</a></li>
+            <li><a class="nav-dropdown-item" href="certification.html">標章認證</a></li>
+            <li><a class="nav-dropdown-item" href="results.html">推廣成果</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 4: 資源連結 -->
+        <li class="nav">
+          <button
+            class="nav-dropdown-button"
+            aria-controls="dropdown-resources"
+            aria-expanded="false"
+          >
+            資源連結
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-resources">
+            <li><a class="nav-dropdown-item" href="relevant_regulations.html">常用法規</a></li>
+            <li><a class="nav-dropdown-item" href="related_organizations.html">相關組織</a></li>
+            <li><a class="nav-dropdown-item" href="grant_programs.html">補助計畫</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 5: 加入我們 -->
+        <li class="nav">
+          <button class="nav-dropdown-button" aria-controls="dropdown-join" aria-expanded="false">
+            加入我們
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-join">
+            <li><a class="nav-dropdown-item" href="join.html">成為會員</a></li>
+            <li><a class="nav-dropdown-item" href="volunteer.html">志工招募</a></li>
+            <li><a class="nav-dropdown-item" href="proposal.html">合作提案</a></li>
+            <li><a class="nav-dropdown-item" href="donate.html">捐款支持</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <img class="nav-divider" src="img/nav-divider.svg" alt="" />
+
+      <a
+        href="https://www.aaedt.org.tw/blog/asdc/"
+        target="_blank"
+        class="nav-2"
+        rel="noopener noreferrer"
+        aria-label="學生競圖 (新視窗開啟)"
+      >
+        <div class="nav-link">學生競圖</div>
+        <img class="icon-external" src="img/icon-external.svg" alt="" />
+      </a>
+    </div>
+  </div>
+  <!-- /.nav-bar-inner -->
+</nav>
+
+      <main class="main" id="main-content">
+        <section class="content-section is-dark">
+          <div class="page-header">
+            <div class="breadcrumb">
+              <a href="/" class="link">首頁</a>
+              <span class="sep">/</span>
+              <a href="campaign_overview.html" class="link">推廣行動</a>
+              <span class="sep">/</span>
+              <a href="#" class="link active">知識分享</a>
+            </div>
+            <div class="title-group">
+              <h2 class="main-title">知識分享</h2>
+              <div class="title-line-bg"></div>
+            </div>
+
+            <div class="intro-group">
+              <h3 class="sub-title">建立可及設計觀念，讓理解成為改變的起點</h3>
+              <p class="intro-text">
+                可及設計的第一步，是觀念的建立。
+                在這個分類中，我們整理可及環境相關的專題文章、案例解析與重要資源，協助設計者、管理者與一般大眾，從不同角度理解「什麼是可及、為何重要」。
+              </p>
+            </div>
+          </div>
+          <img class="intersect" src="data:image/svg+xml,%3csvg%20width='100%25'%20height='60'%20viewBox='0%200%201280%2060'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20preserveAspectRatio='none'%3e%3cpath%20d='M640.5%2060C867.093%2060%201083.11%2040.5364%201280%205.28711V0H0V5.10645C197.158%2040.4689%20413.523%2060%20640.5%2060Z'%20fill='%23F5F4F2'/%3e%3c/svg%3e" alt="" />
+        </section>
+
+        <section class="content-section">
+          <div class="page-header">
+            <div class="title-group">
+              <h2 class="main-title">文章內容</h2>
+              <div class="title-line-bg"></div>
+            </div>
+
+            <div class="intro-group">
+              <!--
+                    <h3 class="sub-title">H3</h3>
+                    <p class="intro-text">text</p>
+                    -->
+              <div class="category-warp">
+                <div class="category-group">
+                  <label>文章類別</label>
+                  <div class="category-content">
+                    <span class="tag">可及設計觀念</span>
+                    <span class="tag">專題解析</span>
+                    <span class="tag">國內外案例分享</span>
+                    <span class="tag">相關研究</span>
+                    <span class="tag">延伸閱讀</span>
+                    <span class="tag">實用連結</span>
+                    <span class="tag">國內外法規與制度</span>
+                  </div>
+                </div>
+                <hr />
+              </div>
+
+              <ul class="card-grid">
+                <li class="card-meeting">
+                  <div class="card-meeting-image">
+                    <img src="./img/article-img.png" alt="" />
+                  </div>
+                  <div class="card-meeting-describe">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">知識分享</span>
+                      <span class="tag">專題解析</span>
+                    </div>
+                    <div class="card-meeting-content-wrap">
+                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                      <h3 class="card-meeting-title">
+                        <a href="campaign_article.html">文章名稱</a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="card-meeting">
+                  <div class="card-meeting-image">
+                    <img src="./img/article-img.png" alt="" />
+                  </div>
+                  <div class="card-meeting-describe">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">知識分享</span>
+                      <span class="tag">專題解析</span>
+                    </div>
+                    <div class="card-meeting-content-wrap">
+                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                      <h3 class="card-meeting-title">
+                        <a href="campaign_article.html">文章名稱</a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-meeting">
+                  <div class="card-meeting-image">
+                    <img src="./img/article-img.png" alt="" />
+                  </div>
+                  <div class="card-meeting-describe">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">知識分享</span>
+                      <span class="tag">專題解析</span>
+                    </div>
+                    <div class="card-meeting-content-wrap">
+                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                      <h3 class="card-meeting-title">
+                        <a href="campaign_article.html">文章名稱</a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-meeting">
+                  <div class="card-meeting-image">
+                    <img src="./img/article-img.png" alt="" />
+                  </div>
+                  <div class="card-meeting-describe">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">知識分享</span>
+                      <span class="tag">專題解析</span>
+                    </div>
+                    <div class="card-meeting-content-wrap">
+                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                      <h3 class="card-meeting-title">
+                        <a href="campaign_article.html">文章名稱</a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-meeting">
+                  <div class="card-meeting-image">
+                    <img src="./img/article-img.png" alt="" />
+                  </div>
+                  <div class="card-meeting-describe">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">知識分享</span>
+                      <span class="tag">專題解析</span>
+                    </div>
+                    <div class="card-meeting-content-wrap">
+                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                      <h3 class="card-meeting-title">
+                        <a href="campaign_article.html">文章名稱</a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-meeting">
+                  <div class="card-meeting-image">
+                    <img src="./img/article-img.png" alt="" />
+                  </div>
+                  <div class="card-meeting-describe">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">知識分享</span>
+                      <span class="tag">專題解析</span>
+                    </div>
+                    <div class="card-meeting-content-wrap">
+                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                      <h3 class="card-meeting-title">
+                        <a href="campaign_article.html">文章名稱</a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="more">查看更多</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+    <a href="#H" title="下方頁尾區塊" id="AH" accesskey="H" name="H" class="sr-only sr-only-focusable">
+        <span class="sr-only">下方頁尾區塊</span>
+        <span aria-hidden="true">:::</span>
+    </a>
+    <img class="bg" src="img/footer/footer-bg.svg" alt=""/>
+    <div class="footer-main-panel">
+        <div class="footer-brand-panel">
+            <div class="footer-logo">
+                <img class="group-17" src="img/footer/footer-logo.png" alt="台灣可及環境設計協會"/>
+            </div>
+
+            <div class="footer-contact-list">
+                <div class="footer-contact-item">
+                    <img class="icon" src="img/footer/property-1-map.svg" alt="address"/>
+                    <div class="contact-text">406台中市北屯區松竹路二段八六巷二八弄 22 號二樓之二</div>
+                </div>
+                <div class="footer-contact-item">
+                    <img class="icon" src="img/footer/property-1-phone.svg" alt="tel"/>
+                    <div class="contact-text">聯絡電話：04-22437659</div>
+                </div>
+                <div class="footer-contact-item">
+                    <img class="icon" src="img/footer/property-1-fax.svg" alt="fax"/>
+                    <div class="contact-text">傳真號碼：04-25370205</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav-panel">
+            <div class="footer-nav-column">
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">最新消息</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">認識協會</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">專業服務</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+            </div>
+            <div class="footer-nav-column">
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">推廣行動</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">相關資源</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">加入我們</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <div class="footer-bottom-panel">
+            <div class="footer-policy-panel">
+                <a href="">隱私權政策</a>  |
+                <a href="">網站無障礙聲明</a>
+            </div>
+            <div class="footer-social-panel">
+                <div>關注我們</div>
+                <img class="footer-social-media" src="img/footer/footer-social-media-youtube.svg" alt="YouTube"/>
+                <img class="footer-social-media" src="img/footer/footer-social-media-line.svg" alt="Line@"/>
+                <div class="footer-social-media-2"></div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>AAEDT 台灣可及環境設計協會 - 志工招募</title>
+    <style>
+    /* 頁面初始隱藏，防止 CSS/JS 尚未載入時的內容閃爍 (FOUC) */
+    html { opacity: 0; }
+
+    /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+    .nav-dropdown {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-10px) !important;
+        position: absolute !important;
+    }
+    /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+    .nav.active .nav-dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+</style>
+
+  <script type="module" crossorigin src="./assets/main-Bg0OGYvo.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-B_5A_H6E.css">
+  <link rel="stylesheet" crossorigin href="./assets/join-DxAlySYL.css">
+</head>
+
+<body>
+    <a href="#main-content" class="sr-only sr-only-focusable">跳至主要內容</a>
+
+    <div class="final">
+        <nav class="nav-bar" aria-label="主選單">
+  <div class="nav-bar-inner">
+    <div class="nav-logo">
+      <a href="index.html" title="回協會首頁">
+        <img class="logo" src="img/logo.png" alt="台灣可及環境設計協會 - 回首頁" />
+      </a>
+    </div>
+
+    <!-- 
+        Hamburger toggle（對應 Bootstrap 的 navbar-toggler）
+        - aria-expanded 由 aaedt.js 的 initMobileToggle() 控制
+        - aria-controls 指向 nav-content-wrapper（與 Bootstrap data-target 概念相同）
+        - 只在 < 1024px 時顯示（CSS 控制）
+    -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="nav-content-wrapper"
+      aria-expanded="false"
+      aria-label="開啟／關閉導覽選單"
+    >
+      <!-- Hamburger icon -->
+      <svg
+        class="icon-hamburger"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      <!-- Close icon -->
+      <svg
+        class="icon-close"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <!-- A11y updated -->
+
+    <!--
+        nav-content-wrapper 加上 id 供 aria-controls 參照（對應 Bootstrap 的 #navbarNav）
+        JS 的 initMobileToggle() 已透過 .nav-content-wrapper 選取；
+        同時加 id 不影響現有邏輯，只是增加可及性連結。
+    -->
+    <div class="nav-content-wrapper" id="nav-content-wrapper">
+      <a
+        href="#U"
+        title="右上方功能區塊"
+        id="AU"
+        accesskey="U"
+        name="U"
+        class="sr-only sr-only-focusable"
+      >
+        <span class="sr-only">右上方功能區塊</span>
+        <span aria-hidden="true">:::</span>
+      </a>
+      <ul class="nav-menu-list">
+        <li class="nav">
+          <a href="news.html" class="nav-link">最新消息</a>
+        </li>
+
+        <!-- Dropdown 1: 認識協會 -->
+        <li class="nav">
+          <button class="nav-dropdown-button" aria-controls="dropdown-about" aria-expanded="false">
+            認識協會
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-about">
+            <li><a class="nav-dropdown-item" href="about.html">關於協會</a></li>
+            <li><a class="nav-dropdown-item" href="organization.html">組織架構</a></li>
+            <li><a class="nav-dropdown-item" href="member.html">成員介紹</a></li>
+            <li><a class="nav-dropdown-item" href="bylaw.html">本會章程</a></li>
+            <li><a class="nav-dropdown-item" href="minutes.html">會議記錄</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 2: 專業服務 -->
+        <li class="nav">
+          <button
+            class="nav-dropdown-button"
+            aria-controls="dropdown-services"
+            aria-expanded="false"
+          >
+            專業服務
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-services">
+            <li><a class="nav-dropdown-item" href="remodeling.html">環境改造</a></li>
+            <li><a class="nav-dropdown-item" href="inspection.html">環境檢測</a></li>
+            <li><a class="nav-dropdown-item" href="workshop.html">體驗工作坊</a></li>
+            <li><a class="nav-dropdown-item" href="lectures.html">系列演講</a></li>
+            <li><a class="nav-dropdown-item" href="academic.html">培訓教學</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 3: 推廣行動 -->
+        <li class="nav">
+          <button
+            class="nav-dropdown-button"
+            aria-controls="dropdown-outreach"
+            aria-expanded="false"
+          >
+            推廣行動
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-outreach">
+            <li><a class="nav-dropdown-item" href="campaign_overview.html">推廣行動</a></li>
+            <li><a class="nav-dropdown-item" href="knowledge.html">知識分享</a></li>
+            <li><a class="nav-dropdown-item" href="practice.html">改善實務</a></li>
+            <li><a class="nav-dropdown-item" href="certification.html">標章認證</a></li>
+            <li><a class="nav-dropdown-item" href="results.html">推廣成果</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 4: 資源連結 -->
+        <li class="nav">
+          <button
+            class="nav-dropdown-button"
+            aria-controls="dropdown-resources"
+            aria-expanded="false"
+          >
+            資源連結
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-resources">
+            <li><a class="nav-dropdown-item" href="relevant_regulations.html">常用法規</a></li>
+            <li><a class="nav-dropdown-item" href="related_organizations.html">相關組織</a></li>
+            <li><a class="nav-dropdown-item" href="grant_programs.html">補助計畫</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown 5: 加入我們 -->
+        <li class="nav">
+          <button class="nav-dropdown-button" aria-controls="dropdown-join" aria-expanded="false">
+            加入我們
+            <img class="icon-arrow" src="img/icon-arrow.svg" alt="" />
+          </button>
+          <ul class="nav-dropdown" id="dropdown-join">
+            <li><a class="nav-dropdown-item" href="join.html">成為會員</a></li>
+            <li><a class="nav-dropdown-item" href="volunteer.html">志工招募</a></li>
+            <li><a class="nav-dropdown-item" href="proposal.html">合作提案</a></li>
+            <li><a class="nav-dropdown-item" href="donate.html">捐款支持</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <img class="nav-divider" src="img/nav-divider.svg" alt="" />
+
+      <a
+        href="https://www.aaedt.org.tw/blog/asdc/"
+        target="_blank"
+        class="nav-2"
+        rel="noopener noreferrer"
+        aria-label="學生競圖 (新視窗開啟)"
+      >
+        <div class="nav-link">學生競圖</div>
+        <img class="icon-external" src="img/icon-external.svg" alt="" />
+      </a>
+    </div>
+  </div>
+  <!-- /.nav-bar-inner -->
+</nav>
+
+        <main class="main" id="main-content">
+            <section class="content-section is-dark">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="/" class="link">首頁</a>
+                        <span class="sep">/</span>
+                        <a href="#" class="link">加入我們</a>
+                        <span class="sep">/</span>
+                        <a href="/volunteer" class="link active">志工招募</a>
+                    </div>
+                    <div class="title-group">
+                        <h2 class="main-title">志工招募</h2>
+                        <div class="title-line-bg"></div>
+                    </div>
+                    <div class="intro-group">
+                        <h3 class="sub-title">把理念，變成長期的陪伴</h3>
+                        <p class="intro-text">
+                            可及環境的改變，從來不是一個人就能完成的事。</br>
+                            它需要願意多想一步的設計者、願意投入行動的夥伴，也需要默默支持的力量。</br>
+                            不論你是專業工作者、學生、企業或關心生活環境的一般大眾，</br>
+                            都能用自己的方式，加入我們的行列。
+                        </p>
+                    </div>
+                </div>
+                <img class="intersect" src="img/intersect.svg" alt="">
+            </section>
+
+            <section class="content-section">
+                <div class="page-header">
+                    <div class="title-group">
+                        <h2 class="main-title">我們需要什麼樣的志工？</h2>
+                        <div class="title-line-bg"></div>
+                    </div>
+                    <div class="intro-group --split mt-1">
+                        <div class="intro-content">
+                            <p class="intro-text">
+                                協會的工作，橫跨推廣、實務、教育與行政。</br>
+                                志工不是「幫忙跑腿的人」，而是一起把理念落實成行動的夥伴。
+                            </p>
+                            <br/>
+                            <p class="intro-text">
+                                我們歡迎以下類型的志工加入：
+                            </p>
+                            <ul class="content-section-ul pt-1 pb-1">
+                                <li class="intro-text">對可及環境、無障礙、共融設計有興趣的人</li>
+                                <li class="intro-text">願意協助活動執行、紀錄與行政支援</li>
+                                <li class="intro-text">喜歡與人互動、協助溝通與現場引導</li>
+                                <li class="intro-text">希望透過實際參與，深入理解可及環境實務的人</li>
+                                <li class="intro-text">設計、工程、社福、教育、傳播等相關背景者（非必要）</li>
+                            </ul>
+                        </div>
+                        <div class="intro-image">
+                            <!-- 使用展覽或活動的圖片，如有對應檔案可再做修改 -->
+                            <img src="img/outreach/2025-09-23-21-06-04-1.png" alt="我們需要什麼樣的志工">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section is-dark">
+                <img class="intersect-top" src="img/intersect.svg" alt="" />
+                <div class="page-header">
+                    <div class="title-group">
+                        <h2 class="main-title">志工可以參與哪些工作？</h2>
+                        <div class="title-line-bg"></div>
+                    </div>
+                    <div class="intro-group --split mt-1">
+                        <div class="intro-content">
+                            <p class="intro-text bold">一、會務支援</p>
+                            <ul class="content-section-ul pt-1 pb-1">
+                                <li class="intro-text">協助協會日常行政與資料整理</li>
+                                <li class="intro-text">活動報名、聯繫與現場支援</li>
+                                <li class="intro-text">會議與活動紀錄整理</li>
+                            </ul>
+                            <br/>
+                            <p class="intro-text bold">二、推廣活動協助</p>
+                            <ul class="content-section-ul pt-1 pb-1">
+                                <li class="intro-text">協助系列演講、體驗工作坊、展覽與競圖活動</li>
+                                <li class="intro-text">現場引導、流程支援、參與者協助</li>
+                                <li class="intro-text">拍攝、文字紀錄與成果整理</li>
+                            </ul>
+                            <br/>
+                            <p class="intro-text bold">三、環境檢測與體驗活動支援</p>
+                            <ul class="content-section-ul pt-1 pb-1">
+                                <li class="intro-text">協助可及環境體驗活動進行</li>
+                                <li class="intro-text">陪同記錄檢測觀察重點與使用者回饋</li>
+                                <li class="intro-text">協助整理檢測成果，轉化為推廣素材</li>
+                                <li class="intro-text">志工參與內容會依活動性質與個人意願彈性安排，不需每項都會。</li>
+                            </ul>
+                        </div>
+                        <div class="intro-image">
+                            <!-- 使用展覽或活動的圖片，如有對應檔案可再做修改 -->
+                            <img src="img/outreach/2025-09-23-21-06-04-1.png" alt="志工可以參與哪些工作">
+                        </div>
+                    </div>
+                </div>
+                <img class="intersect" src="img/intersect.svg" alt="">
+            </section>
+
+            <section class="content-section">
+                <div class="page-header">
+                    <div class="title-group">
+                        <h2 class="main-title">為什麼要加入志工？</h2>
+                        <div class="title-line-bg"></div>
+                    </div>
+                    <div class="intro-group --split mt-1">
+                        <div class="intro-content">
+                            <p class="intro-text">
+                                因為我們希望你不只是來幫忙，而是真的理解我們在做什麼。</br>
+                                透過志工培訓與實際參與，你將有機會：
+                            </p>
+                            <ul class="content-section-ul pt-1 pb-1">
+                                <li class="intro-text">更深入認識可及環境設計的核心理念</li>
+                                <li class="intro-text">參與真實場域的體驗與實務觀察</li>
+                                <li class="intro-text">與不同專業背景的夥伴交流合作</li>
+                                <li class="intro-text">累積公共參與、活動執行與社會實踐經驗</li>
+                                <li class="intro-text">成為推動可及環境的重要一份子</li>
+                            </ul>
+                            
+                            <div style="margin-top: 24px;">
+                                <a href="#" target="_blank" class="btn-external">
+                                    加入志工填寫表單
+                                    <img src="img/icon-external.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="intro-image">
+                            <!-- 使用展覽或活動的圖片，如有對應檔案可再做修改 -->
+                            <img src="img/outreach/2025-09-23-21-06-04-1.png" alt="為什麼要加入志工">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+    <a href="#H" title="下方頁尾區塊" id="AH" accesskey="H" name="H" class="sr-only sr-only-focusable">
+        <span class="sr-only">下方頁尾區塊</span>
+        <span aria-hidden="true">:::</span>
+    </a>
+    <img class="bg" src="img/footer/footer-bg.svg" alt=""/>
+    <div class="footer-main-panel">
+        <div class="footer-brand-panel">
+            <div class="footer-logo">
+                <img class="group-17" src="img/footer/footer-logo.png" alt="台灣可及環境設計協會"/>
+            </div>
+
+            <div class="footer-contact-list">
+                <div class="footer-contact-item">
+                    <img class="icon" src="img/footer/property-1-map.svg" alt="address"/>
+                    <div class="contact-text">406台中市北屯區松竹路二段八六巷二八弄 22 號二樓之二</div>
+                </div>
+                <div class="footer-contact-item">
+                    <img class="icon" src="img/footer/property-1-phone.svg" alt="tel"/>
+                    <div class="contact-text">聯絡電話：04-22437659</div>
+                </div>
+                <div class="footer-contact-item">
+                    <img class="icon" src="img/footer/property-1-fax.svg" alt="fax"/>
+                    <div class="contact-text">傳真號碼：04-25370205</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav-panel">
+            <div class="footer-nav-column">
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">最新消息</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">認識協會</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">專業服務</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+            </div>
+            <div class="footer-nav-column">
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">推廣行動</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">相關資源</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+                <div class="footer-page-link">
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-left.svg" alt=""/>
+                    <div class="text-wrapper-16">加入我們</div>
+                    <img class="footer-illustration" src="img/footer/footer-illustration-decor-right.svg" alt=""/>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <div class="footer-bottom-panel">
+            <div class="footer-policy-panel">
+                <a href="">隱私權政策</a>  |
+                <a href="">網站無障礙聲明</a>
+            </div>
+            <div class="footer-social-panel">
+                <div>關注我們</div>
+                <img class="footer-social-media" src="img/footer/footer-social-media-youtube.svg" alt="YouTube"/>
+                <img class="footer-social-media" src="img/footer/footer-social-media-line.svg" alt="Line@"/>
+                <div class="footer-social-media-2"></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+</body>
+
+</html>
