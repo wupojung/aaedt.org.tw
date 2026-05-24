@@ -80,21 +80,16 @@
         /* 新的 class */
 
         .title-line-bg {
-            /* ✅ 關鍵 1：強制寬度填滿 title-group */
+            /* 寬度跟著 .main-title 文字走 */
             align-self: stretch;
+            width: 100%;
 
-            /* ✅ 關鍵 2：固定高度 */
             height: 12px;
-
-            background-image: url("/img/rectangle-1.svg");
-            /*background-image: url('../assets/img/rectangle-1.svg');*/
-
-            /* ✅ 關鍵 3：背景不重覆且強制拉滿 */
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-
             display: block;
+
+            /* 用 clip-path 重現 SVG 的平行四邊形（左偏移 ≈ 4.55%，右偏移 ≈ 95.45%） */
+            background-color: #FEDB00;
+            clip-path: polygon(4.55% 0%, 100% 0%, 95.45% 100%, 0% 100%);
         }
     }
 

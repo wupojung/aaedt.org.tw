@@ -523,10 +523,12 @@
 }
 
 .final .rectangle-10 {
-    position: relative;
     align-self: stretch;
     width: 100%;
     height: 12px;
+    display: block;
+    background-color: #FEDB00;
+    clip-path: polygon(4.55% 0%, 100% 0%, 95.45% 100%, 0% 100%);
 }
 
 .final .frame-6 {
