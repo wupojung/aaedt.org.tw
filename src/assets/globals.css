@@ -6,6 +6,20 @@
    只要改這裡，nav-bar-inner / .main / .content-section 全部同步。
    ─────────────────────────────────────────────────────────── */
 :root {
+  /* ── 色彩系統 ────────────────────────────────────────────────── */
+  --neautral-0:           rgba(255, 255, 255, 1); /* #ffffff */
+  --neautral-10:          rgba(245, 244, 242, 1); /* #f5f4f2 */
+  --neautral-20:          rgba(231, 231, 231, 1); /* #e7e7e7 */
+  --neautral-30:          rgba(131, 123, 116, 1); /* #837b74 */
+  --neautral-40:          rgba(83, 76, 70, 1);    /* #534c46 */
+  --neautral-50:          rgba(26, 20, 16, 1);    /* #1a1410 */
+  --neautral-60:          rgba(0, 0, 0, 1);       /* #000000 */
+  --primaryyellow:        rgba(254, 219, 0, 1);   /* #fedb00 */
+  --primarygold:          #fec300;
+  --primarylogoyellow:    rgba(229, 195, 62, 1);
+  --primaryorange:        rgba(239, 158, 29, 1);
+
+  /* ── 版面對齊系統 ────────────────────────────────────────────── */
   --layout-max-width: 1280px;
   /* 20px（手機）→ 80px（桌機 1280px+），與 .nav-bar-inner padding 同步 */
   --layout-padding: clamp(20px, 6.25vw, 80px);
