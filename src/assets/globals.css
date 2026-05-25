@@ -84,10 +84,6 @@ a {
   margin-top: 0;
 }
 
-.top_40px {
-  padding-top: 40px;
-}
-
 /* 全域「查看更多」元件，置中顯示，底線連結樣式 */
 .more {
   display: flex;
