@@ -267,7 +267,11 @@
 } */
 
 /* ── tablet（768px–1023px） ──────────────────────────────── */
-
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 12px !important;
+  }
+}
 /* ── desktop（≥1024px） ──────────────────────────────────── */
 @media (min-width: 1024px) {
   .final .footer {

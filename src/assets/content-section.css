@@ -87,7 +87,7 @@
             display: block;
 
             /* 用 clip-path 重現 SVG 的平行四邊形（左偏移 ≈ 4.55%，右偏移 ≈ 95.45%） */
-            background-color: #FEDB00;
+            background-color: #fedb00;
             clip-path: polygon(4.55% 0%, 100% 0%, 95.45% 100%, 0% 100%);
         }
     }
@@ -420,7 +420,11 @@
 }
 
 @media (max-width: 768px) {
+    .title-group {
+        gap: 0 !important;
+    }
     .main-title {
+        font-size: 20px !important;
         margin-top: 2rem;
     }
 }
