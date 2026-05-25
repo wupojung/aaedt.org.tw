@@ -1,0 +1,27 @@
+.main {
+  padding-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 0;
+  }
+  .final .action-card {
+    min-width: 353px;
+  }
+
+  .final .card-visuals--card1 .img,
+  .final .card-visuals--card2 .img,
+  .final .card-visuals--card3 .img {
+    background-size: 100% auto !important;
+  }
+
+  .final .text-wrapper-2,
+  .final .text-wrapper-3 {
+    left: 152px !important;
+  }
+
+  .final .group-3 {
+    left: 277px !important;
+  }
+}
