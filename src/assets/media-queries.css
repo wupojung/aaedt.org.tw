@@ -234,12 +234,6 @@
 }
 
 @media (min-width: 1024px) {
-  .final .intersect {
-    height: 60px;
-  }
-  .final .intersect-top {
-    height: 60px;
-  }
   /* desktop */
   .final .hero-section {
     padding: 0 120px;
@@ -455,9 +449,6 @@
 }
 
 @media (min-width: 1920px) {
-  .final .intersect {
-    height: 60px;
-  }
   /* 4K */
   .final {
     max-width: 1920px;

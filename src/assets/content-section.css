@@ -35,9 +35,8 @@
 
     /* --- 以下內容被嚴格限制在 .page-header-section 內 --- */
 
-    &:has(.intersect-top) {
+    &.arc-top {
         margin-top: 60px;
-        /* 如果您希望間距再大一點，也可以改成 80px */
     }
 
     .page-header {
