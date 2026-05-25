@@ -38,6 +38,7 @@
 
 /* ── 品牌區（左側）────────────────────────────────────────── */
 .final .footer-brand-panel {
+  padding: 0 0 40px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -84,9 +85,9 @@
 
 .final .contact-text {
   font-family: "Noto Sans", Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--neautral-40);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -212,6 +213,18 @@
 
 /* ── mobile（≤767px） ─────────────────────────────────────── */
 @media (max-width: 767px) {
+  .final .footer-nav-panel {
+    padding-top: 20px;
+  }
+  .final .footer-brand-panel {
+    padding: 0;
+  }
+  .final .contact-text,
+  .final .footer-page-link,
+  .footer-link-text,
+  .font_size_14 {
+    font-size: 12px !important;
+  }
   .address_nav_area {
     flex-flow: column;
     justify-content: unset;
@@ -226,7 +239,7 @@
   }
 
   .final .footer-bottom-panel {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 16px;
   }
@@ -242,7 +255,7 @@
 }
 
 /* ── mobile + tablet 共用（≤1024px） ─────────────────────── */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .final .footer * {
     font-size: 12px !important;
     word-break: keep-all;
@@ -252,7 +265,7 @@
     max-width: 28px;
     max-height: 28px;
   }
-}
+} */
 
 /* ── tablet（768px–1023px） ──────────────────────────────── */
 
@@ -304,13 +317,9 @@
   }
 
   .final .footer-social-icon {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
   }
-}
-
-/* ── wide（≥1440px） ─────────────────────────────────────── */
-@media (min-width: 1440px) {
   .final .footer-nav-column {
     align-items: flex-end;
     justify-content: flex-end;
