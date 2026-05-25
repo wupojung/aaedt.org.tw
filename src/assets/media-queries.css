@@ -22,10 +22,6 @@
 }
 
 @media (max-width: 767px) {
-  .final .footer-nav-column {
-    flex: unset;
-    flex-grow: unset;
-  }
   .hide-mobile {
     display: none;
   }
@@ -124,26 +120,6 @@
     min-height: 240px;
     aspect-ratio: 4 / 3;
   }
-  .final .footer-page-link {
-    justify-content: flex-start;
-  }
-  .final .footer-nav-panel {
-    justify-content: unset;
-  }
-
-  /* ─── Footer ── mobile (≤767px) ─────────────────────────────── */
-  /* .final .footer { } */
-  /* .final .footer-main-panel { } */
-  /* .final .footer-brand-panel { } */
-  /* .final .footer-org-name { } */
-  /* .final .footer-contact-list { } */
-  /* .final .footer-nav-panel { } */
-  /* .final .footer-nav-column { } */
-  /* .final .footer-page-link { } */
-  /* .final .footer-bottom-panel { } */
-  /* .final .footer-policy-panel { } */
-  /* .final .footer-social-panel { } */
-  /* ─────────────────────────────────────────────────────────────── */
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -153,43 +129,6 @@
     box-sizing: border-box;
   }
 
-  /* ─── Footer ── tablet (768px–1023px) 與手機板一致 ──────────── */
-  .final .footer-main-panel {
-    flex-direction: column;
-    width: 100%;
-    padding: 0 40px;
-    align-items: stretch;
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 40px auto 0;
-    gap: 32px;
-  }
-
-  .final .footer-brand-panel {
-    flex: unset;
-    width: 100%;
-  }
-
-  .final .footer-nav-panel {
-    flex: unset;
-    width: 100%;
-    align-self: auto;
-    align-items: flex-start;
-    /* justify-content: space-between; */
-    margin-left: 0;
-  }
-
-  .final .footer-page-link {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .final .footer-bottom-panel {
-    margin-top: 0;
-  }
-  /* ─────────────────────────────────────────────────────────────── */
 }
 
 @media (min-width: 768px) {
@@ -311,63 +250,6 @@
     width: 450px;
   }
 
-  /* ─── Footer ── desktop (≥1024px) ───────────────────────────── */
-  .final .footer {
-    min-height: 381px;
-    height: auto;
-    padding-bottom: 0;
-  }
-
-  .final .footer-main-panel {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 1040px;
-    padding: 0;
-    align-items: flex-start;
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 40px auto 40px;
-    gap: 0;
-  }
-
-  .final .footer-brand-panel {
-    flex: 1;
-    /* width: 360px; */
-  }
-
-  .final .footer-nav-panel {
-    flex: 1;
-    /* width: 680px; */
-    align-items: flex-end;
-    justify-content: flex-end;
-    align-self: flex-end;
-    margin-left: 0;
-  }
-
-  .final .footer-social-panel {
-    justify-content: flex-end;
-  }
-
-  .final .footer-page-link {
-    width: 150px;
-    justify-content: flex-end;
-  }
-
-  .final .footer-bottom-panel {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 32px;
-  }
-  /* .final .footer-org-name { } */
-  /* .final .footer-contact-list { } */
-  /* .final .footer-nav-column { } */
-  /* .final .footer-policy-panel { } */
-  /* ─────────────────────────────────────────────────────────────── */
-
   /* .main 已用 max-width + clamp padding 對齊，不再需要覆蓋 */
   .final .content-section .intro-group.--split {
     flex-direction: row;
@@ -431,9 +313,6 @@
 }
 
 @media (min-width: 1440px) {
-  .final .footer-nav-column {
-    justify-content: flex-end;
-  }
   /* wide */
   .final {
     max-width: 1440px;

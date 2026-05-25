@@ -1,240 +1,318 @@
+/* ============================================================
+   style-footer.css
+   Footer 元件所有樣式（base + 各斷點 RWD）統一於此
+   ============================================================ */
+.address_nav_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+/* ── 外層容器 ─────────────────────────────────────────────── */
 .final .footer {
-    position: relative;
-    /*width: 1280px;*/
-    width: 100%;
-    height: auto;
-    padding-bottom: 40px;
-    background-color: var(--neautral-10);
-    margin: 0 auto; /* ✅ 加入這行確保置中 */
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    border-color: #e7e7e7;
+  width: 100%;
 }
 
+/* footer.html 裡保留的 .bg img 不需要顯示（已用 background-image 取代） */
 .final .bg {
-    display: none;
+  display: none;
 }
 
-.final .footer {
-    background-image: url("../../public/img/footer/footer-bg.svg");
-    background-repeat: repeat;
-    background-size: auto;
-    background-position: top left;
-}
-
+/* ── 主內容容器（mobile first：直欄排列） ──────────────────── */
 .final .footer-main-panel {
-    * {
-        color: black;
-    }
-    display: flex;
-    flex-direction: column; /* Modified for mobile */
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-    align-items: stretch;
-    gap: 32px;
-    position: relative; /* Modified for mobile */
-    margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  padding: 40px var(--layout-padding);
+  box-sizing: border-box;
+  margin: 0 auto;
+  gap: 32px;
+  border-top: 1px solid var(--neautral-20);
+  background-color: var(--neautral-10);
+  background-image: url("../../public/img/footer/footer-bg.svg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
-.final .footer-main-panel hr {
-    width: 100%; /* 關鍵 2：強制水平線撐滿 1040px */
-    margin: 0; /* 清除預設的外邊距，讓排版更精準，依賴父層的 gap 即可 */
-    border: none;
-    border-top: 1px solid #e0e0e0; /* 這裡可以依照你的設計圖換成你要的線條顏色與粗細 */
-}
-
+/* ── 品牌區（左側）────────────────────────────────────────── */
 .final .footer-brand-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    position: relative;
-    /* flex: unset;
-    flex-grow: 1; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-.final .footer-nav-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    /* gap: 8px; */
-    position: relative;
-    /* flex: unset;
-    flex-grow: 1; */
-}
-
-.final .footer-nav-panel {
-    display: flex;
-    align-items: flex-start; /* Modified for mobile */
-
-    /* 新增這行：讓內部子元素（也就是那兩個 .div-2）靠右對齊 */
-    gap: 20px;
-    position: relative;
-    flex: 1;
-    align-self: stretch;
-    flex-grow: 1;
+.final .footer-logo img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
 }
 
 .final .footer-org-name {
-    margin: 0;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.4;
-    color: var(--neautral-50);
-    letter-spacing: 0.02em;
+  margin: 0;
+  font-family: "Noto Sans", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--neautral-50);
+  letter-spacing: 0.02em;
 }
 
+/* ── 聯絡資訊 ─────────────────────────────────────────────── */
 .final .footer-contact-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 20px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-style: normal; /* 重置 <address> 斜體 */
 }
 
 .final .footer-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.final .footer-contact-item .icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px; /* 視覺對齊文字首行 */
 }
 
 .final .contact-text {
-    position: relative;
-    flex: 1;
-    font-family: "Inter", Helvetica;
-    font-weight: 400;
-    color: var(--neautral-50);
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 16.8px;
+  font-family: "Noto Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--neautral-40);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-/* 底部政策+社群同列容器（手機/平板） */
-.final .footer-bottom-panel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    flex: 0 0 auto;
+.final .contact-text a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.final .footer-policy-panel {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    flex: 0 1 auto;
+.final .contact-text a:hover {
+  text-decoration: underline;
 }
 
-/* (右下：社群媒體區)*/
-.final .footer-social-panel {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    flex: 0 1 auto;
+/* ── 導覽連結區（右側）────────────────────────────────────── */
+.final .footer-nav-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
 }
 
-.final .footer-logo {
-    position: relative;
-    width: min(220px, 100%);
-    height: auto;
-}
-
-.final .group-17 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    max-width: 206px;
-    height: auto;
-}
-
-.final .footer-social-media {
-    position: relative;
-    width: 36px;
-    height: 36px;
-}
-
-.final .footer-social-media-2 {
-    position: relative;
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    background-image: url("../../public/img/footer/fb-icon.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.final .footer-nav-column {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
 }
 
 .final .footer-page-link {
-    display: flex;
-    width: 100%; /* 手機版自適應寬度，桌機版由 media query 覆蓋回 240px */
-    align-items: center;
-    gap: 4px;
-    padding: 12px 0px;
-    position: relative;
-    flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px 0 0 0;
+  gap: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.final a.footer-page-link {
-    text-decoration: none;
-}
-
-.final a.footer-page-link:hover .text-wrapper-16 {
-    color: var(--neautral-60, #555);
+.final .footer-page-link:hover {
+  opacity: 0.75;
 }
 
 .final .footer-illustration {
-    position: relative;
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
-.final .text-wrapper-16 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 500;
-    color: var(--neautral-40);
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 19.2px;
-    white-space: nowrap;
+.final .footer-link-text {
+  font-family: "Noto Sans", Helvetica, sans-serif;
+  font-weight: 500;
+  color: var(--neautral-40);
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
+/* ── 水平分隔線 ───────────────────────────────────────────── */
+.final .footer-main-panel hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #aca6a1;
+  margin: 0;
+}
+
+/* ── 底部列（政策 + 社群）────────────────────────────────── */
+.final .footer-bottom-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* 隱私政策連結 */
+.final .footer-policy-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.final .footer-policy-panel a {
+  font-family: "Inter", Helvetica;
+  font-size: 14px;
+  color: var(--neautral-40);
+  text-decoration: none;
+}
+
+.final .footer-policy-panel a:hover {
+  text-decoration: underline;
+}
+
+.final .footer-policy-panel span {
+  font-size: 14px;
+  color: var(--neautral-30);
+  user-select: none;
+}
+
+/* 社群媒體 */
+.final .footer-social-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Inter", Helvetica;
+  font-size: 14px;
+  color: var(--neautral-40);
+}
+
+.final .footer-social-panel a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final .footer-social-icon {
+  width: 36px;
+  height: 36px;
+  transition: opacity 0.2s ease;
+}
+
+.final .footer-social-panel a:hover .footer-social-icon {
+  opacity: 0.8;
+}
+
+/* ── mobile（≤767px） ─────────────────────────────────────── */
+@media (max-width: 767px) {
+  .address_nav_area {
+    flex-flow: column;
+    justify-content: unset;
+    align-items: flex-start;
+  }
+  .final .footer-nav-column {
+    flex: 1;
+  }
+
+  .final .footer-page-link {
+    justify-content: flex-start;
+  }
+
+  .final .footer-bottom-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .final .footer-social-panel {
+    gap: 8px;
+  }
+
+  .final .footer-social-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ── mobile + tablet 共用（≤1024px） ─────────────────────── */
 @media (max-width: 1024px) {
-    .footer {
-        * {
-            font-size: 12px !important;
-            word-break: keep-all;
-        }
-    }
-    .final .footer-social-media,
-    .final .footer-social-media-2 {
-        max-width: 25px;
-        max-height: 25px;
-    }
+  .final .footer * {
+    font-size: 12px !important;
+    word-break: keep-all;
+  }
 
-    .final .footer-social-panel {
-        gap: 4;
-    }
+  .final .footer-social-icon {
+    max-width: 28px;
+    max-height: 28px;
+  }
+}
+
+/* ── tablet（768px–1023px） ──────────────────────────────── */
+
+/* ── desktop（≥1024px） ──────────────────────────────────── */
+@media (min-width: 1024px) {
+  .final .footer {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .final .footer-main-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 0;
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .final .footer-nav-panel {
+    flex: 1;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .final .footer-nav-column {
+    align-items: flex-end;
+  }
+
+  .final .footer-page-link {
+    justify-content: flex-end;
+  }
+
+  /* hr 和 footer-bottom-panel 強制換行佔滿整列 */
+  .final .footer-main-panel hr {
+    flex-basis: 100%;
+    margin-top: 32px;
+  }
+
+  .final .footer-bottom-panel {
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .final .footer-social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ── wide（≥1440px） ─────────────────────────────────────── */
+@media (min-width: 1440px) {
+  .final .footer-nav-column {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 }
