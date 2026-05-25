@@ -240,7 +240,6 @@
 
   .final .footer-bottom-panel {
     flex-direction: row;
-    align-items: flex-start;
     gap: 16px;
   }
 
