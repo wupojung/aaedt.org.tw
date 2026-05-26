@@ -592,7 +592,7 @@
     color: #534c46;
     font-size: 18px;
     letter-spacing: 0;
-    line-height: 27px;
+    line-height: 150%;
 }
 
 .final .button {
@@ -1133,6 +1133,13 @@
 }
 
 @media (max-width: 768px) {
+    .final .text-wrapper-8,
+    .final .text-wrapper-9,
+    .sub-title,
+    .intro-text {
+        line-height: 120%;
+    }
+
     .text-wrapper-13,
     .final .text-wrapper-8,
     .sub-title,

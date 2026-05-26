@@ -316,12 +316,6 @@
 }
 
 @media (min-width: 1440px) {
-  /* wide */
-  .final {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-
   .final .outreach-section,
   .final .video-section {
     width: 1280px; /* Restore original width for wide screen */
@@ -333,7 +327,8 @@
 @media (min-width: 1920px) {
   /* 4K */
   .final {
-    max-width: 1920px;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   .final .outreach-section,
