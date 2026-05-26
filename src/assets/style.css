@@ -1133,6 +1133,7 @@
 }
 
 @media (max-width: 768px) {
+    .text-wrapper-13,
     .final .text-wrapper-8,
     .sub-title,
     .text-wrapper-9 > * {
