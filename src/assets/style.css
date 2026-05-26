@@ -1131,3 +1131,94 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+@media (max-width: 768px) {
+    .text-wrapper-13,
+    .final .text-wrapper-8,
+    .sub-title,
+    .text-wrapper-9 > * {
+        font-size: 16px !important;
+    }
+    .card-meeting-title {
+        font-size: 18px !important;
+    }
+    .final .h-2 {
+        font-size: 20px !important;
+    }
+    .final .text-wrapper-10,
+    .final .button .button-arrow,
+    .final .text-wrapper-9,
+    .intro-text {
+        font-size: 14px !important;
+    }
+    .text-wrapper-14,
+    .text-wrapper-12,
+    .category-warp label {
+        font-size: 12px !important;
+    }
+    .final .donate-section,
+    .final .about-us-section,
+    .final .frame-7 {
+        gap: 20px;
+    }
+    .final .button {
+        width: 120px !important;
+    }
+
+    .final .outreach-section,
+    .final .video-section {
+        margin-top: 7rem;
+    }
+
+    .category-warp,
+    .card-meeting-date,
+    .intro-list {
+        font-size: 12px !important;
+        .tag {
+            font-size: 12px !important;
+        }
+    }
+
+    .final .h-2 {
+        height: 27px !important;
+    }
+    .gap-3 {
+        gap: 0 !important;
+    }
+
+    .membership-container {
+        .category-title,
+        strong {
+            font-size: 16px !important;
+        }
+        .download-group,
+        .category-description,
+        .category-suitable {
+            font-size: 14px !important;
+            * {
+                font-size: 14px !important;
+            }
+        }
+    }
+    .payment-info {
+        font-size: 14px !important;
+        * {
+            font-size: 14px !important;
+        }
+    }
+    .accessible-table {
+        th,
+        td {
+            font-size: 14px !important;
+        }
+    }
+
+    .article-group {
+        .title {
+            font-size: 16px !important;
+        }
+        .description {
+            font-size: 14px !important;
+        }
+    }
+}

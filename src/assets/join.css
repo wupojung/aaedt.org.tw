@@ -34,7 +34,10 @@
   line-height: 1.6;
   margin: 0;
 }
-
+.category-suitable {
+  display: flex;
+  flex-flow: column;
+}
 .membership-item .category-suitable strong {
   font-weight: 600;
 }
@@ -78,7 +81,7 @@
   padding: 24px 20px; /* Modified for mobile */
   background-color: #fff;
   color: #837b74; /* Updated color */
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.8;
   border-top: 1px solid #d1cdc7;
@@ -106,7 +109,7 @@
 }
 
 .table-container .accessible-table {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .table-container .accessible-table th,
