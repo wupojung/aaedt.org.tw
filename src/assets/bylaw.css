@@ -150,4 +150,11 @@
     .article-row {
         flex-flow: column;
     }
+
+    .article-row dd,
+    .article-row dt,
+    .bylaw-info p,
+    .bylaw-chapter.active .bylaw-title span {
+        font-size: 16px !important;
+    }
 }
