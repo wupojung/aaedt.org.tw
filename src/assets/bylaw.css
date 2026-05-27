@@ -17,9 +17,7 @@
 }
 
 /* 3. 章節手風琴項目 */
-.bylaw-chapter {
-    border-bottom: 1px solid var(--neautral-20, #e7e7e7);
-}
+
 .bylaw-chapter:last-child {
     border-bottom: none;
 }
@@ -35,6 +33,7 @@
     border: none;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    border-bottom: 1px solid var(--neautral-20, #e7e7e7);
 }
 .bylaw-title:hover {
     opacity: 0.7;
