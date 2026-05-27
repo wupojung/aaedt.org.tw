@@ -10,7 +10,7 @@
     padding: 0 0 1.5rem 0;
 }
 .bylaw-info p {
-    font-size: 0.9rem;
+    font-size: 18px;
     color: var(--neautral-30, #837b74);
     line-height: 1.8;
     margin: 0;
@@ -41,10 +41,9 @@
 }
 
 .bylaw-title span {
-    font-size: 1.125rem;
+    font-size: 20px;
     font-weight: 700;
     color: var(--neautral-50, #1a1410);
-    letter-spacing: 0.05em;
 }
 
 /* 展開狀態：無額外顏色變化 */
@@ -71,9 +70,8 @@
     padding: 0.25rem 0 1.5rem 0;
 }
 .article-row {
-    display: flex;
-    padding: 0.875rem 0;
-    border-bottom: 1px solid var(--neautral-20, #e7e7e7);
+    display: inline-block;
+
     align-items: baseline;
     gap: 0;
 }
@@ -82,12 +80,13 @@
 }
 
 .article-row dt {
+    float: left;
     width: 6em; /* 固定欄寬：容納最長 5 字（第三十五條）+ 尾端留白 */
     flex-shrink: 0;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--neautral-40, #534c46);
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 18px;
     text-align: justify;
     text-align-last: justify;
     letter-spacing: 0; /* justify 自動分散，不另加 letter-spacing 避免尾端溢位 */
@@ -98,31 +97,42 @@
     margin: 0;
     color: var(--neautral-40, #534c46);
     line-height: 1.8;
-    flex: 1;
-    font-size: 1rem;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 /* 6. 任務清單（條文內的 ul） */
 .task-list {
     list-style: none;
-    margin: 0.5rem 0 0 0;
+
     padding: 0;
 }
 .task-list li {
     color: var(--neautral-40, #534c46);
     line-height: 1.8;
-    padding: 0.125rem 0;
     font-size: 1rem;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 /* 7. 圖示 */
 .icon-plus {
     transition: all 0.3s ease;
-    color: var(--neautral-30, #837b74);
+    color: #000000;
     flex-shrink: 0;
 }
 
-.icon-plus path:first-child {
+.icon-plus circle {
+    fill: #f5f4f2;
+    stroke: none;
+    transition: fill 0.3s ease;
+}
+
+.icon-plus path {
+    stroke: #000000;
+}
+
+.icon-plus .line-v {
     transition:
         opacity 0.3s ease,
         transform 0.3s ease;
@@ -130,9 +140,9 @@
 }
 
 .bylaw-chapter.active .icon-plus {
-    color: var(--neautral-50, #1a1410);
+    color: #000000;
 }
-.bylaw-chapter.active .icon-plus path:first-child {
+.bylaw-chapter.active .icon-plus .line-v {
     opacity: 0;
     transform: scaleY(0);
 }
