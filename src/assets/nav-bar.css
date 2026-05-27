@@ -341,20 +341,29 @@
         display: flex;
     }
 
-    /* 收合右側 wrapper，改成全寬下拉 */
+    /* 收合右側 wrapper */
     .nav-bar .nav-content-wrapper {
         display: none;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 0;
-        padding-bottom: 12px;
-        /* 展開動畫 */
-        animation: mobileMenuOpen 0.25s ease;
     }
 
+    /* 展開：fixed overlay，不占文件流、不推動頁面 */
+    /* Mobile top = 16px padding + 48px logo + 16px padding = 80px */
     .nav-bar .nav-content-wrapper.show {
         display: flex;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 12px;
+        background-color: var(--neautral-0, #fff);
+        overflow-y: auto;
+        max-height: calc(100vh - 80px);
+        z-index: 150;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        animation: mobileMenuOpen 0.25s ease;
     }
 
     @keyframes mobileMenuOpen {
@@ -484,18 +493,29 @@
         display: flex;
     }
 
+    /* 收合右側 wrapper */
     .nav-bar .nav-content-wrapper {
         display: none;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 0;
-        padding-bottom: 12px;
-        animation: mobileMenuOpen 0.25s ease;
     }
 
+    /* 展開：fixed overlay，不占文件流、不推動頁面 */
+    /* Tablet top = 16px padding + 60px logo + 16px padding = 92px */
     .nav-bar .nav-content-wrapper.show {
         display: flex;
+        position: fixed;
+        top: 92px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 12px;
+        background-color: var(--neautral-0, #fff);
+        overflow-y: auto;
+        max-height: calc(100vh - 92px);
+        z-index: 150;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        animation: mobileMenuOpen 0.25s ease;
     }
 
     .nav-bar .nav-divider {
