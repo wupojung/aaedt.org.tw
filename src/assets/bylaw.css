@@ -155,7 +155,8 @@
     .article-row dt,
     .bylaw-info p,
     .bylaw-chapter.active,
-    .bylaw-title span {
+    .bylaw-title span,
+    .task-list li {
         font-size: 16px !important;
     }
 
