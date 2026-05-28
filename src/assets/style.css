@@ -1217,6 +1217,11 @@
     .final .video-section {
         margin-top: 7rem;
     } */
+    .category-warp {
+        hr {
+            display: none !important;
+        }
+    }
 
     .category-warp,
     .card-meeting-date,

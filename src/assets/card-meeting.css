@@ -113,6 +113,8 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    min-width: 0;
+    align-self: stretch;
     gap: 16px;
     /*margin-bottom: 30px;*/
     .category-group {
@@ -120,6 +122,8 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+        width: 100%;
+        min-width: 0;
     }
     .tag {
         display: flex;
@@ -155,10 +159,18 @@
 
 .category-content {
     display: flex;
-    flex-wrap: wrap; /* 關鍵：標籤太多時自動換行，不擠成一團 */
-    justify-content: flex-start; /* 標籤從左邊開始排 */
-    gap: 8px; /* 標籤之間的間距 (Figma 常見數值) */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.category-content::-webkit-scrollbar {
+    display: none;
 }
 
 hr {
