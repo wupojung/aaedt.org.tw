@@ -22,7 +22,7 @@
     margin-inline: auto;
     padding: 20px var(--layout-padding);
     /* 垂直 20px 固定；水平用 clamp 跟 .content-section 同步 */
-    flex-wrap: wrap;
+    flex-wrap: row;
     background-color: var(--neautral-0);
     border-bottom: 1px solid #e7e7e7;
     /* Logo 區塊 */
