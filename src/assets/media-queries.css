@@ -151,7 +151,7 @@
   .final .card-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   /* Tablet: feature-card 各佔一半並排，最大不超過原始 333px */
