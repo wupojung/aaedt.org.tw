@@ -133,24 +133,27 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* tablet：card-container 補回側邊距（hero-section padding 已由上方移除） */
   .final .card-container {
     padding: 20px 60px;
     box-sizing: border-box;
   }
+}
 
+@media (min-width: 768px) {
   /* tablet */
-  /* .final .hero-section,
+  .final .hero-section,
   .final .about-us-section,
   .final .donate-section,
   .final .outreach-section,
   .final .video-section {
     padding: 0 60px;
-  } */
+  }
 
-  /* .final .partners-section {
+  .final .partners-section {
     padding: 40px 60px;
-  } */
+  }
 
   .final .card-container {
     flex-direction: row;
@@ -160,10 +163,8 @@
 
   /* Tablet: feature-card 各佔一半並排，最大不超過原始 333px */
   .final .feature-card {
-    width: 100%;
-    /* width: calc(50% - 10px); */
+    width: calc(50% - 10px);
     max-width: 333px;
-    justify-content: center;
   }
 
   .final .frame-13 {
