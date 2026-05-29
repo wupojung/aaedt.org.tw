@@ -1174,6 +1174,10 @@
 }
 
 @media (max-width: 768px) {
+    .title-line-bg {
+        height: 6px !important;
+    }
+
     .final .text-wrapper-8,
     .final .text-wrapper-9,
     .sub-title,
