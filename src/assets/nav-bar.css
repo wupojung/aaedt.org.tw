@@ -104,9 +104,20 @@
         }
 
         .icon-arrow {
-            transition: transform 0.3s ease;
             display: inline-block;
-            vertical-align: middle;
+            width: 16px;
+            height: 10px;
+            background-color: #534C46;
+            clip-path: polygon(
+                0%   15%,
+                9%   0%,
+                50%  70%,
+                91%  0%,
+                100% 15%,
+                50%  100%
+            );
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
         }
 
         /* 下拉選單主體 */
@@ -164,6 +175,8 @@
 
         /* 當前頁面（is-current）：底線標示 */
         &.is-current {
+            background-color: var(--neautral-10, #f5f4f2);
+
             .nav-link,
             .nav-dropdown-button {
                 color: var(--neautral-50, #1a1410);
@@ -173,10 +186,10 @@
                 &::after {
                     content: "";
                     position: absolute;
-                    bottom: -4px;
+                    bottom: 1px;
                     left: 0;
                     width: 100%;
-                    height: 2px;
+                    height: 1px;
                     background-color: var(--neautral-50, #fec300);
                     border-radius: 2px;
                 }
