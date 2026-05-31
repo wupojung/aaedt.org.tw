@@ -107,15 +107,8 @@
             display: inline-block;
             width: 16px;
             height: 10px;
-            background-color: #534C46;
-            clip-path: polygon(
-                0%   15%,
-                9%   0%,
-                50%  70%,
-                91%  0%,
-                100% 15%,
-                50%  100%
-            );
+            background-color: #534c46;
+            clip-path: polygon(0% 15%, 9% 0%, 50% 70%, 91% 0%, 100% 15%, 50% 100%);
             flex-shrink: 0;
             transition: transform 0.3s ease;
         }
@@ -653,7 +646,7 @@
 
     .nav-bar .nav .nav-link,
     .nav-bar .nav .nav-dropdown-button {
-        font-size: 16px;
+        font-size: 18px;
         padding: 0;
         border-bottom: none;
         width: fit-content;

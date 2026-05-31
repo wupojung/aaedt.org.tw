@@ -1069,6 +1069,10 @@
     padding: 0;
 }
 
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
 /* ── Card 1 裝飾圖：CSS 背景圖版本 ───────────────────────────
    位置、尺寸沿用上方 .img / .group-2 ～ .group-7 的規則，
    這裡只補 background-image，不重複寫座標。

@@ -9,10 +9,10 @@
     margin-inline: auto;
 }
 
-.main > :last-child {
+/* .main > :last-child {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
-}
+} */
 
 .is-dark {
     background-color: #f5f4f2;
@@ -43,14 +43,14 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
     }
 
     .intro-group {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         width: 100%;
         color: #534c46;
         text-align: center;
@@ -375,6 +375,7 @@
 
 @media (max-width: 768px) {
     .title-group {
+        margin-top: 0 !important;
         gap: 0 !important;
     }
     .main-title {

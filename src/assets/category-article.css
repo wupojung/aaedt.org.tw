@@ -7,7 +7,7 @@
 .category-article {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 50px;
     padding-bottom: 48px;
 }
 
