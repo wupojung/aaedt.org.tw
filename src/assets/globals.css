@@ -84,12 +84,20 @@ a {
   margin-top: 0;
 }
 
+.pt_60px {
+  padding-top: 60px !important;
+}
+
 .pb_60px {
   padding-bottom: 60px !important;
 }
 
 .mt_40px {
   margin-top: 40px;
+}
+
+.mb_60px {
+  margin-bottom: 60px !important;
 }
 
 /* 全域「查看更多」元件，置中顯示，底線連結樣式 */
