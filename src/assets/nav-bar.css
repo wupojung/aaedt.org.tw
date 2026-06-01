@@ -345,6 +345,10 @@
             }
         }
     }
+
+    .nav {
+        gap: 0 !important;
+    }
     .nav-bar {
         position: fixed;
     }
