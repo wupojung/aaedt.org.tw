@@ -1170,13 +1170,12 @@
     .final .arc-bottom::after {
         bottom: -30px;
     }
-    .content-section {
-        padding: 20px var(--layout-padding) 20px var(--layout-padding);
-    }
     .mb_60px {
         margin-bottom: 30px !important;
     }
     .content-section {
+        padding: 20px var(--layout-padding) 20px var(--layout-padding);
+        gap: 20px !important;
         .page-header {
             gap: 20px !important;
         }
