@@ -1055,7 +1055,7 @@
 }
 
 .campaign_overview_section {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .mb-0 {
@@ -1167,6 +1167,9 @@
 }
 
 @media (max-width: 768px) {
+    .final .element-wrapper {
+        height: 300px;
+    }
     /* .mb_60px {
         margin-bottom: 30px !important;
     } */
