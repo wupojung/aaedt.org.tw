@@ -27,7 +27,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    text-align: left;
     padding: 1.25rem 0;
     background: transparent;
     border: none;
