@@ -1166,6 +1166,23 @@
 }
 
 @media (max-width: 768px) {
+    .final .arc-bottom::after {
+        bottom: -30px;
+    }
+    .content-section {
+        padding: 20px var(--layout-padding) 20px var(--layout-padding);
+    }
+    .mb_60px {
+        margin-bottom: 30px !important;
+    }
+    .content-section {
+        .page-header {
+            gap: 20px !important;
+        }
+    }
+    .content-section-hero {
+        padding: 12px var(--layout-padding) 0 var(--layout-padding) !important;
+    }
     .title-line-bg {
         height: 6px !important;
     }
