@@ -643,7 +643,7 @@
 
     align-items: center;
     justify-content: space-between;
-    padding: 12px 16px 12px 24px;
+    padding: 8px 16px 8px 16px;
     position: relative;
     flex: 0 0 auto;
     background-color: var(--primaryyellow);
@@ -678,6 +678,7 @@
     font-size: 20px;
     letter-spacing: 0;
     line-height: 30px;
+    padding-right: 0.8rem;
     white-space: nowrap;
 }
 
@@ -1206,8 +1207,7 @@
     .final .h-2 {
         font-size: 20px !important;
     }
-    .final .text-wrapper-10,
-    .final .button .button-arrow,
+
     .final .text-wrapper-9,
     .intro-text {
         font-size: 14px !important;
@@ -1222,10 +1222,6 @@
     .final .frame-7 {
         gap: 20px;
     }
-    .final .button {
-        width: 120px !important;
-    }
-
     /* .final .outreach-section,
     .final .video-section {
         margin-top: 7rem;
