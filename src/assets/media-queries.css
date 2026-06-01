@@ -133,7 +133,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .final .card-container {
     padding: 20px 0;
     gap: 12px;

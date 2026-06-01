@@ -1167,15 +1167,12 @@
 }
 
 @media (max-width: 768px) {
-    .final .arc-bottom::after {
-        bottom: -30px;
-    }
     .mb_60px {
         margin-bottom: 30px !important;
     }
     .content-section {
-        padding: 20px var(--layout-padding) 20px var(--layout-padding);
-        gap: 20px !important;
+        gap: 30px;
+        padding: 30px var(--layout-padding) 30px var(--layout-padding);
         .page-header {
             gap: 20px !important;
         }
