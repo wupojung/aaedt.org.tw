@@ -319,27 +319,34 @@
     z-index: 9999;
 }
 
-/* ============================================================
-   Mobile（< 768px）：Hamburger menu 全展開
-   ============================================================ */
-@media (max-width: 767px) {
-    .nav-bar {
-        position: fixed; /* mobile 固定在頂部 */
+/* ── 展開動畫（mobile + tablet 共用，須在 media query 外定義） ── */
+@keyframes mobileMenuOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
     }
-    .nav-bar-inner {
-        padding: 16px 20px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    /* Logo 縮小 */
-    .nav-bar .nav-logo {
-        width: 160px;
-        height: 48px;
+/* ============================================================
+   Hamburger 共用樣式（< 1024px）
+   Mobile 與 Tablet 共享的 hamburger 選單結構與行為
+   ============================================================ */
+@media (max-width: 1023px) {
+    .nav-bar-inner {
+        & .nav {
+            & .nav-dropdown {
+                .nav-dropdown-item {
+                    padding: 1rem 2rem;
+                }
+            }
+        }
     }
-    .nav-bar .nav-logo .logo {
-        width: 160px;
-        height: 37px;
-        top: calc(50% - 18px);
-        left: calc(50% - 80px);
+    .nav-bar {
+        position: fixed;
     }
 
     /* 顯示 hamburger 按鈕 */
@@ -353,37 +360,21 @@
     }
 
     /* 展開：fixed overlay，不占文件流、不推動頁面 */
-    /* Mobile top = 16px padding + 48px logo + 16px padding = 80px */
     .nav-bar .nav-content-wrapper.show {
         display: flex;
         position: fixed;
-        top: 80px;
         left: 0;
         width: 100%;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding-bottom: 12px;
         background-color: var(--neautral-0, #fff);
         overflow-y: auto;
-        max-height: calc(100vh - 80px);
         z-index: 150;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         animation: mobileMenuOpen 0.25s ease;
     }
 
-    @keyframes mobileMenuOpen {
-        from {
-            opacity: 0;
-            transform: translateY(-8px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* 分隔線在 mobile 隱藏 */
     .nav-bar .nav-divider {
         display: none;
     }
@@ -417,29 +408,24 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 14px 16px;
-        font-size: 16px;
         border-bottom: 1px solid #f5f4f2;
         box-sizing: border-box;
     }
 
-    /* 下拉選單在 mobile：inline 靜態展開，緊接在 button 下方 */
+    /* 下拉選單：inline 靜態展開（清除所有 desktop 浮層屬性） */
     .nav-bar .nav .nav-dropdown {
-        /* 清除所有 desktop 浮層屬性 */
         position: static !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
         opacity: 1 !important;
         visibility: visible !important;
-        /* 清除陰影、邊框、圓角 */
         box-shadow: none !important;
         border: none !important;
         border-radius: 0 !important;
         margin-top: 0 !important;
         min-width: auto !important;
         z-index: auto !important;
-        /* 背景與收合狀態 */
         background-color: #fafafa;
         display: none; /* 預設收合；.active 展開 */
         width: 100%;
@@ -449,134 +435,103 @@
         display: block;
     }
 
-    /* 子選單縮排 */
     .nav-bar .nav .nav-dropdown-item {
-        padding-left: 32px;
-        font-size: 15px;
         border-bottom: 1px solid #f0f0f0;
     }
 
-    /* 學生競圖連結 */
     .nav-bar .nav-2 {
-        padding: 14px 16px;
         justify-content: flex-start;
-        font-size: 16px;
         border-top: 1px solid #e7e7e7;
         transform: none !important;
-    }
-    .nav-bar .nav-2:hover {
-        border-radius: 0;
+
+        &:hover {
+            border-radius: 0;
+        }
     }
 
-    /* 當前頁面：mobile hamburger 用左邊框取代底線 */
+    /* 當前頁面：左邊框取代底線 */
     .nav-bar .nav.is-current .nav-link,
     .nav-bar .nav.is-current .nav-dropdown-button {
         color: var(--neautral-50, #1a1410);
         font-weight: 700;
         border-left: 3px solid var(--primarygold, #fec300);
-        padding-left: 13px; /* 補回 3px border */
         background-color: #fef9e7;
     }
+
     .nav-bar .nav.is-current .nav-link::after,
     .nav-bar .nav.is-current .nav-dropdown-button::after {
-        display: none; /* 隱藏桌面底線 */
+        display: none;
     }
 }
 
 /* ============================================================
-   Tablet（768px – 1023px）：縮小字體 + 折疊成兩排或繼續 hamburger
+   Mobile（< 768px）：Logo 縮小 + 緊湊間距
    ============================================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .nav-bar {
-        position: fixed;
-    }
+@media (max-width: 767px) {
     .nav-bar-inner {
-        padding: 16px 32px;
+        padding: 16px 20px;
     }
 
-    /* 顯示 hamburger（tablet 仍用 hamburger） */
-    .nav-toggle {
-        display: flex;
+    /* Logo 縮小 */
+    .nav-bar .nav-logo {
+        width: 160px;
+        height: 48px;
+    }
+    .nav-bar .nav-logo .logo {
+        width: 160px;
+        height: 37px;
+        top: calc(50% - 18px);
+        left: calc(50% - 80px);
     }
 
-    /* 收合右側 wrapper */
-    .nav-bar .nav-content-wrapper {
-        display: none;
-    }
-
-    /* 展開：fixed overlay，不占文件流、不推動頁面 */
-    /* Tablet top = 16px padding + 60px logo + 16px padding = 92px */
+    /* top = 16px padding + 48px logo + 16px padding = 80px */
     .nav-bar .nav-content-wrapper.show {
-        display: flex;
-        position: fixed;
-        top: 92px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding-bottom: 12px;
-        background-color: var(--neautral-0, #fff);
-        overflow-y: auto;
-        max-height: calc(100vh - 92px);
-        z-index: 150;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        animation: mobileMenuOpen 0.25s ease;
-    }
-
-    .nav-bar .nav-divider {
-        display: none;
-    }
-
-    .nav-bar .nav-menu-list {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
-
-    .nav-bar .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        justify-content: flex-start;
-        border-radius: 0;
-        padding: 0;
+        top: 80px;
+        max-height: calc(100vh - 80px);
     }
 
     .nav-bar .nav .nav-link,
     .nav-bar .nav .nav-dropdown-button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+
+    .nav-bar .nav .nav-dropdown-item {
+        padding-left: 40px;
+        font-size: 15px;
+    }
+
+    .nav-bar .nav-2 {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+
+    /* 補回 3px left-border 佔用的寬度 */
+    .nav-bar .nav.is-current .nav-link,
+    .nav-bar .nav.is-current .nav-dropdown-button {
+        padding-left: 21px;
+    }
+}
+
+/* ============================================================
+   Tablet（768px – 1023px）：稍大字體 + 較寬 padding
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nav-bar-inner {
+        padding: 16px 32px;
+    }
+
+    /* top = 16px padding + 60px logo + 16px padding = 92px */
+    .nav-bar .nav-content-wrapper.show {
+        top: 92px;
+        max-height: calc(100vh - 92px);
+        padding-bottom: 12px;
+    }
+
+    .nav-bar .nav .nav-link,
+    .nav-bar .nav .nav-dropdown-button {
         padding: 14px 20px;
         font-size: 17px;
-        border-bottom: 1px solid #f5f4f2;
-        box-sizing: border-box;
-    }
-
-    /* 下拉選單在 tablet：inline 靜態展開，緊接在 button 下方 */
-    .nav-bar .nav .nav-dropdown {
-        position: static !important;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        box-shadow: none !important;
-        border: none !important;
-        border-radius: 0 !important;
-        margin-top: 0 !important;
-        min-width: auto !important;
-        z-index: auto !important;
-        background-color: #fafafa;
-        display: none;
-        width: 100%;
-    }
-
-    .nav-bar .nav.active .nav-dropdown {
-        display: block;
     }
 
     .nav-bar .nav .nav-dropdown-item {
@@ -586,96 +541,37 @@
 
     .nav-bar .nav-2 {
         padding: 14px 20px;
-        justify-content: flex-start;
         font-size: 17px;
-        border-top: 1px solid #e7e7e7;
-        transform: none !important;
     }
 
-    /* 當前頁面：tablet hamburger 用左邊框取代底線 */
+    /* 補回 3px left-border 佔用的寬度 */
     .nav-bar .nav.is-current .nav-link,
     .nav-bar .nav.is-current .nav-dropdown-button {
-        color: var(--neautral-50, #1a1410);
-        font-weight: 700;
-        border-left: 3px solid var(--primarygold, #fec300);
         padding-left: 17px;
-        background-color: #fef9e7;
-    }
-    .nav-bar .nav.is-current .nav-link::after,
-    .nav-bar .nav.is-current .nav-dropdown-button::after {
-        display: none;
     }
 }
 
 /* ============================================================
-   Desktop（1024px – 1439px）：原本樣式，但 width 改 100% 適配
+   Desktop（1024px – 1439px）：恢復橫向排列，調整 padding / 字體
    ============================================================ */
 @media (min-width: 1024px) and (max-width: 1439px) {
-    .nav-bar {
-        position: absolute;
-    }
     .nav-bar-inner {
         padding: 20px 48px;
     }
 
-    /* 確保 hamburger 完全隱藏 */
-    .nav-toggle {
-        display: none;
-    }
-
-    /* 確保選單恢復橫向顯示 */
-    .nav-bar .nav-content-wrapper {
-        display: inline-flex !important;
-        flex-direction: row;
-        align-items: center;
-        width: auto;
-        padding-bottom: 0;
-    }
-
-    .nav-bar .nav-menu-list {
-        flex-direction: row;
-        width: auto;
-    }
-
     .nav-bar .nav {
-        width: auto;
-        border-radius: 8px;
         padding: 10px 6px;
-        justify-content: center;
     }
 
     .nav-bar .nav .nav-link,
     .nav-bar .nav .nav-dropdown-button {
         font-size: 18px;
         padding: 0;
-        border-bottom: none;
-        width: fit-content;
-    }
-
-    /* 子選單回到 absolute 浮層 */
-    .nav-bar .nav .nav-dropdown {
-        position: absolute;
-        display: block; /* 回到原本 CSS 控制 opacity/visibility */
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-    }
-
-    .nav-bar .nav.active .nav-dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        display: block;
-    }
-
-    .nav-bar .nav-divider {
-        display: block;
     }
 
     .nav-bar .nav-2 {
         padding: 10px 8px;
         font-size: 16px;
-        border-top: none;
     }
 }
 
