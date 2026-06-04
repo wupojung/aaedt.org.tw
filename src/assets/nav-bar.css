@@ -9,8 +9,8 @@
     position: absolute;
     top: 0;
     left: 0;
-
     z-index: 100;
+    border-bottom: 0.1px solid #e7e7e7;
 }
 
 /* ── 內層限寬容器：與 .main 使用相同機制對齊 ─────────────── */
@@ -23,8 +23,6 @@
     padding: 20px var(--layout-padding);
     /* 垂直 20px 固定；水平用 clamp 跟 .content-section 同步 */
     flex-wrap: row;
-    background-color: var(--neautral-0);
-    border-bottom: 1px solid #e7e7e7;
     /* Logo 區塊 */
     .nav-logo {
         position: relative;
@@ -70,28 +68,23 @@
         align-items: center;
         justify-content: center;
         gap: 4px;
-        padding: 10px 8px;
+        padding: 12px 10px;
         position: relative;
         flex: 0 0 auto;
         cursor: pointer;
         transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: rgba(254, 219, 0, 0.1);
-            border-radius: 8px;
-        }
 
         .nav-link,
         .nav-dropdown-button {
             position: relative;
             width: fit-content;
             margin-top: -1px;
-            font-family: "Noto Sans", Helvetica, sans-serif;
+            font-family: Noto Sans;
             font-weight: 500;
-            color: var(--neautral-40);
+            color: #1a1410;
             font-size: 18px;
             letter-spacing: 0;
-            line-height: normal;
+            line-height: 24px;
         }
         .nav-dropdown-button {
             background-color: inherit;
@@ -173,7 +166,7 @@
             .nav-link,
             .nav-dropdown-button {
                 color: var(--neautral-50, #1a1410);
-                font-weight: 700;
+                /* font-weight: 700; */
                 position: relative;
 
                 &::after {
@@ -222,15 +215,6 @@
             background-color: rgba(254, 219, 0, 0.1);
             border-radius: 8px;
         }
-    }
-    /* nav.css */
-    .nav-2,
-    .button {
-        transition: transform 0.3s ease;
-    }
-    .nav-2:hover,
-    .button:hover {
-        transform: scale(1.05); /* 交給 CSS 處理，不經過 JS */
     }
 }
 
