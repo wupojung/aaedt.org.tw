@@ -20,7 +20,7 @@
   --primaryorange: rgba(239, 158, 29, 1);
 
   /* ── 版面對齊系統 ────────────────────────────────────────────── */
-  --layout-max-width: 1280px;
+  --layout-max-width: 100%;
   /* 20px（手機）→ 80px（桌機 1280px+），與 .nav-bar-inner padding 同步 */
   --layout-padding: clamp(20px, 6.25vw, 80px);
 }

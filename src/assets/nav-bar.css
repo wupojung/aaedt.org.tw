@@ -16,6 +16,7 @@
 
 /* ── 內層限寬容器：與 .main 使用相同機制對齊 ─────────────── */
 .nav-bar-inner {
+    width: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -211,11 +212,6 @@
         font-size: 18px;
         letter-spacing: 0;
         line-height: normal;
-
-        &:hover {
-            background-color: rgba(254, 219, 0, 0.1);
-            border-radius: 8px;
-        }
     }
 }
 
