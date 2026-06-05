@@ -36,9 +36,11 @@
 }
 
 .final .hero-section {
+    width: 100%;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     padding: 40px 20px; /* Modified for mobile */
     position: relative;
@@ -72,6 +74,8 @@
     max-width: 1040px;
     height: auto;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .final .feature-card {
