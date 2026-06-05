@@ -11,6 +11,7 @@
     left: 0;
     z-index: 100;
     border-bottom: 0.1px solid #e7e7e7;
+    background-color: white;
 }
 
 /* ── 內層限寬容器：與 .main 使用相同機制對齊 ─────────────── */
