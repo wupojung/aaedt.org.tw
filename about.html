@@ -2,7 +2,7 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
     <title>AAEDT 台灣可及環境設計協會 - 關於協會</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <include src="src/partials/head-styles.html" />
@@ -21,11 +21,11 @@
               <a href="/about" class="link active">關於協會</a>
             </div>
             <div class="title-group">
-              <h2 class="main-title">關於協會</h2>
+              <h1 class="main-title">關於協會</h1>
               <div class="title-line-bg"></div>
             </div>
             <div class="intro-group">
-              <h3 class="sub-title">環境要可及，生活更 Easy。</h3>
+              <h2 class="sub-title">環境要可及，生活更 Easy。</h2>
               <p class="intro-text">
                 我們推動可及設計，讓每個人都能自在參與生活 ── 不論年齡或能力。<br />從居家改造到社區倡議，AAEDT
                 用專業與溫度，將「友善空間」變成日常。
@@ -160,16 +160,13 @@
             <div class="intro-group">
               <div class="table-container">
                 <table class="accessible-table">
-                  <!--
-                        <caption>協會大事紀</caption>
-                        -->
-                  <thead>
-                    <!--
+                    <!-- 這裡是必要的，這樣螢幕閱讀器才能將相關內容朗讀出來 -->                        
+                    <caption class="sr-only">協會大事紀</caption>
+                  <thead class="sr-only">
                         <tr>
                             <th scope="col">年份</th>
                             <th scope="col">具體項目</th>
                         </tr>
-                        -->
                   </thead>
                   <tbody>
                     <tr>
