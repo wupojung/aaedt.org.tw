@@ -150,10 +150,11 @@
     }
 }
 
-.category-warp label {
+.category-warp h3 {
     color: var(--neautral-50, #1a1410);
     font-family: "Noto Sans";
-    font-size: 14px;
+    /* font-size 會需要用 rem 喔，想確認一下是否有了解過 rem是甚麼? */
+    font-size: 14px; 
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 21px */

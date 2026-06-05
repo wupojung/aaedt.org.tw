@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initDropdownNavigation();
   initExternalLinks();
   initCurrentNav();
+  initBylawToggle();
 });
 
 /* ============================================================
@@ -165,4 +166,20 @@ function initExternalLinks() {
       window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
     });
   }
+}
+
+/* ============================================================
+   Bylaw Toggle — 控制法規章程的展開/收合
+   - 監聽 .bylaw-title 按鈕的 click
+   - 切換 aria-expanded 的值（true ↔ false）
+   ============================================================ */
+function initBylawToggle() {
+  const bylawButtons = document.querySelectorAll('.bylaw-title');
+
+  bylawButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isExpanded));
+    });
+  });
 }
