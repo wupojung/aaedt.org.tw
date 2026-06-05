@@ -11,6 +11,11 @@
 /* ── 外層容器 ─────────────────────────────────────────────── */
 .final .footer {
   width: 100%;
+  background-color: var(--neautral-10);
+  background-image: url("../../public/img/footer/footer-bg.svg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 /* footer.html 裡保留的 .bg img 不需要顯示（已用 background-image 取代） */
@@ -29,11 +34,6 @@
   margin: 0 auto;
   gap: 32px;
   border-top: 1px solid var(--neautral-20);
-  background-color: var(--neautral-10);
-  background-image: url("../../public/img/footer/footer-bg.svg");
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: top left;
 }
 
 /* ── 品牌區（左側）────────────────────────────────────────── */
