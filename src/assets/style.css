@@ -174,27 +174,27 @@
 
 .final .text-wrapper-2 {
     position: absolute;
-    top: 22%;
-    left: 40%;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    top: 31.2px;
+    left: 131.73px;
+    font-family: "Noto Sans";
     font-weight: 500;
     color: #3c3831;
-    font-size: 17.3px;
+    font-size: 17.33px;
     letter-spacing: 0;
-    line-height: normal;
+    line-height: 120%;
 }
 
 .final .text-wrapper-3 {
     position: absolute;
-    top: 45%;
-    left: 40%;
+    top: 61.53px;
+    left: 131.73px;
     width: 55%;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: "Noto Sans";
     font-weight: 400;
     color: #3c3831;
-    font-size: 12.1px;
+    font-size: 12.13px;
     letter-spacing: 0;
-    line-height: 14.6px;
+    line-height: 120%;
 }
 
 .final .group-2 {
@@ -536,7 +536,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     /*width: 100%;*/
     width: fit-content;
     margin-left: auto;
@@ -569,11 +569,12 @@
     }
     .main-title,
     .h-2 {
-        font-size: 32px; /* 響應式字體 */
+        font-family: "Noto Sans TC";
+        font-size: 28px; /* 響應式字體 */
         font-weight: 500;
-        color: var(--neautral-40, #534c46); /* 加入備用顏色 */
+        color: #1a1410; /* 加入備用顏色 */
         text-align: center;
-        line-height: 1.4;
+        line-height: 36px;
         margin: 0;
     }
 }
@@ -614,43 +615,35 @@
     width: 100%; /* Modified for mobile */
     max-width: 380px;
     align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
     position: relative;
     flex: 0 0 auto;
 }
 
 .final .text-wrapper-8 {
     position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 600;
-    color: #534c46;
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: 27px;
-    white-space: nowrap;
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    color: #1a1410;
+    font-size: 20px;
+    line-height: 28px;
 }
 
-.final .text-wrapper-9 {
-    position: relative;
-    align-self: stretch;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+.final .text-wrapper-9 * {
+    font-family: "Noto Sans";
     font-weight: 400;
     color: #534c46;
     font-size: 18px;
-    letter-spacing: 0;
-    line-height: 150%;
 }
 
 .final .button {
-    all: unset;
+    width: 200px;
     box-sizing: border-box;
     display: flex;
 
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px 8px 16px;
+    padding: 12px 16px 12px 24px;
     position: relative;
     flex: 0 0 auto;
     background-color: var(--primaryyellow);
@@ -667,8 +660,7 @@
     align-items: center;
     justify-content: center;
     color: var(--neautral-50);
-    font-size: 20px;
-    line-height: 1;
+    font-size: 24px;
     flex-shrink: 0;
 }
 
@@ -678,14 +670,12 @@
     align-items: center;
     justify-content: center;
     width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: Noto Sans TC;
     font-weight: 500;
     color: var(--neautral-50);
     font-size: 20px;
     letter-spacing: 0;
     line-height: 30px;
-    padding-right: 0.8rem;
     white-space: nowrap;
 }
 
@@ -861,12 +851,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 23px;
+    padding: 4px 16px;
     position: relative;
     flex: 0 0 auto;
-    background-color: #655b52;
+    background-color: #ffffff;
     border-radius: 40px;
     border: 1px solid;
+    color: #1a1410;
 }
 
 .final .text-wrapper-12 {
@@ -874,14 +865,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 500;
-    color: #ffffff;
+    font-family: Noto Sans TC;
+    font-weight: 400;
+    color: #1a1410;
     font-size: 14px;
     letter-spacing: 0;
-    line-height: 18px;
+    line-height: 150%;
     white-space: nowrap;
 }
 
