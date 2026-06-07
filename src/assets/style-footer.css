@@ -84,11 +84,11 @@
 }
 
 .final .contact-text {
-  font-family: "Noto Sans", Helvetica, sans-serif;
-  font-weight: 500;
-  color: var(--neautral-40);
+  font-family: "Inter";
+  font-weight: 400;
+  color: #1a1410;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 120%;
 }
 
 .final .contact-text a {
@@ -124,12 +124,12 @@
 }
 
 .final .footer-page-link::before {
-  content: '';
+  content: "";
   display: block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--primaryorange, #EF9E1D);
+  background-color: var(--primaryorange, #ef9e1d);
   flex-shrink: 0;
 }
 
@@ -138,11 +138,11 @@
 }
 
 .final .footer-link-text {
-  font-family: "Noto Sans", Helvetica, sans-serif;
+  font-family: Noto Sans TC;
   font-weight: 500;
   color: var(--neautral-40);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 22px;
   white-space: nowrap;
 }
 
@@ -173,9 +173,11 @@
 }
 
 .final .footer-policy-panel a {
-  font-family: "Inter", Helvetica;
+  font-family: "Inter";
+  font-weight: 500;
   font-size: 14px;
-  color: var(--neautral-40);
+  line-height: 120%;
+  color: #1a1410;
   text-decoration: none;
 }
 
@@ -183,20 +185,23 @@
   text-decoration: underline;
 }
 
-.final .footer-policy-panel span {
+/* .final .footer-policy-panel span {
   font-size: 14px;
   color: var(--neautral-30);
   user-select: none;
-}
+} */
 
 /* 社群媒體 */
 .final .footer-social-panel {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: "Inter", Helvetica;
+  font-family: "Inter";
+  font-weight: 500;
   font-size: 14px;
-  color: var(--neautral-40);
+  line-height: 120%;
+  color: #1a1410;
+  text-decoration: none;
 }
 
 .final .footer-social-panel a {

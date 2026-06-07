@@ -174,8 +174,8 @@
 
 .final .text-wrapper-2 {
     position: absolute;
-    top: 31.2px;
-    left: 131.73px;
+    top: 25%;
+    left: 40%;
     font-family: "Noto Sans";
     font-weight: 500;
     color: #3c3831;
@@ -186,8 +186,8 @@
 
 .final .text-wrapper-3 {
     position: absolute;
-    top: 61.53px;
-    left: 131.73px;
+    top: 45%;
+    left: 40%;
     width: 55%;
     font-family: "Noto Sans";
     font-weight: 400;
@@ -629,8 +629,10 @@
     line-height: 28px;
 }
 
+.final .text-wrapper-9,
 .final .text-wrapper-9 * {
-    font-family: "Noto Sans";
+    line-height: 28px;
+    font-family: Noto Sans TC;
     font-weight: 400;
     color: #534c46;
     font-size: 18px;
@@ -856,8 +858,16 @@
     flex: 0 0 auto;
     background-color: #ffffff;
     border-radius: 40px;
-    border: 1px solid;
+    border: 1px solid #534c46;
     color: #1a1410;
+}
+
+.final .frame-16:focus,
+.final .frame-16:hover {
+    background-color: #655b52;
+    * {
+        color: #ffffff !important;
+    }
 }
 
 .final .text-wrapper-12 {
@@ -1000,14 +1010,13 @@
     position: relative;
     width: 100%;
     max-width: 450px;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: Noto Sans TC;
     font-weight: 400;
     color: #534c46;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     letter-spacing: 0;
-    line-height: 27px;
+    line-height: 28px;
 }
 
 .final .partners-section {
