@@ -1,10 +1,4 @@
 .content-section {
-  .intro-group {
-    gap: 12px;
-  }
-}
-
-.content-section {
   & .intro-group {
     &.--split {
       .intro-content {

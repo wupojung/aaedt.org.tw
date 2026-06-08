@@ -24,6 +24,10 @@
     gap: 40px;
 }
 
+.pb_40px {
+    padding-bottom: 40px;
+}
+
 .final {
     background-color: #ffffff;
     overflow: hidden;
