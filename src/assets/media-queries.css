@@ -134,6 +134,10 @@
 }
 
 @media (max-width: 768px) {
+  .mobile_padding_left_right_20px {
+    padding: 0 20px;
+  }
+
   .final .card-container {
     padding: 20px 0;
     gap: 12px;

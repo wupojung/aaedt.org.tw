@@ -26,7 +26,7 @@
     width: 100%;
     gap: 40px;
     position: relative;
-    padding: 60px var(--layout-padding) 60px var(--layout-padding);
+    /* padding: 60px var(--layout-padding) 60px var(--layout-padding); */
 
     margin-top: 0;
     flex: 0 0 auto;
@@ -45,7 +45,6 @@
     }
 
     .intro-group {
-        gap: 8px;
         font-size: 18px;
         font-weight: 400;
         display: flex;

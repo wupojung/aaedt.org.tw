@@ -603,7 +603,6 @@
     display: flex;
     flex-direction: column;
     width: 100%; /* Modified for mobile */
-    max-width: 400px;
     align-items: flex-start;
     gap: 60px;
     position: relative;
@@ -639,10 +638,8 @@
 }
 
 .final .button {
-    width: 200px;
     box-sizing: border-box;
     display: flex;
-
     align-items: center;
     justify-content: space-between;
     padding: 12px 16px 12px 24px;
@@ -657,16 +654,20 @@
     background-color: var(--primarygold);
 }
 
-.final .button .button-arrow {
+.final .button-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--neautral-50);
-    font-size: 24px;
+    align-items: flex-start;
+}
+
+.final .button .button-arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
 .final .text-wrapper-10 {
+    padding-right: 56px;
     position: relative;
     display: flex;
     align-items: center;
@@ -1175,13 +1176,13 @@
     /* .mb_60px {
         margin-bottom: 30px !important;
     } */
-    .content-section {
+    /* .content-section {
         gap: 30px;
         padding: 30px var(--layout-padding) 30px var(--layout-padding);
         .page-header {
             gap: 20px !important;
         }
-    }
+    } */
     .content-section-hero {
         padding: 12px var(--layout-padding) 0 var(--layout-padding) !important;
     }
@@ -1221,7 +1222,10 @@
     .final .donate-section,
     .final .about-us-section,
     .final .frame-7 {
-        /* gap: 20px; */
+        gap: 12px;
+    }
+    .mobile_center {
+        justify-content: center;
     }
     /* .final .outreach-section,
     .final .video-section {

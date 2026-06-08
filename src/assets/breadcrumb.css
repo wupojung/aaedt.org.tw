@@ -3,25 +3,25 @@
     align-self: flex-start; /* 確保在 Flex 容器中靠左 */
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 30px;
-    font-size: 14px;
-    font-family: "Noto Sans", sans-serif;
+    gap: 4px;
 
     /* 處理所有的連結 */
     .link {
-        color: #8a847e;
+        font-size: 16px;
+        font-family: Noto Sans TC;
+        font-weight: 500;
+        line-height: 22px;
+        color: #1a1410;
         text-decoration: none;
         transition: color 0.3s ease;
 
         &:hover {
-            color: #534c46;
             text-decoration: underline;
         }
 
         /* 當前頁面的特殊樣式 */
         &.active {
-            color: #534c46;
+            color: #1a1410;
             font-weight: 600;
             pointer-events: none;
             text-decoration: underline;
