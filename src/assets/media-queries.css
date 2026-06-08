@@ -133,11 +133,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile_padding_left_right_20px {
     padding: 0 20px;
   }
+}
 
+@media (max-width: 768px) {
   .final .card-container {
     padding: 20px 0;
     gap: 12px;
@@ -286,7 +288,7 @@
   /* .main 已用 max-width + clamp padding 對齊，不再需要覆蓋 */
   .final .content-section .intro-group.--split {
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     gap: 60px;
   }
 
@@ -295,7 +297,8 @@
   }
 
   .final .content-section .intro-group.--split .intro-image {
-    min-height: 360px;
+    height: 387px;
+    width: 500px;
   }
 
   /* organization.css overrides */

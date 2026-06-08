@@ -3,3 +3,13 @@
     gap: 12px;
   }
 }
+
+.content-section {
+  & .intro-group {
+    &.--split {
+      .intro-content {
+        justify-content: center;
+      }
+    }
+  }
+}
