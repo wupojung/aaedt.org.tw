@@ -1,10 +1,9 @@
 /* 表格外部包裝層 */
 .table-container {
     border-radius: 12px;
-    border: 1px solid #d1cdc7; /* 稍微加深邊框顏色以符合圖片 */
+    border: 1px solid #837b74; /* 稍微加深邊框顏色以符合圖片 */
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin: 20px 0;
     width: 100%;
     overflow-x: auto; /* Added for mobile table scrolling */
 }
@@ -12,19 +11,22 @@
 .accessible-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
-    background-color: #fff;
+    font-family: "Noto Sans";
+    * {
+        font-family: "Noto Sans";
+    }
 
     th,
     td {
         /* ✅ 依照需求修正：上下 12px, 左右 20px */
         padding: 12px 20px;
         text-align: left;
-        border-bottom: 1px solid #d1cdc7;
-        border-right: 1px solid #d1cdc7; /* 加上垂直線 */
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #534c46;
+        border-bottom: 1px solid #837b74;
+        border-right: 1px solid #837b74; /* 加上垂直線 */
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #837b74;
     }
 
     /* 移除最後一欄的右邊框，避免重複 */
@@ -58,14 +60,5 @@
         vertical-align: middle;
         text-align: center;
         white-space: nowrap;
-    }
-}
-
-@media (min-width: 768px) {
-    .accessible-table {
-        th,
-        td {
-            padding: 12px 11px;
-        }
     }
 }

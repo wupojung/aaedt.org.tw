@@ -12,6 +12,10 @@
     margin-inline: auto;
 }
 
+.pt_pb_60px {
+    padding: 60px 0;
+}
+
 .gap_20px {
     gap: 20px;
 }
@@ -1273,13 +1277,6 @@
             font-size: 14px !important;
         }
     }
-    .accessible-table {
-        th,
-        td {
-            font-size: 14px !important;
-        }
-    }
-
     .article-group {
         .title {
             font-size: 16px !important;

@@ -180,7 +180,7 @@
   .final .donate-section,
   .final .outreach-section,
   .final .video-section {
-    /* padding: 0 60px; */
+    padding: 20px 20px;
   }
 
   .final .card-container {

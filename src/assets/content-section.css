@@ -68,7 +68,6 @@
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 gap: 12px;
             }
 
@@ -89,16 +88,17 @@
             font-size: 20px;
             font-weight: 500;
             line-height: 28px;
-            color: #1a1410;
+            word-spacing: 0%;
+            color: #534c46;
             margin: 0;
         }
 
-        .intro-text {
+        .intro-text,
+        .intro-text ul * {
             font-family: "Noto Sans TC";
             font-size: 18px;
             font-weight: 400;
             line-height: 28px;
-            max-width: 800px;
             margin: 0;
             color: #534c46;
 
