@@ -65,12 +65,12 @@
 
     /* 單個導覽項目 */
     .nav {
-        border-radius: 8px; /* 預先設定好，避免 hover 瞬間才出現圓角導致閃動 */
+        border-radius: 8px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 4px;
-        padding: 12px 10px;
+        padding: 8px 12px;
         position: relative;
         flex: 0 0 auto;
         cursor: pointer;
@@ -80,7 +80,6 @@
         .nav-dropdown-button {
             position: relative;
             width: fit-content;
-            margin-top: -1px;
             font-family: Noto Sans;
             font-weight: 500;
             color: #1a1410;
@@ -128,11 +127,12 @@
             .nav-dropdown-item {
                 display: flex;
                 align-items: center;
-                padding: 12px 16px;
-                color: var(--neautral-40);
-                font-family: "Noto Sans", Helvetica, sans-serif;
-                font-weight: 400;
-                font-size: 16px;
+                padding: 10px 8px;
+                color: #1a1410;
+                font-family: "Noto Sans";
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 100%;
                 cursor: pointer;
                 transition: background-color 0.2s ease;
                 border-bottom: 1px solid #f5f4f2;
@@ -178,7 +178,7 @@
                     left: 0;
                     width: 100%;
                     height: 1px;
-                    background-color: var(--neautral-50, #fec300);
+                    background-color: var(--neautral-50, #f5f4f2);
                     border-radius: 2px;
                 }
             }
@@ -186,9 +186,8 @@
             /* dropdown 內的當前子項目 */
             .nav-dropdown-item.is-current-item {
                 color: var(--neautral-50, #1a1410);
-                font-weight: 600;
-                background-color: #fef9e7;
-                border-left: 3px solid var(--primarygold, #fec300);
+                font-weight: 500;
+                background-color: #f5f4f2;
             }
         }
     }
@@ -205,13 +204,11 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
         text-decoration: none;
-
-        font-family: "Noto Sans", Helvetica, sans-serif;
-        font-weight: 500;
-        color: var(--neautral-40);
+        font-family: Noto Sans;
         font-size: 18px;
         letter-spacing: 0;
-        line-height: normal;
+        font-weight: 500;
+        line-height: 100%;
     }
 }
 
@@ -486,10 +483,10 @@
         font-size: 15px;
     }
 
-    .nav-bar .nav-2 {
+    /* .nav-bar .nav-2 {
         padding: 14px 24px;
         font-size: 16px;
-    }
+    } */
 
     /* 補回 3px left-border 佔用的寬度 */
     .nav-bar .nav.is-current .nav-link,
@@ -524,10 +521,10 @@
         font-size: 16px;
     }
 
-    .nav-bar .nav-2 {
+    /* .nav-bar .nav-2 {
         padding: 14px 20px;
         font-size: 17px;
-    }
+    } */
 
     /* 補回 3px left-border 佔用的寬度 */
     .nav-bar .nav.is-current .nav-link,
@@ -544,9 +541,9 @@
         padding: 20px;
     }
 
-    .nav-bar .nav {
+    /* .nav-bar .nav {
         padding: 10px 6px;
-    }
+    } */
 
     .nav-bar .nav .nav-link,
     .nav-bar .nav .nav-dropdown-button {
@@ -554,10 +551,10 @@
         padding: 0;
     }
 
-    .nav-bar .nav-2 {
+    /* .nav-bar .nav-2 {
         padding: 10px 8px;
         font-size: 16px;
-    }
+    } */
 }
 
 /* ============================================================

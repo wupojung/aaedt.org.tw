@@ -23,18 +23,18 @@
 }
 
 .article-group .title {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-family: "Noto Sans TC" !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
     color: var(--neautral-50, #1a1410);
-    line-height: 1.5;
+    line-height: 28px !important;
 }
 
 .article-group .description {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1rem;
-    color: var(--neautral-40, #534c46);
-    line-height: 1.8;
+    font-family: "Noto Sans TC";
+    font-size: 18px !important;
+    color: var(--neautral-40, #534c46) !important;
+    line-height: 28px !important;
 }
 
 .article-group .description ul {
