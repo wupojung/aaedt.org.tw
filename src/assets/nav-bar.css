@@ -16,13 +16,13 @@
 
 /* ── 內層限寬容器：與 .main 使用相同機制對齊 ─────────────── */
 .nav-bar-inner {
-    width: 1280px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: var(--layout-max-width);
+    max-width: 1280px;
     margin-inline: auto;
-    padding: 20px var(--layout-padding);
+    padding: 20px 0;
     /* 垂直 20px 固定；水平用 clamp 跟 .content-section 同步 */
     flex-wrap: row;
     /* Logo 區塊 */
@@ -541,7 +541,7 @@
    ============================================================ */
 @media (min-width: 1024px) and (max-width: 1439px) {
     .nav-bar-inner {
-        padding: 20px 48px;
+        padding: 20px;
     }
 
     .nav-bar .nav {
@@ -670,8 +670,7 @@
 /* ── 1920px+：4K / Ultra-wide ───────────────────────────── */
 @media (min-width: 1920px) {
     .nav-bar-inner {
-        max-width: 1600px;
-        padding: 24px 100px;
+        padding: 24px 0;
     }
 
     .nav-toggle {
