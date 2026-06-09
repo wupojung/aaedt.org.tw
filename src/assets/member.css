@@ -125,8 +125,7 @@
 .final .intro-content img[src*="vector-1"] {
   border: none !important;
   height: 1px !important;
-  background-color: #edebe9 !important; /* Soft, light divider line */
-  margin: 12px 0 !important;
+  background-color: #837b74 !important; /* Soft, light divider line */
   opacity: 0.8 !important;
 }
 
