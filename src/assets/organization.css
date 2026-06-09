@@ -6,3 +6,14 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .content-section {
+        & .intro-group {
+            .intro-text,
+            .intro-text ul * {
+                width: auto !important;
+            }
+        }
+    }
+}
