@@ -84,7 +84,7 @@
 
 .final .footer-contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
 }
 
@@ -96,11 +96,11 @@
 }
 
 .final .contact-text {
-  font-family: "Inter";
+  font-family: Noto Sans TC;
   font-weight: 400;
   color: #1a1410;
   font-size: 16px;
-  line-height: 120%;
+  line-height: 28px;
 }
 
 .final .contact-text a {
@@ -152,7 +152,7 @@
 .final .footer-link-text {
   font-family: Noto Sans TC;
   font-weight: 500;
-  color: var(--neautral-40);
+  color: #1a1410;
   font-size: 16px;
   line-height: 22px;
   white-space: nowrap;
@@ -208,12 +208,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: "Inter";
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 120%;
-  color: #1a1410;
-  text-decoration: none;
+  * {
+    font-family: "Noto Sans TC";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #1a1410;
+    text-decoration: none;
+  }
 }
 
 .final .footer-social-panel a {
@@ -234,7 +236,11 @@
 
 /* ── mobile（≤767px） ─────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .final .footer-social-panel {
+    font-size: 14px;
+  }
   .final .footer-policy-panel {
+    font-size: 14px;
     gap: 12px;
   }
   .final .footer-main-panel {
