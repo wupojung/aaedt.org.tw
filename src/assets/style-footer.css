@@ -227,11 +227,6 @@
 .final .footer-social-icon {
   width: 36px;
   height: 36px;
-  transition: opacity 0.2s ease;
-}
-
-.final .footer-social-panel a:hover .footer-social-icon {
-  opacity: 0.8;
 }
 
 /* ── mobile（≤767px） ─────────────────────────────────────── */
