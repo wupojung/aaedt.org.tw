@@ -27,11 +27,14 @@
 
 /* Role badge (e.g., "理事", "常務監事") */
 .final .is-dark article span.text-primaryorange {
-  color: var(--primarygold) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.05em !important;
-  margin-bottom: 4px !important;
+  background: #f5f4f2;
+  padding: 4px 16px;
+  border-radius: 40px;
+  color: #1a1410;
+  font-size: 14px;
+  font-weight: 500 !important;
+  line-height: 22px;
+  letter-spacing: 0;
   display: inline-block !important;
 }
 
