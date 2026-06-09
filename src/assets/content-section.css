@@ -93,6 +93,11 @@
             margin: 0;
         }
 
+        .intro-text {
+            width: 100%;
+            max-width: 800px;
+        }
+
         .intro-text,
         .intro-text ul * {
             font-family: "Noto Sans TC";

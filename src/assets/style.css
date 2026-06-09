@@ -17,7 +17,7 @@
 }
 
 .gap_20px {
-    gap: 20px;
+    gap: 20px !important;
 }
 
 .gap_40px {
