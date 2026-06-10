@@ -85,25 +85,27 @@
     }
 }
 
-.tag {
-    /* 讓寬度隨文字自動調整 (Hug) */
-    display: inline-flex;
+.category-content .tag.active {
+    background-color: #534c46;
+    color: #ffffff;
+    border-color: #534c46;
+}
+
+.category-content .tag {
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    /* 根據你的 Figma 數據 */
-    min-height: 40px;
-    padding: 6px 16px; /* 上下 8px，左右 20px */
-
-    /* 圓角與顏色 */
+    font-weight: 400;
+    text-align: center;
+    padding: 6px 16px;
+    line-height: 150%;
     border-radius: 40px;
-    background-color: #e6e6e6; /* 這是圖片中的淺灰色 */
-    color: #333;
-
-    /* 移除 a 標籤預設底線 */
+    border: 1px solid #534c46;
     text-decoration: none;
-    font-size: 16px;
-    white-space: nowrap; /* 強制不換行，確保寬度完整 */
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: "Noto Sans TC";
+    color: #1a1410;
 }
 
 .category-warp {
@@ -122,23 +124,6 @@
         gap: 12px;
         width: 100%;
         min-width: 0;
-    }
-    .tag {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 400;
-        text-align: center;
-        padding: 4px 16px;
-        line-height: 150%;
-        border-radius: 40px;
-        border: 1px solid #1a1410;
-        background: #534c46;
-        text-decoration: none;
-        font-size: 14px;
-        font-family: Noto Sans TC;
-        white-space: nowrap;
-        color: #ffffff;
     }
 }
 

@@ -22,7 +22,6 @@
         /* 當前頁面的特殊樣式 */
         &.active {
             color: #1a1410;
-            font-weight: 600;
             pointer-events: none;
             text-decoration: underline;
             text-underline-offset: 3px;

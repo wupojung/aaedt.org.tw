@@ -23,11 +23,11 @@
 
 @media (max-width: 767px) {
   .final .text-wrapper-2 {
-    font-size: 17.33px !important;
+    font-size: 18 !important;
   }
 
   .final .text-wrapper-3 {
-    font-size: 12.13px !important;
+    font-size: 16px !important;
   }
   .intro-group {
     gap: 5px;
@@ -39,12 +39,6 @@
   .show-mobile {
     display: block;
   }
-
-  .final .card-container {
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
   /* organization.html / about.html: 手機板 table 每 row 變成獨立圓角卡片
      scope 限定 .page-organization 與 .page-about，不影響 join.html 多欄表格 */
   .final .page-organization .table-container,
@@ -140,12 +134,23 @@
 }
 
 @media (max-width: 768px) {
+  .mobile_margin_bottom_40px {
+    margin-bottom: 40px !important;
+  }
+  .mobile_margin_top_40px {
+    margin-top: 40px !important;
+  }
+  .mobile_margin_bottom_20px {
+    margin-bottom: 20px !important;
+  }
+  .mobile_margin_top_20px {
+    margin-top: 20px !important;
+  }
+  .mobile_gap_20px {
+    gap: 20px !important;
+  }
   .final .card-container {
-    padding: 20px 0;
-    gap: 12px;
-    width: calc(100% - 40px);
     max-width: 100%;
-    margin: 0 20px;
     align-self: stretch;
     box-sizing: border-box;
   }

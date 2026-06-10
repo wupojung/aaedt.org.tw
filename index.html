@@ -16,7 +16,7 @@
       <include src="src/partials/header.html" />
 
       <!-- 這是建立在我們的頁面是 HTML 跟之後會用 WP 之上的作法。如果是 SPA 的話，作法稍有不同，但是吳老師你可以直接問我，到時候我一起看跟講解 -->
-      <main class="main index_main" id="main-content">
+      <main class="main index_main mobile_gap_40px" id="main-content">
         <a
           href="#C"
           title="中央內容區塊"
@@ -29,7 +29,7 @@
           <span aria-hidden="true">:::</span>
         </a>
         <h1 class="sr-only">首頁</h1>
-        <section class="hero-section">
+        <section class="hero-section mobile_margin_bottom_40px">
           <!-- 這裡的 alt 要比較描述 (it needs to be more descriptive)，因為這有代表協會的相關的含意，更詳細可能要和立婷確認，其實 Copilot 現在可以給的 alt text 還滿好的 -->
           <div class="section_1280px">
             <div class="section_1040px gap_20px">
@@ -38,7 +38,7 @@
                 src="img/hero/hero.svg"
                 alt="可及協會在環境不要障礙的活動時的團體照，總共12位成員，每個人帶著笑容並拿著綠色盆栽一起提倡環境不要障礙。"
               />
-              <div class="card-container">
+              <div class="card-container mobile_padding_left_right_20px">
                 <div class="feature-card">
                   <div class="action-card action-card--1">
                     <div class="text-wrapper-2">我要改善環境</div>
@@ -68,9 +68,9 @@
           </div>
         </section>
 
-        <section class="about-us-section">
+        <section class="about-us-section mobile_margin_bottom_40px">
           <div class="section_1280px">
-            <div class="section_1040px gap_40px mobile_padding_left_right_20px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
               <div class="title-group">
                 <h2 class="main-title">認識我們</h2>
                 <div class="title-line-bg"></div>
@@ -97,7 +97,7 @@
         <section class="outreach-section arc-top arc-bottom">
           <div class="content-section campaign_overview_section section_1280px">
             <div class="section_1040px gap_40px mobile_padding_left_right_20px">
-              <div class="page-header">
+              <div class="page-header mobile_gap_20px">
                 <div class="title-group">
                   <h2 class="main-title">推廣行動</h2>
                   <div class="title-line-bg"></div>
@@ -120,10 +120,9 @@
                     />
                   </div>
                   <div class="frame-15">
-                    <div class="frame-16">
-                      <div class="text-wrapper-12">改善環境</div>
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">改善環境</span>
                     </div>
-                    <!-- 先放 GOOG 在這作範例 -->
                     <h3 class="text-wrapper-9">
                       <a href="https://www.google.com/">長照2.0居家環境改造</a>
                     </h3>
@@ -138,8 +137,8 @@
                     />
                   </div>
                   <div class="frame-15 card">
-                    <div class="frame-16">
-                      <div class="text-wrapper-12">改善環境</div>
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">改善環境</span>
                     </div>
                     <h3 class="text-wrapper-9"><a href="#">公共空間無障礙環境改善</a></h3>
                   </div>
@@ -153,8 +152,8 @@
                     />
                   </div>
                   <div class="frame-15 card">
-                    <div class="frame-16">
-                      <div class="text-wrapper-12">改善環境</div>
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">改善環境</span>
                     </div>
                     <h3 class="text-wrapper-9"><a href="#">可及性設計理念教育推廣</a></h3>
                   </div>
@@ -170,9 +169,9 @@
           </div>
         </section>
 
-        <section class="donate-section">
+        <section class="donate-section mobile_margin_top_40px mobile_margin_bottom_40px">
           <div class="section_1280px">
-            <div class="section_1040px gap_40px mobile_padding_left_right_20px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
               <div class="title-group">
                 <h2 class="main-title">贊助我們</h2>
                 <div class="title-line-bg"></div>
@@ -200,7 +199,7 @@
 
         <section class="video-section arc-top arc-bottom">
           <div class="section_1280px">
-            <div class="section_1040px gap_40px mobile_padding_left_right_20px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
               <div class="title-group">
                 <h2 class="main-title">媒體專區</h2>
                 <div class="title-line-bg"></div>
@@ -234,9 +233,9 @@
             </div>
           </div>
         </section>
-        <section class="partners-section">
+        <section class="partners-section mobile_margin_top_40px mobile_margin_bottom_40px">
           <div class="section_1280px">
-            <div class="section_1040px gap_40px mobile_padding_left_right_20px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
               <div class="title-group">
                 <h2 class="main-title">合作夥伴</h2>
                 <div class="title-line-bg"></div>
@@ -254,4 +253,3 @@
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
