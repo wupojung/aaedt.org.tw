@@ -1058,11 +1058,20 @@
 
 .final .frame-25 {
     position: relative;
-    width: 100%; /* Modified for mobile */
+    width: 100%;
     max-width: 1040.23px;
     height: auto;
     flex: 0 0 auto;
     margin-right: -0.23px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .final .frame-25 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .campaign_overview_section {
