@@ -9,14 +9,19 @@
     box-sizing: border-box;
 }
 
-/* 2. 平板端：寬度大於 640px 時變 2 欄 */
-@media (min-width: 640px) {
+/* 2. 平板端：寬度大於 640px 時變 2 欄，卡片恢復圓角 */
+@media (max-width: 767px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
 }
 
+@media (max-width: 1040px) {
+    .carousel {
+        border-radius: 0 !important;
+    }
+}
 /* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
 @media (min-width: 1024px) {
     .card-grid {
@@ -31,7 +36,8 @@
 .card-meeting {
     background-color: #ffffff;
     border: 1px solid var(--neautral-20, #d1cdc7);
-    border-radius: 16px;
+    border-radius: 0;
+    width: 100%;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     position: relative;
