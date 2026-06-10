@@ -16,7 +16,12 @@ import './assets/styleguide.css';
 //import './assets/organization.css';
 import './assets/media-queries.css';
 
+import './assets/carousel.css';
+
 import './scripts/aaedt.js';
 import './scripts/accessibiliy.js';
+import { initCarousel } from './scripts/carousel.js';
+
+document.addEventListener('DOMContentLoaded', initCarousel);
 
 console.log('專案啟動成功！');
