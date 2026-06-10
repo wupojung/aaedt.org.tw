@@ -16,12 +16,6 @@
         gap: 24px;
     }
 }
-
-@media (max-width: 1040px) {
-    .carousel {
-        border-radius: 0 !important;
-    }
-}
 /* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
 @media (min-width: 1024px) {
     .card-grid {
