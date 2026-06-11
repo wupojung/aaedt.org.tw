@@ -116,21 +116,21 @@
             border: 1px solid #e7e7e7;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            min-width: 150px;
+            min-width: 200px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             z-index: 1000;
             margin-top: 8px;
-            display: flex !important;
+            display: flex;
             flex-direction: column;
             gap: 8px;
 
             .nav-dropdown-item {
                 display: flex;
                 justify-content: center;
-                padding: 10px 8px;
+                padding: 14px 8px;
                 color: #1a1410;
                 font-family: "Noto Sans";
                 font-weight: 500;
@@ -138,7 +138,12 @@
                 line-height: 100%;
                 cursor: pointer;
                 transition: background-color 0.2s ease;
-                text-decoration: none;
+
+                text-decoration: none; /* 確保 a 標籤沒有底線 */
+
+                &:last-child {
+                    border-bottom: none;
+                }
 
                 &:hover {
                     background-color: #f5f4f2;

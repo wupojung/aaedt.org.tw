@@ -1,8 +1,8 @@
 /* 1. 基礎容器：手機端 (預設) */
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 手機端單欄 */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
     /* padding: 20px; */
     width: 100%;
     margin: 0 auto;
@@ -10,27 +10,24 @@
 }
 
 /* 2. 平板端：寬度大於 640px 時變 2 欄，卡片恢復圓角 */
-@media (max-width: 767px) {
+
+/* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
+@media (max-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
     }
 }
-/* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
-@media (min-width: 1024px) {
+
+@media (max-width: 767px) {
     .card-grid {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1280px; /* 鎖定設計師要求的寬度 */
-        gap: 30px;
-        /* padding: 40px 20px; */
+        grid-template-columns: 1fr;
     }
 }
 
 /* 強制卡片等高，即便標題字數不同 */
 .card-meeting {
-    background-color: #ffffff;
-    border: 1px solid var(--neautral-20, #d1cdc7);
-    border-radius: 0;
+    border: 1px solid #837b74;
+    border-radius: 20px;
     width: 100%;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
