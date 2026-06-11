@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavOffset();
   initMobileToggle();
   initDropdownNavigation();
-  initExternalLinks();
   initCurrentNav();
 });
 
@@ -155,14 +154,3 @@ function initCurrentNav() {
   });
 }
 
-/* ============================================================
-   External Links（學生競圖）
-   ============================================================ */
-function initExternalLinks() {
-  const externalLink = document.querySelector('.nav-2');
-  if (externalLink) {
-    externalLink.addEventListener('click', () => {
-      window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
-    });
-  }
-}

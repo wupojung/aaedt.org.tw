@@ -20,7 +20,6 @@ Array.prototype.forEach.call(cards, (card) => {
  */
 document.addEventListener('DOMContentLoaded', function () {
   initKeyboardNavigation();
-  initExternalLinks();
 });
 
 function initKeyboardNavigation() {
@@ -131,14 +130,3 @@ function focusItem(items, index) {
   if (items[index]) items[index].focus();
 }
 
-/* ============================================================
-   External Links
-   ============================================================ */
-function initExternalLinks() {
-  const externalLink = document.querySelector('.nav-2');
-  if (externalLink) {
-    externalLink.addEventListener('click', () => {
-      window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
-    });
-  }
-}
