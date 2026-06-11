@@ -100,6 +100,9 @@ a {
   margin-bottom: 60px !important;
 }
 
+.mt_60px {
+  margin-top: 60px !important;
+}
 /* 全域「查看更多」元件，置中顯示，底線連結樣式 */
 .more {
   display: flex;

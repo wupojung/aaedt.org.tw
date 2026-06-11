@@ -23,14 +23,14 @@
 
 @media (max-width: 767px) {
   .final .text-wrapper-2 {
-    font-size: 17.13 !important;
+    font-size: 17.13px !important;
   }
 
   .final .text-wrapper-3 {
-    font-size: 13.33 !important;
+    font-size: 13.33px !important;
   }
   .intro-group {
-    gap: 5px;
+    gap: 0px !important;
   }
   .hide-mobile {
     display: none;

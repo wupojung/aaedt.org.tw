@@ -389,6 +389,10 @@
 }
 
 @media (max-width: 768px) {
+    .intro-text,
+    .intro-text ul * {
+        font-size: 16px !important;
+    }
     .title-group {
         margin-top: 0 !important;
         gap: 0 !important;
@@ -396,5 +400,14 @@
     .main-title {
         font-size: 24px !important;
         margin-top: 2rem;
+    }
+
+    .content-section {
+        .page-header {
+            gap: 20px;
+        }
+    }
+    .mb_60px {
+        margin-bottom: 40px;
     }
 }

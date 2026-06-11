@@ -1069,6 +1069,19 @@
 }
 
 @media (max-width: 767px) {
+    .final .arc-bottom::after,
+    .final .arc-top::before {
+        height: 40px;
+    }
+
+    .final .arc-bottom::after {
+        bottom: -40px;
+    }
+
+    .final .arc-top::before {
+        top: -40px;
+    }
+
     .final .frame-25 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1187,6 +1200,13 @@
 }
 
 @media (max-width: 768px) {
+    .card-meeting-tag-wrap .tag {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .more {
+        font-size: 16px;
+    }
     .final .text-wrapper-10 {
         font-size: 18px;
     }
@@ -1205,6 +1225,7 @@
     } */
     .content-section-hero {
         padding: 12px var(--layout-padding) 0 var(--layout-padding) !important;
+        margin-bottom: 40px;
     }
     .title-line-bg {
         height: 6px !important;
@@ -1226,9 +1247,6 @@
     .card-meeting-title {
         font-size: 18px !important;
     }
-    .final .h-2 {
-        font-size: 20px !important;
-    }
 
     .final .text-wrapper-9,
     .intro-text {
@@ -1238,6 +1256,9 @@
     .text-wrapper-12,
     .category-warp label {
         font-size: 12px !important;
+    }
+    .category-warp {
+        margin-bottom: 20px !important;
     }
     .final .donate-section,
     .final .about-us-section,
@@ -1266,8 +1287,10 @@
         }
     }
 
-    .final .h-2 {
-        height: 27px !important;
+    .main-title,
+    .h-2 {
+        font-size: 20px !important;
+        line-height: 28px !important;
     }
     .gap-3 {
         gap: 0 !important;
@@ -1300,5 +1323,8 @@
         .description {
             font-size: 14px !important;
         }
+    }
+    .pt_pb_60px {
+        padding: 40px 0;
     }
 }

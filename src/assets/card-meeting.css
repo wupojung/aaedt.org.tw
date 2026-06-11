@@ -2,7 +2,7 @@
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 20px;
     /* padding: 20px; */
     width: 100%;
     margin: 0 auto;
@@ -19,6 +19,9 @@
 }
 
 @media (max-width: 767px) {
+    .card-meeting-title a {
+        font-size: 12px !important;
+    }
     .card-grid {
         grid-template-columns: 1fr;
     }
