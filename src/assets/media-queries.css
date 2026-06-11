@@ -133,7 +133,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile_margin_bottom_40px {
     margin-bottom: 40px !important;
   }
