@@ -1227,9 +1227,6 @@
         padding: 12px var(--layout-padding) 0 var(--layout-padding) !important;
         margin-bottom: 40px;
     }
-    .title-line-bg {
-        height: 6px !important;
-    }
 
     .final .text-wrapper-8,
     .final .text-wrapper-9,
@@ -1289,8 +1286,7 @@
 
     .main-title,
     .h-2 {
-        font-size: 20px !important;
-        line-height: 28px !important;
+        font-size: 24px !important;
     }
     .gap-3 {
         gap: 0 !important;
