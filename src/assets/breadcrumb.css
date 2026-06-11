@@ -3,6 +3,7 @@
     align-self: flex-start; /* 確保在 Flex 容器中靠左 */
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
 
     /* 處理所有的連結 */
@@ -30,7 +31,11 @@
 
     /* 分隔符號 */
     .sep {
-        color: #ccc;
+        font-family: Noto Sans;
+        font-weight: 400;
+        color: #1a1410;
         user-select: none;
+        line-height: 150%;
+        font-size: 20px;
     }
 }
