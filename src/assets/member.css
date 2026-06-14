@@ -1,3 +1,123 @@
+.count-group {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.count-group-item {
+  align-items: center;
+  gap: 4px;
+  flex-direction: column;
+  width: 100px;
+  display: flex;
+  position: relative;
+
+  .count-group-item-content {
+    font-family: "Inter";
+    letter-spacing: 0%;
+    line-height: 80px;
+    font-weight: 500;
+    font-size: 64px;
+    text-align: center;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    display: flex;
+    position: relative;
+    color: #ef9e1d;
+  }
+  .count-group-item-p {
+    color: #1a1410;
+    font-weight: 500;
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.intro-text {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-content-article {
+  width: 100%;
+  gap: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.intro-content-head {
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  align-items: center;
+  gap: 20px;
+}
+
+.intro-content-head-img {
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.intro-content-head-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.intro-content-name {
+  color: #1a1410;
+  font-weight: 500;
+  font-family: Noto Sans TC;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+.intro-content-article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+.intro-content-article-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.intro-content-article-h4 {
+  color: #1a1410;
+  font-weight: 500;
+  font-family: Noto Sans TC;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  border-bottom: 1px solid #837b74;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.intro-content-article-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  li {
+    font-weight: 400;
+    font-family: Noto Sans TC;
+    font-size: 18px;
+    line-height: 28px !important;
+    letter-spacing: 0%;
+    color: #534c46;
+    text-align: left;
+  }
+}
+
 /* ==========================================
    Member Cards Refined Styling (member.html)
    ========================================== */
@@ -102,17 +222,6 @@
    ========================================== */
 
 /* Style all list items in the intro sections of President and Secretary General */
-.final .intro-content ul li {
-  position: relative !important;
-  color: #534c46 !important; /* High legibility dark gray */
-  font-size: 16px !important;
-  line-height: 27px !important; /* Matches line-height from layout */
-  font-weight: 400 !important; /* Premium regular weight */
-  list-style: none !important;
-  margin: 0 !important;
-  text-align: left !important;
-  padding-left: 0 !important; /* No bullets or indentation, aligns cleanly to the left */
-}
 
 /* Ensure no bullets are drawn */
 .final .intro-content ul li::before {
@@ -146,6 +255,18 @@
 
 /* ── Mobile (max 767px) ── */
 @media (max-width: 767px) {
+  .intro-content-article-h4,
+  .intro-content-name {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .intro-content-article-ul {
+    li {
+      font-size: 16px;
+      line-height: 24px !important;
+    }
+  }
+
   .page-header .inline-flex {
     gap: 5px !important;
   }
@@ -236,25 +357,13 @@
   }
 }
 
-/* ── Tablet (768px – 1023px) ── */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* 理監事群卡片：兩欄排列 */
-  .final .is-dark .intro-content > div > div {
-    flex-wrap: wrap !important;
-    gap: 20px !important;
-    justify-content: center !important;
+@media (max-width: 768px) {
+  .count-group-item-content {
+    font-size: 64px !important;
+    line-height: 80px !important;
   }
-
-  .final .is-dark .intro-content > div > div > article {
-    width: calc(50% - 10px) !important;
-    max-width: 360px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* 團體會員表格：移除固定 1040px */
-  .final .content-section:not(.is-dark) .intro-group .intro-content > div {
-    width: 100% !important;
-    min-width: 0 !important;
+  .count-group-item-p {
+    font-size: 16px !important;
+    line-height: 20px !important;
   }
 }
