@@ -118,6 +118,15 @@
   }
 }
 
+.article-discribe {
+  font-weight: 400;
+  font-family: Noto Sans TC;
+  font-size: 18px;
+  line-height: 28px !important;
+  letter-spacing: 0%;
+  color: #534c46;
+  text-align: center;
+}
 /* ==========================================
    Member Cards Refined Styling (member.html)
    ========================================== */
@@ -190,23 +199,6 @@
   opacity: 0.8 !important;
 }
 
-/* Section Subheadings (e.g., "現職", "專長") */
-.final .is-dark article h4 {
-  color: #3c3831 !important; /* Premium dark brown */
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-  margin-bottom: 8px !important;
-}
-
-/* Section Paragraph Content */
-.final .is-dark article p {
-  color: #534c46 !important; /* Highly legible dark gray */
-  font-size: 15px !important;
-  line-height: 24px !important; /* Balanced, readable spacing */
-  letter-spacing: 0.01em !important;
-}
-
 /* Custom Bullet List rendering for the "專長" (Expertise) block
    Targeting the 2nd block child which is "專長" */
 .final .is-dark article .flex-col > div:nth-child(2) p {
@@ -274,7 +266,7 @@
   .final .content-section:not(.is-dark) article {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 32px !important;
+    gap: 20px !important;
   }
 
   /* 履歷文字區塊佔滿全寬 */
@@ -358,6 +350,25 @@
 }
 
 @media (max-width: 768px) {
+  .card-grid-item-name {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .article-discribe {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+  .card-grid-item-label {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .card-grid-item-list,
+  .card-grid-item-text {
+    li {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+  }
   .count-group-item-content {
     font-size: 64px !important;
     line-height: 80px !important;
@@ -365,5 +376,156 @@
   .count-group-item-p {
     font-size: 16px !important;
     line-height: 20px !important;
+  }
+}
+
+/* ==========================================
+   Card Grid — 第五屆理監事群
+   ========================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.card-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #837a73;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-grid-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(83, 76, 70, 0.08);
+  border-color: #d3cbc4;
+}
+
+.card-grid-item-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.card-grid-item-role {
+  background: #f5f4f2;
+  padding: 4px 16px;
+  border-radius: 40px;
+  color: #1a1410;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0;
+  display: inline-block;
+}
+
+.card-grid-item-name {
+  color: #2c2724;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.card-grid-item-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card-grid-item:hover .card-grid-item-photo {
+  transform: scale(1.02);
+}
+
+.card-grid-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.card-grid-item-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-grid-item-label {
+  font-family: Noto Sans TC;
+  text-align: left;
+  color: #1a1410 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  letter-spacing: 0 !important;
+}
+
+.card-grid-item-text {
+  font-family: Noto Sans TC;
+  color: #534c46;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.card-grid-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 0;
+  list-style: disc;
+
+  li {
+    font-family: Noto Sans TC;
+    color: #534c46;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-align: left;
+    margin-left: 1.6rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: #837a73;
+    }
+  }
+}
+
+/* ── Tablet (768px – 1023px)：2 欄 ── */
+@media (max-width: 1023px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile (max 767px)：1 欄 ── */
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid-item-photo {
+    width: 160px;
+    height: 160px;
   }
 }
