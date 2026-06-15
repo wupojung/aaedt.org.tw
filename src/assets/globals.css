@@ -99,7 +99,9 @@ a {
 .mb_60px {
   margin-bottom: 60px !important;
 }
-
+.mb_40px {
+  margin-bottom: 40px !important;
+}
 .mt_60px {
   margin-top: 60px !important;
 }
