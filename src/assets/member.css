@@ -349,36 +349,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .card-grid-item-name {
-    font-size: 18px !important;
-    line-height: 24px !important;
-  }
-  .article-discribe {
-    font-size: 16px !important;
-    line-height: 24px !important;
-  }
-  .card-grid-item-label {
-    font-size: 16px !important;
-    line-height: 20px !important;
-  }
-  .card-grid-item-list,
-  .card-grid-item-text {
-    li {
-      font-size: 12px !important;
-      line-height: 18px !important;
-    }
-  }
-  .count-group-item-content {
-    font-size: 40px !important;
-    line-height: 48px !important;
-  }
-  .count-group-item-p {
-    font-size: 16px !important;
-    line-height: 20px !important;
-  }
-}
-
 /* ==========================================
    Card Grid — 第五屆理監事群
    ========================================== */
@@ -666,5 +636,37 @@
   .card-grid-item-photo {
     width: 160px;
     height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid-item-name {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .article-discribe {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+  .card-grid-item-label {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .card-grid-item-list,
+  .card-grid-item-text {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    li {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+  }
+  .count-group-item-content {
+    font-size: 40px !important;
+    line-height: 48px !important;
+  }
+  .count-group-item-p {
+    font-size: 16px !important;
+    line-height: 20px !important;
   }
 }
