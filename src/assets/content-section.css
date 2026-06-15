@@ -390,7 +390,8 @@
 
 @media (max-width: 768px) {
     .intro-text,
-    .intro-text ul * {
+    .intro-text ul *,
+    .intro-list li {
         font-size: 16px !important;
     }
     .title-group {
