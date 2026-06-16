@@ -29,6 +29,7 @@
 
 /* 強制卡片等高，即便標題字數不同 */
 .card-meeting {
+    background: white;
     border: 1px solid #837b74;
     border-radius: 20px;
     width: 100%;

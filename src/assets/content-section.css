@@ -201,42 +201,57 @@
                             text-align: left; /* 確保內部所有文字（XXX標章）靠左 */
 
                             .cert-name {
-                                color: #534c46;
-                                font-size: 1.25rem;
-                                font-weight: 600;
+                                font-family: Noto Sans TC;
+                                color: #1a1410;
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 28px;
                                 margin: 0 0 12px 0;
                             }
 
                             .cert-desc {
+                                font-family: Noto Sans TC;
                                 color: #534c46;
-                                font-size: 18px; /* 維持您的設定 */
+                                font-size: 18px;
                                 font-weight: 400;
-                                line-height: 1.6;
-                                margin-bottom: 20px;
+                                line-height: 28px;
+                                margin-bottom: 12px;
                             }
 
                             /* 下載區域 */
 
                             .cert-download {
+                                font-family: Noto Sans TC;
+                                font-weight: 400;
+                                font-size: 18px;
+                                line-height: 28px;
                                 display: flex;
                                 align-items: center;
                                 gap: 16px;
 
                                 .file-link {
+                                    font-family: Noto Sans TC;
                                     color: #534c46;
                                     text-decoration: underline;
-                                    font-size: 16px;
+                                    font-size: 18px;
+                                    line-height: 28px;
+                                    font-weight: 400;
                                 }
 
                                 .btn-download {
-                                    display: inline-flex;
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 8px;
                                     align-items: center;
-                                    background-color: #f5f5f4;
-                                    color: #111827;
-                                    padding: 6px 12px;
+                                    background-color: #f5f4f2;
+                                    color: #1a1410;
+                                    padding: 8px 16px;
                                     border-radius: 6px;
                                     text-decoration: none;
-                                    font-size: 14px;
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                    font-weight: 500;
+                                    font-family: Noto Sans TC;
 
                                     &::after {
                                         content: "";
@@ -244,7 +259,7 @@
                                         width: 14px;
                                         height: 14px;
                                         margin-left: 8px;
-                                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M7.88384 7.29345e-08L6.11616 9.40138e-08L6.11616 10.6061L1.25505 5.74495L8.34742e-08 7L7 14L14 7L12.7449 5.74495L7.88384 10.6061L7.88384 7.29345e-08Z' fill='%23534C46'/%3E%3C/svg%3E");
+                                        background-image: url("../../public/img/certification/download_icon.svg");
                                         background-repeat: no-repeat;
                                         background-size: contain;
                                     }
@@ -389,6 +404,37 @@
 }
 
 @media (max-width: 768px) {
+    .btn-download {
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+    .cert-desc,
+    .file-link {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+    .cert-name {
+        font-size: 18px !important;
+        line-height: 24px !important;
+    }
+
+    .content-section {
+        & .intro-group {
+            & .cert-group {
+                & .list {
+                    & ul {
+                        & .cert-card {
+                            & .cert-info {
+                                .cert-download {
+                                    align-items: flex-start !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .intro-text,
     .intro-text ul *,
     .intro-list li {
