@@ -54,18 +54,35 @@ function initMobileToggle() {
   const wrapper = document.querySelector('.nav-content-wrapper');
   if (!toggle || !wrapper) return;
 
+  function closeWrapper() {
+    if (!wrapper.classList.contains('show')) return;
+    wrapper.classList.add('closing');
+    wrapper.addEventListener(
+      'animationend',
+      () => {
+        wrapper.classList.remove('show', 'closing');
+      },
+      { once: true }
+    );
+  }
+
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
     const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isExpanded));
-    wrapper.classList.toggle('show');
+    if (isExpanded) {
+      closeWrapper();
+    } else {
+      wrapper.classList.remove('closing');
+      wrapper.classList.add('show');
+    }
   });
 
   // 點擊 nav-bar 外部：收合 wrapper
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-bar')) {
       closeAllDropdowns();
-      wrapper.classList.remove('show');
+      closeWrapper();
       toggle.setAttribute('aria-expanded', 'false');
     }
   });
