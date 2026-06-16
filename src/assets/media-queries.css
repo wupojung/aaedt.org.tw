@@ -346,11 +346,6 @@
   .final .accessible-table td:first-child {
     width: 120px;
   }
-
-  /* join.css overrides */
-  .final .payment-info {
-    padding: 24px 40px;
-  }
 }
 
 /* @media (min-width: 1920px) {
