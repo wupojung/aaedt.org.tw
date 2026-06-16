@@ -13,15 +13,20 @@
 }
 
 .pt_pb_60px {
-    padding: 60px 0;
+    padding: 60px 0 !important;
 }
 
 .gap_20px {
     gap: 20px !important;
 }
+.gap_12px {
+    display: flex;
+    flex-direction: column;
+    gap: 12px !important;
+}
 
 .gap_40px {
-    gap: 40px;
+    gap: 40px !important;
 }
 
 .pb_40px {

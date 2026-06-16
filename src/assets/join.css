@@ -166,10 +166,6 @@
   margin-left: 8px;
 }
 
-.intro-group.--split + .intro-group.--split {
-  margin-top: 60px;
-}
-
 .intro-text.bold {
   font-weight: 600;
 }
