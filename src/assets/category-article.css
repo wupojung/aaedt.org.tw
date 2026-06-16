@@ -7,8 +7,7 @@
 .category-article {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding-bottom: 48px;
+    gap: 40px;
 }
 
 .category-article:last-child {
@@ -93,4 +92,10 @@
 
 .card-meeting-title a:hover {
     color: var(--primarygold, #fec300);
+}
+
+@media (max-width: 768px) {
+    .category-article {
+        gap: 20px;
+    }
 }
