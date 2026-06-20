@@ -508,18 +508,18 @@
 
     .nav-bar .nav .nav-link,
     .nav-bar .nav .nav-dropdown-button {
-        padding: 14px 24px;
-        font-size: 16px;
+        padding: 14px 24px !important;
+        font-size: 16px !important;
     }
 
     .nav-bar .nav .nav-dropdown-item {
-        padding-left: 40px;
-        font-size: 15px;
+        padding-left: 40px !important;
+        font-size: 15px !important;
     }
 
     .nav-bar .nav-2 {
-        padding: 14px 24px;
-        font-size: 16px;
+        padding: 14px 24px !important;
+        font-size: 16px !important;
     }
 }
 
