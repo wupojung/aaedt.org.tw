@@ -72,15 +72,17 @@
 }
 .article-row {
     width: 100%;
-    display: inline-block;
+    display: flex;
     align-items: baseline;
+    gap: 1em;
+    padding: 8px 0;
 }
 .article-row:last-child {
     border-bottom: none;
 }
 
 .article-row dt {
-    float: left;
+    flex-shrink: 0;
     width: 6em;
     font-weight: 400;
     color: #534c46;
@@ -89,11 +91,10 @@
     text-align: justify;
     text-align-last: justify;
     letter-spacing: 0;
-    padding-right: 1em;
-    box-sizing: content-box;
     font-family: Noto Sans TC;
 }
 .article-row dd {
+    flex: 1;
     margin: 0;
     color: #534c46;
     line-height: 28px;
@@ -149,10 +150,6 @@
 }
 
 @media (max-width: 768px) {
-    .article-row {
-        flex-flow: column;
-    }
-
     .article-row dd,
     .article-row dt,
     .bylaw-info p,
