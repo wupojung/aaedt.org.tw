@@ -16,3 +16,16 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.title {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #837b74;
+}
+
+.info-list {
+  padding-top: 12px;
+}
+
+.padding_top_12px {
+  padding-top: 12px;
+}

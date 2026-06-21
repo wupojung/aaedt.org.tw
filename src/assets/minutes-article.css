@@ -55,9 +55,11 @@
         line-height: 150%; /* 27px */
 
         .download-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             list-style: none;
             padding: 0;
-
             li {
                 /*display: flex;*/
                 align-items: center;
