@@ -1090,6 +1090,13 @@
     .final .frame-25 {
         grid-template-columns: repeat(2, 1fr);
     }
+    .final .frame-25 img {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 .campaign_overview_section {
