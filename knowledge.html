@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
@@ -52,118 +52,270 @@
                   <div class="category-warp">
                     <div class="category-group">
                       <label>文章類別</label>
-                      <div class="category-content">
-                        <span class="tag">可及設計觀念</span>
-                        <span class="tag">專題解析</span>
-                        <span class="tag">國內外案例分享</span>
-                        <span class="tag">相關研究</span>
-                        <span class="tag">延伸閱讀</span>
-                        <span class="tag">實用連結</span>
-                        <span class="tag">國內外法規與制度</span>
+                      <div class="category-content" id="filter-category">
+                        <span class="tag active" data-filter-value="all">全部</span>
+                        <span class="tag" data-filter-value="可及設計觀念">可及設計觀念</span>
+                        <span class="tag" data-filter-value="專題解析">專題解析</span>
+                        <span class="tag" data-filter-value="國內外案例分享">國內外案例分享</span>
+                        <span class="tag" data-filter-value="相關研究">相關研究</span>
+                        <span class="tag" data-filter-value="延伸閱讀">延伸閱讀</span>
+                        <span class="tag" data-filter-value="實用連結">實用連結</span>
+                        <span class="tag" data-filter-value="國內外法規與制度">國內外法規與制度</span>
                       </div>
                     </div>
                   </div>
 
-                  <ul class="card-grid">
-                    <li class="card-meeting">
+                  <ul class="card-grid" id="card-grid">
+                    <li class="card-meeting" data-category="可及設計觀念">
                       <div class="card-meeting-image">
                         <img src="/img/article-img.png" alt="" />
                       </div>
                       <div class="card-meeting-describe">
                         <div class="card-meeting-tag-wrap">
-                          <span class="tag">知識分享</span>
-                          <span class="tag">專題解析</span>
+                          <span class="tag">可及設計觀念</span>
                         </div>
                         <div class="card-meeting-content-wrap">
                           <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
                           <h3 class="card-meeting-title">
-                            <a href="campaign_article.html">文章名稱</a>
+                            <a href="campaign_article.html">什麼是通用設計？從七大原則認識無障礙環境</a>
                           </h3>
                         </div>
                       </div>
                     </li>
 
-                    <li class="card-meeting">
+                    <li class="card-meeting" data-category="專題解析">
                       <div class="card-meeting-image">
                         <img src="/img/article-img.png" alt="" />
                       </div>
                       <div class="card-meeting-describe">
                         <div class="card-meeting-tag-wrap">
-                          <span class="tag">知識分享</span>
                           <span class="tag">專題解析</span>
                         </div>
                         <div class="card-meeting-content-wrap">
-                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <time datetime="2025-09-18" class="card-meeting-date">2025.09.18</time>
                           <h3 class="card-meeting-title">
-                            <a href="campaign_article.html">文章名稱</a>
+                            <a href="campaign_article.html">輪椅使用者的視角：室內動線規劃五大要點</a>
                           </h3>
                         </div>
                       </div>
                     </li>
-                    <li class="card-meeting">
+
+                    <li class="card-meeting" data-category="國內外案例分享">
                       <div class="card-meeting-image">
                         <img src="/img/article-img.png" alt="" />
                       </div>
                       <div class="card-meeting-describe">
                         <div class="card-meeting-tag-wrap">
-                          <span class="tag">知識分享</span>
-                          <span class="tag">專題解析</span>
+                          <span class="tag">國內外案例分享</span>
                         </div>
                         <div class="card-meeting-content-wrap">
-                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <time datetime="2025-08-25" class="card-meeting-date">2025.08.25</time>
                           <h3 class="card-meeting-title">
-                            <a href="campaign_article.html">文章名稱</a>
+                            <a href="campaign_article.html">日本無障礙城市典範：京都老街的友善改造</a>
                           </h3>
                         </div>
                       </div>
                     </li>
-                    <li class="card-meeting">
+
+                    <li class="card-meeting" data-category="相關研究">
                       <div class="card-meeting-image">
                         <img src="/img/article-img.png" alt="" />
                       </div>
                       <div class="card-meeting-describe">
                         <div class="card-meeting-tag-wrap">
-                          <span class="tag">知識分享</span>
-                          <span class="tag">專題解析</span>
+                          <span class="tag">相關研究</span>
                         </div>
                         <div class="card-meeting-content-wrap">
-                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <time datetime="2025-07-14" class="card-meeting-date">2025.07.14</time>
                           <h3 class="card-meeting-title">
-                            <a href="campaign_article.html">文章名稱</a>
+                            <a href="campaign_article.html">台灣無障礙環境使用滿意度調查報告 2025</a>
                           </h3>
                         </div>
                       </div>
                     </li>
-                    <li class="card-meeting">
+
+                    <li class="card-meeting" data-category="國內外法規與制度">
                       <div class="card-meeting-image">
                         <img src="/img/article-img.png" alt="" />
                       </div>
                       <div class="card-meeting-describe">
                         <div class="card-meeting-tag-wrap">
-                          <span class="tag">知識分享</span>
-                          <span class="tag">專題解析</span>
+                          <span class="tag">國內外法規與制度</span>
                         </div>
                         <div class="card-meeting-content-wrap">
-                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <time datetime="2025-06-30" class="card-meeting-date">2025.06.30</time>
                           <h3 class="card-meeting-title">
-                            <a href="campaign_article.html">文章名稱</a>
+                            <a href="campaign_article.html">建築技術規則無障礙專章修訂重點解析</a>
                           </h3>
                         </div>
                       </div>
                     </li>
-                    <li class="card-meeting">
+
+                    <li class="card-meeting" data-category="延伸閱讀">
                       <div class="card-meeting-image">
                         <img src="/img/article-img.png" alt="" />
                       </div>
                       <div class="card-meeting-describe">
                         <div class="card-meeting-tag-wrap">
-                          <span class="tag">知識分享</span>
+                          <span class="tag">延伸閱讀</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-06-05" class="card-meeting-date">2025.06.05</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">推薦書單：10本認識無障礙設計的必讀好書</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="實用連結">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">實用連結</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-05-20" class="card-meeting-date">2025.05.20</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">無障礙資源整合平台：政府與民間資源一覽</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="可及設計觀念">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">可及設計觀念</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-04-22" class="card-meeting-date">2025.04.22</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">從障礙模式到社會模式：重新理解無障礙的意義</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="專題解析">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
                           <span class="tag">專題解析</span>
                         </div>
                         <div class="card-meeting-content-wrap">
-                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <time datetime="2025-03-15" class="card-meeting-date">2025.03.15</time>
                           <h3 class="card-meeting-title">
-                            <a href="campaign_article.html">文章名稱</a>
+                            <a href="campaign_article.html">視覺引導系統設計：從點字磚到色彩對比</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="國內外案例分享">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">國內外案例分享</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-02-10" class="card-meeting-date">2025.02.10</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">北歐通用設計典範：芬蘭公共空間的友善策略</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="相關研究">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">相關研究</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-01-08" class="card-meeting-date">2025.01.08</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">高齡化社會與無障礙環境需求趨勢研究</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="國內外法規與制度">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">國內外法規與制度</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-12-18" class="card-meeting-date">2024.12.18</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">美國 ADA 法案三十年：對台灣的啟示</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="延伸閱讀">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">延伸閱讀</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-11-20" class="card-meeting-date">2024.11.20</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">TED 演講推薦：改變世界的無障礙設計思維</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="實用連結">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">實用連結</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-10-05" class="card-meeting-date">2024.10.05</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">無障礙網頁設計 WCAG 2.2 中文導讀</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="可及設計觀念">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">可及設計觀念</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-08-28" class="card-meeting-date">2024.08.28</time>
+                          <h3 class="card-meeting-title">
+                            <a href="campaign_article.html">包容性設計 vs 無障礙設計：觀念釐清與實踐差異</a>
                           </h3>
                         </div>
                       </div>
@@ -171,8 +323,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="more text-center w-full">查看更多</div>
             </section>
+
+            <nav class="pagination" id="pagination" aria-label="分頁導覽"></nav>
           </div>
         </div>
       </main>
@@ -180,5 +333,98 @@
       <include src="src/partials/footer.html" />
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      (function () {
+        var ITEMS_PER_PAGE = 6;
+        var activeCategory = 'all';
+        var currentPage = 1;
+
+        var grid = document.getElementById('card-grid');
+        var pagination = document.getElementById('pagination');
+        var allCards = Array.from(grid.querySelectorAll('.card-meeting'));
+
+        function getFiltered() {
+          return allCards.filter(function (card) {
+            return activeCategory === 'all' || card.dataset.category === activeCategory;
+          });
+        }
+
+        function render() {
+          var filtered = getFiltered();
+
+          grid.querySelectorAll('.card-ghost').forEach(function (el) { el.remove(); });
+          grid.querySelectorAll('.card-empty').forEach(function (el) { el.remove(); });
+
+          if (filtered.length === 0) {
+            allCards.forEach(function (card) { card.style.display = 'none'; });
+            var empty = document.createElement('li');
+            empty.className = 'card-empty';
+            empty.textContent = '無資料';
+            grid.appendChild(empty);
+            renderPagination(1);
+            return;
+          }
+
+          var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+          if (currentPage > totalPages) currentPage = totalPages;
+
+          var start = (currentPage - 1) * ITEMS_PER_PAGE;
+          var visible = new Set(filtered.slice(start, start + ITEMS_PER_PAGE));
+
+          allCards.forEach(function (card) {
+            card.style.display = visible.has(card) ? '' : 'none';
+          });
+
+          var shortage = ITEMS_PER_PAGE - visible.size;
+          for (var i = 0; i < shortage; i++) {
+            var ghost = document.createElement('li');
+            ghost.className = 'card-ghost';
+            grid.appendChild(ghost);
+          }
+
+          renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+          pagination.innerHTML = '';
+
+          function makeBtn(html, page, disabled, active, isArrow) {
+            var el = document.createElement('button');
+            el.className = 'pagination-btn' + (active ? ' active' : '') + (isArrow ? ' arrow' : '');
+            if (active) el.setAttribute('aria-current', 'page');
+            el.disabled = disabled;
+            el.innerHTML = html;
+            if (!disabled) {
+              el.addEventListener('click', function () {
+                currentPage = page;
+                render();
+              });
+            }
+            return el;
+          }
+
+          var prevSvg = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          var nextSvg = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+          pagination.appendChild(makeBtn(prevSvg, currentPage - 1, currentPage === 1, false, true));
+          for (var i = 1; i <= totalPages; i++) {
+            pagination.appendChild(makeBtn(i, i, false, i === currentPage, false));
+          }
+          pagination.appendChild(makeBtn(nextSvg, currentPage + 1, currentPage === totalPages, false, true));
+        }
+
+        document.getElementById('filter-category').addEventListener('click', function (e) {
+          var tag = e.target.closest('[data-filter-value]');
+          if (!tag) return;
+          activeCategory = tag.dataset.filterValue;
+          currentPage = 1;
+          document.querySelectorAll('#filter-category .tag').forEach(function (t) { t.classList.remove('active'); });
+          tag.classList.add('active');
+          render();
+        });
+
+        render();
+      })();
+    </script>
   </body>
 </html>

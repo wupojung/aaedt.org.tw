@@ -162,6 +162,19 @@ hr {
     width: 100%;
 }
 
+/* 無資料提示 */
+.card-empty {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    color: #837b74;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
 /* 佔位元素：維持 grid 高度，不顯示任何內容 */
 .card-ghost {
     visibility: hidden;

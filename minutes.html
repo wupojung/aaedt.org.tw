@@ -364,6 +364,20 @@
 
         function render() {
           var filtered = getFiltered();
+
+          grid.querySelectorAll('.card-ghost').forEach(function (el) { el.remove(); });
+          grid.querySelectorAll('.card-empty').forEach(function (el) { el.remove(); });
+
+          if (filtered.length === 0) {
+            allCards.forEach(function (card) { card.style.display = 'none'; });
+            var empty = document.createElement('li');
+            empty.className = 'card-empty';
+            empty.textContent = '無資料';
+            grid.appendChild(empty);
+            renderPagination(1);
+            return;
+          }
+
           var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
           if (currentPage > totalPages) currentPage = totalPages;
 
@@ -374,8 +388,6 @@
             card.style.display = visible.has(card) ? '' : 'none';
           });
 
-          // 補 invisible 佔位，讓 grid 永遠維持滿版高度，避免 pagination 跳動
-          grid.querySelectorAll('.card-ghost').forEach(function (el) { el.remove(); });
           var shortage = ITEMS_PER_PAGE - visible.size;
           for (var i = 0; i < shortage; i++) {
             var ghost = document.createElement('li');
