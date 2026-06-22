@@ -163,8 +163,8 @@
     }
 
     .minutes-article .photo-grid {
-        grid-template-columns: repeat(2, 1fr); /* 手機改為一排 2 張 */
-        column-gap: 8px; /* 手機空間有限，縮小一點間距 */
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 8px;
     }
 }
 
