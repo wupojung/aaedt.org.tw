@@ -91,7 +91,7 @@
 }
 
 .card-meeting-title a:hover {
-    color: var(--primarygold, #fec300);
+    color: var(--neautral-30, #837b74);
 }
 
 @media (max-width: 768px) {
