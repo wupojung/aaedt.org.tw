@@ -135,7 +135,33 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .back-group {
+        font-size: 18px !important;
+        line-height: 18px !important;
+    }
+    .minutes-article {
+        h1.title,
+        h2.title,
+        .title {
+            font-size: 18px !important;
+            line-height: 18px !important;
+        }
+        .content {
+            font-size: 14px !important;
+            line-height: 18px !important;
+        }
+        & .info-list {
+            * {
+                font-size: 14px !important;
+                line-height: 18px !important;
+            }
+        }
+        .file-name {
+            font-size: 14px !important;
+        }
+    }
+
     .minutes-article .photo-grid {
         grid-template-columns: repeat(2, 1fr); /* 手機改為一排 2 張 */
         column-gap: 8px; /* 手機空間有限，縮小一點間距 */

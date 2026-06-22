@@ -29,3 +29,9 @@
 .padding_top_12px {
   padding-top: 12px;
 }
+
+.btn-download {
+  img {
+    padding-left: 8px;
+  }
+}

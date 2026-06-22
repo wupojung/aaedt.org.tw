@@ -153,18 +153,25 @@ function closeAllDropdowns() {
 function initCurrentNav() {
   const path = window.location.pathname;
   // 取最後一段檔名（e.g. "/about.html" → "about.html"；"/" → "index.html"）
-  const page = path.split('/').pop() || 'index.html';
+  let page = path.split('/').pop() || 'index.html';
+
+  // 子頁面對應表：detail 頁 → 其所屬的 nav dropdown 父頁
+  const parentPageMap = {
+    'meetings_detail.html': 'minutes.html',
+    'news_detail.html': 'news.html',
+  };
+  const effectivePage = parentPageMap[page] ?? page;
 
   // 直接連結（最新消息）
   document.querySelectorAll('.nav-link[href]').forEach((link) => {
-    if (link.getAttribute('href') === page) {
+    if (link.getAttribute('href') === effectivePage) {
       link.closest('.nav')?.classList.add('is-current');
     }
   });
 
   // Dropdown 子項目
   document.querySelectorAll('.nav-dropdown-item[href]').forEach((item) => {
-    if (item.getAttribute('href') === page) {
+    if (item.getAttribute('href') === effectivePage) {
       item.classList.add('is-current-item');
       item.closest('.nav')?.classList.add('is-current');
     }

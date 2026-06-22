@@ -64,16 +64,6 @@
   height: auto;
 }
 
-.final .footer-org-name {
-  margin: 0;
-  font-family: "Noto Sans", Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.4;
-  color: var(--neautral-50);
-  letter-spacing: 0.02em;
-}
-
 /* ── 聯絡資訊 ─────────────────────────────────────────────── */
 .final .footer-contact-list {
   display: flex;

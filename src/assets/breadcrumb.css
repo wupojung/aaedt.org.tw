@@ -41,8 +41,44 @@
 }
 
 @media (max-width: 767px) {
+    .breadcrumb {
+        max-width: 100%;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        gap: 0;
+    }
+
     .breadcrumb .link {
         font-size: 14px;
         line-height: 18px;
+        flex-shrink: 0;
+    }
+
+    /* 隱藏中間層（非第一個、非最後一個 active）的連結與其前後分隔符 */
+    .breadcrumb .link:not(:first-child):not(.active) {
+        display: none;
+    }
+
+    .breadcrumb .sep {
+        display: none;
+    }
+
+    /* 在首頁連結後插入「/ ... /」 */
+    .breadcrumb .link:first-child::after {
+        content: " / ... /";
+        color: #1a1410;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        margin-right: 4px;
+    }
+
+    /* active 連結截斷省略 */
+    .breadcrumb .link.active {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 200px;
     }
 }
