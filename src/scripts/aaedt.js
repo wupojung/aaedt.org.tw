@@ -159,6 +159,7 @@ function initCurrentNav() {
   const parentPageMap = {
     'meetings_detail.html': 'minutes.html',
     'news_detail.html': 'news.html',
+    'campaign_article.html': 'campaign_overview.html',
   };
   const effectivePage = parentPageMap[page] ?? page;
 
