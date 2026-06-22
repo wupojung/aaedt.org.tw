@@ -68,10 +68,13 @@
                 /*border-bottom: 1px solid #eee; /* 參考圖片中的水平線 */
 
                 .file-name {
-                    color: #534c46; /* 維持您之前的文字顏色設定 */
+                    color: #534c46;
                     font-size: 18px;
                     flex: 1;
                     margin-right: 20px;
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                    cursor: pointer;
                 }
 
                 .btn-download {
