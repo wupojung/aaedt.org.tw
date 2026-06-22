@@ -388,7 +388,6 @@
 
         function renderPagination(totalPages) {
           pagination.innerHTML = '';
-          if (totalPages <= 1) return;
 
           function makeBtn(html, page, disabled, active, isArrow) {
             var el = document.createElement('button');
