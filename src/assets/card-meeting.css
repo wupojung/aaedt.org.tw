@@ -154,17 +154,68 @@
 }
 
 hr {
-    /* 移除瀏覽器預設樣式 */
     border: 0;
-
-    /* 設定一條 1px 的實線，顏色建議與卡片邊框一致 */
     height: 1px;
-    background-color: #e6e6e6; /* 或你的變數 --neautral-border */
-
-    /* 處理上下 20px 的間距 */
+    background-color: #e6e6e6;
     margin-top: 20px;
     margin-bottom: 20px;
-
-    /* 確保 RWD 下寬度正確 */
     width: 100%;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #d9d9d9;
+    color: black;
+    font-family: "Noto Sans TC";
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition:
+        background 0.18s,
+        color 0.18s;
+    line-height: 1;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #d9d9d9;
+}
+
+.pagination-btn.active {
+    background: #bdbdbd;
+    font-weight: 500;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.pagination-btn.arrow svg {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .pagination {
+        gap: 6px;
+    }
+    .pagination-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
 }
