@@ -374,6 +374,15 @@
             card.style.display = visible.has(card) ? '' : 'none';
           });
 
+          // 補 invisible 佔位，讓 grid 永遠維持滿版高度，避免 pagination 跳動
+          grid.querySelectorAll('.card-ghost').forEach(function (el) { el.remove(); });
+          var shortage = ITEMS_PER_PAGE - visible.size;
+          for (var i = 0; i < shortage; i++) {
+            var ghost = document.createElement('li');
+            ghost.className = 'card-ghost';
+            grid.appendChild(ghost);
+          }
+
           renderPagination(totalPages);
         }
 

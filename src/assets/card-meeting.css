@@ -162,6 +162,12 @@ hr {
     width: 100%;
 }
 
+/* 佔位元素：維持 grid 高度，不顯示任何內容 */
+.card-ghost {
+    visibility: hidden;
+    pointer-events: none;
+}
+
 /* Pagination */
 .pagination {
     display: flex;
