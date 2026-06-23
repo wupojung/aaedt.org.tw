@@ -22,6 +22,7 @@ export default defineConfig({
                 bylaw: resolve(__dirname, 'bylaw.html'),
                 minutes: resolve(__dirname, 'minutes.html'),
                 meetings_detail: resolve(__dirname, 'meetings_detail.html'),
+                news_detail: resolve(__dirname, 'news_detail.html'),
 
                 //專業服務
                 remodeling: resolve(__dirname, 'remodeling.html'),  //環境改造
@@ -32,6 +33,7 @@ export default defineConfig({
 
                 //推廣行動
                 campaign: resolve(__dirname, 'campaign_overview.html'),  //推廣行動
+                campaign_article: resolve(__dirname, 'campaign_article.html'),  //推廣文章
                 knowledge: resolve(__dirname, 'knowledge.html'),//知識分享
                 practice: resolve(__dirname, 'practice.html'), //改善實務
                 certification: resolve(__dirname, 'certification.html'), //標章認證
