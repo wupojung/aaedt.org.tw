@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initMobileToggle();
   initDropdownNavigation();
   initCurrentNav();
+  initBreadcrumbCollapse();
 });
 
 /* ============================================================
@@ -179,3 +180,33 @@ function initCurrentNav() {
   });
 }
 
+/* ============================================================
+   Breadcrumb Collapse — 手機板超過 page-header 一半寬度才折疊
+   ============================================================ */
+function initBreadcrumbCollapse() {
+  const breadcrumbs = document.querySelectorAll('.breadcrumb');
+  if (!breadcrumbs.length) return;
+
+  function updateCollapse() {
+    if (window.innerWidth > 767) {
+      breadcrumbs.forEach((bc) => bc.classList.remove('collapsed'));
+      return;
+    }
+    breadcrumbs.forEach((bc) => {
+      const header = bc.closest('.page-header');
+      if (!header) return;
+      const threshold = header.getBoundingClientRect().width * 0.5;
+      // 暫時移除 collapsed 取得真實展開寬度
+      bc.classList.remove('collapsed');
+      const fullWidth = bc.scrollWidth;
+      if (fullWidth > threshold) {
+        bc.classList.add('collapsed');
+      }
+    });
+  }
+
+  updateCollapse();
+
+  const ro = new ResizeObserver(updateCollapse);
+  document.querySelectorAll('.page-header').forEach((h) => ro.observe(h));
+}
