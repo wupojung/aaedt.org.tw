@@ -50,6 +50,9 @@ export default defineConfig({
                 volunteer: resolve(__dirname, 'volunteer.html'),//志工招募
                 proposal: resolve(__dirname, 'proposal.html'), //合作提案
                 donate: resolve(__dirname, 'donate.html'), //捐款支持
+
+                // 其他
+                privacy_policy: resolve(__dirname, 'privacy_policy.html'), //隱私權政策
             },
         },
     },
