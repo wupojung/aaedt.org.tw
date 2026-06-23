@@ -1,19 +1,21 @@
 /* 1. 外部大容器 */
 .bylaw-wrap {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background: transparent;
     text-align: left;
 }
 
 /* 2. 頂部備查資訊區 */
-.bylaw-info {
-    padding: 0 0 1.5rem 0;
-}
+
 .bylaw-info p {
+    font-family: Noto Sans TC;
+    font-weight: 400;
     font-size: 18px;
-    color: var(--neautral-30, #837b74);
-    line-height: 1.8;
-    margin: 0;
+    line-height: 28px;
+    color: #534c46;
+    letter-spacing: 0;
 }
 
 /* 3. 章節手風琴項目 */
@@ -26,31 +28,31 @@
 .bylaw-title {
     width: 100%;
     display: flex;
+    padding: 20px 0;
     justify-content: space-between;
     text-align: left;
-    padding: 1.25rem 0;
     background: transparent;
     border: none;
     cursor: pointer;
     transition: opacity 0.2s ease;
-    border-bottom: 1px solid var(--neautral-20, #e7e7e7);
+    border-bottom: 1px solid #837b74;
 }
 .bylaw-title:hover {
     opacity: 0.7;
 }
 
 .bylaw-title span {
+    font-family: Noto Sans TC;
     font-size: 20px;
-    font-weight: 700;
-    color: var(--neautral-50, #1a1410);
+    line-height: 28px;
+    font-weight: 500;
+    color: #1a1410;
+    letter-spacing: 0;
 }
 
 /* 展開狀態：無額外顏色變化 */
 .bylaw-chapter.active .bylaw-title {
     background: transparent;
-}
-.bylaw-chapter.active .bylaw-title span {
-    color: var(--neautral-40, #534c46);
 }
 
 /* 4. 手風琴展開動畫邏輯 */
@@ -66,38 +68,39 @@
 
 /* 5. 條文清單 (dl/dt/dd) */
 .article-list {
-    padding: 0.25rem 0 1.5rem 0;
+    padding: 20px 0;
 }
 .article-row {
-    display: inline-block;
-
+    width: 100%;
+    display: flex;
     align-items: baseline;
-    gap: 0;
+    gap: 1em;
+    padding: 8px 0;
 }
 .article-row:last-child {
     border-bottom: none;
 }
 
 .article-row dt {
-    float: left;
-    width: 6em; /* 固定欄寬：容納最長 5 字（第三十五條）+ 尾端留白 */
     flex-shrink: 0;
+    width: 6em;
     font-weight: 400;
-    color: var(--neautral-40, #534c46);
-    line-height: 1.8;
+    color: #534c46;
+    line-height: 28px;
     font-size: 18px;
     text-align: justify;
     text-align-last: justify;
-    letter-spacing: 0; /* justify 自動分散，不另加 letter-spacing 避免尾端溢位 */
-    padding-right: 1em; /* dt 與 dd 之間的固定間距 */
-    box-sizing: content-box;
+    letter-spacing: 0;
+    font-family: Noto Sans TC;
 }
 .article-row dd {
+    flex: 1;
     margin: 0;
-    color: var(--neautral-40, #534c46);
-    line-height: 1.8;
+    color: #534c46;
+    line-height: 28px;
     font-size: 18px;
     font-weight: 400;
+    font-family: Noto Sans TC;
 }
 
 /* 6. 任務清單（條文內的 ul） */
@@ -147,10 +150,6 @@
 }
 
 @media (max-width: 768px) {
-    .article-row {
-        flex-flow: column;
-    }
-
     .article-row dd,
     .article-row dt,
     .bylaw-info p,
@@ -158,10 +157,18 @@
     .bylaw-title span,
     .task-list li {
         font-size: 16px !important;
+        line-height: 24px !important;
     }
 
     .icon-plus {
         width: 16px;
         height: 16px;
+    }
+
+    .bylaw-title {
+        padding: 12px 0;
+    }
+    .article-list {
+        padding: 12px 0;
     }
 }

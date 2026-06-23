@@ -5,6 +5,7 @@
     
     <title>AAEDT 台灣可及環境設計協會 - 組織架構</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/assets/organization.css" />
     <include src="src/partials/head-styles.html" />
   </head>
 
@@ -15,132 +16,138 @@
       <include src="src/partials/header.html" />
       <main class="main page-organization" id="main-content">
         <section class="content-section is-dark arc-bottom content-section-hero">
-          <div class="page-header">
-            <div class="breadcrumb">
-              <a href="index.html" class="link">首頁</a>
-              <span class="sep">/</span>
-              <span class="link">認識協會</span>
-              <span class="sep">/</span>
-              <span class="link active">組織架構</span>
-            </div>
-            <div class="title-group">
-              <h1 class="main-title">組織架構</h1>
-              <div class="title-line-bg"></div>
-            </div>
-            <div class="intro-group">
-              <h3 class="sub-title">推動可及觀念，從理解到行動</h3>
-              <p class="intro-text">
-                AAEDT以清楚的分工與協作為基礎，串連研究、實務、教育與推廣的力量，讓「可及」不只停留在理念，而能一步步落實於真實的生活環境之中。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="content-section">
-          <div class="page-header">
-            <div class="title-group">
-              <h2 class="main-title">組織架構圖</h2>
-              <div class="title-line-bg"></div>
-            </div>
-            <div class="intro-group">
-              <picture>
-                <source media="(max-width: 768px)" srcset="/img/mobile-organization.svg" />
-                <img
-                  class="intro-image"
-                  src="/img/organization.png"
-                  alt="詳細介紹在此架構圖下方的表格內，社團法人台灣可及環境設計協會組織架構圖：本會以會員大會為最高權力機構，並成立理事會與監事會，由理事長領導並代表本會，對內綜理秘書處、專案推動組、教育推廣組及環境設計組，協會工作涵蓋政策倡議、人才培訓與空間改善等業務。"
-                />
-              </picture>
-              <div class="table-container">
-                <table class="accessible-table">
-                  <caption class="sr-only">
-                    協會大事紀
-                  </caption>
-                  <colgroup>
-                    <col style="width: 200px" />
-                    <col />
-                  </colgroup>
-                  <thead class="sr-only">
-                    <tr>
-                      <th scope="col">組織</th>
-                      <th scope="col">權責</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">理事會與監事會</th>
-                      <td>
-                        理事會為本會最高決策單位，負責協會整體發展方向、重大政策與年度計畫之擬定與審議。監事會依法行使監督職責，確保本會運作之合法性、財務健全與治理透明。
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">理事長</th>
-                      <td>
-                        理事長統籌本會整體運作與跨組溝通，連結理事會決策與各工作單位的實際執行，帶領協會穩健發展，並代表本會對外交流與合作。
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">顧問群</th>
-                      <td>
-                        本會邀集來自環境設計、建築、景觀、教育、社會福利等領域之專家組成顧問群，提供專業諮詢與策略建議，協助協會在政策倡議、研究發展與實務推動上持續精進。
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <th scope="row">秘書處</th>
-                      <td>
-                        秘書處為協會日常運作的核心單位，負責行政與營運支持工作，包括：
-                        <ul class="list-disc list-outside ml-6">
-                          <li>會務與會員管理</li>
-                          <li>業務與專案行政</li>
-                          <li>財務與帳務管理</li>
-                          <li>行銷與對外聯繫</li>
-                        </ul>
-                        確保各項專業工作能在穩定且有效的基礎上推進。
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">專案推動組</th>
-                      <td>
-                        專注於制度與政策層面的推動，將可及理念轉化為可實踐的行動與規範，包括：
-                        <ul class="list-disc list-outside ml-6">
-                          <li>政策倡議與制度建議</li>
-                          <li>可及相關標章與推動機制</li>
-                        </ul>
-                        促進可及環境在公共與專業領域中的落實。
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">教育推廣組</th>
-                      <td>
-                        以教育與體驗為核心，培育可及觀念與實務能力，推動不同族群對可及環境的理解與參與：
-                        <ul class="list-disc list-outside ml-6">
-                          <li>師資培訓（核心師資、種子師資）</li>
-                          <li>可及課程與觀念推廣</li>
-                          <li>環境體驗、演講參訪</li>
-                          <li>學校教育、專業課程與競圖活動</li>
-                        </ul>
-                        讓可及不只是知識，而是可被感受與實踐的日常經驗。
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">環境設計組</th>
-                      <td>
-                        以實務導向回應實際空間需求，提供專業評估與改善建議，涵蓋：
-                        <ul class="list-disc list-outside ml-6">
-                          <li>專業諮詢</li>
-                          <li>空間檢測與評估</li>
-                          <li>環境與空間改善建議</li>
-                        </ul>
-                        協助公共與私人空間逐步邁向更安全、友善且真正可及的環境。
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+          <div class="section_1280px">
+            <div class="page-header">
+              <div class="breadcrumb">
+                <a href="index.html" class="link">首頁</a>
+                <span class="sep">/</span>
+                <span class="link">認識協會</span>
+                <span class="sep">/</span>
+                <span class="link active">組織架構</span>
+              </div>
+              <div class="title-group">
+                <h2 class="main-title">組織架構</h2>
+                <div class="title-line-bg"></div>
+              </div>
+              <div class="intro-group">
+                <h3 class="sub-title">推動可及觀念，從理解到行動</h3>
+                <p class="intro-text">
+                  AAEDT以清楚的分工與協作為基礎，串連研究、實務、教育與推廣的力量，讓「可及」不只停留在理念，而能一步步落實於真實的生活環境之中。
+                </p>
               </div>
             </div>
           </div>
         </section>
+
+        <div class="section_1280px pt_pb_60px">
+          <div class="section_1040px mobile_padding_left_right_20px">
+            <section class="content-section">
+              <div class="page-header">
+                <div class="title-group">
+                  <h2 class="main-title">組織架構圖</h2>
+                  <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group">
+                  <picture class="pb_40px">
+                    <source media="(max-width: 768px)" srcset="/img/mobile-organization.svg" />
+                    <img
+                      class="intro-image"
+                      src="/img/organization.png"
+                      alt="詳細介紹在此架構圖下方的表格內，社團法人台灣可及環境設計協會組織架構圖：本會以會員大會為最高權力機構，並成立理事會與監事會，由理事長領導並代表本會，對內綜理秘書處、專案推動組、教育推廣組及環境設計組，協會工作涵蓋政策倡議、人才培訓與空間改善等業務。"
+                    />
+                  </picture>
+                  <div class="table-container">
+                    <table class="accessible-table">
+                      <caption class="sr-only">
+                        協會大事紀
+                      </caption>
+                      <colgroup>
+                        <col style="width: 200px" />
+                        <col />
+                      </colgroup>
+                      <thead class="sr-only">
+                        <tr>
+                          <th scope="col">組織</th>
+                          <th scope="col">權責</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">理事會與監事會</th>
+                          <td>
+                            理事會為本會最高決策單位，負責協會整體發展方向、重大政策與年度計畫之擬定與審議。監事會依法行使監督職責，確保本會運作之合法性、財務健全與治理透明。
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">理事長</th>
+                          <td>
+                            理事長統籌本會整體運作與跨組溝通，連結理事會決策與各工作單位的實際執行，帶領協會穩健發展，並代表本會對外交流與合作。
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">顧問群</th>
+                          <td>
+                            本會邀集來自環境設計、建築、景觀、教育、社會福利等領域之專家組成顧問群，提供專業諮詢與策略建議，協助協會在政策倡議、研究發展與實務推動上持續精進。
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">秘書處</th>
+                          <td>
+                            秘書處為協會日常運作的核心單位，負責行政與營運支持工作，包括：
+                            <ul class="list-disc list-outside ml-6">
+                              <li>會務與會員管理</li>
+                              <li>業務與專案行政</li>
+                              <li>財務與帳務管理</li>
+                              <li>行銷與對外聯繫</li>
+                            </ul>
+                            確保各項專業工作能在穩定且有效的基礎上推進。
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">專案推動組</th>
+                          <td>
+                            專注於制度與政策層面的推動，將可及理念轉化為可實踐的行動與規範，包括：
+                            <ul class="list-disc list-outside ml-6">
+                              <li>政策倡議與制度建議</li>
+                              <li>可及相關標章與推動機制</li>
+                            </ul>
+                            促進可及環境在公共與專業領域中的落實。
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">教育推廣組</th>
+                          <td>
+                            以教育與體驗為核心，培育可及觀念與實務能力，推動不同族群對可及環境的理解與參與：
+                            <ul class="list-disc list-outside ml-6">
+                              <li>師資培訓（核心師資、種子師資）</li>
+                              <li>可及課程與觀念推廣</li>
+                              <li>環境體驗、演講參訪</li>
+                              <li>學校教育、專業課程與競圖活動</li>
+                            </ul>
+                            讓可及不只是知識，而是可被感受與實踐的日常經驗。
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">環境設計組</th>
+                          <td>
+                            以實務導向回應實際空間需求，提供專業評估與改善建議，涵蓋：
+                            <ul class="list-disc list-outside ml-6">
+                              <li>專業諮詢</li>
+                              <li>空間檢測與評估</li>
+                              <li>環境與空間改善建議</li>
+                            </ul>
+                            協助公共與私人空間逐步邁向更安全、友善且真正可及的環境。
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </main>
 
       <include src="src/partials/footer.html" />

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: var(--layout-max-width); /* 與 .nav-bar-inner 相同限寬 */
+    max-width: var(--layout-max-width); /* 與 .nav-bar-inner 相同限寬，margin-inline:auto 才有效 */
     align-items: flex-start;
     position: relative;
     margin-top: var(--navbar-height, 100px);
@@ -26,7 +26,7 @@
     width: 100%;
     gap: 40px;
     position: relative;
-    padding: 60px var(--layout-padding) 60px var(--layout-padding);
+    /* padding: 60px var(--layout-padding) 60px var(--layout-padding); */
 
     margin-top: 0;
     flex: 0 0 auto;
@@ -41,11 +41,11 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     .intro-group {
-        gap: 8px;
+        gap: 12px;
         font-size: 18px;
         font-weight: 400;
         display: flex;
@@ -69,7 +69,6 @@
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 gap: 12px;
             }
 
@@ -84,20 +83,29 @@
                 }
             }
         }
-
         .sub-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            line-height: 1.6;
+            font-family: "Noto Sans TC";
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+            word-spacing: 0%;
+            color: #1a1410;
             margin: 0;
         }
 
         .intro-text {
-            font-size: 1.125rem; /* 18px */
-            font-weight: 400;
-            line-height: 2;
+            width: 100%;
             max-width: 800px;
+        }
+
+        .intro-text,
+        .intro-text ul * {
+            font-family: "Noto Sans TC";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
             margin: 0;
+            color: #534c46;
 
             ul {
                 list-style-type: disc;
@@ -109,17 +117,17 @@
         .intro-list {
             list-style-type: disc;
             padding-left: 1.5em;
-            margin: 0;
+            font-family: Noto Sans TC;
             font-size: 18px;
             font-weight: 400;
-            line-height: 2;
-            max-width: 700px;
-            color: inherit;
+            line-height: 28px;
+            color: #534c46;
             * {
+                font-family: Noto Sans TC;
                 font-size: 18px;
                 font-weight: 400;
-                line-height: 2;
-                max-width: 700px;
+                line-height: 28px;
+                color: #534c46;
             }
         }
 
@@ -193,42 +201,57 @@
                             text-align: left; /* 確保內部所有文字（XXX標章）靠左 */
 
                             .cert-name {
-                                color: #534c46;
-                                font-size: 1.25rem;
-                                font-weight: 600;
+                                font-family: Noto Sans TC;
+                                color: #1a1410;
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 28px;
                                 margin: 0 0 12px 0;
                             }
 
                             .cert-desc {
+                                font-family: Noto Sans TC;
                                 color: #534c46;
-                                font-size: 18px; /* 維持您的設定 */
+                                font-size: 18px;
                                 font-weight: 400;
-                                line-height: 1.6;
-                                margin-bottom: 20px;
+                                line-height: 28px;
+                                margin-bottom: 12px;
                             }
 
                             /* 下載區域 */
 
                             .cert-download {
+                                font-family: Noto Sans TC;
+                                font-weight: 400;
+                                font-size: 18px;
+                                line-height: 28px;
                                 display: flex;
                                 align-items: center;
                                 gap: 16px;
 
                                 .file-link {
+                                    font-family: Noto Sans TC;
                                     color: #534c46;
                                     text-decoration: underline;
-                                    font-size: 16px;
+                                    font-size: 18px;
+                                    line-height: 28px;
+                                    font-weight: 400;
                                 }
 
                                 .btn-download {
-                                    display: inline-flex;
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 8px;
                                     align-items: center;
-                                    background-color: #f5f5f4;
-                                    color: #111827;
-                                    padding: 6px 12px;
+                                    background-color: #f5f4f2;
+                                    color: #1a1410;
+                                    padding: 8px 16px;
                                     border-radius: 6px;
                                     text-decoration: none;
-                                    font-size: 14px;
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                    font-weight: 500;
+                                    font-family: Noto Sans TC;
 
                                     &::after {
                                         content: "";
@@ -236,7 +259,7 @@
                                         width: 14px;
                                         height: 14px;
                                         margin-left: 8px;
-                                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M7.88384 7.29345e-08L6.11616 9.40138e-08L6.11616 10.6061L1.25505 5.74495L8.34742e-08 7L7 14L14 7L12.7449 5.74495L7.88384 10.6061L7.88384 7.29345e-08Z' fill='%23534C46'/%3E%3C/svg%3E");
+                                        background-image: url("../../public/img/certification/download_icon.svg");
                                         background-repeat: no-repeat;
                                         background-size: contain;
                                     }
@@ -280,7 +303,7 @@
             gap: 12px;
 
             .title {
-                color: #534c46;
+                color: #1a1410;
                 font-size: 22px;
                 font-style: normal;
                 font-weight: 600;
@@ -381,12 +404,57 @@
 }
 
 @media (max-width: 768px) {
+    .btn-download {
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+    .cert-desc,
+    .file-link {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+    .cert-name {
+        font-size: 18px !important;
+        line-height: 24px !important;
+    }
+
+    .content-section {
+        & .intro-group {
+            & .cert-group {
+                & .list {
+                    & ul {
+                        & .cert-card {
+                            & .cert-info {
+                                .cert-download {
+                                    align-items: flex-start !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .intro-text,
+    .intro-text ul *,
+    .intro-list li {
+        font-size: 16px !important;
+    }
     .title-group {
         margin-top: 0 !important;
         gap: 0 !important;
     }
     .main-title {
-        font-size: 20px !important;
+        font-size: 24px !important;
         margin-top: 2rem;
+    }
+
+    /* .content-section {
+        .page-header {
+            gap: 20px;
+        }
+    } */
+    .mb_60px {
+        margin-bottom: 40px;
     }
 }

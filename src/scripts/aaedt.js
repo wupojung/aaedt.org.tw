@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavOffset();
   initMobileToggle();
   initDropdownNavigation();
-  initExternalLinks();
   initCurrentNav();
-  initBylawToggle();
+  initBreadcrumbCollapse();
+  initLoadMore();
 });
 
 /* ============================================================
@@ -56,18 +56,35 @@ function initMobileToggle() {
   const wrapper = document.querySelector('.nav-content-wrapper');
   if (!toggle || !wrapper) return;
 
+  function closeWrapper() {
+    if (!wrapper.classList.contains('show')) return;
+    wrapper.classList.add('closing');
+    wrapper.addEventListener(
+      'animationend',
+      () => {
+        wrapper.classList.remove('show', 'closing');
+      },
+      { once: true }
+    );
+  }
+
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
     const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isExpanded));
-    wrapper.classList.toggle('show');
+    if (isExpanded) {
+      closeWrapper();
+    } else {
+      wrapper.classList.remove('closing');
+      wrapper.classList.add('show');
+    }
   });
 
   // 點擊 nav-bar 外部：收合 wrapper
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-bar')) {
       closeAllDropdowns();
-      wrapper.classList.remove('show');
+      closeWrapper();
       toggle.setAttribute('aria-expanded', 'false');
     }
   });
@@ -138,18 +155,26 @@ function closeAllDropdowns() {
 function initCurrentNav() {
   const path = window.location.pathname;
   // 取最後一段檔名（e.g. "/about.html" → "about.html"；"/" → "index.html"）
-  const page = path.split('/').pop() || 'index.html';
+  let page = path.split('/').pop() || 'index.html';
+
+  // 子頁面對應表：detail 頁 → 其所屬的 nav dropdown 父頁
+  const parentPageMap = {
+    'meetings_detail.html': 'minutes.html',
+    'news_detail.html': 'news.html',
+    'campaign_article.html': 'campaign_overview.html',
+  };
+  const effectivePage = parentPageMap[page] ?? page;
 
   // 直接連結（最新消息）
   document.querySelectorAll('.nav-link[href]').forEach((link) => {
-    if (link.getAttribute('href') === page) {
+    if (link.getAttribute('href') === effectivePage) {
       link.closest('.nav')?.classList.add('is-current');
     }
   });
 
   // Dropdown 子項目
   document.querySelectorAll('.nav-dropdown-item[href]').forEach((item) => {
-    if (item.getAttribute('href') === page) {
+    if (item.getAttribute('href') === effectivePage) {
       item.classList.add('is-current-item');
       item.closest('.nav')?.classList.add('is-current');
     }
@@ -157,29 +182,48 @@ function initCurrentNav() {
 }
 
 /* ============================================================
-   External Links（學生競圖）
+   Breadcrumb Collapse — 手機板超過 page-header 一半寬度才折疊
    ============================================================ */
-function initExternalLinks() {
-  const externalLink = document.querySelector('.nav-2');
-  if (externalLink) {
-    externalLink.addEventListener('click', () => {
-      window.open('https://www.aaedt.org.tw/blog/asdc/', '_blank');
+function initBreadcrumbCollapse() {
+  const breadcrumbs = document.querySelectorAll('.breadcrumb');
+  if (!breadcrumbs.length) return;
+
+  function updateCollapse() {
+    if (window.innerWidth > 767) {
+      breadcrumbs.forEach((bc) => bc.classList.remove('collapsed'));
+      return;
+    }
+    breadcrumbs.forEach((bc) => {
+      const header = bc.closest('.page-header');
+      if (!header) return;
+      const threshold = header.getBoundingClientRect().width * 0.5;
+      // 暫時移除 collapsed 取得真實展開寬度
+      bc.classList.remove('collapsed');
+      const fullWidth = bc.scrollWidth;
+      if (fullWidth > threshold) {
+        bc.classList.add('collapsed');
+      }
     });
   }
+
+  updateCollapse();
+
+  const ro = new ResizeObserver(updateCollapse);
+  document.querySelectorAll('.page-header').forEach((h) => ro.observe(h));
 }
 
 /* ============================================================
-   Bylaw Toggle — 控制法規章程的展開/收合
-   - 監聽 .bylaw-title 按鈕的 click
-   - 切換 aria-expanded 的值（true ↔ false）
+   Load More — 點擊「查看更多」每次展開 3 張隱藏卡片
+   HTML: <ul id="grid-xxx"> + <div class="more" data-target="grid-xxx">
    ============================================================ */
-function initBylawToggle() {
-  const bylawButtons = document.querySelectorAll('.bylaw-title');
+function initLoadMore() {
+  document.querySelectorAll('.more[data-target]').forEach((btn) => {
+    const grid = document.getElementById(btn.dataset.target);
+    if (!grid) return;
 
-  bylawButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!isExpanded));
+    btn.addEventListener('click', () => {
+      const hidden = Array.from(grid.querySelectorAll('.card-meeting.is-hidden'));
+      hidden.slice(0, 3).forEach((card) => card.classList.remove('is-hidden'));
     });
   });
 }

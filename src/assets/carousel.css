@@ -1,0 +1,161 @@
+/* ── Carousel ── */
+#carouselExampleIndicators {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── RWD ── */
+@media (max-width: 1120px) {
+    #carouselExampleIndicators {
+        border-radius: 0;
+    }
+
+    .carousel-item img {
+        height: auto;
+        object-fit: fill;
+    }
+}
+
+/* ── 左右箭頭 ── */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.carousel-control-prev {
+    left: 12px;
+}
+.carousel-control-next {
+    right: 12px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-top: 2.5px solid #534c46;
+    border-right: 2.5px solid #534c46;
+}
+
+.carousel-control-prev-icon {
+    transform: rotate(-135deg);
+    margin-left: 3px;
+}
+
+.carousel-control-next-icon {
+    transform: rotate(45deg);
+    margin-right: 3px;
+}
+
+/* ── 暫停 / 播放按鈕 ── */
+.carousel-control-play {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    padding: 0;
+}
+
+.carousel-control-play:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* 預設（播放中）：顯示 pause，隱藏 play */
+.carousel-control-play .icon-play {
+    display: none;
+}
+.carousel-control-play .icon-pause {
+    display: block;
+}
+
+/* 暫停中：顯示 play，隱藏 pause */
+.carousel-control-play.is-paused .icon-play {
+    display: block;
+}
+.carousel-control-play.is-paused .icon-pause {
+    display: none;
+}
+
+/* ── 指示點 ── */
+.carousel-indicators {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.carousel-indicators li.active {
+    background: #ffffff;
+    transform: scale(1.2);
+}

@@ -23,14 +23,14 @@
 
 @media (max-width: 767px) {
   .final .text-wrapper-2 {
-    font-size: 17.33px !important;
+    font-size: 17.13px !important;
   }
 
   .final .text-wrapper-3 {
-    font-size: 12.13px !important;
+    font-size: 13.33px !important;
   }
   .intro-group {
-    gap: 5px;
+    gap: 0px !important;
   }
   .hide-mobile {
     display: none;
@@ -39,12 +39,6 @@
   .show-mobile {
     display: block;
   }
-
-  .final .card-container {
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
   /* organization.html / about.html: 手機板 table 每 row 變成獨立圓角卡片
      scope 限定 .page-organization 與 .page-about，不影響 join.html 多欄表格 */
   .final .page-organization .table-container,
@@ -124,7 +118,7 @@
   }
 
   .final .donate-section {
-    padding: 40px 20px;
+    /* padding: 40px 20px; */
   }
 
   .final .frame-19 {
@@ -133,13 +127,30 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .mobile_padding_left_right_20px {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile_margin_bottom_40px {
+    margin-bottom: 40px !important;
+  }
+  .mobile_margin_top_40px {
+    margin-top: 40px !important;
+  }
+  .mobile_margin_bottom_20px {
+    margin-bottom: 20px !important;
+  }
+  .mobile_margin_top_20px {
+    margin-top: 20px !important;
+  }
+  .mobile_gap_20px {
+    gap: 20px !important;
+  }
   .final .card-container {
-    padding: 20px 0;
-    gap: 12px;
-    width: calc(100% - 40px);
     max-width: 100%;
-    margin: 0 20px;
     align-self: stretch;
     box-sizing: border-box;
   }
@@ -176,11 +187,7 @@
   .final .donate-section,
   .final .outreach-section,
   .final .video-section {
-    padding: 0 60px;
-  }
-
-  .final .partners-section {
-    padding: 40px 60px;
+    padding: 20px 20px;
   }
 
   .final .card-container {
@@ -212,37 +219,32 @@
 
 @media (min-width: 1024px) {
   /* desktop */
-  .final .hero-section {
-    padding: 0 120px;
+  .hero-section {
+    padding: 40px 120px 30px 120px;
   }
 
-  .final .about-us-section,
+  .final .about-us-section .section_1280px {
+    padding: 30px 120px 60px 120px;
+  }
+
   .final .donate-section {
-    padding: 80px 120px;
+    padding: 60px 120px;
   }
 
-  .final .outreach-section,
+  /* .final .outreach-section,
   .final .video-section {
     padding: 20px 120px;
-  }
+  } */
 
   /* Desktop: 恢復 partners-section 原始 padding */
   .final .partners-section {
     padding: 60px 120px;
   }
 
-  /* .final .card-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 1040px;
-  } */
-
-  /* Desktop: feature-card 固定回原始寬度，三張並排 */
-  /* .final .feature-card {
-    width: 333px;
-    max-width: none;
-  } */
+  */ .final .outreach-section,
+  .final .video-section {
+    width: 100%;
+  }
 
   .final .frame-6 {
     flex-direction: row;
@@ -291,7 +293,7 @@
   /* .main 已用 max-width + clamp padding 對齊，不再需要覆蓋 */
   .final .content-section .intro-group.--split {
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     gap: 60px;
   }
 
@@ -300,12 +302,13 @@
   }
 
   .final .content-section .intro-group.--split .intro-image {
-    min-height: 360px;
+    height: 387px;
+    width: 500px;
   }
 
   /* organization.css overrides */
   .final .organization-container {
-    width: 1280px;
+    width: 100%;
   }
   /* .nav-bar padding 已移至 .nav-bar-inner，不再需要覆蓋 */
   .final .breadcrumb-section {
@@ -343,29 +346,9 @@
   .final .accessible-table td:first-child {
     width: 120px;
   }
-
-  /* join.css overrides */
-  .final .payment-info {
-    padding: 24px 40px;
-  }
 }
 
-@media (min-width: 1440px) {
-  .final .outreach-section,
-  .final .video-section {
-    width: 1280px; /* Restore original width for wide screen */
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 1920px) {
-  /* 4K */
-  .final {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
+/* @media (min-width: 1920px) {
   .final .outreach-section,
   .final .video-section {
     width: 1280px;
@@ -379,4 +362,4 @@
     font-size: 22px;
     line-height: 34px;
   }
-}
+} */

@@ -1,3 +1,132 @@
+.count-group {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.count-group-item {
+  align-items: center;
+  gap: 4px;
+  flex-direction: column;
+  width: 100px;
+  display: flex;
+  position: relative;
+
+  .count-group-item-content {
+    font-family: "Inter";
+    letter-spacing: 0%;
+    line-height: 80px;
+    font-weight: 500;
+    font-size: 64px;
+    text-align: center;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    display: flex;
+    position: relative;
+    color: #ef9e1d;
+  }
+  .count-group-item-p {
+    color: #1a1410;
+    font-weight: 500;
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.intro-text {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-content-article {
+  width: 100%;
+  gap: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.intro-content-head {
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  align-items: center;
+  gap: 20px;
+}
+
+.intro-content-head-img {
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.intro-content-head-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.intro-content-name {
+  color: #1a1410;
+  font-weight: 500;
+  font-family: Noto Sans TC;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+.intro-content-article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+.intro-content-article-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.intro-content-article-h4 {
+  color: #1a1410;
+  font-weight: 500;
+  font-family: Noto Sans TC;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  border-bottom: 1px solid #837b74;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.intro-content-article-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  li {
+    font-weight: 400;
+    font-family: Noto Sans TC;
+    font-size: 18px;
+    line-height: 28px !important;
+    letter-spacing: 0%;
+    color: #534c46;
+    text-align: left;
+  }
+}
+
+.article-discribe {
+  font-weight: 400;
+  font-family: Noto Sans TC;
+  font-size: 18px;
+  line-height: 28px !important;
+  letter-spacing: 0%;
+  color: #534c46;
+  text-align: center;
+}
 /* ==========================================
    Member Cards Refined Styling (member.html)
    ========================================== */
@@ -27,11 +156,14 @@
 
 /* Role badge (e.g., "理事", "常務監事") */
 .final .is-dark article span.text-primaryorange {
-  color: var(--primarygold) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.05em !important;
-  margin-bottom: 4px !important;
+  background: #f5f4f2;
+  padding: 4px 16px;
+  border-radius: 40px;
+  color: #1a1410;
+  font-size: 14px;
+  font-weight: 500 !important;
+  line-height: 22px;
+  letter-spacing: 0;
   display: inline-block !important;
 }
 
@@ -67,23 +199,6 @@
   opacity: 0.8 !important;
 }
 
-/* Section Subheadings (e.g., "現職", "專長") */
-.final .is-dark article h4 {
-  color: #3c3831 !important; /* Premium dark brown */
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-  margin-bottom: 8px !important;
-}
-
-/* Section Paragraph Content */
-.final .is-dark article p {
-  color: #534c46 !important; /* Highly legible dark gray */
-  font-size: 15px !important;
-  line-height: 24px !important; /* Balanced, readable spacing */
-  letter-spacing: 0.01em !important;
-}
-
 /* Custom Bullet List rendering for the "專長" (Expertise) block
    Targeting the 2nd block child which is "專長" */
 .final .is-dark article .flex-col > div:nth-child(2) p {
@@ -99,17 +214,6 @@
    ========================================== */
 
 /* Style all list items in the intro sections of President and Secretary General */
-.final .intro-content ul li {
-  position: relative !important;
-  color: #534c46 !important; /* High legibility dark gray */
-  font-size: 16px !important;
-  line-height: 27px !important; /* Matches line-height from layout */
-  font-weight: 400 !important; /* Premium regular weight */
-  list-style: none !important;
-  margin: 0 !important;
-  text-align: left !important;
-  padding-left: 0 !important; /* No bullets or indentation, aligns cleanly to the left */
-}
 
 /* Ensure no bullets are drawn */
 .final .intro-content ul li::before {
@@ -125,8 +229,7 @@
 .final .intro-content img[src*="vector-1"] {
   border: none !important;
   height: 1px !important;
-  background-color: #edebe9 !important; /* Soft, light divider line */
-  margin: 12px 0 !important;
+  background-color: #837b74 !important; /* Soft, light divider line */
   opacity: 0.8 !important;
 }
 
@@ -144,6 +247,18 @@
 
 /* ── Mobile (max 767px) ── */
 @media (max-width: 767px) {
+  .intro-content-article-h4,
+  .intro-content-name {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .intro-content-article-ul {
+    li {
+      font-size: 16px;
+      line-height: 24px !important;
+    }
+  }
+
   .page-header .inline-flex {
     gap: 5px !important;
   }
@@ -151,7 +266,7 @@
   .final .content-section:not(.is-dark) article {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 32px !important;
+    gap: 20px !important;
   }
 
   /* 履歷文字區塊佔滿全寬 */
@@ -200,7 +315,7 @@
     object-fit: contain !important;
     padding: 16px !important;
     box-sizing: border-box !important;
-    /* border-bottom: 1px solid #837a73 !important; */
+    border-bottom: 1px solid #837a73 !important;
     border-right: none !important;
     flex-shrink: 0 !important;
   }
@@ -234,25 +349,302 @@
   }
 }
 
-/* ── Tablet (768px – 1023px) ── */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* 理監事群卡片：兩欄排列 */
-  .final .is-dark .intro-content > div > div {
-    flex-wrap: wrap !important;
-    gap: 20px !important;
-    justify-content: center !important;
+/* ==========================================
+   Card Grid — 第五屆理監事群
+   ========================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.card-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #837a73;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-grid-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(83, 76, 70, 0.08);
+  border-color: #d3cbc4;
+}
+
+.card-grid-item-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.card-grid-item-role {
+  background: #f5f4f2;
+  padding: 4px 16px;
+  border-radius: 40px;
+  color: #1a1410;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0;
+  display: inline-block;
+}
+
+.card-grid-item-name {
+  color: #2c2724;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.card-grid-item-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card-grid-item:hover .card-grid-item-photo {
+  transform: scale(1.02);
+}
+
+.card-grid-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.card-grid-item-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-grid-item-label {
+  font-family: Noto Sans TC;
+  text-align: left;
+  color: #1a1410 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  letter-spacing: 0 !important;
+}
+
+.card-grid-item-text {
+  font-family: Noto Sans TC;
+  color: #534c46;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.card-grid-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 0;
+  list-style: disc;
+
+  li {
+    font-family: Noto Sans TC;
+    color: #534c46;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-align: left;
+    margin-left: 1.6rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: #837a73;
+    }
+  }
+}
+
+/* ==========================================
+   Org List — 團體會員 (CSS Grid Table)
+   ========================================== */
+
+/* 外框 + grid 兩欄：左欄 200px 固定，右欄彈性延展 */
+.org-list {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  width: 100%;
+  border: 1px solid #837a73;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* display:contents 讓 row 消失於佈局，子元素直接進 grid */
+.org-list__row {
+  display: contents;
+}
+
+/* Logo 欄 */
+.org-list__logo {
+  width: 200px;
+  height: 84px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #837a73;
+}
+
+/* 名稱欄 */
+.org-list__name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px;
+}
+
+/* Row 分隔線：所有列（除最後一列）的 logo 欄與名稱欄都加 border-bottom */
+.org-list__row:not(:last-child) > .org-list__logo,
+.org-list__row:not(:last-child) > .org-list__logo-cell,
+.org-list__row:not(:last-child) > .org-list__name-cell {
+  border-bottom: 1px solid #837a73;
+}
+
+/* 公司名稱文字 */
+.org-list__company {
+  flex: 1;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #534c46;
+  text-align: left;
+}
+
+/* ── Mobile (max 767px)：grid 改回 flex，每列獨立卡片 ── */
+@media (max-width: 767px) {
+  .org-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
   }
 
-  .final .is-dark .intro-content > div > div > article {
-    width: calc(50% - 10px) !important;
-    max-width: 360px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .org-list__row {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #837a73;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
-  /* 團體會員表格：移除固定 1040px */
-  .final .content-section:not(.is-dark) .intro-group .intro-content > div {
-    width: 100% !important;
-    min-width: 0 !important;
+  .org-list__logo {
+    width: 100%;
+    height: 100px;
+    padding: 16px;
+    box-sizing: border-box;
+    border-right: none;
+    border-bottom: 1px solid #837a73;
+  }
+
+  .org-list__logo-cell {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    box-sizing: border-box;
+    border-right: none;
+    border-bottom: 1px solid #837a73;
+  }
+
+  /* 覆蓋 row 分隔線（卡片模式下由卡片本身的 border 負責） */
+  .org-list__row:not(:last-child) > .org-list__logo,
+  .org-list__row:not(:last-child) > .org-list__logo-cell {
+    border-bottom: 1px solid #837a73;
+  }
+
+  .org-list__row:not(:last-child) > .org-list__name-cell,
+  .org-list__name-cell {
+    border-bottom: none;
+  }
+
+  .org-list__name-cell {
+    padding: 14px 16px;
+    justify-content: center;
+  }
+
+  .org-list__company {
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+    color: #837b74;
+  }
+}
+
+/* ── Tablet (768px – 1023px)：2 欄 ── */
+@media (max-width: 1023px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile (max 767px)：1 欄 ── */
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid-item-photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid-item-name {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .article-discribe {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+  .card-grid-item-label {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .card-grid-item-list,
+  .card-grid-item-text {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    li {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+  }
+  .count-group-item-content {
+    font-size: 40px !important;
+    line-height: 48px !important;
+  }
+  .count-group-item-p {
+    font-size: 16px !important;
+    line-height: 20px !important;
   }
 }

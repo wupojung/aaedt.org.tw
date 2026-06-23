@@ -1,7 +1,7 @@
 /* 1. 基礎容器：手機端 (預設) */
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 手機端單欄 */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     /* padding: 20px; */
     width: 100%;
@@ -9,29 +9,30 @@
     box-sizing: border-box;
 }
 
-/* 2. 平板端：寬度大於 640px 時變 2 欄 */
-@media (min-width: 640px) {
+/* 2. 平板端：寬度大於 640px 時變 2 欄，卡片恢復圓角 */
+
+/* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
+@media (max-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
     }
 }
 
-/* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
-@media (min-width: 1024px) {
+@media (max-width: 767px) {
+    .card-meeting-title a {
+        font-size: 12px !important;
+    }
     .card-grid {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1280px; /* 鎖定設計師要求的寬度 */
-        gap: 30px;
-        /* padding: 40px 20px; */
+        grid-template-columns: 1fr;
     }
 }
 
 /* 強制卡片等高，即便標題字數不同 */
 .card-meeting {
-    background-color: #ffffff;
-    border: 1px solid var(--neautral-20, #d1cdc7);
-    border-radius: 16px;
+    background: white;
+    border: 1px solid #837b74;
+    border-radius: 20px;
+    width: 100%;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     position: relative;
@@ -67,45 +68,45 @@
     gap: 4px;
 
     .card-meeting-date {
-        color: var(--neautral-60, #837b74);
-        font-family: "Noto Sans";
+        color: #534c46;
+        font-family: Noto Sans TC;
         font-size: 14px;
         font-style: normal;
-        font-weight: 500;
-        line-height: 150%; /* 21px */
+        font-weight: 400;
+        line-height: 22px;
     }
 
-    .card-meeting-title {
-        color: var(--neautral-50, #1a1410);
-        font-family: "Noto Sans";
-        font-size: 20px;
+    .card-meeting-title a {
+        color: #1a1410;
+        font-family: Noto Sans TC;
+        font-size: 16px;
         font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 30px */
-        a {
-        }
+        font-weight: 500;
+        line-height: 22px;
     }
 }
 
-.tag {
-    /* 讓寬度隨文字自動調整 (Hug) */
-    display: inline-flex;
+.category-content .tag.active {
+    background-color: #534c46;
+    color: #ffffff;
+    border-color: #534c46;
+}
+
+.category-content .tag {
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    /* 根據你的 Figma 數據 */
-    min-height: 40px;
-    padding: 6px 16px; /* 上下 8px，左右 20px */
-
-    /* 圓角與顏色 */
+    font-weight: 400;
+    text-align: center;
+    padding: 6px 16px;
+    line-height: 150%;
     border-radius: 40px;
-    background-color: #e6e6e6; /* 這是圖片中的淺灰色 */
-    color: #333;
-
-    /* 移除 a 標籤預設底線 */
+    border: 1px solid #534c46;
     text-decoration: none;
-    font-size: 16px;
-    white-space: nowrap; /* 強制不換行，確保寬度完整 */
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: "Noto Sans TC";
+    color: #1a1410;
 }
 
 .category-warp {
@@ -121,43 +122,19 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 12px;
         width: 100%;
         min-width: 0;
     }
-    .tag {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 400;
-        text-align: center;
-
-        padding: 4px 16px;
-        line-height: 24px;
-
-        /* 圓角與顏色 */
-        border-radius: 40px;
-
-        border: 1px solid var(--neautral-50, #1a1410);
-        background: var(--neautral-40, #534c46);
-
-        /* 移除 a 標籤預設底線 */
-        text-decoration: none;
-        font-size: 14px;
-        white-space: nowrap;
-
-        color: #ffffff;
-    }
 }
 
-.category-warp h3 {
-    color: var(--neautral-50, #1a1410);
-    font-family: "Noto Sans";
-    /* font-size 會需要用 rem 喔，想確認一下是否有了解過 rem是甚麼? */
-    font-size: 14px; 
+.category-warp label {
+    color: #1a1410;
+    font-family: Noto Sans TC;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 21px */
+    font-weight: 500;
+    line-height: 150%;
 }
 
 .category-content {
@@ -177,17 +154,87 @@
 }
 
 hr {
-    /* 移除瀏覽器預設樣式 */
     border: 0;
-
-    /* 設定一條 1px 的實線，顏色建議與卡片邊框一致 */
     height: 1px;
-    background-color: #e6e6e6; /* 或你的變數 --neautral-border */
-
-    /* 處理上下 20px 的間距 */
+    background-color: #e6e6e6;
     margin-top: 20px;
     margin-bottom: 20px;
-
-    /* 確保 RWD 下寬度正確 */
     width: 100%;
+}
+
+/* 無資料提示 */
+.card-empty {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    color: #837b74;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 佔位元素：維持 grid 高度，不顯示任何內容 */
+.card-ghost {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #d9d9d9;
+    color: black;
+    font-family: "Noto Sans TC";
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition:
+        background 0.18s,
+        color 0.18s;
+    line-height: 1;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #d9d9d9;
+}
+
+.pagination-btn.active {
+    background: #bdbdbd;
+    font-weight: 500;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.pagination-btn.arrow svg {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .pagination {
+        gap: 6px;
+    }
+    .pagination-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
 }

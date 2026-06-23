@@ -15,179 +15,439 @@
       <include src="src/partials/header.html" />
       <main class="main" id="main-content">
         <section class="content-section is-dark arc-bottom content-section-hero">
-          <div class="page-header">
-            <div class="breadcrumb">
-              <a href="index.html" class="link">首頁</a>
-              <span class="sep">/</span>
-              <a href="#" class="link">認識協會</a>
-              <span class="sep">/</span>
-              <a href="#" class="link active">會議記錄</a>
+          <div class="section_1280px">
+            <div class="page-header">
+              <div class="breadcrumb">
+                <a href="index.html" class="link">首頁</a>
+                <span class="sep">/</span>
+                <a href="#" class="link">認識協會</a>
+                <span class="sep">/</span>
+                <a href="#" class="link active">會議記錄</a>
+              </div>
+              <div class="title-group">
+                <h2 class="main-title">會議記錄</h2>
+                <div class="title-line-bg"></div>
+              </div>
             </div>
-            <div class="title-group">
-              <h1 class="main-title">會議記錄</h1>
-              <div class="title-line-bg"></div>
-            </div>
-            <!--
-                <div class="intro-group">
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">TEXT</p>
-                </div>
-                -->
           </div>
         </section>
 
-        <section class="content-section">
-          <div class="page-header">
-            <!--
-               <div class="title-group">
-                   <h2 class="main-title">H2</h2>
-                   <div class="title-line-bg"></div>
-                </div>
-                 -->
-            <div class="intro-group">
-              <!--
-                   <h3 class="sub-title">H3</h3>
-                   <p class="intro-text">text</p>
-                   -->
-              <div class="category-warp">
-                <div class="category-group">
-                  <h3>會議類別</h3>
-                  <div class="category-content">
-                    <span class="tag">會員大會</span>
-                    <span class="tag">理監事會</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
+        <div class="section_1280px pt_pb_60px">
+          <div class="section_1040px mobile_padding_left_right_20px gap_40px mobile_gap_20px">
+            <section class="content-section">
+              <div class="page-header">
+                <div class="intro-group">
+                  <div class="category-warp">
+                    <div class="category-group">
+                      <label>會議類別</label>
+                      <div class="category-content" id="filter-category">
+                        <span class="tag active" data-filter-type="category" data-filter-value="all">全部</span>
+                        <span class="tag" data-filter-type="category" data-filter-value="會員大會">會員大會</span>
+                        <span class="tag" data-filter-type="category" data-filter-value="理監事會">理監事會</span>
+                        <span class="tag" data-filter-type="category" data-filter-value="協會公告">協會公告</span>
+                      </div>
+                    </div>
+                    <div class="category-group">
+                      <label>會議屆數</label>
+                      <div class="category-content" id="filter-term">
+                        <span class="tag active" data-filter-type="term" data-filter-value="all">全部</span>
+                        <span class="tag" data-filter-type="term" data-filter-value="第五屆">第五屆</span>
+                        <span class="tag" data-filter-type="term" data-filter-value="第四屆">第四屆</span>
+                        <span class="tag" data-filter-type="term" data-filter-value="第三屆">第三屆</span>
+                        <span class="tag" data-filter-type="term" data-filter-value="第二屆">第二屆</span>
+                        <span class="tag" data-filter-type="term" data-filter-value="第一屆">第一屆</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="category-group">
-                  <h3>會議屆數</h3>
-                  <div class="category-content">
-                    <span class="tag">第五屆</span>
-                    <span class="tag">第四屆</span>
-                    <span class="tag">第三屆</span>
-                    <span class="tag">第二屆</span>
-                    <span class="tag">第一屆</span>
-                  </div>
+
+                  <ul class="card-grid" id="card-grid">
+                    <li class="card-meeting" data-category="協會公告" data-term="第五屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                          <span class="tag">第五屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="理監事會" data-term="第五屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">理監事會</span>
+                          <span class="tag">第五屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-08-20" class="card-meeting-date">2025.08.20</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第5屆第2次理監事聯席會議</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="會員大會" data-term="第五屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">會員大會</span>
+                          <span class="tag">第五屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-06-15" class="card-meeting-date">2025.06.15</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第5屆第1次會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="理監事會" data-term="第五屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">理監事會</span>
+                          <span class="tag">第五屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-04-10" class="card-meeting-date">2025.04.10</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第5屆第1次理監事聯席會議</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="協會公告" data-term="第四屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                          <span class="tag">第四屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-11-05" class="card-meeting-date">2024.11.05</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第4屆第4次臨時會員(代表)大會公告</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="會員大會" data-term="第四屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">會員大會</span>
+                          <span class="tag">第四屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-09-18" class="card-meeting-date">2024.09.18</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第4屆第3次會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="理監事會" data-term="第四屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">理監事會</span>
+                          <span class="tag">第四屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-07-22" class="card-meeting-date">2024.07.22</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第4屆第2次理監事聯席會議</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="會員大會" data-term="第四屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">會員大會</span>
+                          <span class="tag">第四屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-05-08" class="card-meeting-date">2024.05.08</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第4屆第2次會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="協會公告" data-term="第三屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                          <span class="tag">第三屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2023-12-14" class="card-meeting-date">2023.12.14</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第3屆協會年度工作報告公告</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="理監事會" data-term="第三屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">理監事會</span>
+                          <span class="tag">第三屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2023-09-30" class="card-meeting-date">2023.09.30</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第3屆第3次理監事聯席會議</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="會員大會" data-term="第三屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">會員大會</span>
+                          <span class="tag">第三屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2023-06-25" class="card-meeting-date">2023.06.25</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第3屆第2次會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="理監事會" data-term="第二屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">理監事會</span>
+                          <span class="tag">第二屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2022-10-19" class="card-meeting-date">2022.10.19</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第2屆第2次理監事聯席會議</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="會員大會" data-term="第二屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">會員大會</span>
+                          <span class="tag">第二屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2022-06-11" class="card-meeting-date">2022.06.11</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第2屆第1次會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="協會公告" data-term="第一屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                          <span class="tag">第一屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2021-11-03" class="card-meeting-date">2021.11.03</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第1屆協會成立大會公告</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="會員大會" data-term="第一屆">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">會員大會</span>
+                          <span class="tag">第一屆</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2021-08-07" class="card-meeting-date">2021.08.07</time>
+                          <h3 class="card-meeting-title">
+                            <a href="meetings_detail.html">第1屆第1次會員(代表)大會</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
+            </section>
 
-              <ul class="card-grid">
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h3 class="card-meeting-title">
-                        <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h3 class="card-meeting-title">
-                        <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h3 class="card-meeting-title">
-                        <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h3 class="card-meeting-title">
-                        <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h3 class="card-meeting-title">
-                        <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h3 class="card-meeting-title">
-                        <a href="meetings_detail.html">第5屆第3次臨時會員(代表)大會</a>
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="more pt_60px">查看更多</div>
-            </div>
+            <nav class="pagination" id="pagination" aria-label="分頁導覽"></nav>
           </div>
-        </section>
+        </div>
       </main>
 
       <include src="src/partials/footer.html" />
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      (function () {
+        const ITEMS_PER_PAGE = 6;
+        let activeCategory = 'all';
+        let activeTerm = 'all';
+        let currentPage = 1;
+
+        const grid = document.getElementById('card-grid');
+        const pagination = document.getElementById('pagination');
+        const allCards = Array.from(grid.querySelectorAll('.card-meeting'));
+
+        function getFiltered() {
+          return allCards.filter(function (card) {
+            var matchCat = activeCategory === 'all' || card.dataset.category === activeCategory;
+            var matchTerm = activeTerm === 'all' || card.dataset.term === activeTerm;
+            return matchCat && matchTerm;
+          });
+        }
+
+        function render() {
+          var filtered = getFiltered();
+
+          grid.querySelectorAll('.card-ghost').forEach(function (el) { el.remove(); });
+          grid.querySelectorAll('.card-empty').forEach(function (el) { el.remove(); });
+
+          if (filtered.length === 0) {
+            allCards.forEach(function (card) { card.style.display = 'none'; });
+            var empty = document.createElement('li');
+            empty.className = 'card-empty';
+            empty.textContent = '無資料';
+            grid.appendChild(empty);
+            renderPagination(1);
+            return;
+          }
+
+          var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+          if (currentPage > totalPages) currentPage = totalPages;
+
+          var start = (currentPage - 1) * ITEMS_PER_PAGE;
+          var visible = new Set(filtered.slice(start, start + ITEMS_PER_PAGE));
+
+          allCards.forEach(function (card) {
+            card.style.display = visible.has(card) ? '' : 'none';
+          });
+
+          var shortage = ITEMS_PER_PAGE - visible.size;
+          for (var i = 0; i < shortage; i++) {
+            var ghost = document.createElement('li');
+            ghost.className = 'card-ghost';
+            grid.appendChild(ghost);
+          }
+
+          renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+          pagination.innerHTML = '';
+
+          function makeBtn(html, page, disabled, active, isArrow) {
+            var el = document.createElement('button');
+            el.className = 'pagination-btn' + (active ? ' active' : '') + (isArrow ? ' arrow' : '');
+            if (active) el.setAttribute('aria-current', 'page');
+            el.disabled = disabled;
+            el.innerHTML = html;
+            if (!disabled) {
+              el.addEventListener('click', function () {
+                currentPage = page;
+                render();
+              });
+            }
+            return el;
+          }
+
+          var prevSvg = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          var nextSvg = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+          pagination.appendChild(makeBtn(prevSvg, currentPage - 1, currentPage === 1, false, true));
+          for (var i = 1; i <= totalPages; i++) {
+            pagination.appendChild(makeBtn(i, i, false, i === currentPage, false));
+          }
+          pagination.appendChild(makeBtn(nextSvg, currentPage + 1, currentPage === totalPages, false, true));
+        }
+
+        document.getElementById('filter-category').addEventListener('click', function (e) {
+          var tag = e.target.closest('[data-filter-type="category"]');
+          if (!tag) return;
+          activeCategory = tag.dataset.filterValue;
+          currentPage = 1;
+          document.querySelectorAll('#filter-category .tag').forEach(function (t) { t.classList.remove('active'); });
+          tag.classList.add('active');
+          render();
+        });
+
+        document.getElementById('filter-term').addEventListener('click', function (e) {
+          var tag = e.target.closest('[data-filter-type="term"]');
+          if (!tag) return;
+          activeTerm = tag.dataset.filterValue;
+          currentPage = 1;
+          document.querySelectorAll('#filter-term .tag').forEach(function (t) { t.classList.remove('active'); });
+          tag.classList.add('active');
+          render();
+        });
+
+        render();
+      })();
+    </script>
   </body>
 </html>

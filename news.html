@@ -13,165 +13,402 @@
 
     <div class="final">
       <include src="src/partials/header.html" />
-      <main class="main" id="main-content">
+      <main class="main mobile_gap_40px" id="main-content">
         <section class="content-section is-dark arc-bottom content-section-hero">
-          <div class="page-header">
-            <div class="breadcrumb">
-              <a href="index.html" class="link">首頁</a>
-              <span class="sep">/</span>
-              <a href="/about" class="link active">最新消息</a>
-            </div>
-            <div class="title-group">
-              <h1 class="main-title">最新消息</h1>
-              <div class="title-line-bg"></div>
+          <div class="section_1280px">
+            <div class="page-header">
+              <div class="breadcrumb">
+                <a href="index.html" class="link">首頁</a>
+                <span class="sep">/</span>
+                <a href="/about" class="link active">最新消息</a>
+              </div>
+              <div class="title-group">
+                <h2 class="main-title">最新消息</h2>
+                <div class="title-line-bg"></div>
+              </div>
             </div>
           </div>
         </section>
-
-        <section class="content-section mb_60px">
-          <div class="page-header">
-            <div class="intro-group">
-              <!--
-                    <h3 class="sub-title">H3</h3>
-                    <p class="intro-text">text</p>
-                    -->
-              <div class="category-warp">
-                <div class="category-group">
-                  <!-- 想請問一下，這個 <label>的用法我很常在亞洲的工程師的代碼看到，在這裡的使用邏輯是甚麼? -->
-                  <h3>消息類別</h3>
-                  <div class="category-content">
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
-                    <span class="tag">協會公告</span>
+        <div class="section_1280px">
+          <div
+            class="section_1040px mt_60px mobile_padding_left_right_20px mobile_margin_top_40px mb_60px mobile_margin_top_40px"
+          >
+            <section class="content-section">
+              <div class="page-header">
+                <div class="intro-group">
+                  <div class="category-warp">
+                    <div class="category-group">
+                      <label>消息類別</label>
+                      <div class="category-content" id="filter-category">
+                        <span class="tag active" data-filter-value="all">全部</span>
+                        <span class="tag" data-filter-value="協會公告">協會公告</span>
+                        <span class="tag" data-filter-value="活動訊息">活動訊息</span>
+                        <span class="tag" data-filter-value="媒體報導">媒體報導</span>
+                        <span class="tag" data-filter-value="研習課程">研習課程</span>
+                      </div>
+                    </div>
                   </div>
+
+                  <ul class="card-grid" id="card-grid">
+                    <li class="card-meeting" data-category="協會公告">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">2025年度會員大會召開公告</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="活動訊息">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">活動訊息</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-09-20" class="card-meeting-date">2025.09.20</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">2025無障礙環境體驗工作坊報名開始</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="媒體報導">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">媒體報導</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-08-15" class="card-meeting-date">2025.08.15</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">聯合報專訪：台灣可及環境設計的下一步</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="研習課程">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">研習課程</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-07-28" class="card-meeting-date">2025.07.28</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">無障礙設計師培訓課程第三期招生</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="協會公告">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-07-01" class="card-meeting-date">2025.07.01</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">理監事會第2次聯席會議決議公告</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="活動訊息">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">活動訊息</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-06-10" class="card-meeting-date">2025.06.10</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">2025可及城市論壇活動報名</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="媒體報導">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">媒體報導</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-05-22" class="card-meeting-date">2025.05.22</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">公視新聞報導：無障礙友善商圈推動成果</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="研習課程">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">研習課程</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-04-18" class="card-meeting-date">2025.04.18</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">通用設計概論線上研習課程開放報名</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="協會公告">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-03-05" class="card-meeting-date">2025.03.05</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">114年度會費繳納通知</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="活動訊息">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">活動訊息</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2025-02-14" class="card-meeting-date">2025.02.14</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">2025春季友善環境踏查活動開放報名</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="媒體報導">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">媒體報導</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-12-20" class="card-meeting-date">2024.12.20</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">天下雜誌：讓城市對每個人都友善</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="研習課程">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">研習課程</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-11-08" class="card-meeting-date">2024.11.08</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">無障礙空間評估實務工作坊報名</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="協會公告">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">協會公告</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-10-01" class="card-meeting-date">2024.10.01</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">第5屆理監事選舉結果公告</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="活動訊息">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">活動訊息</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-09-03" class="card-meeting-date">2024.09.03</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">2024國際身心障礙日紀念活動</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="card-meeting" data-category="媒體報導">
+                      <div class="card-meeting-image">
+                        <img src="/img/article-img.png" alt="" />
+                      </div>
+                      <div class="card-meeting-describe">
+                        <div class="card-meeting-tag-wrap">
+                          <span class="tag">媒體報導</span>
+                        </div>
+                        <div class="card-meeting-content-wrap">
+                          <time datetime="2024-07-15" class="card-meeting-date">2024.07.15</time>
+                          <h3 class="card-meeting-title">
+                            <a href="news_detail.html">自由時報：無障礙坡道設計新標準上路</a>
+                          </h3>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
+            </section>
 
-              <ul class="card-grid">
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h2 class="card-meeting-title">
-                        <a href="/post-url">消息標題</a>
-                      </h2>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h2 class="card-meeting-title">
-                        <a href="/post-url">消息標題</a>
-                      </h2>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h2 class="card-meeting-title">
-                        <a href="/post-url">消息標題</a>
-                      </h2>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h2 class="card-meeting-title">
-                        <a href="/post-url">消息標題</a>
-                      </h2>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h2 class="card-meeting-title">
-                        <a href="/post-url">消息標題</a>
-                      </h2>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="card-meeting">
-                  <div class="card-meeting-image">
-                    <img src="/img/article-img.png" alt="" />
-                  </div>
-                  <div class="card-meeting-describe">
-                    <div class="card-meeting-tag-wrap">
-                      <span class="tag">協會公告</span>
-                      <span class="tag">協會公告</span>
-                    </div>
-                    <div class="card-meeting-content-wrap">
-                      <time datetime="2025-10-12" class="card-meeting-date">2025.10.12</time>
-                      <h2 class="card-meeting-title">
-                        <a href="/post-url">消息標題</a>
-                      </h2>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <nav class="pagination" id="pagination" aria-label="分頁導覽"></nav>
           </div>
-          <!-- 增加 button 讓這個元件可以支持鍵盤跟螢幕閱讀器 -->
-          <div class="more"><button class="more-button">查看更多</button></div>
-        </section>
+        </div>
       </main>
 
       <include src="src/partials/footer.html" />
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      (function () {
+        var ITEMS_PER_PAGE = 6;
+        var activeCategory = 'all';
+        var currentPage = 1;
+
+        var grid = document.getElementById('card-grid');
+        var pagination = document.getElementById('pagination');
+        var allCards = Array.from(grid.querySelectorAll('.card-meeting'));
+
+        function getFiltered() {
+          return allCards.filter(function (card) {
+            return activeCategory === 'all' || card.dataset.category === activeCategory;
+          });
+        }
+
+        function render() {
+          var filtered = getFiltered();
+
+          grid.querySelectorAll('.card-ghost').forEach(function (el) { el.remove(); });
+          grid.querySelectorAll('.card-empty').forEach(function (el) { el.remove(); });
+
+          if (filtered.length === 0) {
+            allCards.forEach(function (card) { card.style.display = 'none'; });
+            var empty = document.createElement('li');
+            empty.className = 'card-empty';
+            empty.textContent = '無資料';
+            grid.appendChild(empty);
+            renderPagination(1);
+            return;
+          }
+
+          var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+          if (currentPage > totalPages) currentPage = totalPages;
+
+          var start = (currentPage - 1) * ITEMS_PER_PAGE;
+          var visible = new Set(filtered.slice(start, start + ITEMS_PER_PAGE));
+
+          allCards.forEach(function (card) {
+            card.style.display = visible.has(card) ? '' : 'none';
+          });
+
+          var shortage = ITEMS_PER_PAGE - visible.size;
+          for (var i = 0; i < shortage; i++) {
+            var ghost = document.createElement('li');
+            ghost.className = 'card-ghost';
+            grid.appendChild(ghost);
+          }
+
+          renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+          pagination.innerHTML = '';
+
+          function makeBtn(html, page, disabled, active, isArrow) {
+            var el = document.createElement('button');
+            el.className = 'pagination-btn' + (active ? ' active' : '') + (isArrow ? ' arrow' : '');
+            if (active) el.setAttribute('aria-current', 'page');
+            el.disabled = disabled;
+            el.innerHTML = html;
+            if (!disabled) {
+              el.addEventListener('click', function () {
+                currentPage = page;
+                render();
+              });
+            }
+            return el;
+          }
+
+          var prevSvg = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          var nextSvg = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+          pagination.appendChild(makeBtn(prevSvg, currentPage - 1, currentPage === 1, false, true));
+          for (var i = 1; i <= totalPages; i++) {
+            pagination.appendChild(makeBtn(i, i, false, i === currentPage, false));
+          }
+          pagination.appendChild(makeBtn(nextSvg, currentPage + 1, currentPage === totalPages, false, true));
+        }
+
+        document.getElementById('filter-category').addEventListener('click', function (e) {
+          var tag = e.target.closest('[data-filter-value]');
+          if (!tag) return;
+          activeCategory = tag.dataset.filterValue;
+          currentPage = 1;
+          document.querySelectorAll('#filter-category .tag').forEach(function (t) { t.classList.remove('active'); });
+          tag.classList.add('active');
+          render();
+        });
+
+        render();
+      })();
+    </script>
   </body>
 </html>

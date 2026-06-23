@@ -20,7 +20,7 @@
   --primaryorange: rgba(239, 158, 29, 1);
 
   /* ── 版面對齊系統 ────────────────────────────────────────────── */
-  --layout-max-width: 1280px;
+  --layout-max-width: 100%;
   /* 20px（手機）→ 80px（桌機 1280px+），與 .nav-bar-inner padding 同步 */
   --layout-padding: clamp(20px, 6.25vw, 80px);
 }
@@ -99,20 +99,30 @@ a {
 .mb_60px {
   margin-bottom: 60px !important;
 }
+.mb_40px {
+  margin-bottom: 40px !important;
+}
+.mt_60px {
+  margin-top: 60px !important;
+}
+/* 隱藏尚未展開的卡片 */
+.card-meeting.is-hidden {
+  display: none;
+}
+
 
 /* 全域「查看更多」元件，置中顯示，底線連結樣式 */
 .more {
   display: flex;
-  padding: 10px 8px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color: var(--neautral-50, #1a1410);
-  font-family: "Noto Sans", Helvetica, sans-serif;
+  color: #1a1410;
+  font-family: Noto Sans TC;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 120%;
+  line-height: 24px;
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: auto;
@@ -135,6 +145,23 @@ a {
 
 .font-family_Noto {
   font-family: "Noto Sans", Helvetica, sans-serif;
+}
+
+.org-section-title {
+  font-family: Noto Sans TC !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+  letter-spacing: 0 !important;
+  color: #1a1410 !important;
+}
+.family_Noto {
+  font-family: Noto Sans TC;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #534c46;
 }
 
 .font_size_14 {

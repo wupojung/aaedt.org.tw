@@ -1,3 +1,38 @@
+.section_1280px {
+    max-width: 1280px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.section_1040px {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.pt_pb_60px {
+    padding: 60px 0 !important;
+}
+
+.gap_20px {
+    gap: 20px !important;
+}
+.gap_12px {
+    display: flex;
+    flex-direction: column;
+    gap: 12px !important;
+}
+
+.gap_40px {
+    gap: 40px !important;
+}
+
+.pb_40px {
+    padding-bottom: 40px;
+}
+
 .final {
     background-color: #ffffff;
     overflow: hidden;
@@ -36,11 +71,12 @@
 }
 
 .final .hero-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
-    padding: 40px 20px; /* Modified for mobile */
+
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -72,6 +108,8 @@
     max-width: 1040px;
     height: auto;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .final .feature-card {
@@ -149,14 +187,14 @@
 
 .final .text-wrapper-2 {
     position: absolute;
-    top: 22%;
+    top: 25%;
     left: 40%;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: "Noto Sans";
     font-weight: 500;
     color: #3c3831;
-    font-size: 17.3px;
+    font-size: 17.33px;
     letter-spacing: 0;
-    line-height: normal;
+    line-height: 120%;
 }
 
 .final .text-wrapper-3 {
@@ -164,12 +202,12 @@
     top: 45%;
     left: 40%;
     width: 55%;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: "Noto Sans";
     font-weight: 400;
     color: #3c3831;
-    font-size: 12.1px;
+    font-size: 12.13px;
     letter-spacing: 0;
-    line-height: 14.6px;
+    line-height: 120%;
 }
 
 .final .group-2 {
@@ -479,9 +517,8 @@
 .final .about-us-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 40px 20px; /* Modified for mobile */
+    align-items: center;
+    /* gap: 40px; */
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -508,28 +545,11 @@
     position: relative;
 }
 
-/* .final {
-    display: flex;
-    align-items: center;
-    align-self: stretch;
-    height: 40px;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 500;
-    color: var(--neautral-40);
-    font-size: 32px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: 48px;
-    white-space: nowrap;
-    justify-content: center;
-    position: relative;
-} */
 .title-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     /*width: 100%;*/
     width: fit-content;
     margin-left: auto;
@@ -562,11 +582,12 @@
     }
     .main-title,
     .h-2 {
-        font-size: 32px; /* 響應式字體 */
+        font-family: "Noto Sans TC";
+        font-size: 28px; /* 響應式字體 */
         font-weight: 500;
-        color: var(--neautral-40, #534c46); /* 加入備用顏色 */
+        color: #1a1410; /* 加入備用顏色 */
         text-align: center;
-        line-height: 1.4;
+        line-height: 36px;
         margin: 0;
     }
 }
@@ -595,7 +616,6 @@
     display: flex;
     flex-direction: column;
     width: 100%; /* Modified for mobile */
-    max-width: 400px;
     align-items: flex-start;
     gap: 60px;
     position: relative;
@@ -607,43 +627,35 @@
     width: 100%; /* Modified for mobile */
     max-width: 380px;
     align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
     position: relative;
     flex: 0 0 auto;
 }
 
 .final .text-wrapper-8 {
     position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 600;
-    color: #534c46;
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: 27px;
-    white-space: nowrap;
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    color: #1a1410;
+    font-size: 20px;
+    line-height: 28px;
 }
 
-.final .text-wrapper-9 {
-    position: relative;
-    align-self: stretch;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+.final .text-wrapper-9,
+.final .text-wrapper-9 * {
+    line-height: 28px;
+    font-family: Noto Sans TC;
     font-weight: 400;
     color: #534c46;
     font-size: 18px;
-    letter-spacing: 0;
-    line-height: 150%;
 }
 
 .final .button {
-    all: unset;
     box-sizing: border-box;
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px 8px 16px;
+    padding: 12px 16px 12px 24px;
     position: relative;
     flex: 0 0 auto;
     background-color: var(--primaryyellow);
@@ -655,30 +667,31 @@
     background-color: var(--primarygold);
 }
 
-.final .button .button-arrow {
+.final .button-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--neautral-50);
-    font-size: 20px;
-    line-height: 1;
+    align-items: flex-start;
+}
+
+.final .button .button-arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
 .final .text-wrapper-10 {
+    padding-right: 56px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: Noto Sans TC;
     font-weight: 500;
     color: var(--neautral-50);
     font-size: 20px;
     letter-spacing: 0;
     line-height: 30px;
-    padding-right: 0.8rem;
     white-space: nowrap;
 }
 
@@ -726,11 +739,8 @@
     flex-direction: column;
     width: 100%; /* Modified for mobile */
     align-items: flex-start;
-    gap: 40px;
+
     position: relative;
-
-    padding: 20px 20px; /* Modified for mobile */
-
     /* ✅ 修改這裡：同時預留上面和下面的空間 */
     margin-top: 60px; /* 給頭頂波浪用的空間 */
     margin-bottom: 60px; /* 給腳底波浪用的空間 */
@@ -840,8 +850,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding: 20px 0px 20px 16px;
+    gap: 8px;
+    padding: 16px 12px 16px 12px;
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -857,12 +867,21 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 23px;
+    padding: 4px 16px;
     position: relative;
     flex: 0 0 auto;
-    background-color: #655b52;
+    background-color: #ffffff;
     border-radius: 40px;
-    border: 1px solid;
+    border: 1px solid #534c46;
+    color: #1a1410;
+}
+
+.final .frame-16:focus,
+.final .frame-16:hover {
+    background-color: #655b52;
+    * {
+        color: #ffffff !important;
+    }
 }
 
 .final .text-wrapper-12 {
@@ -870,14 +889,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 500;
-    color: #ffffff;
+    font-family: Noto Sans TC;
+    font-weight: 400;
+    color: #1a1410;
     font-size: 14px;
     letter-spacing: 0;
-    line-height: 18px;
+    line-height: 150%;
     white-space: nowrap;
 }
 
@@ -1007,14 +1024,13 @@
     position: relative;
     width: 100%;
     max-width: 450px;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-family: Noto Sans TC;
     font-weight: 400;
     color: #534c46;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     letter-spacing: 0;
-    line-height: 27px;
+    line-height: 28px;
 }
 
 .final .partners-section {
@@ -1023,7 +1039,7 @@
     align-items: flex-start;
     gap: 20px;
     /* Mobile first: 小 padding */
-    padding: 40px 20px;
+    /* padding: 40px 20px; */
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -1047,11 +1063,40 @@
 
 .final .frame-25 {
     position: relative;
-    width: 100%; /* Modified for mobile */
+    width: 100%;
     max-width: 1040.23px;
     height: auto;
     flex: 0 0 auto;
     margin-right: -0.23px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .final .arc-bottom::after,
+    .final .arc-top::before {
+        height: 40px;
+    }
+
+    .final .arc-bottom::after {
+        bottom: -40px;
+    }
+
+    .final .arc-top::before {
+        top: -40px;
+    }
+
+    .final .frame-25 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .final .frame-25 img {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 .campaign_overview_section {
@@ -1166,60 +1211,75 @@
     background-repeat: no-repeat;
 }
 
+@media (max-width: 1024px) {
+    .content-section-hero {
+        padding: 20px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
 @media (max-width: 768px) {
+    .card-meeting-tag-wrap .tag {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .more {
+        font-size: 16px;
+    }
+    .final .text-wrapper-10 {
+        font-size: 18px;
+    }
     .final .element-wrapper {
         height: 300px;
     }
     /* .mb_60px {
         margin-bottom: 30px !important;
     } */
-    .content-section {
+    /* .content-section {
         gap: 30px;
         padding: 30px var(--layout-padding) 30px var(--layout-padding);
         .page-header {
             gap: 20px !important;
         }
-    }
-    .content-section-hero {
-        padding: 12px var(--layout-padding) 0 var(--layout-padding) !important;
-    }
-    .title-line-bg {
-        height: 6px !important;
-    }
+    } */
 
     .final .text-wrapper-8,
     .final .text-wrapper-9,
     .sub-title,
     .intro-text {
-        line-height: 120%;
+        line-height: 24px !important;
     }
 
     .text-wrapper-13,
     .final .text-wrapper-8,
     .sub-title,
     .text-wrapper-9 > * {
+        line-height: 24px !important;
         font-size: 16px !important;
     }
     .card-meeting-title {
         font-size: 18px !important;
     }
-    .final .h-2 {
-        font-size: 20px !important;
-    }
 
     .final .text-wrapper-9,
     .intro-text {
-        font-size: 14px !important;
+        font-size: 16px !important;
     }
     .text-wrapper-14,
     .text-wrapper-12,
     .category-warp label {
         font-size: 12px !important;
     }
+    .category-warp {
+        margin-bottom: 20px !important;
+    }
     .final .donate-section,
     .final .about-us-section,
     .final .frame-7 {
-        gap: 20px;
+        gap: 12px;
+    }
+    .mobile_center {
+        justify-content: center;
     }
     /* .final .outreach-section,
     .final .video-section {
@@ -1240,8 +1300,9 @@
         }
     }
 
-    .final .h-2 {
-        height: 27px !important;
+    .main-title,
+    .h-2 {
+        font-size: 24px !important;
     }
     .gap-3 {
         gap: 0 !important;
@@ -1267,13 +1328,6 @@
             font-size: 14px !important;
         }
     }
-    .accessible-table {
-        th,
-        td {
-            font-size: 14px !important;
-        }
-    }
-
     .article-group {
         .title {
             font-size: 16px !important;
@@ -1281,5 +1335,8 @@
         .description {
             font-size: 14px !important;
         }
+    }
+    .pt_pb_60px {
+        padding: 40px 0 !important;
     }
 }

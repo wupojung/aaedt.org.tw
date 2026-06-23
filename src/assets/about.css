@@ -1,0 +1,9 @@
+.content-section {
+  & .intro-group {
+    &.--split {
+      .intro-content {
+        justify-content: center;
+      }
+    }
+  }
+}

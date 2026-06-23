@@ -7,8 +7,7 @@
 .category-article {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding-bottom: 48px;
+    gap: 40px;
 }
 
 .category-article:last-child {
@@ -23,18 +22,18 @@
 }
 
 .article-group .title {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-family: "Noto Sans TC" !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
     color: var(--neautral-50, #1a1410);
-    line-height: 1.5;
+    line-height: 28px !important;
 }
 
 .article-group .description {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1rem;
-    color: var(--neautral-40, #534c46);
-    line-height: 1.8;
+    font-family: "Noto Sans TC";
+    font-size: 18px !important;
+    color: var(--neautral-40, #534c46) !important;
+    line-height: 28px !important;
 }
 
 .article-group .description ul {
@@ -67,13 +66,14 @@
 /* 卡片內小 tag 樣式（比 category-warp 的篩選 tag 更小） */
 .card-meeting-tag-wrap .tag {
     min-height: auto;
-    padding: 2px 12px;
-    font-size: 0.8125rem; /* 13px */
-    background-color: var(--neautral-10, #f5f4f2);
-    color: black;
+    font-family: "Noto Sans TC";
+    font-size: 14px;
+    background-color: #f5f4f2;
+    color: #1a1410;
     border-radius: 40px;
-    font-weight: 400;
-    padding: 12px;
+    font-weight: 500;
+    padding: 4px 16px;
+    line-height: 22px;
 }
 
 /* 4. 卡片日期 + 標題直向排列 */
@@ -91,5 +91,11 @@
 }
 
 .card-meeting-title a:hover {
-    color: var(--primarygold, #fec300);
+    color: var(--neautral-30, #837b74);
+}
+
+@media (max-width: 768px) {
+    .category-article {
+        gap: 20px;
+    }
 }

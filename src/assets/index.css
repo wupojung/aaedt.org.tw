@@ -1,12 +1,5 @@
-.main {
-  padding-top: 40px;
-}
-
 @media (max-width: 768px) {
-  .main {
-    padding-top: 0;
+  .text-wrapper-9 a {
+    font-size: 16px !important;
   }
-  /* .final .action-card {
-    min-width: 353px;
-  } */
 }
