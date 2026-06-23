@@ -28,7 +28,7 @@
 }
 
 /* ── RWD ── */
-@media (max-width: 767px) {
+@media (max-width: 1120px) {
     #carouselExampleIndicators {
         border-radius: 0;
     }
@@ -64,8 +64,12 @@
     background: rgba(255, 255, 255, 0.95);
 }
 
-.carousel-control-prev { left: 12px; }
-.carousel-control-next { right: 12px; }
+.carousel-control-prev {
+    left: 12px;
+}
+.carousel-control-next {
+    right: 12px;
+}
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -84,6 +88,45 @@
 .carousel-control-next-icon {
     transform: rotate(45deg);
     margin-right: 3px;
+}
+
+/* ── 暫停 / 播放按鈕 ── */
+.carousel-control-play {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    padding: 0;
+}
+
+.carousel-control-play:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* 預設（播放中）：顯示 pause，隱藏 play */
+.carousel-control-play .icon-play {
+    display: none;
+}
+.carousel-control-play .icon-pause {
+    display: block;
+}
+
+/* 暫停中：顯示 play，隱藏 pause */
+.carousel-control-play.is-paused .icon-play {
+    display: block;
+}
+.carousel-control-play.is-paused .icon-pause {
+    display: none;
 }
 
 /* ── 指示點 ── */
@@ -107,7 +150,9 @@
     background: rgba(255, 255, 255, 0.55);
     border: 1.5px solid rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    transition:
+        background 0.2s,
+        transform 0.2s;
 }
 
 .carousel-indicators li.active {

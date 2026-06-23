@@ -8,8 +8,11 @@ export function initCarousel() {
   const prevBtn = carousel.querySelector('.carousel-control-prev');
   const nextBtn = carousel.querySelector('.carousel-control-next');
 
+  const playBtn = document.getElementById('carouselPlayBtn');
+
   let current = 0;
   let autoTimer = null;
+  let isPaused = false;
   const total = items.length;
   const INTERVAL = 3000;
 
@@ -29,28 +32,46 @@ export function initCarousel() {
     clearInterval(autoTimer);
   }
 
+  function setPlayState(paused) {
+    isPaused = paused;
+    playBtn?.classList.toggle('is-paused', paused);
+    if (playBtn) playBtn.setAttribute('aria-label', paused ? '開始輪播' : '暫停輪播');
+  }
+
   prevBtn?.addEventListener('click', (e) => {
     e.preventDefault();
     goTo(current - 1);
-    startAuto();
+    if (!isPaused) startAuto();
   });
 
   nextBtn?.addEventListener('click', (e) => {
     e.preventDefault();
     goTo(current + 1);
-    startAuto();
+    if (!isPaused) startAuto();
   });
 
   indicators.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       goTo(i);
-      startAuto();
+      if (!isPaused) startAuto();
     });
   });
 
-  // 暫停自動播放（滑鼠懸停時）
+  playBtn?.addEventListener('click', () => {
+    if (isPaused) {
+      setPlayState(false);
+      startAuto();
+    } else {
+      setPlayState(true);
+      stopAuto();
+    }
+  });
+
+  // 滑鼠懸停時暫停，但不改變 isPaused 狀態（離開後按原狀態決定是否繼續）
   carousel.addEventListener('mouseenter', stopAuto);
-  carousel.addEventListener('mouseleave', startAuto);
+  carousel.addEventListener('mouseleave', () => {
+    if (!isPaused) startAuto();
+  });
 
   goTo(0);
   startAuto();
