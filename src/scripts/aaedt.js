@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initDropdownNavigation();
   initCurrentNav();
   initBreadcrumbCollapse();
+  initLoadMore();
 });
 
 /* ============================================================
@@ -209,4 +210,20 @@ function initBreadcrumbCollapse() {
 
   const ro = new ResizeObserver(updateCollapse);
   document.querySelectorAll('.page-header').forEach((h) => ro.observe(h));
+}
+
+/* ============================================================
+   Load More — 點擊「查看更多」每次展開 3 張隱藏卡片
+   HTML: <ul id="grid-xxx"> + <div class="more" data-target="grid-xxx">
+   ============================================================ */
+function initLoadMore() {
+  document.querySelectorAll('.more[data-target]').forEach((btn) => {
+    const grid = document.getElementById(btn.dataset.target);
+    if (!grid) return;
+
+    btn.addEventListener('click', () => {
+      const hidden = Array.from(grid.querySelectorAll('.card-meeting.is-hidden'));
+      hidden.slice(0, 3).forEach((card) => card.classList.remove('is-hidden'));
+    });
+  });
 }
