@@ -1247,14 +1247,15 @@
     .final .text-wrapper-9,
     .sub-title,
     .intro-text {
-        line-height: 24px;
+        line-height: 24px !important;
     }
 
     .text-wrapper-13,
     .final .text-wrapper-8,
     .sub-title,
     .text-wrapper-9 > * {
-        font-size: 18px !important;
+        line-height: 24px !important;
+        font-size: 16px !important;
     }
     .card-meeting-title {
         font-size: 18px !important;
