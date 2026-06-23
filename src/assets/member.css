@@ -500,37 +500,15 @@
   display: contents;
 }
 
-/* ── 共用：Logo 欄（兩種型態都加 column 分隔線） ── */
-.org-list__logo,
-.org-list__logo-cell {
-  border-right: 1px solid #837a73;
-}
-
-/* Logo 欄 — div 背景圖型 */
+/* Logo 欄 */
 .org-list__logo {
+  width: 200px;
   height: 84px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: contain;
   background-color: #ffffff;
-  box-sizing: content-box;
-}
-
-/* Logo 欄 — div 容器型（有實際 logo 圖片） */
-.org-list__logo-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 0;
-}
-
-.org-list__logo-box {
-  width: 91.88px;
-  height: 60px;
-  background-color: #ffffff;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #837a73;
 }
 
 /* 名稱欄 */
