@@ -253,17 +253,6 @@
                                     font-weight: 500;
                                     font-family: Noto Sans TC;
 
-                                    &::after {
-                                        content: "";
-                                        display: inline-block;
-                                        width: 14px;
-                                        height: 14px;
-                                        margin-left: 8px;
-                                        background-image: url("../../public/img/certification/download_icon.svg");
-                                        background-repeat: no-repeat;
-                                        background-size: contain;
-                                    }
-
                                     &:hover {
                                         background-color: #e7e7e4;
                                     }
@@ -274,9 +263,8 @@
                 }
             }
         }
-
         /* RWD: 手機版自動改為上下堆疊 */
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .cert-group .list ul .cert-card {
                 flex-direction: column;
 
