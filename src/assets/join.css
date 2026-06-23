@@ -20,7 +20,8 @@
 }
 
 .membership-item .category-title {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans";
+  font-style: SemiBold;
   font-size: 18px;
   font-weight: 600;
   line-height: 150%;
@@ -49,7 +50,6 @@
 
 .download-list {
   display: flex;
-  flex-direction: column;
   gap: 12px;
   list-style: none;
   padding: 0;
@@ -184,6 +184,9 @@
 }
 
 @media (max-width: 768px) {
+  .download-list {
+    flex-flow: column;
+  }
   .download-list li {
     align-items: center;
 
