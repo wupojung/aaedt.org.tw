@@ -162,6 +162,7 @@ function initCurrentNav() {
     'meetings_detail.html': 'minutes.html',
     'news_detail.html': 'news.html',
     'campaign_article.html': 'campaign_overview.html',
+    'knowledge_article.html': 'knowledge.html',
   };
   const effectivePage = parentPageMap[page] ?? page;
 
