@@ -20,7 +20,8 @@
 }
 
 .membership-item .category-title {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans";
+  font-style: SemiBold;
   font-size: 18px;
   font-weight: 600;
   line-height: 150%;
@@ -47,38 +48,50 @@
   font-weight: 600;
 }
 
-.download-group {
+.download-list {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
   margin-top: 8px;
-  flex-wrap: wrap;
-}
 
-.download-group .file-link {
-  text-decoration: underline;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 150%;
-  color: #534c46;
-  margin: 0;
-}
+  li {
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
 
-.download-group .download-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #534c46;
-  margin-left: 8px;
-}
+    .file-name {
+      color: #534c46;
+      font-family: "Noto Sans TC";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+      margin-right: 20px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-.download-group .icon-download {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-image: url("../../public/img/join/download.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f5f4f2;
+      color: #1a1410;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: "Noto Sans TC", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22px;
+      transition: background-color 0.2s;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #e7e7e4;
+      }
+    }
+  }
 }
 
 .table-container .accessible-table th,
@@ -171,6 +184,27 @@
 }
 
 @media (max-width: 768px) {
+  .download-list {
+    flex-flow: column;
+  }
+  .download-list li {
+    align-items: center;
+
+    .file-name {
+      font-size: 14px !important;
+      margin-right: 0;
+    }
+
+    .btn-download {
+      font-size: 14px !important;
+
+      img {
+        width: 1rem !important;
+        height: 1rem !important;
+      }
+    }
+  }
+
   .membership-container {
     gap: 24px;
   }

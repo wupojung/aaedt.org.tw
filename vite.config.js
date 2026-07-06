@@ -35,6 +35,7 @@ export default defineConfig({
                 campaign: resolve(__dirname, 'campaign_overview.html'),  //推廣行動
                 campaign_article: resolve(__dirname, 'campaign_article.html'),  //推廣文章
                 knowledge: resolve(__dirname, 'knowledge.html'),//知識分享
+                knowledge_article: resolve(__dirname, 'knowledge_article.html'),//知識分享文章
                 practice: resolve(__dirname, 'practice.html'), //改善實務
                 certification: resolve(__dirname, 'certification.html'), //標章認證
                 results: resolve(__dirname, 'results.html'), //推廣成果
@@ -53,6 +54,7 @@ export default defineConfig({
 
                 // 其他
                 privacy_policy: resolve(__dirname, 'privacy_policy.html'), //隱私權政策
+                accessibility_statement: resolve(__dirname, 'accessibility_statement.html'), //網站無障礙聲明
             },
         },
     },

@@ -107,6 +107,7 @@
     white-space: nowrap;
     font-family: "Noto Sans TC";
     color: #1a1410;
+    cursor: pointer;
 }
 
 .category-warp {

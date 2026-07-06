@@ -162,6 +162,7 @@ function initCurrentNav() {
     'meetings_detail.html': 'minutes.html',
     'news_detail.html': 'news.html',
     'campaign_article.html': 'campaign_overview.html',
+    'knowledge_article.html': 'knowledge.html',
   };
   const effectivePage = parentPageMap[page] ?? page;
 
@@ -213,7 +214,7 @@ function initBreadcrumbCollapse() {
 }
 
 /* ============================================================
-   Load More — 點擊「查看更多」每次展開 3 張隱藏卡片
+   Load More — 點擊「查看更多」展開全部，點擊「收合」折疊回初始狀態
    HTML: <ul id="grid-xxx"> + <div class="more" data-target="grid-xxx">
    ============================================================ */
 function initLoadMore() {
@@ -221,9 +222,25 @@ function initLoadMore() {
     const grid = document.getElementById(btn.dataset.target);
     if (!grid) return;
 
+    // 記錄初始隱藏的卡片（頁面載入時已有 is-hidden 的）
+    const initiallyHidden = new Set(
+      Array.from(grid.querySelectorAll('.card-meeting.is-hidden'))
+    );
+
     btn.addEventListener('click', () => {
-      const hidden = Array.from(grid.querySelectorAll('.card-meeting.is-hidden'));
-      hidden.slice(0, 3).forEach((card) => card.classList.remove('is-hidden'));
+      const isExpanded = btn.dataset.expanded === 'true';
+
+      if (!isExpanded) {
+        // 展開全部
+        initiallyHidden.forEach((card) => card.classList.remove('is-hidden'));
+        btn.textContent = '收合';
+        btn.dataset.expanded = 'true';
+      } else {
+        // 收合回初始狀態
+        initiallyHidden.forEach((card) => card.classList.add('is-hidden'));
+        btn.textContent = '查看更多';
+        btn.dataset.expanded = 'false';
+      }
     });
   });
 }

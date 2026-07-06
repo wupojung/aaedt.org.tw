@@ -54,8 +54,12 @@
   .final .page-organization .accessible-table tbody,
   .final .page-about .accessible-table,
   .final .page-about .accessible-table tbody {
+    font-family: Noto Sans;
     display: block;
     width: 100%;
+    * {
+      font-family: Noto Sans;
+    }
   }
 
   .final .page-organization .accessible-table tr,
@@ -79,7 +83,6 @@
     display: block;
     width: 100%;
     text-align: center;
-    font-weight: 600;
     font-size: 14px;
     color: #534c46;
     padding: 12px 20px;
@@ -241,7 +244,7 @@
     padding: 60px 120px;
   }
 
-  */ .final .outreach-section,
+  .final .outreach-section,
   .final .video-section {
     width: 100%;
   }

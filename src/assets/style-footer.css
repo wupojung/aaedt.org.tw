@@ -187,6 +187,13 @@
   text-decoration: underline;
 }
 
+.final .footer-policy-panel .policy-divider {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #000000;
+}
+
 /* .final .footer-policy-panel span {
   font-size: 14px;
   color: var(--neautral-30);
