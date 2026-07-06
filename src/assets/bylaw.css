@@ -149,7 +149,14 @@
     transform: scaleY(0);
 }
 
-/* 8. 無障礙聲明 / 純文字政策頁面樣式 */
+/* 8. 政策頁面外層容器（避免與 .content-section .intro-group 衝突） */
+.policy-content-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 9. 無障礙聲明 / 純文字政策頁面樣式 */
 .policy-section {
     display: flex;
     flex-direction: column;
