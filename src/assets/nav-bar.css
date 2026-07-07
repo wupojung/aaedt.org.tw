@@ -6,7 +6,7 @@
 /* ── 外層容器：全寬、定位、背景 ─────────────────────────── */
 .nav-bar {
     width: 100%;
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 100;
@@ -332,6 +332,10 @@
    Mobile 與 Tablet 共享的 hamburger 選單結構與行為
    ============================================================ */
 @media (max-width: 1023px) {
+    body.nav-open {
+        overflow: hidden;
+    }
+
     .nav-bar-inner {
         & .nav {
             & .nav-dropdown {
@@ -344,9 +348,6 @@
 
     .nav {
         gap: 0 !important;
-    }
-    .nav-bar {
-        position: fixed;
     }
 
     /* 顯示 hamburger 按鈕 */
@@ -451,7 +452,6 @@
         align-items: center;
         width: 100%;
         border-top: 1px solid #e7e7e7;
-        border-bottom: 1px solid #f5f4f2;
         border-radius: 0;
         transform: none !important;
         box-sizing: border-box;
@@ -621,10 +621,9 @@
      * 若有需要在 1024px 以上「所有寬度」都套用的共用規則，寫在此處。
      */
 
-    /* Desktop 以上：nav-bar 改回 absolute（不隨捲動固定） */
+    /* Desktop 以上：nav-bar 維持 sticky，捲動時貼齊頂部 */
     .nav-bar {
-        position: absolute;
-        box-shadow: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     /* Desktop 以上：確保 hamburger 隱藏 */

@@ -1,15 +1,13 @@
 /* Media query template */
 /* Mobile first (default) */
 
-/* hero 全寬貼頂：< 1024px 全部移除 hero-section padding
-   main 的 padding-top 由 JS initNavOffset() 動態測量設定 */
+/* hero 全寬貼頂：< 1024px 全部移除 hero-section padding */
 @media (max-width: 1024px) {
-  /* padding-top 由 JS initNavOffset() 動態設定在 .final 上
-     !important 蓋過後面 min-width: 768px 的 padding: 40px 60px，
+  /* !important 蓋過後面 min-width: 768px 的 padding: 40px 60px，
      確保 768–1023px 時 hero 仍全寬貼頂 */
   .final .hero-section {
     padding: 0 !important;
-    gap: 0;
+    gap: 24px;
   }
   .final .hero-img {
     border-radius: 0;
