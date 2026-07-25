@@ -1,0 +1,50 @@
+/*
+Theme Name: AAEDT New Theme
+Theme URI: https://www.aaedt.org.tw/
+Description: A modern, high-performance, and accessible (WCAG 2.1 AA) theme built with Vite and custom Tailwind integrations for the Taiwan Association of Accessible Environment Design Technology.
+Version: 1.0.0
+Author: AAEDT Project Team
+Author URI: https://www.aaedt.org.tw/
+Text Domain: new-aaedt-theme
+Tags: custom-menu, translation-ready, accessibility, custom-logo
+*/
+
+// ============================================================
+// Core / Globals
+// ============================================================
+@import './globals';
+@import './styleguide';
+
+// ============================================================
+// Layout Components
+// ============================================================
+@import './nav-bar';
+@import './style-footer';
+@import './accessibility';
+@import './breadcrumb';
+@import './carousel';
+@import './content-section';
+@import './table-container';
+
+// ============================================================
+// Page / Template specific styles
+// ============================================================
+@import './card-meeting';
+@import './category-article';
+@import './minutes-article';
+@import './bylaw';
+@import './style';
+@import './index';
+@import './about';
+@import './organization';
+@import './member';
+@import './academic';
+@import './join';
+@import './volunteer';
+@import './meetings_detail';
+@import './related_organizations';
+
+// ============================================================
+// Responsive media queries (must be loaded last)
+// ============================================================
+@import './media-queries';

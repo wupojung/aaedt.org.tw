@@ -12,7 +12,7 @@ export function initCarousel() {
 
   let current = 0;
   let autoTimer = null;
-  let isPaused = false;
+  let isPaused = true;
   const total = items.length;
   const INTERVAL = 3000;
 
@@ -74,5 +74,5 @@ export function initCarousel() {
   });
 
   goTo(0);
-  startAuto();
+  setPlayState(true);
 }

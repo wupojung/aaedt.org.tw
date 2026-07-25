@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>AAEDT 台灣可及環境設計協會</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="/src/assets/index.css" /> -->
+    <style>
+        /* 頁面初始隱藏，防止 CSS/JS 尚未載入時的內容閃爍 (FOUC) */
+        html { opacity: 0; }
+
+        /* 預先定義下拉選單的隱藏狀態，防止閃爍 */
+        .nav-dropdown {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            position: absolute !important;
+        }
+        /* 當 JS 或是 CSS 載入完成，且有 active 時才覆蓋 */
+        .nav.active .nav-dropdown {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- skip link 必需要是第一個元件 -->
+    <a href="#main-content" class="sr-only sr-only-focusable">跳至主要內容</a>
+    <div class="final">
+      <nav class="nav-bar" aria-label="主選單">
+        <div class="nav-bar-inner">
+          <div class="nav-logo">
+            <a href="index.html" title="回協會首頁">
+              <img class="logo" src="img/logo.svg" alt="台灣可及環境設計協會 - 回首頁" />
+            </a>
+          </div>
+
+          <!-- 
+              Hamburger toggle（對應 Bootstrap 的 navbar-toggler）
+              - aria-expanded 由 aaedt.js 的 initMobileToggle() 控制
+              - aria-controls 指向 nav-content-wrapper（與 Bootstrap data-target 概念相同）
+              - 只在 < 1024px 時顯示（CSS 控制）
+          -->
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-controls="nav-content-wrapper"
+            aria-expanded="false"
+            aria-label="開啟／關閉導覽選單"
+          >
+            <!-- Hamburger icon -->
+            <svg
+              class="icon-hamburger"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+            <!-- Close icon -->
+            <svg
+              class="icon-close"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+
+          <!-- A11y updated -->
+
+          <!--
+              nav-content-wrapper 加上 id 供 aria-controls 參照（對應 Bootstrap 的 #navbarNav）
+              JS 的 initMobileToggle() 已透過 .nav-content-wrapper 選取；
+              同時加 id 不影響現有邏輯，只是增加可及性連結。
+          -->
+          <div class="nav-content-wrapper" id="nav-content-wrapper">
+            <a
+              href="#U"
+              title="右上方功能區塊"
+              id="AU"
+              accesskey="U"
+              name="U"
+              class="sr-only sr-only-focusable"
+            >
+              <span class="sr-only">右上方功能區塊</span>
+              <span aria-hidden="true">:::</span>
+            </a>
+            <ul class="nav-menu-list">
+              <li class="nav">
+                <a href="news.html" class="nav-link">最新消息</a>
+              </li>
+
+              <!-- Dropdown 1: 認識協會 -->
+              <li class="nav">
+                <button class="nav-dropdown-button" aria-controls="dropdown-about" aria-expanded="false">
+                  認識協會
+                  <span class="icon-arrow" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-dropdown" id="dropdown-about">
+                  <li><a class="nav-dropdown-item" href="about.html">關於協會</a></li>
+                  <li><a class="nav-dropdown-item" href="organization.html">組織架構</a></li>
+                  <li><a class="nav-dropdown-item" href="member.html">成員介紹</a></li>
+                  <li><a class="nav-dropdown-item" href="bylaw.html">本會章程</a></li>
+                  <li><a class="nav-dropdown-item" href="minutes.html">會議記錄</a></li>
+                </ul>
+              </li>
+
+              <!-- Dropdown 2: 專業服務 -->
+              <li class="nav">
+                <button
+                  class="nav-dropdown-button"
+                  aria-controls="dropdown-services"
+                  aria-expanded="false"
+                >
+                  專業服務
+                  <span class="icon-arrow" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-dropdown" id="dropdown-services">
+                  <li><a class="nav-dropdown-item" href="remodeling.html">環境改善</a></li>
+                  <li><a class="nav-dropdown-item" href="inspection.html">環境檢測</a></li>
+                  <li><a class="nav-dropdown-item" href="workshop.html">體驗工作坊</a></li>
+                  <li><a class="nav-dropdown-item" href="lectures.html">系列演講</a></li>
+                  <li><a class="nav-dropdown-item" href="academic.html">培訓教學</a></li>
+                </ul>
+              </li>
+
+              <!-- Dropdown 3: 推廣行動 -->
+              <li class="nav">
+                <button
+                  class="nav-dropdown-button"
+                  aria-controls="dropdown-outreach"
+                  aria-expanded="false"
+                >
+                  推廣行動
+                  <span class="icon-arrow" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-dropdown" id="dropdown-outreach">
+                  <li><a class="nav-dropdown-item" href="campaign_overview.html">推廣行動</a></li>
+                  <li><a class="nav-dropdown-item" href="knowledge.html">知識分享</a></li>
+                  <li><a class="nav-dropdown-item" href="practice.html">改善實務</a></li>
+                  <li><a class="nav-dropdown-item" href="certification.html">標章認證</a></li>
+                  <li><a class="nav-dropdown-item" href="results.html">推廣成果</a></li>
+                </ul>
+              </li>
+
+              <!-- Dropdown 4: 資源連結 -->
+              <li class="nav">
+                <button
+                  class="nav-dropdown-button"
+                  aria-controls="dropdown-resources"
+                  aria-expanded="false"
+                >
+                  資源連結
+                  <span class="icon-arrow" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-dropdown" id="dropdown-resources">
+                  <li><a class="nav-dropdown-item" href="relevant_regulations.html">常用法規</a></li>
+                  <li><a class="nav-dropdown-item" href="related_organizations.html">相關組織</a></li>
+                  <li><a class="nav-dropdown-item" href="grant_programs.html">補助計畫</a></li>
+                </ul>
+              </li>
+
+              <!-- Dropdown 5: 加入我們 -->
+              <li class="nav">
+                <button class="nav-dropdown-button" aria-controls="dropdown-join" aria-expanded="false">
+                  加入我們
+                  <span class="icon-arrow" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-dropdown" id="dropdown-join">
+                  <li><a class="nav-dropdown-item" href="join.html">成為會員</a></li>
+                  <li><a class="nav-dropdown-item" href="volunteer.html">志工招募</a></li>
+                  <li><a class="nav-dropdown-item" href="proposal.html">合作提案</a></li>
+                  <li><a class="nav-dropdown-item" href="donate.html">捐款支持</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <img class="nav-divider" src="img/nav-divider.svg" alt="" />
+
+            <a
+              href="https://www.aaedt.org.tw/blog/asdc/"
+              target="_blank"
+              class="nav-2"
+              rel="noopener noreferrer"
+              aria-label="學生競圖 (新視窗開啟)"
+            >
+              <div class="nav-link">學生競圖</div>
+              <img class="icon-external" src="img/icon-external.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <!-- /.nav-bar-inner -->
+      </nav>
+
+      <!-- 這是建立在我們的頁面是 HTML 跟之後會用 WP 之上的作法。如果是 SPA 的話，作法稍有不同，但是吳老師你可以直接問我，到時候我一起看跟講解 -->
+      <main class="main index_main mobile_gap_40px" id="main-content">
+        <a
+          href="#C"
+          title="中央內容區塊"
+          id="AC"
+          accesskey="C"
+          name="C"
+          class="sr-only sr-only-focusable"
+        >
+          <span class="sr-only">中央內容區塊</span>
+          <span aria-hidden="true">:::</span>
+        </a>
+        <h1 class="sr-only">首頁</h1>
+        <section class="hero-section mobile_margin_bottom_40px">
+          <!-- 這裡的 alt 要比較描述 (it needs to be more descriptive)，因為這有代表協會的相關的含意，更詳細可能要 and 立婷確認，其實 Copilot 現在可以給的 alt text 還滿好的 -->
+          <div class="section_1280px">
+            <div class="section_1040px gap_20px">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame1.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame1.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 1"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame2.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame2.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 2"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame3.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame3.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 3"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame4.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame4.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 4"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame5.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame5.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 5"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame6.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame6.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 6"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame7.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame7.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 7"
+                      />
+                    </picture>
+                  </div>
+                  <div class="carousel-item">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/img/banner/mobile/Frame8.svg"
+                      />
+                      <img
+                        class="d-block w-100"
+                        src="./public/img/banner/Frame8.svg"
+                        alt="AAEDT 可及環境設計協會 Banner 8"
+                      />
+                    </picture>
+                  </div>
+                </div>
+                <a
+                  class="carousel-control-prev"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <button class="carousel-control-play" id="carouselPlayBtn" aria-label="暫停輪播">
+                  <!-- pause icon（預設播放中，顯示暫停） -->
+                  <svg class="icon-pause" width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                    <rect x="0" y="0" width="4" height="16" rx="1.5" fill="#534c46"/>
+                    <rect x="10" y="0" width="4" height="16" rx="1.5" fill="#534c46"/>
+                  </svg>
+                  <!-- play icon（暫停中，顯示播放） -->
+                  <svg class="icon-play" width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                    <path d="M1 1L13 8L1 15V1Z" fill="#534c46" stroke="#534c46" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <!-- <img
+                class="hero-img"
+                src="img/hero/hero.svg"
+                alt="可及協會在環境不要障礙的活動時的團體照，總共12位成員，每個人帶著笑容並拿著綠色盆栽一起提倡環境不要障礙。"
+              /> -->
+              <div class="card-container mobile_padding_left_right_20px">
+                <a href="remodeling.html" class="feature-card">
+                  <div class="action-card action-card--1">
+                    <div class="text-wrapper-2">我要改善環境</div>
+                    <div class="text-wrapper-3">
+                      從居家到公共空間，我們提供專業的檢測與改善服務，讓每個人都能安心使用。
+                    </div>
+                  </div>
+                </a>
+                <a href="lectures.html" class="feature-card">
+                  <div class="action-card action-card--2">
+                    <div class="text-wrapper-2">我想邀約演講</div>
+                    <div class="text-wrapper-3">
+                      邀請我們的專業講師到現場分享，讓更多人了解『可及設計』的理念與實踐。
+                    </div>
+                  </div>
+                </a>
+                <a href="news.html" class="feature-card">
+                  <div class="action-card action-card--3">
+                    <div class="text-wrapper-2">我想參加活動</div>
+                    <div class="text-wrapper-3">
+                      參加課程、工作坊、講座或參展，親身理解『可及設計』，和大家一起學習、分享。
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-us-section mobile_margin_bottom_40px">
+          <div class="section_1280px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
+              <div class="title-group">
+                <h2 class="main-title">認識我們</h2>
+                <div class="title-line-bg"></div>
+              </div>
+              <div class="frame-6">
+                <div class="frame-7">
+                  <div class="frame-8">
+                    <h3 class="text-wrapper-8">每一步努力，都是為了讓環境更友善</h3>
+                    <div class="text-wrapper-9">
+                      了解協會的使命與推廣行動，認識我們如何從環境到數位，持續推動可及的未來。
+                    </div>
+                  </div>
+                  <button class="button">
+                    <div class="text-wrapper-10">認識我們</div>
+                    <img class="button-arrow" src="img/arrow-right.svg" alt="" aria-hidden="true" />
+                  </button>
+                </div>
+                <div class="frame-9"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="outreach-section arc-top arc-bottom">
+          <div class="content-section campaign_overview_section section_1280px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px">
+              <div class="page-header mobile_gap_20px">
+                <div class="title-group">
+                  <h2 class="main-title">推廣行動</h2>
+                  <div class="title-line-bg"></div>
+                </div>
+                <div class="intro-group">
+                  <h3 class="sub-title">我們正在努力的方向</h3>
+                  <p class="intro-text">
+                    從居家改善到社區推廣，AAEDT 積極推動不同計畫，<br />讓可及設計更貼近生活。
+                  </p>
+                </div>
+              </div>
+              <!-- 以下的 card component 可以參考這個網站 https://inclusive-components.design/cards/ -->
+              <div class="frame-13">
+                <div class="frame-14 card">
+                  <div class="element-wrapper">
+                    <img
+                      class="element-2"
+                      src="img/outreach/2025-09-23-21-06-04-1.png"
+                      alt="長照2.0居家環境改造範例"
+                    />
+                  </div>
+                  <div class="frame-15">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">改善環境</span>
+                    </div>
+                    <h3 class="text-wrapper-9">
+                      <a href="https://www.google.com/">長照2.0居家環境改造</a>
+                    </h3>
+                  </div>
+                </div>
+                <div class="frame-17 card">
+                  <div class="element-wrapper">
+                    <img
+                      class="element-2"
+                      src="img/outreach/2025-09-23-21-06-48-1.png"
+                      alt="公共空間無障礙環境改善範例"
+                    />
+                  </div>
+                  <div class="frame-15 card">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">改善環境</span>
+                    </div>
+                    <h3 class="text-wrapper-9"><a href="#">公共空間無障礙環境改善</a></h3>
+                  </div>
+                </div>
+                <div class="frame-18 card">
+                  <div class="element-wrapper">
+                    <img
+                      class="element-2"
+                      src="img/outreach/2025-09-23-21-06-48-1-1.png"
+                      alt="可及性設計理念教育推廣"
+                    />
+                  </div>
+                  <div class="frame-15 card">
+                    <div class="card-meeting-tag-wrap">
+                      <span class="tag">改善環境</span>
+                    </div>
+                    <h3 class="text-wrapper-9"><a href="#">可及性設計理念教育推廣</a></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="button-wrapper mobile_center">
+                <button class="button">
+                  <div class="text-wrapper-10">更多活動</div>
+                  <img class="button-arrow" src="img/arrow-right.svg" alt="" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="donate-section mobile_margin_top_40px mobile_margin_bottom_40px">
+          <div class="section_1280px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
+              <div class="title-group">
+                <h2 class="main-title">贊助我們</h2>
+                <div class="title-line-bg"></div>
+              </div>
+              <div class="frame-6">
+                <div class="frame-7">
+                  <div class="frame-8">
+                    <h3 class="text-wrapper-13">
+                      支持協會，讓改變發生。改善環境需要每一份力量。捐款、志工或合作提案，都是推動可及設計的重要支持。
+                    </h3>
+                    <div class="text-wrapper-9">
+                      本會帳號： 國泰世華銀行台中分行(代碼：013)<br />帳號：006-03-500889-4<br />戶名：台灣可及環境設計協會張華蓀
+                    </div>
+                  </div>
+                  <button class="button">
+                    <div class="text-wrapper-10">支持我們</div>
+                    <img class="button-arrow" src="img/arrow-right.svg" alt="" aria-hidden="true" />
+                  </button>
+                </div>
+                <div class="frame-19"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-section arc-top arc-bottom">
+          <div class="section_1280px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
+              <div class="title-group">
+                <h2 class="main-title">媒體專區</h2>
+                <div class="title-line-bg"></div>
+              </div>
+              <div class="frame-22">
+                <iframe
+                  class="element-3"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/IfVTo_PWc7Q?si=tLvN_a6t4mKbyhkv"
+                  title="AAEDT台灣可及環境設計協會影片：也許，我們的生活環境還可以更友善"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+
+                <div class="frame-12">
+                  <div class="text-wrapper-14">
+                    我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明
+                    我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明我是影片說明
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="partners-section mobile_margin_top_40px mobile_margin_bottom_40px">
+          <div class="section_1280px">
+            <div class="section_1040px gap_40px mobile_padding_left_right_20px mobile_gap_20px">
+              <div class="title-group">
+                <h2 class="main-title">合作夥伴</h2>
+                <div class="title-line-bg"></div>
+              </div>
+              <div class="frame-25">
+                <img src="img/partners/1.svg" alt="新綠主義股份有限公司" />
+                <img src="img/partners/2.svg" alt="愷恩無障礙室內裝修設計工程有限公司" />
+                <img src="img/partners/3.svg" alt="薰香設計室內裝修有限公司" />
+                <img src="img/partners/4.svg" alt="亦欣企業" />
+                <img src="img/partners/4.svg" alt="亦欣企業" />
+                <img src="img/partners/3.svg" alt="薰香設計室內裝修有限公司" />
+                <img src="img/partners/2.svg" alt="愷恩無障礙室內裝修設計工程有限公司" />
+                <img src="img/partners/1.svg" alt="新綠主義股份有限公司" />
+              </div>
+              <!-- <img class="frame-25 hide-mobile" src="img/partners.svg" alt="partners" />
+              <img class="frame-25 show-mobile" src="img/mobile-partners.svg" alt="partners" /> -->
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-main-panel mobile_padding_left_right_20px">
+          <!-- 左側：品牌與聯絡資訊 -->
+          <div class="footer-brand-panel">
+            <div class="footer-logo">
+              <img src="img/logo.svg" alt="台灣可及環境設計協會 logo" />
+            </div>
+          </div>
+
+          <div class="address_nav_area">
+            <address class="footer-contact-list">
+              <div class="footer-contact-item">
+                <img class="icon" src="img/footer/property-1-map.svg" alt="" aria-hidden="true" />
+                <span class="contact-text">406台中市北屯區松竹路二段 86 巷 28 弄 22 號 2 樓之 2</span>
+              </div>
+              <div class="footer-contact-item">
+                <img class="icon" src="img/footer/property-1-phone.svg" alt="" aria-hidden="true" />
+                <span class="contact-text">聯絡電話：<a href="tel:+886422437659">04-22437659</a></span>
+              </div>
+              <div class="footer-contact-item">
+                <img class="icon" src="img/footer/property-1-fax.svg" alt="" aria-hidden="true" />
+                <span class="contact-text">傳真號碼：04-25370205</span>
+              </div>
+            </address>
+            <nav class="footer-nav-panel" aria-label="頁尾導覽">
+              <div class="footer-nav-column">
+                <a href="news.html" class="footer-page-link">
+                  <span class="footer-link-text">最新消息</span>
+                </a>
+                <a href="about.html" class="footer-page-link">
+                  <span class="footer-link-text">認識協會</span>
+                </a>
+                <a href="inspection.html" class="footer-page-link">
+                  <span class="footer-link-text">專業服務</span>
+                </a>
+              </div>
+              <div class="footer-nav-column">
+                <a href="campaign_overview.html" class="footer-page-link">
+                  <span class="footer-link-text">推廣行動</span>
+                </a>
+                <a href="related_organizations.html" class="footer-page-link">
+                  <span class="footer-link-text">相關資源</span>
+                </a>
+                <a href="join.html" class="footer-page-link">
+                  <span class="footer-link-text">加入我們</span>
+                </a>
+              </div>
+            </nav>
+          </div>
+
+          <hr />
+
+          <!-- 底部：政策 + 社群 -->
+          <div class="footer-bottom-panel">
+            <div class="footer-policy-panel">
+              <a class="font_family_inter font_size_14 font_w_500" href="privacy_policy.html"
+                >隱私權政策</a
+              >
+              <span class="policy-divider" aria-hidden="true"></span>
+              <a
+                class="font_family_inter font_size_14 font_w_500"
+                href="accessibility_statement.html"
+                >網站無障礙聲明</a
+              >
+            </div>
+            <div class="footer-social-panel">
+              <span class="font_size_14 font_w_500">關注我們</span>
+              <a href="https://www.youtube.com/@AAEDT" target="_blank" rel="noopener noreferrer" aria-label="YouTube（新視窗開啟）">
+                <img
+                  class="footer-social-icon"
+                  src="img/footer/footer-social-media-youtube.svg"
+                  alt="YouTube"
+                />
+              </a>
+              <a href="https://lin.ee/Q538Cx5" target="_blank" rel="noopener noreferrer" aria-label="Line@（新視窗開啟）">
+                <img
+                  class="footer-social-icon"
+                  src="img/footer/footer-social-media-line.svg"
+                  alt="Line@"
+                />
+              </a>
+              <a href="https://www.facebook.com/AAEDT2014" target="_blank" rel="noopener noreferrer" aria-label="Facebook（新視窗開啟）">
+                <img class="footer-social-icon" src="img/footer/footer-social-media-fb.svg" alt="Facebook" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

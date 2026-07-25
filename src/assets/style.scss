@@ -147,19 +147,19 @@
 
 /* SVG banner backgrounds */
 .final .action-card--1 {
-    background-image: url("/img/banner/Homepage_Card01.svg");
+    background-image: url("./public/img/banner/Homepage_Card01.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .final .action-card--2 {
-    background-image: url("/img/banner/Homepage_Card02.svg");
+    background-image: url("./public/img/banner/Homepage_Card02.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .final .action-card--3 {
-    background-image: url("/img/banner/Homepage_Card03.svg");
+    background-image: url("./public/img/banner/Homepage_Card03.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -1071,6 +1071,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -1112,49 +1113,49 @@
    這裡只補 background-image，不重複寫座標。
    ────────────────────────────────────────────────────────── */
 .final .card-visuals--card1 .img {
-    background-image: url(/img/hero/feature-card-bg1.svg);
+    background-image: url(./public/img/hero/feature-card-bg1.svg);
     background-size: 110% auto;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card1 .group-2 {
-    background-image: url("/img/hero/card1/group-51.png");
+    background-image: url("./public/img/hero/card1/group-51.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card1 .group-3 {
-    background-image: url("/img/hero/card1/group-52.png");
+    background-image: url("./public/img/hero/card1/group-52.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card1 .group-4 {
-    background-image: url("/img/hero/card1/group-53.png");
+    background-image: url("./public/img/hero/card1/group-53.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card1 .group-5 {
-    background-image: url("/img/hero/card1/group-31.png");
+    background-image: url("./public/img/hero/card1/group-31.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card1 .group-6 {
-    background-image: url("/img/hero/card1/group-23.png");
+    background-image: url("./public/img/hero/card1/group-23.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card1 .group-7 {
-    background-image: url("/img/hero/card1/group-44.png");
+    background-image: url("./public/img/hero/card1/group-44.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -1162,35 +1163,35 @@
 
 /* ── Card 2 裝飾圖 ── */
 .final .card-visuals--card2 .img {
-    background-image: url("/img/hero/feature-card-bg2.svg");
+    background-image: url("./public/img/hero/feature-card-bg2.svg");
     background-size: 110% auto;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card2 .group-2 {
-    background-image: url("/img/hero/card2/group-51-1.png");
+    background-image: url("./public/img/hero/card2/group-51-1.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card2 .group-3 {
-    background-image: url("/img/hero/card2/group-52-1.png");
+    background-image: url("./public/img/hero/card2/group-52-1.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card2 .group-8 {
-    background-image: url("/img/hero/card2/group-53-1.png");
+    background-image: url("./public/img/hero/card2/group-53-1.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card2 .group-9 {
-    background-image: url("/img/hero/card2/group-61.png");
+    background-image: url("./public/img/hero/card2/group-61.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -1198,14 +1199,14 @@
 
 /* ── Card 3 裝飾圖 ── */
 .final .card-visuals--card3 .img {
-    background-image: url("/img/hero/feature-card-bg3.png");
+    background-image: url("./public/img/hero/feature-card-bg3.png");
     background-size: 110% auto;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .final .card-visuals--card3 .group-2 {
-    background-image: url("/img/hero/card3/group-51-2.png");
+    background-image: url("./public/img/hero/card3/group-51-2.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
