@@ -350,13 +350,16 @@
                     top: 0;
                     width: 40px;
                     height: 40px;
-                    background-color: #88837d;
+                    font-size: 20px;
+                    background-color: #534c46;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: #ffffff;
-                    font-weight: 700;
+                    font-weight: 500;
+                    line-height: 28px;
+                    font-family: Noto Sans TC;
                     z-index: 1; /* 確保圓圈在線條上方 */
                 }
 
@@ -364,17 +367,18 @@
                 .step-content {
                     h3,
                     h4 {
-                        font-size: 1.25rem;
-                        font-weight: 700;
-                        color: #534c46;
-                        margin: 0 0 4px 0;
-                        line-height: 1.4;
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: #1a1410;
+                        line-height: 28px;
+                        font-family: Noto Sans TC;
                     }
 
                     p {
-                        font-size: 1rem;
-                        color: #726b64;
-                        line-height: 1.6;
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: #534c46;
+                        line-height: 28px;
                         margin: 0;
                     }
                 }
@@ -391,6 +395,15 @@
 }
 
 @media (max-width: 768px) {
+    .step-content {
+        h3,
+        h4 {
+            font-size: 16px !important;
+        }
+        p {
+            font-size: 14px !important;
+        }
+    }
     .btn-download {
         font-size: 14px !important;
         line-height: 18px !important;
