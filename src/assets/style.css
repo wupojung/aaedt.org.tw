@@ -1069,7 +1069,18 @@
     margin-right: -0.23px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    align-items: center;
     gap: 20px;
+}
+
+.final .frame-25 img {
+    width: 100%;
+    max-width: 245px;
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
 }
 
 @media (max-width: 767px) {
