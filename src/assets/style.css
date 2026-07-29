@@ -939,13 +939,12 @@
 .final .text-wrapper-13 {
     position: relative;
     align-self: stretch;
-    margin-top: -1px;
-    font-family: "Noto Sans", Helvetica, sans-serif;
-    font-weight: 600;
-    color: #534c46;
-    font-size: 18px;
+    font-family: Noto Sans TC;
+    font-weight: 500;
+    color: var(--neautral-50);
+    font-size: 20px;
     letter-spacing: 0;
-    line-height: 27px;
+    line-height: 28px;
 }
 
 .final .frame-19 {
@@ -954,6 +953,9 @@
     /* max-width: 600px; */
     /* 保持原始比例 600:387 */
     aspect-ratio: 600 / 387;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
     height: auto;
     border-radius: 12px;
     background-image: url(https://c.animaapp.com/mkudp988xLWCmu/img/-----2025-09-23-21-10-39-1.png);
@@ -969,9 +971,6 @@
     position: relative; /* ✅ 定位基準點 (保持不動) */
     align-self: stretch;
     width: 100%;
-    flex: 0 0 auto;
-    background-color: #ffffff;
-    border-radius: 12px;
 
     /* ❌ 刪除或註解掉這行 */
     /* overflow: hidden; */
