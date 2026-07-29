@@ -176,8 +176,19 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   /* tablet：card-container 補回側邊距（hero-section padding 已由上方移除） */
   .final .card-container {
-    padding: 20px 60px;
+    padding: 20px 30px !important;
     box-sizing: border-box;
+  }
+
+  /* 三張卡片同一列時，縮小 min-width 避免重疊 */
+  .final .action-card {
+    min-width: 0 !important;
+  }
+  .final .text-wrapper-2 {
+    font-size: 15px !important;
+  }
+  .final .text-wrapper-3 {
+    font-size: 10px !important;
   }
 }
 
@@ -193,13 +204,13 @@
 
   .final .card-container {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 
-  /* Tablet: feature-card 各佔一半並排，最大不超過原始 333px */
+  /* Tablet: feature-card 三張同一列並排，不換行 */
   .final .feature-card {
-    width: calc(50% - 10px);
+    width: calc(33.333% - 14px);
     max-width: 333px;
   }
 
