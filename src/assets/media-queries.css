@@ -110,14 +110,6 @@
     margin-top: 0;
     margin-bottom: 0;
   } */
-  /* frame-14/17/18 max-width: 340px vs frame-9 max-width: 600px
-     手機板兩者都用 width: 100%，移除 max-width 讓寬度一致 */
-  .final .frame-14,
-  .final .frame-17,
-  .final .frame-18 {
-    max-width: none;
-  }
-
   .final .donate-section {
     /* padding: 40px 20px; */
   }
@@ -190,6 +182,15 @@
   .final .text-wrapper-3 {
     font-size: 10px !important;
   }
+
+  /* 平板：frame-13 強制固定三欄，不換行，欄寬不足時等比縮小而非擠壓變形 */
+  .final .frame-13 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .final .outreach-card {
+    max-width: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -214,25 +215,17 @@
     max-width: 333px;
   }
 
-  .final .frame-13 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  /* Tablet: outreach cards 各佔一半並排 */
-  .final .frame-14,
-  .final .frame-17,
-  .final .frame-18 {
-    width: calc(50% - 20px);
-    max-width: 340px;
-  }
 }
 
 @media (min-width: 1024px) {
   /* desktop */
   .hero-section {
     padding: 40px 120px 30px 120px;
+  }
+
+  /* Desktop: frame-13 恢復原始間距 */
+  .final .frame-13 {
+    gap: 40px;
   }
 
   .final .about-us-section .section_1280px {
@@ -280,21 +273,6 @@
     width: 600px;
     height: 387px;
     aspect-ratio: unset;
-  }
-
-  .final .frame-13 {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-  }
-
-  /* Desktop: outreach cards 固定回原始寬度，三張並排 */
-  .final .frame-14,
-  .final .frame-17,
-  .final .frame-18 {
-    width: 322px;
-    max-width: none;
-    flex: 1;
   }
 
   .final .text-wrapper-11,

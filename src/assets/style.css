@@ -801,28 +801,23 @@
 }
 
 .final .frame-13 {
-    display: flex;
-    flex-direction: column; /* Added for mobile */
-    align-items: center; /* Changed for mobile */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     position: relative;
     align-self: stretch;
     width: 100%;
-    flex: 0 0 auto;
 }
 
-.final .frame-14 {
+.final .outreach-card {
     display: flex;
     flex-direction: column;
-    /* Mobile first: 全寬，最大 322px，desktop 時由 flex parent 控制 */
-    width: 100%;
-    max-width: 340px;
     align-items: flex-start;
     position: relative;
-    margin-top: -1px;
-    margin-bottom: -1px;
-    margin-left: -1px;
-    background-color: #534c46;
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+    background-color: white;
     border-radius: 12px;
     border: 1px solid;
     border-color: #bbbbbb;
@@ -897,43 +892,12 @@
     white-space: nowrap;
 }
 
-.final .frame-17 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 340px;
-    align-items: flex-start;
-    position: relative;
-    margin-top: -1px;
-    margin-bottom: -1px;
-    background-color: #534c46;
-    border-radius: 12px;
-    border: 1px solid;
-    border-color: #bbbbbb;
-}
-
 .final .element-2 {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.final .frame-18 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 340px;
-    align-items: flex-start;
-    position: relative;
-    margin-top: -1px;
-    margin-bottom: -1px;
-    margin-right: -1px;
-    background-color: #534c46;
-    border-radius: 12px;
-    border: 1px solid;
-    border-color: #bbbbbb;
 }
 
 .final .text-wrapper-13 {
