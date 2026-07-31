@@ -73,6 +73,7 @@
 
             .intro-image {
                 flex: 1;
+                aspect-ratio: 500 / 387;
 
                 img {
                     width: 100%;
@@ -131,6 +132,12 @@
         }
 
         .intro-image {
+            width: 100%;
+            height: auto;
+            padding: 0 0;
+        }
+
+        .org-chart-image {
             width: 100%;
             height: auto;
             padding: 0 0;
