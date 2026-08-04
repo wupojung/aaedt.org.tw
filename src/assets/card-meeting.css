@@ -26,9 +26,9 @@
         grid-template-columns: 1fr;
     }
 
-    .card-meeting-image {
+    /* .card-meeting-image {
         height: 320px;
-    }
+    } */
 
     .card-meeting-image img {
         height: 100%;
@@ -55,8 +55,14 @@
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
 }
 
+.card-meeting-image {
+    width: 100%;
+    max-width: 100%;
+}
+
 .card-meeting-image img {
     width: 100%;
+    max-width: 100%;
     object-fit: cover;
     display: block;
 }
