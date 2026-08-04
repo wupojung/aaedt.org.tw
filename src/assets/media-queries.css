@@ -214,7 +214,6 @@
     width: calc(33.333% - 14px);
     max-width: 333px;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -233,7 +232,7 @@
   }
 
   .final .donate-section {
-    padding: 60px 120px;
+    padding: 60px 0;
   }
 
   /* .final .outreach-section,
@@ -243,7 +242,7 @@
 
   /* Desktop: 恢復 partners-section 原始 padding */
   .final .partners-section {
-    padding: 60px 120px;
+    padding: 60px 0;
   }
 
   .final .outreach-section,
@@ -266,13 +265,19 @@
 
   .final .frame-9 {
     width: 600px;
+    max-width: 600px;
+    flex-shrink: 0;
+    aspect-ratio: 600 / 387;
+    height: auto;
   }
 
   /* Desktop: 恢復 frame-19 固定尺寸 */
   .final .frame-19 {
     width: 600px;
-    height: 387px;
-    aspect-ratio: unset;
+    max-width: 600px;
+    flex-shrink: 0;
+    aspect-ratio: 600 / 387;
+    height: auto;
   }
 
   .final .text-wrapper-11,
