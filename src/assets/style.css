@@ -825,7 +825,7 @@
     position: relative;
     align-self: stretch;
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 12px 12px 0px 0px;
     overflow: hidden;
 }
@@ -892,9 +892,12 @@
 
 .final .element-2 {
     display: block;
-    position: relative;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .final .text-wrapper-13 {
