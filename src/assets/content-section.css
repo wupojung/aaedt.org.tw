@@ -73,7 +73,10 @@
 
             .intro-image {
                 flex: 1;
+                width: 100%;
+                max-width: 360px;
                 aspect-ratio: 500 / 387;
+                margin: 0 auto;
 
                 img {
                     width: 100%;
