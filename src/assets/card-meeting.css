@@ -9,29 +9,15 @@
     box-sizing: border-box;
 }
 
-/* 2. 平板端：寬度大於 640px 時變 2 欄，卡片恢復圓角 */
+/* 平板端維持桌面 3 欄版型，不切 2 欄 */
 
-/* 3. 桌面端：寬度大於 1024px 時變 3 欄 (符合 1280 設計需求) */
-@media (max-width: 1024px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
+@media (max-width: 500px) {
     /* .card-meeting-title a {
         font-size: 12px !important;
     } */
     .card-grid {
+        max-width: 350px;
         grid-template-columns: 1fr;
-    }
-
-    /* .card-meeting-image {
-        height: 320px;
-    } */
-
-    .card-meeting-image img {
-        height: 100%;
     }
 }
 
