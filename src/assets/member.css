@@ -609,6 +609,11 @@
 @media (max-width: 767px) {
   .card-grid {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card-grid-item {
+    max-width: 333px;
   }
 
   .card-grid-item-photo {

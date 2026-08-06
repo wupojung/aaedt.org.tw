@@ -1074,6 +1074,11 @@
     .final .frame-13 {
         grid-template-columns: 1fr;
         gap: 20px !important;
+        justify-items: center;
+    }
+
+    .final .outreach-card {
+        max-width: 320px;
     }
 }
 
