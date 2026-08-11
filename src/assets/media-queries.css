@@ -124,9 +124,6 @@
   .mobile_padding_left_right_20px {
     padding: 0 20px;
   }
-}
-
-@media (max-width: 1024px) {
   .mobile_margin_bottom_40px {
     margin-bottom: 40px !important;
   }
@@ -166,9 +163,12 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  /* .mobile_padding_left_right_20px {
+    padding: 0 5vw;
+  } */
   /* tablet：card-container 補回側邊距（hero-section padding 已由上方移除） */
   .final .card-container {
-    padding: 20px 30px !important;
+    /* padding: 20px 30px !important; */
     box-sizing: border-box;
   }
 
@@ -177,10 +177,10 @@
     min-width: 0 !important;
   }
   .final .text-wrapper-2 {
-    font-size: 15px !important;
+    font-size: 13px !important;
   }
   .final .text-wrapper-3 {
-    font-size: 10px !important;
+    font-size: 9px !important;
   }
 
   /* 平板：frame-13 強制固定三欄，不換行，欄寬不足時等比縮小而非擠壓變形 */
@@ -195,13 +195,13 @@
 
 @media (min-width: 768px) {
   /* tablet */
-  .final .hero-section,
+  /* .final .hero-section,
   .final .about-us-section,
   .final .donate-section,
   .final .outreach-section,
   .final .video-section {
     padding: 20px 20px;
-  }
+  } */
 
   .final .card-container {
     flex-direction: row;
@@ -211,16 +211,18 @@
 
   /* Tablet: feature-card 三張同一列並排，不換行 */
   .final .feature-card {
-    width: calc(33.333% - 14px);
     max-width: 333px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section {
+    padding: 40px 120px 30px 120px;
   }
 }
 
 @media (min-width: 1024px) {
   /* desktop */
-  .hero-section {
-    padding: 40px 120px 30px 120px;
-  }
 
   /* Desktop: frame-13 恢復原始間距 */
   .final .frame-13 {
@@ -266,7 +268,6 @@
   .final .frame-9 {
     width: 600px;
     max-width: 600px;
-    flex-shrink: 0;
     aspect-ratio: 600 / 387;
     height: auto;
   }
@@ -275,7 +276,6 @@
   .final .frame-19 {
     width: 600px;
     max-width: 600px;
-    flex-shrink: 0;
     aspect-ratio: 600 / 387;
     height: auto;
   }

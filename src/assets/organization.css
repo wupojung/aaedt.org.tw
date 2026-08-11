@@ -2,7 +2,7 @@
     & .intro-group {
         .intro-text,
         .intro-text ul * {
-            width: 800px;
+            /* width: 800px; */
         }
     }
 }

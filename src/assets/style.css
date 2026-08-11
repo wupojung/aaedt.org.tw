@@ -902,7 +902,7 @@
     /* max-width: 600px; */
     /* 保持原始比例 600:387 */
     aspect-ratio: 600 / 387;
-    flex: 0 0 auto;
+    /* flex: 0 0 auto; */
     background-color: #ffffff;
     height: auto;
     border-radius: 12px;
@@ -960,7 +960,6 @@
     position: relative;
     /* Mobile first: 全寬，限制最大尺寸，保持 16:9 比例 */
     width: 100%;
-    max-width: 858px;
     aspect-ratio: 16 / 9;
     height: auto;
     border-radius: 12px;

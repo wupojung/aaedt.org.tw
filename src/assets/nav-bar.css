@@ -528,7 +528,7 @@
    ============================================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
     .nav-bar-inner {
-        padding: 16px 32px;
+        padding: 20px;
     }
 
     /* top = 16px padding + 60px logo + 16px padding = 92px */
@@ -540,7 +540,7 @@
 
     .nav-bar .nav .nav-link,
     .nav-bar .nav .nav-dropdown-button {
-        padding: 14px 20px;
+        padding: 14px 32px;
         font-size: 17px;
     }
 
@@ -550,7 +550,7 @@
     }
 
     .nav-bar .nav-2 {
-        padding: 14px 20px;
+        padding: 14px 32px;
         font-size: 17px;
     }
 }
