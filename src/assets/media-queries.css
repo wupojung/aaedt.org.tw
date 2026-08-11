@@ -191,6 +191,11 @@
   .final .outreach-card {
     max-width: none;
   }
+
+  /* 平板：element-3 限制最大寬度 */
+  .final .element-3 {
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -235,6 +240,12 @@
 
   .final .donate-section {
     padding: 60px 0;
+  }
+
+  /* 桌面：element-3 恢復全寬 */
+  .final .element-3 {
+    width: 100%;
+    max-width: none;
   }
 
   /* .final .outreach-section,
